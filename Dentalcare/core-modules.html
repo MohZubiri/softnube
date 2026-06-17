@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المستخدم — الإدارة المالية | نظام DentalCare</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-primary: #0d9488;
+            --clr-primary-dark: #0f766e;
+            --clr-primary-darker: #115e59;
+            --clr-primary-light: #ccfbf1;
+            --clr-primary-50: #f0fdfa;
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-text: #1e293b;
+            --clr-text-secondary: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-border-light: #f1f5f9;
+            --clr-success: #16a34a;
+            --clr-success-bg: #dcfce7;
+            --clr-warning: #ca8a04;
+            --clr-warning-bg: #fef9c3;
+            --clr-danger: #dc2626;
+            --clr-danger-bg: #fee2e2;
+            --clr-info: #2563eb;
+            --clr-info-bg: #dbeafe;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Header / Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .version-badge {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ─── TOC ─── */
+        .toc {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 32px 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .toc h2 {
+            font-size: 1.3rem;
+            color: var(--clr-primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc h2 .icon {
+            font-size: 1.5rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            color: var(--clr-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: var(--clr-primary-50);
+            border-color: var(--clr-primary-light);
+            color: var(--clr-primary-dark);
+            transform: translateX(-4px);
+        }
+
+        .toc-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ─── Container ─── */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* ─── Sections ─── */
+        .section {
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 40px 36px;
+            margin-bottom: 32px;
+            border: 1px solid var(--clr-border-light);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--clr-primary-light);
+        }
+
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-primary-darker);
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            color: var(--clr-primary-dark);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--clr-text);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 16px;
+            padding-right: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: var(--clr-primary-darker);
+        }
+
+        /* ─── Steps Block ─── */
+        .steps-block {
+            background: var(--clr-primary-50);
+            border-right: 4px solid var(--clr-primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .steps-block .steps-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--clr-primary-darker);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .steps-block ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .steps-block ol li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-right: 40px;
+            margin-bottom: 12px;
+        }
+
+        .steps-block ol li::before {
+            content: counter(step-counter);
+            position: absolute;
+            right: 0;
+            top: 2px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--clr-primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ─── Screenshot ─── */
+        .screenshot-wrapper {
+            text-align: center;
+            margin: 24px 0;
+            padding: 16px;
+            background: var(--clr-border-light);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.01);
+        }
+
+        .screenshot-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            cursor: zoom-in;
+        }
+
+        .screenshot-caption {
+            font-size: 0.88rem;
+            color: var(--clr-text-secondary);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* ─── Badges ─── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .badge-success {
+            background: var(--clr-success-bg);
+            color: #166534;
+        }
+
+        .badge-warning {
+            background: var(--clr-warning-bg);
+            color: #854d0e;
+        }
+
+        .badge-danger {
+            background: var(--clr-danger-bg);
+            color: #991b1b;
+        }
+
+        .badge-info {
+            background: var(--clr-info-bg);
+            color: #1e40af;
+        }
+
+        .badge-code {
+            background: #f1f5f9;
+            color: #475569;
+            font-family: 'Courier New', monospace;
+            direction: ltr;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* ─── Tip / Note / Warning Blocks ─── */
+        .callout {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .callout-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-tip {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .callout-note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+        }
+
+        .callout-warning {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+        }
+
+        .callout-danger {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        /* ─── Permissions Table ─── */
+        .perm-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.92rem;
+        }
+
+        .perm-table th {
+            background: var(--clr-primary-50);
+            color: var(--clr-primary-darker);
+            padding: 12px 16px;
+            text-align: right;
+            font-weight: 700;
+            border-bottom: 2px solid var(--clr-primary-light);
+        }
+
+        .perm-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .perm-table tr:hover td {
+            background: var(--clr-primary-50);
+        }
+
+        /* ─── Footer ─── */
+        .manual-footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .manual-footer a {
+            color: var(--clr-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* ─── Lightbox ─── */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            cursor: zoom-out;
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-overlay img {
+            max-width: 95%;
+            max-height: 95vh;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ─── Scrollbar ─── */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* ─── Print ─── */
+        @media print {
+            .hero {
+                padding: 30px;
+            }
+
+            .toc,
+            .section {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            .screenshot-wrapper img {
+                max-height: 400px;
+            }
+
+            body {
+                font-size: 14px;
+            }
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .toc,
+            .section {
+                padding: 24px 20px;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <header class="hero">
+        <a href="index.html" class="back-link">← العودة للقائمة الرئيسية</a>
+        <h1>💰 دليل المستخدم — الإدارة المالية والحسابات</h1>
+        <p class="subtitle">إدارة الفواتير، الدفعات، المصروفات، وإغلاق الصندوق</p>
+        <span class="version-badge">الإصدار 1.0 — يونيو 2026</span>
+    </header>
+
+    <!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
+    <nav class="toc">
+        <h2><span class="icon">📑</span> أقسام دليل الإدارة المالية والحسابات</h2>
+        <div class="toc-grid">
+            <a href="#sec-overview" class="toc-item">
+                <span class="toc-num">1</span>
+                نظرة عامة على القسم المالي
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-invoices-list" class="toc-item">
+                <span class="toc-num">2</span>
+                عرض وتصفية الفواتير
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-create-invoice" class="toc-item">
+                <span class="toc-num">3</span>
+                إصدار فاتورة جديدة
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-invoice-details" class="toc-item">
+                <span class="toc-num">4</span>
+                تفاصيل الفاتورة والدفعات
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-treatment-plan-invoice" class="toc-item">
+                <span class="toc-num">5</span>
+                فوترة خطط العلاج
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-expenses" class="toc-item">
+                <span class="toc-num">6</span>
+                إدارة المصروفات
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-daily-closing" class="toc-item">
+                <span class="toc-num">7</span>
+                إغلاق الصندوق اليومي
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-expense-categories" class="toc-item">
+                <span class="toc-num">8</span>
+                فئات المصروفات
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-permissions" class="toc-item">
+                <span class="toc-num">9</span>
+                الصلاحيات المطلوبة
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+            <a href="#sec-audit-logs" class="toc-item">
+                <span class="toc-num">10</span>
+                سجل المراجعة والعمليات (اللوج)
+                <span class="badge badge-success" style="margin-right: auto; font-size: 0.7rem;">نشط</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- ═══════════════ 1. OVERVIEW ═══════════════ -->
+        <section class="section" id="sec-overview">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2>نظرة عامة على القسم المالي</h2>
+            </div>
+            <p>
+                يتضمن تبويب <strong>«الإدارة المالية»</strong> في القائمة الجانبية جميع الأدوات اللازمة لإدارة الدورة
+                المالية الكاملة للعيادة. يمكنك الوصول إليه من القائمة الجانبية بالضغط على <strong>«الإدارة
+                    المالية»</strong> لفتح القائمة الفرعية.
+            </p>
+
+            <h3>الأقسام الفرعية:</h3>
+            <ul>
+                <li><strong>الفواتير:</strong> إنشاء وإدارة ومتابعة فواتير المرضى — سواء فواتير خدمات مباشرة أو فواتير
+                    مرتبطة بخطط علاجية.</li>
+                <li><strong>المصروفات:</strong> تسجيل ومتابعة جميع مصروفات العيادة اليومية من رواتب ومشتريات وصيانة
+                    وغيرها.</li>
+                <li><strong>إغلاق اليوم:</strong> مطابقة النقد الفعلي في صندوق العيادة مع المبالغ المسجلة في النظام
+                    يومياً.</li>
+                <li><strong>فئات المصروفات:</strong> تنظيم المصروفات ضمن فئات (مثال: رواتب، مواد طبية، إيجار، صيانة).
+                </li>
+            </ul>
+
+            <div class="screenshot-wrapper">
+                <img src="images/dashboard.png" alt="لوحة التحكم الرئيسية" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 1 — لوحة التحكم الرئيسية بعد تسجيل الدخول</div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 3. INVOICES LIST ═══════════════ -->
+        <section class="section" id="sec-invoices-list">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2>عرض وتصفية الفواتير</h2>
+            </div>
+            <p>
+                للوصول إلى قائمة الفواتير، اضغط على <strong>«الإدارة المالية»</strong> ← <strong>«الفواتير»</strong> من
+                القائمة الجانبية.
+                تعرض هذه الصفحة جدولاً بجميع الفواتير المسجلة في النظام مع إمكانية البحث والتصفية.
+            </p>
+
+            <h3>أدوات التصفية:</h3>
+            <ul>
+                <li><strong>من تاريخ / إلى تاريخ:</strong> تحديد نطاق زمني لعرض الفواتير الصادرة خلاله. يتم تحديد تاريخ
+                    اليوم تلقائياً عند فتح الصفحة.</li>
+                <li><strong>اسم المريض:</strong> البحث عن فواتير مريض محدد بإدخال اسمه أو جزء منه.</li>
+                <li><strong>طريقة الدفع:</strong> عرض الفواتير التي تم دفعها بطريقة محددة (نقداً، تحويل بنكي، إلخ).</li>
+            </ul>
+
+            <h3>معلومات الجدول:</h3>
+            <ul>
+                <li><strong>رقم الفاتورة:</strong> رقم تسلسلي فريد بصيغة <span class="badge-code">INV-00010</span></li>
+                <li><strong>التاريخ:</strong> تاريخ إصدار الفاتورة.</li>
+                <li><strong>اسم المريض:</strong> المريض المرتبط بالفاتورة.</li>
+                <li><strong>المبلغ الإجمالي:</strong> المبلغ الكلي للفاتورة.</li>
+                <li><strong>حالة الفاتورة:</strong>
+                    <ul>
+                        <li><span class="badge badge-success">✅ مدفوع</span> — تم سداد كامل المبلغ.</li>
+                        <li><span class="badge badge-warning">⏳ جزئي</span> — تم سداد جزء والباقي معلق.</li>
+                        <li><span class="badge badge-danger">❌ غير مدفوع</span> — لم يتم تسجيل أي دفعة بعد.</li>
+                    </ul>
+                </li>
+                <li><strong>الإجراءات:</strong> زر <strong>«عرض»</strong> للدخول لتفاصيل الفاتورة وزر
+                    <strong>«حذف»</strong> (يتطلب صلاحية خاصة).</li>
+            </ul>
+
+            <div class="callout callout-tip">
+                <span class="callout-icon">💡</span>
+                <div>لعرض جميع الفواتير بدون تصفية بتاريخ محدد، قم بمسح حقلي التاريخ (من / إلى) ثم اضغط على زر
+                    <strong>«بحث»</strong>.</div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/invoices_list.png" alt="قائمة الفواتير" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 2 — قائمة إدارة وتصفية الفواتير</div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 4. CREATE INVOICE ═══════════════ -->
+        <section class="section" id="sec-create-invoice">
+            <div class="section-header">
+                <span class="section-num">3</span>
+                <h2>إصدار فاتورة جديدة</h2>
+            </div>
+            <p>
+                لإنشاء فاتورة خدمات مباشرة (غير مرتبطة بخطة علاج)، اضغط على زر <strong>«إصدار فاتورة»</strong> في أعلى
+                صفحة الفواتير.
+            </p>
+
+            <div class="steps-block">
+                <div class="steps-title">📝 خطوات إصدار فاتورة جديدة:</div>
+                <ol>
+                    <li><strong>اختيار المريض:</strong> ابحث عن اسم المريض في القائمة المنسدلة واختره. إذا لم يكن المريض
+                        مسجلاً بعد، يجب إضافته أولاً من قسم المرضى.</li>
+                    <li><strong>تاريخ الفاتورة:</strong> يتم تعيين تاريخ اليوم تلقائياً، ويمكنك تعديله عند الحاجة.</li>
+                    <li><strong>إضافة بنود الفاتورة:</strong>
+                        <ul>
+                            <li>انقر على زر <strong>«إضافة خدمة»</strong> لإضافة بند جديد.</li>
+                            <li>اختر الخدمة المطلوبة من القائمة المنسدلة.</li>
+                            <li><strong>إذا كانت الخدمة تملك أكثر من شريحة سعر (شرائح أسعار):</strong> يظهر حقل
+                                <strong>«نوع السعر»</strong> لاختيار الشريحة المناسبة (مثلاً: سعر عادي، تأمين، خصم).
+                                بمجرد اختيار الشريحة يتم ملء <strong>سعر الوحدة</strong> تلقائياً بحسب الشريحة المحددة،
+                                ويُقفل حقل السعر اليدوي فلا يمكن تعديله يدوياً.</li>
+                            <li><strong>إذا كانت الخدمة لا تملك شرائح أسعار:</strong> أدخل <strong>سعر الوحدة</strong>
+                                يدوياً في حقل السعر.</li>
+                            <li>يُحسب إجمالي البند تلقائياً ويُعرض في عمود <strong>«الإجمالي»</strong>.</li>
+                            <li>يمكنك إضافة عدة بنود بتكرار الخطوة.</li>
+                        </ul>
+                    </li>
+                    <li><strong>الدفعة الأولى (اختياري):</strong> إذا أراد المريض الدفع فوراً — أدخل المبلغ واختر طريقة
+                        الدفع. إذا كانت الطريقة تتطلب رقم مرجعي (مثل التحويل البنكي)، أدخل رقم الحوالة.</li>
+                    <li><strong>الملاحظات:</strong> أضف أي ملاحظات إضافية (اختياري).</li>
+                    <li><strong>مراجعة الملخص:</strong> تحقق من الإجمالي والمبلغ المدفوع والرصيد المتبقي في ملخص
+                        الفاتورة.</li>
+                    <li>اضغط على زر <strong>«إنشاء الفاتورة»</strong> لحفظ الفاتورة.</li>
+                </ol>
+            </div>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">📌</span>
+                <div>الخدمات المعروضة هنا هي <strong>الخدمات العادية فقط</strong> (غير المرتبطة بخطط العلاج). لإنشاء
+                    فاتورة لخطة علاجية، استخدم الطريقة الموضحة في القسم 5.</div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/create_invoice.png" alt="إنشاء فاتورة جديدة" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 3 — نموذج إصدار فاتورة خدمات جديدة مع إمكانية تسجيل الدفعة الأولى
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 5. INVOICE DETAILS ═══════════════ -->
+        <section class="section" id="sec-invoice-details">
+            <div class="section-header">
+                <span class="section-num">4</span>
+                <h2>تفاصيل الفاتورة وإدارة الدفعات</h2>
+            </div>
+            <p>
+                عند الضغط على زر <strong>«عرض»</strong> بجانب أي فاتورة في القائمة، تفتح صفحة تفاصيل الفاتورة التي تعرض
+                جميع المعلومات والإجراءات المتاحة.
+            </p>
+
+            <h3>محتويات صفحة التفاصيل:</h3>
+            <ul>
+                <li><strong>بيانات الفاتورة:</strong> رقم الفاتورة، التاريخ، اسم المريض، نوع الفاتورة (عادية أو خطة
+                    علاج)، والحالة.</li>
+                <li><strong>بنود الفاتورة:</strong> جدول يعرض كل خدمة بأعمدة: <strong>الخدمة، السعر، الإجمالي</strong>
+                    (لا يوجد عمود للكمية).</li>
+                <li><strong>ملخص مالي:</strong> يوضح المبلغ الإجمالي، إجمالي المدفوع، والرصيد المتبقي.</li>
+            </ul>
+
+            <h3>سجل المدفوعات (سندات القبض):</h3>
+            <ul>
+                <li>يعرض جدولاً بكل الدفعات التي تمت على هذه الفاتورة.</li>
+                <li>كل دفعة تحمل <strong>رقم سند قبض</strong> فريد بصيغة <span class="badge-code">RCP-2026-0002</span>.
+                </li>
+                <li>يظهر لكل دفعة: المبلغ، طريقة الدفع، التاريخ، رقم المرجع (إن وجد).</li>
+                <li>يمكنك طباعة <strong>سند القبض</strong> لأي دفعة بالضغط على زر <strong>«🖨️ سند قبض»</strong>.</li>
+            </ul>
+
+            <h3>إضافة دفعة جديدة:</h3>
+            <div class="steps-block">
+                <div class="steps-title">💳 تسجيل دفعة (سند قبض):</div>
+                <ol>
+                    <li>تأكد أن الفاتورة لا تزال تحتوي على رصيد متبقي (الحالة: غير مدفوع أو جزئي).</li>
+                    <li>في قسم <strong>«إضافة دفعة»</strong> أسفل الصفحة، أدخل <strong>المبلغ المدفوع</strong>.</li>
+                    <li>اختر <strong>طريقة الدفع</strong> (نقداً، تحويل بنكي، شبكة، إلخ).</li>
+                    <li>إذا تطلبت الطريقة رقم مرجعي — أدخله في حقل <strong>«رقم الحوالة»</strong>.</li>
+                    <li>حدد <strong>تاريخ الدفعة</strong> (يتم تعيين اليوم تلقائياً).</li>
+                    <li>اضغط على زر <strong>«تسجيل دفعة»</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="callout callout-warning">
+                <span class="callout-icon">⚠️</span>
+                <div>لا يمكن تسجيل دفعة تتجاوز الرصيد المتبقي على الفاتورة. سيظهر النظام رسالة خطأ في حال تجاوز المبلغ.
+                </div>
+            </div>
+
+            <h3>طباعة الفاتورة:</h3>
+            <p>يمكنك طباعة الفاتورة الرسمية بصيغة A4 بالضغط على زر <strong>«طباعة الفاتورة (A4)»</strong> أسفل الصفحة.
+                تتضمن المطبوعة شعار العيادة وبيانات المريض وتفاصيل البنود والمدفوعات.</p>
+
+            <div class="screenshot-wrapper">
+                <img src="images/invoice_details.png" alt="تفاصيل الفاتورة والدفعات" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 4 — واجهة تفاصيل الفاتورة مع سجل الدفعات وإمكانية إضافة دفعة جديدة
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 6. TREATMENT PLAN INVOICE ═══════════════ -->
+        <section class="section" id="sec-treatment-plan-invoice">
+            <div class="section-header">
+                <span class="section-num">5</span>
+                <h2>فوترة خطط العلاج</h2>
+            </div>
+            <p>
+                يدعم النظام إنشاء فواتير مرتبطة بخطط العلاج مباشرة. يمكن الوصول لهذه الميزة من صفحة خطة العلاج نفسها.
+            </p>
+
+            <div class="steps-block">
+                <div class="steps-title">📋 خطوات إنشاء فاتورة لخطة علاج:</div>
+                <ol>
+                    <li>انتقل إلى قسم <strong>«خطط العلاج»</strong> من القائمة الجانبية.</li>
+                    <li>ادخل على خطة العلاج المطلوبة.</li>
+                    <li>اضغط على زر <strong>«إنشاء فاتورة»</strong> أو <strong>«تسجيل دفعة»</strong> (حسب ما إذا كانت
+                        الفاتورة موجودة سابقاً أم لا).</li>
+                    <li>سيتم عرض نموذج خاص يتضمن:
+                        <ul>
+                            <li>بيانات خطة العلاج والمريض تلقائياً.</li>
+                            <li>جلسات العلاج المتاحة (غير الملغية) لربطها بالفاتورة.</li>
+                            <li>الخدمات العلاجية فقط (المخصصة لخطط العلاج).</li>
+                        </ul>
+                    </li>
+                    <li>أضف بنود الفاتورة واربطها بالجلسات المناسبة.</li>
+                    <li>سجّل الدفعة الأولى إن رغبت.</li>
+                    <li>اضغط على <strong>«حفظ»</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">📌</span>
+                <div>
+                    <strong>ملاحظات مهمة:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>كل خطة علاج يمكن أن تملك <strong>فاتورة واحدة فقط</strong>.</li>
+                        <li>بعد إنشاء الفاتورة، يمكنك تعديل البنود وإضافة دفعات متعددة.</li>
+                        <li>إذا كانت الخطة بحالة <strong>«مكتملة»</strong>، لا يمكن تعديل بنود الفاتورة (مقفلة).</li>
+                        <li>لا يمكن أن يتجاوز إجمالي بنود الفاتورة المبلغ الكلي لخطة العلاج.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 7. EXPENSES ═══════════════ -->
+        <section class="section" id="sec-expenses">
+            <div class="section-header">
+                <span class="section-num">6</span>
+                <h2>إدارة المصروفات</h2>
+            </div>
+            <p>
+                لإدارة المصروفات اليومية للعيادة، انتقل إلى <strong>«الإدارة المالية»</strong> ←
+                <strong>«المصروفات»</strong> من القائمة الجانبية.
+            </p>
+
+            <h3>عرض وتصفية المصروفات:</h3>
+            <ul>
+                <li><strong>تصفية بالتاريخ:</strong> حدد نطاق زمني (من تاريخ / إلى تاريخ) لعرض مصروفات فترة محددة.</li>
+                <li><strong>تصفية بالفئة:</strong> اختر فئة المصروف من القائمة المنسدلة (مثال: رواتب، مواد طبية).</li>
+                <li>يعرض الجدول: الوصف، الفئة، المبلغ، التاريخ، وزر الحذف.</li>
+            </ul>
+
+            <div class="screenshot-wrapper">
+                <img src="images/expenses_list.png" alt="قائمة المصروفات" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 5 — قائمة المصروفات اليومية مع خيارات التصفية</div>
+            </div>
+
+            <h3>إضافة مصروف جديد:</h3>
+            <div class="steps-block">
+                <div class="steps-title">💰 خطوات تسجيل مصروف:</div>
+                <ol>
+                    <li>اضغط على زر <strong>«إضافة مصروف»</strong> في أعلى صفحة المصروفات.</li>
+                    <li>أدخل <strong>وصف المصروف</strong> (مثال: «فاتورة كهرباء شهر يونيو»، «سلفة من راتب الموظف أحمد»).
+                    </li>
+                    <li>اختر <strong>فئة المصروف</strong> المناسبة من القائمة المنسدلة.
+                        <ul>
+                            <li>إذا كانت الفئة <strong>مرتبطة بالموظفين</strong> (مثل: رواتب، سلف)، سيظهر حقل إضافي
+                                لاختيار اسم الموظف.</li>
+                        </ul>
+                    </li>
+                    <li>أدخل <strong>المبلغ</strong>.</li>
+                    <li>حدد <strong>التاريخ</strong>.</li>
+                    <li>اضغط على <strong>«حفظ المصروف»</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/add_expense.png" alt="إضافة مصروف جديد" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 6 — نموذج تسجيل مصروف جديد مع اختيار الفئة والموظف</div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 8. DAILY CLOSING ═══════════════ -->
+        <section class="section" id="sec-daily-closing">
+            <div class="section-header">
+                <span class="section-num">7</span>
+                <h2>إغلاق الصندوق اليومي</h2>
+            </div>
+            <p>
+                تُعد عملية إغلاق الصندوق اليومي من أهم الإجراءات المالية اليومية. تتيح هذه الميزة مطابقة المبالغ النقدية
+                الفعلية الموجودة في صندوق العيادة مع المبالغ المسجلة في النظام.
+            </p>
+            <p>
+                للوصول إليها: <strong>«الإدارة المالية»</strong> ← <strong>«إغلاق اليوم»</strong>.
+            </p>
+
+            <div class="steps-block">
+                <div class="steps-title">🔒 خطوات إغلاق الصندوق:</div>
+                <ol>
+                    <li><strong>تأكد من التاريخ:</strong> يتم تحديد تاريخ اليوم تلقائياً. يمكنك تغييره لإغلاق يوم سابق.
+                    </li>
+                    <li><strong>مراجعة المصروفات:</strong> يعرض النظام تلقائياً قائمة بجميع المصروفات المسجلة لنفس
+                        اليوم، حتى تتمكن من مراجعتها قبل الإغلاق.</li>
+                    <li><strong>إدخال النقد الفعلي:</strong> عدّ النقد الموجود في صندوق العيادة وأدخل المبلغ في حقل
+                        <strong>«النقد الفعلي»</strong>.</li>
+                    <li>اضغط على <strong>«إغلاق اليوم»</strong>.</li>
+                    <li><strong>عرض النتائج:</strong> سيقوم النظام بـ:
+                        <ul>
+                            <li>حساب <strong>النقد المتوقع</strong> = (مجموع المدفوعات النقدية) − (مجموع المصروفات).
+                            </li>
+                            <li>مقارنة النقد المتوقع مع النقد الفعلي.</li>
+                            <li>عرض <strong>الفرق</strong> — إذا كان موجباً فهو زيادة، وإذا كان سالباً فهو عجز.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="callout callout-danger">
+                <span class="callout-icon">🚨</span>
+                <div>إذا ظهر فرق كبير بين النقد المتوقع والفعلي، تأكد من أن جميع المصروفات والمدفوعات النقدية تم تسجيلها
+                    بشكل صحيح خلال اليوم. قد يكون السبب مصروف لم يُسجّل أو دفعة نقدية فائتة.</div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/daily_closing.png" alt="إغلاق الصندوق اليومي" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 7 — صفحة إغلاق الصندوق اليومي ومراجعة مصروفات اليوم</div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 9. EXPENSE CATEGORIES ═══════════════ -->
+        <section class="section" id="sec-expense-categories">
+            <div class="section-header">
+                <span class="section-num">8</span>
+                <h2>فئات المصروفات</h2>
+            </div>
+            <p>
+                يمكنك إدارة فئات المصروفات من <strong>«الإدارة المالية»</strong> ← <strong>«فئات المصروفات»</strong>.
+                تساعد الفئات في تنظيم المصروفات وتسهيل إعداد التقارير.
+            </p>
+
+            <h3>إمكانيات الإدارة:</h3>
+            <ul>
+                <li><strong>إضافة فئة جديدة:</strong> حدد اسم الفئة وما إذا كانت مرتبطة بالموظفين أم لا.</li>
+                <li><strong>تعديل فئة:</strong> تحديث اسم الفئة أو خاصية الارتباط بالموظفين.</li>
+                <li><strong>حذف فئة:</strong> حذف فئة لم تعد مستخدمة.</li>
+            </ul>
+
+            <div class="callout callout-tip">
+                <span class="callout-icon">💡</span>
+                <div>عند تفعيل خيار <strong>«مرتبطة بالموظفين»</strong> لفئة معينة، سيطلب النظام تلقائياً اختيار اسم
+                    الموظف عند تسجيل أي مصروف تحت هذه الفئة. مثال: فئة «الرواتب» أو «السلف».</div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/expense_categories.png" alt="قائمة فئات المصروفات" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 8 — قائمة فئات المصروفات وتعريف خيارات الارتباط بالموظفين</div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/add_expense_category.png" alt="إضافة فئة مصروف جديدة" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 9 — نموذج إضافة/تعديل فئة مصروف جديدة</div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 10. PERMISSIONS ═══════════════ -->
+        <section class="section" id="sec-permissions">
+            <div class="section-header">
+                <span class="section-num">9</span>
+                <h2>الصلاحيات المطلوبة</h2>
+            </div>
+            <p>
+                يعتمد النظام على نظام صلاحيات مفصّل. الجدول التالي يوضح الصلاحيات المطلوبة لكل عملية في القسم المالي:
+            </p>
+
+            <table class="perm-table">
+                <thead>
+                    <tr>
+                        <th>العملية</th>
+                        <th>الصلاحية المطلوبة</th>
+                        <th>الوصف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>عرض قائمة الفواتير</td>
+                        <td><span class="badge-code">invoices.view</span></td>
+                        <td>عرض جدول الفواتير وتصفيتها</td>
+                    </tr>
+                    <tr>
+                        <td>إنشاء فاتورة</td>
+                        <td><span class="badge-code">invoices.create</span></td>
+                        <td>إصدار فاتورة جديدة</td>
+                    </tr>
+                    <tr>
+                        <td>تعديل فاتورة</td>
+                        <td><span class="badge-code">invoices.edit</span></td>
+                        <td>تعديل بيانات الفاتورة وبنودها</td>
+                    </tr>
+                    <tr>
+                        <td>حذف فاتورة</td>
+                        <td><span class="badge-code">invoices.delete</span> + <span
+                                class="badge-code">financial.delete</span></td>
+                        <td>حذف الفاتورة — يتطلب صلاحيتين معاً</td>
+                    </tr>
+                    <tr>
+                        <td>تسجيل دفعة (سند قبض)</td>
+                        <td><span class="badge-code">invoices.payments</span> أو <span
+                                class="badge-code">payments.create</span></td>
+                        <td>إضافة دفعة على الفاتورة — يكفي امتلاك إحدى الصلاحيتين</td>
+                    </tr>
+                    <tr>
+                        <td>طباعة فاتورة / سند قبض</td>
+                        <td><span class="badge-code">invoices.print</span></td>
+                        <td>طباعة الفاتورة أو سند القبض بصيغة A4</td>
+                    </tr>
+                    <tr>
+                        <td>عرض المصروفات</td>
+                        <td><span class="badge-code">expenses.view</span></td>
+                        <td>عرض قائمة المصروفات وتصفيتها</td>
+                    </tr>
+                    <tr>
+                        <td>تسجيل مصروف</td>
+                        <td><span class="badge-code">expenses.create</span></td>
+                        <td>تسجيل مصروف جديد</td>
+                    </tr>
+                    <tr>
+                        <td>حذف مصروف</td>
+                        <td><span class="badge-code">expenses.delete</span> + <span
+                                class="badge-code">financial.delete</span></td>
+                        <td>حذف مصروف — يتطلب صلاحيتين معاً</td>
+                    </tr>
+                    <tr>
+                        <td>إغلاق الصندوق اليومي</td>
+                        <td><span class="badge-code">daily-closings.create</span></td>
+                        <td>فتح صفحة الإغلاق وتنفيذ إغلاق الصندوق (صلاحية <span
+                                class="badge-code">daily-closings.view</span> تخص عرض قوائم الإغلاقات فقط)</td>
+                    </tr>
+                    <tr>
+                        <td>إدارة فئات المصروفات</td>
+                        <td><span class="badge-code">expense-categories.view</span></td>
+                        <td>عرض وإدارة فئات المصروفات</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">📌</span>
+                <div>لتعديل صلاحيات المستخدمين، انتقل إلى <strong>«الإدارة»</strong> ← <strong>«الأدوار»</strong> ← اختر
+                    الدور المطلوب ← تعديل الصلاحيات. دور <strong>«مدير النظام»</strong> يملك جميع الصلاحيات تلقائياً.
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════ 11. AUDIT LOGS ═══════════════ -->
+        <section class="section" id="sec-audit-logs">
+            <div class="section-header">
+                <span class="section-num">10</span>
+                <h2>سجل المراجعة والعمليات (Audit Logs)</h2>
+            </div>
+            <p>
+                يوفر النظام سجلاً متكاملاً لمراقبة ومراجعة كافة العمليات التي تحدث في النظام (إضافة، تعديل، حذف، تسجيل
+                دخول، إلخ) لضمان الشفافية والأمان ومعرفة من قام بكل إجراء وتاريخه.
+            </p>
+
+            <h3>كيفية الوصول إلى سجل المراجعة:</h3>
+            <p>
+                من القائمة الجانبية، انتقل إلى قسم <strong>«الإدارة»</strong> ← <strong>«سجلات المراجعة»</strong>.
+            </p>
+
+            <h3>لماذا قد لا يظهر سجل المراجعة في القائمة الجانبية؟</h3>
+            <ul>
+                <li><strong>صلاحيات الوصول:</strong> يتطلب هذا القسم صلاحية خاصة وهي <span
+                        class="badge-code">audit-log.view</span>، أو أن يكون الحساب يملك دور Super User (مدير النظام
+                    الأكبر).</li>
+                <li><strong>عدم ظهور الصلاحية في صفحة الصلاحيات:</strong> إذا لم تظهر الصلاحية في لوحة التحكم الخاصة
+                    بالأدوار والصلاحيات، فهذا يعني أن السيدر الخاص بالصلاحيات بحاجة لإعادة تشغيل لتحديث قاعدة البيانات.
+                    يمكنك تشغيل الأمر التالي في سطر الأوامر لتحديث الصلاحيات فوراً:
+                    <br><span class="badge-code">php artisan db:seed --class=RolesAndPermissionsSeeder</span>
+                </li>
+            </ul>
+
+            <h3>محتويات صفحة سجل المراجعة:</h3>
+            <ul>
+                <li><strong>المستخدم:</strong> اسم الموظف/المستخدم الذي قام الإجراء.</li>
+                <li><strong>الحدث (Event):</strong> نوع العملية (إنشاء <span class="badge badge-success">created</span>،
+                    تعديل <span class="badge badge-warning">updated</span>، حذف <span
+                        class="badge badge-danger">deleted</span>).</li>
+                <li><strong>القسم (Model):</strong> الجدول أو الكائن المتأثر (مثال: الفواتير، المرضى، المواعيد).</li>
+                <li><strong>التفاصيل (Payload):</strong> البيانات القديمة والجديدة التي تم تعديلها للمقارنة ومعرفة
+                    الحقول المعدلة بدقة.</li>
+                <li><strong>التاريخ والوقت:</strong> وقت حدوث العملية بالثانية.</li>
+            </ul>
+
+            <div class="screenshot-wrapper">
+                <img src="images/audit_logs.png" alt="سجل المراجعة والعمليات" onclick="openLightbox(this)">
+                <div class="screenshot-caption">شكل 10 — واجهة سجل العمليات والمراجعة (Audit Logs) في لوحة الإدارة</div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="manual-footer">
+        <p>دليل المستخدم — نظام إدارة العيادات (DentalCare)</p>
+        <p>تم إعداده بتاريخ يونيو 2026 — الإصدار 1.0</p>
+        <p>Powered by <a href="https://softnube.site" target="_blank">softnube.site</a></p>
+    </footer>
+
+    <!-- ═══════════════ LIGHTBOX ═══════════════ -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(imgEl) {
+            const overlay = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgEl.src;
+            lightboxImg.alt = imgEl.alt;
+            overlay.classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+
+</html>

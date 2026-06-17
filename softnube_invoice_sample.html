@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولّد فواتير Softnube</title>
+    <!-- استدعاء وتضمين Tailwind CSS عبر سحابة CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- خط تجوال للغة العربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            #editor-panel {
+                display: none !important;
+            }
+
+            #invoice-preview {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .print-hidden {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row h-screen font-sans text-slate-800 overflow-hidden">
+
+    <!-- لوحة التحكم (النموذج) -->
+    <div id="editor-panel"
+        class="w-full md:w-1/3 h-full bg-white border-l border-slate-200 shadow-xl z-10 flex flex-col overflow-y-auto">
+        <div class="p-6 border-b border-slate-100 bg-slate-50 sticky top-0 z-20">
+            <h2 class="text-xl font-extrabold text-teal-700 flex items-center gap-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                    </path>
+                </svg>
+                منشئ الفواتير
+            </h2>
+            <p class="text-xs text-slate-500 mt-1">قم بتعديل بيانات الفاتورة هنا وستظهر فوراً في المعاينة.</p>
+        </div>
+
+        <div class="p-6 space-y-6 flex-1">
+            <!-- الشعار -->
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2">شعار الشركة (اللوجو)</label>
+                <input type="file" id="logoInput" accept="image/*"
+                    class="block w-full text-sm text-slate-500 file:mr-0 file:ml-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100 border border-slate-200 rounded-md p-1"
+                    onchange="updateLogo(event)">
+            </div>
+
+            <!-- بيانات العميل -->
+            <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <h3 class="font-bold text-teal-600 text-sm border-b border-slate-200 pb-2">بيانات العميل (العيادة)</h3>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">اسم العيادة</label>
+                    <input type="text" id="clinicNameInput" value="عيادة المدار لطب الأسنان"
+                        class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                        oninput="updateField('clinicName', this.value)">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">اسم الدكتور</label>
+                    <input type="text" id="doctorNameInput" value="د. أحمد محمد"
+                        class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                        oninput="updateField('doctorName', this.value)">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">رقم الهاتف</label>
+                    <input type="text" id="phoneInput" value="00966500000000"
+                        class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                        oninput="updateField('phone', this.value)">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">البريد الإلكتروني</label>
+                    <input type="email" id="emailInput" value="info@example-clinic.com"
+                        class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                        oninput="updateField('email', this.value)">
+                </div>
+            </div>
+
+            <!-- إضافة الأصناف -->
+            <div class="space-y-4 bg-teal-50/50 p-4 rounded-xl border border-teal-100">
+                <h3 class="font-bold text-teal-700 text-sm border-b border-teal-200 pb-2">إضافة الأصناف (الخدمات)</h3>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">اسم الخدمة / الوصف</label>
+                    <input type="text" id="itemName" placeholder="مثال: اشتراك الباقة الأساسية"
+                        class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none pb-1">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">التفاصيل (اختياري)</label>
+                    <input type="text" id="itemDesc" placeholder="تفاصيل الخدمة المقدمة..."
+                        class="w-full text-xs border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                </div>
+                <div class="flex gap-2">
+                    <div class="w-1/2">
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">الكمية/المدة</label>
+                        <input type="text" id="itemQty" value="1"
+                            class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                    </div>
+                    <div class="w-1/2">
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">السعر ($)</label>
+                        <input type="number" id="itemPrice" value="100"
+                            class="w-full text-sm border-slate-300 rounded-lg p-2 border focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                    </div>
+                </div>
+                <button type="button" onclick="addItem()"
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors mt-2 shadow-sm">
+                    + إضافة للفاتورة
+                </button>
+            </div>
+        </div>
+
+        <div class="p-6 border-t border-slate-200 bg-white sticky bottom-0 z-20">
+            <button onclick="window.print()"
+                class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
+                    </path>
+                </svg>
+                <span>حفظ أو طباعة PDF</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- المعاينة الحية (شكل الفاتورة المطبوعة) - التصميم الأصلي -->
+    <div class="w-full md:w-2/3 h-full overflow-y-auto p-4 md:p-8 flex justify-center bg-slate-200/50">
+        <div id="invoice-preview"
+            class="w-full max-w-4xl bg-white p-10 rounded-2xl shadow-xl border border-slate-100 min-h-full">
+
+            <!-- الترويسة (اللوجو والتاريخ) - التصميم الأول الأصلي -->
+            <div class="flex justify-between items-start border-b border-slate-200 pb-8 mb-8">
+                <!-- الشعار ومعلومات شركتك -->
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <!-- صورة الشعار (مخفية افتراضياً) -->
+                        <img id="logoPreview" src="" alt="Softnube Logo" class="h-12 w-auto object-contain hidden">
+                        <!-- الشعار الافتراضي (صندوق بداخلة حرفين) -->
+                        <div id="defaultLogo"
+                            class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl shadow-sm">
+                            SN
+                        </div>
+
+                    </div>
+                    <p class="text-sm text-slate-500 font-medium">شركة استشارات وحلول تقنية</p>
+                    <p class="text-sm text-slate-500">support@softnube.site</p>
+                    <p class="text-sm text-slate-500">www.softnube.site</p>
+                </div>
+
+                <!-- معلومات الفاتورة -->
+                <div class="text-left">
+                    <h2 class="text-3xl font-bold text-slate-300 uppercase tracking-widest mb-2">فاتورة</h2>
+                    <table class="text-sm text-slate-600">
+                        <tr>
+                            <th class="pr-4 py-1 text-right text-slate-400 font-medium">رقم الفاتورة:</th>
+                            <td class="font-bold text-slate-800">INV-2026-0014</td>
+                        </tr>
+                        <tr>
+                            <th class="pr-4 py-1 text-right text-slate-400 font-medium">تاريخ الإصدار:</th>
+                            <td class="font-medium" id="currentDate">13 أبريل 2026</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- بيانات العميل -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl border border-slate-100">
+                <h3 class="text-sm font-bold text-teal-600 mb-2 uppercase">فاتورة إلى:</h3>
+                <p id="clinicName" class="text-xl font-bold text-slate-800">عيادة المدار لطب الأسنان</p>
+                <p id="doctorName" class="text-base text-slate-600 mt-1">د. أحمد محمد</p>
+                <p class="text-sm text-slate-600 mt-1">الهاتف: <span id="phone" dir="ltr">00966500000000</span></p>
+                <p class="text-sm text-slate-600">البريد: <span id="email">info@example-clinic.com</span></p>
+            </div>
+
+            <!-- جدول المشتريات -->
+            <div class="overflow-hidden mb-8 border border-slate-200 rounded-xl shadow-sm">
+                <table class="w-full text-right border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-600 text-sm border-b border-slate-200">
+                            <th class="p-4 font-bold text-right rounded-tr-xl">الوصف والبيان</th>
+                            <th class="p-4 font-bold text-center w-24">الكمية</th>
+                            <th class="p-4 font-bold text-center w-24">السعر الموحد</th>
+                            <th class="p-4 font-bold text-left w-32 rounded-tl-xl">الإجمالي</th>
+                            <th class="p-4 print-hidden w-10"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoiceItems" class="text-sm divide-y divide-slate-100">
+                        <!-- الأصناف التوضيحية أضفتها لتظهر عند فتح الصفحة -->
+                        <tr class="hover:bg-slate-50 transition-colors group">
+                            <td class="p-4">
+                                <p class="font-bold text-slate-800 text-base">اشتراك نظام إدارة العيادات - الباقة
+                                    الأساسية</p>
+                                <p class="text-slate-500 mt-1 text-xs leading-relaxed">
+                                    تشمل: (1) مدير طبي، (1) سكرتارية، (2) أطباء، و(1) غرفة عيادة. <br>
+                                    تفعيل خدمات: إدارة المواعيد، السجل الطبي والخرائط السنية، والفواتير والمقبوضات.
+                                </p>
+                            </td>
+                            <td class="p-4 text-center text-slate-600 font-medium">12 شهراً</td>
+                            <td class="p-4 text-center text-slate-600 font-medium">$8.33</td>
+                            <td class="p-4 text-left font-bold text-slate-800" data-value="100">$100.00</td>
+                            <td
+                                class="p-4 print-hidden text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button onclick="removeItem(this)" class="text-red-500 hover:bg-red-50 p-1 rounded-md"
+                                    title="حذف">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors group">
+                            <td class="p-4">
+                                <p class="font-bold text-slate-800">رسوم التأسيس وإعداد النظام</p>
+                                <p class="text-slate-500 mt-1 text-xs">شاملة تدريب مبدئي للموظفين وتهيئة الحسابات
+                                    الأساسية.</p>
+                            </td>
+                            <td class="p-4 text-center text-slate-600 font-medium">مرة واحدة</td>
+                            <td class="p-4 text-center text-slate-600 font-medium line-through decoration-red-400">
+                                $50.00</td>
+                            <td class="p-4 text-left font-bold text-teal-600" data-value="0">مجاناً</td>
+                            <td
+                                class="p-4 print-hidden text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button onclick="removeItem(this)" class="text-red-500 hover:bg-red-50 p-1 rounded-md"
+                                    title="حذف">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- خلاصة المجاميع -->
+            <div class="flex justify-end mb-8">
+                <div class="w-1/2 md:w-1/3 space-y-3 pb-4">
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>الإجمالي الفرعي:</span>
+                        <span id="subTotalPreview" class="font-medium">$100.00</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600 border-b border-slate-200 pb-3">
+                        <span>ضريبة القيمة المضافة (0%):</span>
+                        <span class="font-medium">$0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="text-lg font-bold text-slate-800">الإجمالي المستحق:</span>
+                        <span id="finalTotalPreview" class="text-2xl font-black text-teal-700">$100.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- طرق الدفع والشروط -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                <!-- الشروط -->
+                <div class="bg-teal-50 p-5 rounded-xl border border-teal-100">
+                    <h4 class="font-bold text-slate-800 mb-2 border-b-2 border-teal-600 inline-block pb-1">الشروط
+                        والأحكام</h4>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1 mt-2">
+                        <li>الاشتراك سارٍ لمدة سنة كاملة من تاريخ التفعيل.</li>
+                        <li>يتم تفعيل الحساب والبيانات خلال 24 ساعة من الدفع.</li>
+                        <li>يُجدد الاشتراك سنوياً بناءً على طلب العميل.</li>
+                        <li>البيانات مشفرة ويتم أخذ نسخة احتياطية بشكل دوري.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- التذييل -->
+            <div class="mt-12 text-center border-t border-slate-200 pt-8">
+                <p class="text-slate-500 font-medium pb-4">شكراً لاختياركم لخدماتنا في Softnube للحلول السحابية ❤️</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // تعيين التاريخ الحالي
+        document.getElementById('currentDate').innerText = new Intl.DateTimeFormat('ar-EG', { dateStyle: 'long' }).format(new Date());
+
+        // تحديث الحقول الحية
+        function updateField(fieldId, value) {
+            document.getElementById(fieldId).innerText = value || '-';
+        }
+
+        // تحديث الشعار وإظهاره بدل الافتراضي
+        function updateLogo(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.getElementById('logoPreview');
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                    document.getElementById('defaultLogo').classList.add('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function addItem() {
+            const name = document.getElementById('itemName').value;
+            const desc = document.getElementById('itemDesc').value;
+            const qty = document.getElementById('itemQty').value;
+            const price = parseFloat(document.getElementById('itemPrice').value) || 0;
+
+            if (!name) {
+                alert('الرجاء إدخال اسم الخدمة');
+                return;
+            }
+
+            const itemTotal = (parseFloat(qty) || 1) * price;
+
+            const tr = document.createElement('tr');
+            tr.className = 'hover:bg-slate-50 transition-colors group';
+            tr.innerHTML = `
+                <td class="p-4 text-right">
+                    <p class="font-bold text-slate-800 text-base">${name}</p>
+                    ${desc ? `<p class="text-slate-500 mt-1 text-xs">${desc}</p>` : ''}
+                </td>
+                <td class="p-4 text-center text-slate-600 font-medium w-24">${qty}</td>
+                <td class="p-4 text-center text-slate-600 font-medium w-24">$${price.toFixed(2)}</td>
+                <td class="p-4 text-left font-bold text-slate-800" data-value="${itemTotal}">$${itemTotal.toFixed(2)}</td>
+                <td class="p-4 print-hidden text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button onclick="removeItem(this)" class="text-red-500 hover:bg-red-50 p-1 rounded-md" title="حذف">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                </td>
+            `;
+
+            document.getElementById('invoiceItems').appendChild(tr);
+
+            // إضافة تفريغ الحقول بعد الإضافة
+            document.getElementById('itemName').value = '';
+            document.getElementById('itemDesc').value = '';
+            document.getElementById('itemName').focus();
+
+            calculateTotal();
+        }
+
+        function removeItem(btn) {
+            btn.closest('tr').remove();
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            const rows = document.querySelectorAll('#invoiceItems tr');
+            rows.forEach(row => {
+                const dataValObj = row.querySelector('[data-value]');
+                if (dataValObj) {
+                    const val = parseFloat(dataValObj.getAttribute('data-value'));
+                    total += val;
+                }
+            });
+
+            document.getElementById('subTotalPreview').innerText = '$' + total.toFixed(2);
+            document.getElementById('finalTotalPreview').innerText = '$' + total.toFixed(2);
+        }
+
+        // احسب التوتال فور تحميل الصفحة لتشمل الأصناف الاصلية المدمجة
+        calculateTotal();
+
+    </script>
+</body>
+
+</html>

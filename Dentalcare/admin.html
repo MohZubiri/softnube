@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المستخدم — الإدارة | نظام العيادات</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-primary: #0d9488;
+            --clr-primary-dark: #0f766e;
+            --clr-primary-darker: #115e59;
+            --clr-primary-light: #ccfbf1;
+            --clr-primary-50: #f0fdfa;
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-text: #1e293b;
+            --clr-text-secondary: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-border-light: #f1f5f9;
+            --clr-success: #16a34a;
+            --clr-success-bg: #dcfce7;
+            --clr-warning: #ca8a04;
+            --clr-warning-bg: #fef9c3;
+            --clr-danger: #dc2626;
+            --clr-danger-bg: #fee2e2;
+            --clr-info: #2563eb;
+            --clr-info-bg: #dbeafe;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Header / Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ─── TOC ─── */
+        .toc {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 32px 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .toc h2 {
+            font-size: 1.3rem;
+            color: var(--clr-primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            color: var(--clr-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: var(--clr-primary-50);
+            border-color: var(--clr-primary-light);
+            color: var(--clr-primary-dark);
+            transform: translateX(-4px);
+        }
+
+        .toc-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ─── Container ─── */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* ─── Sections ─── */
+        .section {
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 40px 36px;
+            margin-bottom: 32px;
+            border: 1px solid var(--clr-border-light);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--clr-primary-light);
+        }
+
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-primary-darker);
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            color: var(--clr-primary-dark);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--clr-text);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 16px;
+            padding-right: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: var(--clr-primary-darker);
+        }
+
+        /* ─── Screenshot ─── */
+        .screenshot-wrapper {
+            text-align: center;
+            margin: 24px 0;
+            padding: 16px;
+            background: var(--clr-border-light);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.01);
+        }
+
+        .screenshot-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            cursor: zoom-in;
+        }
+
+        .screenshot-caption {
+            font-size: 0.88rem;
+            color: var(--clr-text-secondary);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* ─── Callouts ─── */
+        .callout {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .callout-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-tip {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .callout-note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+        }
+
+        /* ─── Footer ─── */
+        .manual-footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--clr-border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <a href="index.html" class="back-link">← العودة للقائمة الرئيسية</a>
+        <h1>دليل المستخدم</h1>
+        <div class="subtitle">تبويب الإدارة (لوحة تحكم المدير)</div>
+    </header>
+
+    <div class="toc">
+        <h2>محتويات الدليل - الإدارة</h2>
+        <div class="toc-grid">
+            <a href="#sec-overview" class="toc-item">
+                <span class="toc-num">1</span>
+                نظرة عامة على الإدارة
+            </a>
+            <a href="#sec-users" class="toc-item">
+                <span class="toc-num">2</span>
+                المستخدمون (حسابات الدخول)
+            </a>
+            <a href="#sec-roles" class="toc-item">
+                <span class="toc-num">3</span>
+                الأدوار
+            </a>
+            <a href="#sec-permissions" class="toc-item">
+                <span class="toc-num">4</span>
+                الصلاحيات
+            </a>
+            <a href="#sec-services" class="toc-item">
+                <span class="toc-num">5</span>
+                الخدمات الطبية
+            </a>
+            <a href="#sec-tiers" class="toc-item">
+                <span class="toc-num">6</span>
+                شرائح الأسعار
+            </a>
+            <a href="#sec-payment-methods" class="toc-item">
+                <span class="toc-num">7</span>
+                طرق الدفع
+            </a>
+            <a href="#sec-expense-categories" class="toc-item">
+                <span class="toc-num">8</span>
+                فئات المصروفات
+            </a>
+            <a href="#sec-tooth" class="toc-item">
+                <span class="toc-num">9</span>
+                حالات وأسطح الأسنان
+            </a>
+            <a href="#sec-system-settings" class="toc-item">
+                <span class="toc-num">10</span>
+                إعدادات النظام
+            </a>
+            <a href="#sec-audit" class="toc-item">
+                <span class="toc-num">11</span>
+                سجل العمليات (Audit Logs)
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Overview -->
+        <section id="sec-overview" class="section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2>نظرة عامة على الإدارة</h2>
+            </div>
+
+            <p>تبويب "الإدارة" هو القلب النابض للنظام الذي يسمح للمدراء بالتحكم في البنية التحتية للعيادة مثل إعدادات
+                الخدمات، الأسعار، وإدارة الصلاحيات الشاملة.</p>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_main.png" alt="واجهة الإدارة">
+                <div class="screenshot-caption">شكل 1: لوحة تحكم الإدارة للإعدادات الأساسية</div>
+            </div>
+        </section>
+
+        <!-- 2. Users -->
+        <section id="sec-users" class="section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2>المستخدمون (حسابات الدخول)</h2>
+            </div>
+
+            <p>شاشة "المستخدمون" هي المكان الذي تُنشأ فيه حسابات الدخول لموظفي وأطباء العيادة، ويُسند لكل حساب دوره.
+                لإنشاء مستخدم جديد:</p>
+            <ol>
+                <li>اضغط "إضافة مستخدم".</li>
+                <li>أدخل <strong>الاسم</strong> و<strong>البريد الإلكتروني</strong> (يجب أن يكون فريداً).</li>
+                <li>أدخل <strong>كلمة المرور</strong> وأعد كتابتها في حقل التأكيد.</li>
+                <li>اختر <strong>الدور</strong> المناسب من القائمة ليأخذ المستخدم كل صلاحيات ذلك الدور تلقائياً.</li>
+                <li>احفظ لتظهر رسالة "تم إنشاء المستخدم بنجاح".</li>
+            </ol>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div>
+                    <strong>ملاحظات:</strong> عند التعديل يمكنك تغيير الدور أو تعيين كلمة مرور جديدة (اختياري). لا يمكنك
+                    حذف حسابك الشخصي، كما أن حساب "Super User" لا يظهر ولا يُعدَّل من هذه الشاشة.
+                </div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_users.png" alt="إدارة المستخدمين">
+                <div class="screenshot-caption">قائمة المستخدمين ونموذج إضافة مستخدم مع اختيار الدور</div>
+            </div>
+        </section>
+
+        <!-- 3. Roles -->
+        <section id="sec-roles" class="section">
+            <div class="section-header">
+                <span class="section-num">3</span>
+                <h2>الأدوار (Roles)</h2>
+            </div>
+
+            <p>بدلاً من منح الصلاحيات لكل موظف على حدة، يجمع النظام الصلاحيات في "أدوار" تُسند للمستخدمين. لإنشاء دور:
+            </p>
+            <ol>
+                <li>اضغط "إضافة دور".</li>
+                <li>أدخل <strong>اسم الدور بالإنجليزية</strong> و<strong>اسم الدور بالعربية</strong> — كلاهما إجباري
+                    (الأدوار ثنائية اللغة).</li>
+                <li>حدّد <strong>الصلاحيات</strong> الممنوحة لهذا الدور من القوائم المصنّفة (مثل: إنشاء فواتير، حذف
+                    مواعيد... إلخ).</li>
+                <li>احفظ ليصبح الدور متاحاً للإسناد للمستخدمين.</li>
+            </ol>
+
+            <div class="callout callout-warning">
+                <span class="callout-icon">⚠️</span>
+                <div>
+                    <strong>أدوار محمية:</strong> دورا "admin" و"Super Admin" لا يمكن حذفهما لضمان عدم فقدان الوصول
+                    الإداري للنظام.
+                </div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_roles.png" alt="إدارة الأدوار">
+                <div class="screenshot-caption">قائمة الأدوار ونموذج تحديد الصلاحيات</div>
+            </div>
+        </section>
+
+        <!-- 4. Permissions -->
+        <section id="sec-permissions" class="section">
+            <div class="section-header">
+                <span class="section-num">4</span>
+                <h2>الصلاحيات (Permissions)</h2>
+            </div>
+
+            <p>للصلاحيات شاشتها المستقلة التي تعرض قائمة الصلاحيات المتاحة في النظام، مصنّفة حسب الفئة (Category).
+                تُستخدم هذه الصلاحيات لاحقاً عند بناء الأدوار في شاشة "الأدوار".</p>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_permissions.png" alt="شاشة الصلاحيات">
+                <div class="screenshot-caption">شاشة الصلاحيات مصنّفة حسب الفئة</div>
+            </div>
+        </section>
+
+        <!-- 5. Services -->
+        <section id="sec-services" class="section">
+            <div class="section-header">
+                <span class="section-num">5</span>
+                <h2>الخدمات الطبية</h2>
+            </div>
+
+            <p>هنا تُعرّف الخدمات التي تظهر لاحقاً للأطباء وموظفي الاستقبال عند إصدار الفواتير وإنشاء خطط العلاج. لكل
+                خدمة الحقول التالية:</p>
+            <ul>
+                <li><strong>الاسم (name):</strong> اسم الخدمة (يجب أن يكون فريداً).</li>
+                <li><strong>السعر (price):</strong> سعر افتراضي اختياري للخدمة.</li>
+                <li><strong>الحالة (is_active):</strong> مفتاح تفعيل/إيقاف الخدمة. الخدمة الموقوفة تبقى محفوظة لكنها لا
+                    تظهر للاستخدام عند إصدار الفواتير.</li>
+                <li><strong>خدمة خطة علاجية (is_treatment_plan_service):</strong> يحدد ما إذا كانت الخدمة تُستخدم ضمن
+                    خطط العلاج.</li>
+                <li><strong>أسعار الشرائح:</strong> يمكن تحديد سعر مستقل للخدمة لكل شريحة أسعار مفعّلة (راجع قسم "شرائح
+                    الأسعار").</li>
+            </ul>
+
+            <div class="callout callout-tip">
+                <span class="callout-icon">💡</span>
+                <div>
+                    <strong>تفعيل/إيقاف سريع:</strong> يمكنك تبديل حالة الخدمة (مفعّلة/موقوفة) مباشرة من قائمة الخدمات
+                    دون الحاجة لفتح نموذج التعديل. لا يمكن حذف خدمة استُخدمت سابقاً في فواتير.
+                </div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_services.png" alt="إدارة الخدمات">
+                <div class="screenshot-caption">قائمة الخدمات مع أسعار الشرائح ومفتاح التفعيل</div>
+            </div>
+        </section>
+
+        <!-- 6. Price Tiers -->
+        <section id="sec-tiers" class="section">
+            <div class="section-header">
+                <span class="section-num">6</span>
+                <h2>شرائح الأسعار (Price Tiers)</h2>
+            </div>
+
+            <p>تتيح "شرائح الأسعار" تعريف أكثر من قائمة أسعار للعيادة (مثل: سعر عام، سعر تأمين، سعر شركة)، بحيث يكون لكل
+                خدمة سعر خاص بكل شريحة. لإدارة الشرائح:</p>
+            <ol>
+                <li>اضغط "إضافة شريحة".</li>
+                <li>أدخل <strong>اسم الشريحة</strong> (فريد) واختر <strong>لوناً</strong> مميزاً لها وحدّد <strong>ترتيب
+                        الظهور</strong>.</li>
+                <li>فعّل أو أوقف الشريحة عبر <strong>مفتاح الحالة</strong> (يمكن تبديل الحالة مباشرة من القائمة).</li>
+                <li>احفظ، ثم عند تعديل أي خدمة سيظهر حقل سعر لكل شريحة مفعّلة.</li>
+            </ol>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div>
+                    <strong>الاستخدام عند الفوترة:</strong> سعر الشريحة هو الذي يُعتمد عند إصدار الفواتير حسب الشريحة
+                    المختارة. لا يمكن حذف شريحة استُخدمت سابقاً في فواتير.
+                </div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_price_tiers.png" alt="شرائح الأسعار">
+                <div class="screenshot-caption">قائمة شرائح الأسعار ونموذج إنشاء شريحة</div>
+            </div>
+        </section>
+
+        <!-- 7. Payment Methods -->
+        <section id="sec-payment-methods" class="section">
+            <div class="section-header">
+                <span class="section-num">7</span>
+                <h2>طرق الدفع (Payment Methods)</h2>
+            </div>
+
+            <p>تُعرّف هنا طرق الدفع المتاحة عند تسجيل المدفوعات. لإضافة طريقة دفع:</p>
+            <ol>
+                <li>اضغط "إضافة طريقة دفع".</li>
+                <li>اختر <strong>النوع</strong> من الأنواع المعرّفة في النظام.</li>
+                <li>أدخل <strong>الاسم</strong> (فريد).</li>
+                <li>حدّد ما إذا كانت الطريقة <strong>تتطلب رقم مرجعي</strong> (has_reference_number) — مثل رقم الحوالة
+                    أو رقم العملية.</li>
+                <li>احفظ. لا يمكن حذف طريقة دفع استُخدمت سابقاً في مدفوعات.</li>
+            </ol>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_payment_methods.png" alt="طرق الدفع">
+                <div class="screenshot-caption">قائمة طرق الدفع ونموذج الإضافة</div>
+            </div>
+        </section>
+
+        <!-- 8. Expense Categories -->
+        <section id="sec-expense-categories" class="section">
+            <div class="section-header">
+                <span class="section-num">8</span>
+                <h2>فئات المصروفات (Expense Categories)</h2>
+            </div>
+
+            <p>تُستخدم فئات المصروفات لتصنيف مصروفات العيادة عند تسجيلها. لإدارة الفئات:</p>
+            <ol>
+                <li>أدخل <strong>اسم الفئة</strong> (فريد) وأضفها.</li>
+                <li>حدّد ما إذا كانت الفئة <strong>مرتبطة بالموظفين</strong> (is_employee_related) مثل الرواتب.</li>
+                <li>يمكنك تعديل أو حذف أي فئة من نفس الشاشة.</li>
+            </ol>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_expense_categories.png" alt="فئات المصروفات">
+                <div class="screenshot-caption">قائمة فئات المصروفات وإضافتها</div>
+            </div>
+        </section>
+
+        <!-- 9. Tooth Conditions & Surfaces -->
+        <section id="sec-tooth" class="section">
+            <div class="section-header">
+                <span class="section-num">9</span>
+                <h2>حالات الأسنان وأسطح الأسنان</h2>
+            </div>
+
+            <p>تُعرّف هاتان الشاشتان الخيارات التي تظهر للأطباء في مخطط الأسنان (Dental Chart).</p>
+
+            <h3>حالات الأسنان (Tooth Conditions)</h3>
+            <ol>
+                <li>أدخل <strong>الرمز (code)</strong> الفريد للحالة.</li>
+                <li>أدخل <strong>التسمية بالإنجليزية</strong> و<strong>التسمية بالعربية</strong>.</li>
+                <li>اختر <strong>اللون</strong> الذي يمثّل الحالة في المخطط.</li>
+                <li>حدّد <strong>ترتيب الظهور</strong> وحالة <strong>التفعيل</strong>.</li>
+            </ol>
+
+            <h3>أسطح الأسنان (Tooth Surfaces)</h3>
+            <ol>
+                <li>أدخل <strong>الرمز (code)</strong> الفريد للسطح.</li>
+                <li>أدخل <strong>التسمية بالإنجليزية</strong> و<strong>التسمية بالعربية</strong>.</li>
+                <li>حدّد <strong>ترتيب الظهور</strong> وحالة <strong>التفعيل</strong>.</li>
+            </ol>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div>
+                    <strong>أين تظهر؟</strong> هذه القيم هي الخيارات التي يستخدمها الطبيب عند توثيق حالة كل سن أو سطح في
+                    مخطط الأسنان.
+                </div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_tooth_conditions.png" alt="حالات وأسطح الأسنان">
+                <div class="screenshot-caption">شاشتا حالات الأسنان وأسطح الأسنان</div>
+            </div>
+        </section>
+
+        <!-- 10. System Settings -->
+        <section id="sec-system-settings" class="section">
+            <div class="section-header">
+                <span class="section-num">10</span>
+                <h2>إعدادات النظام</h2>
+            </div>
+
+            <p>تتيح هذه الشاشة (لحساب Super User) التحكم في اسم النظام، اسم العيادة، شعار النظام، شعار ترويسة التقارير،
+                ونصوص ترويسة التقرير (يمين/وسط/يسار).</p>
+
+            <div class="callout callout-tip">
+                <span class="callout-icon">💡</span>
+                <div>
+                    لمزيد من التفاصيل حول هذه الحقول راجع دليل <a href="settings.html">الإعدادات</a> — قسم "إعدادات
+                    النظام العامة".
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Audit -->
+        <section id="sec-audit" class="section">
+            <div class="section-header">
+                <span class="section-num">11</span>
+                <h2>سجل العمليات (Audit Logs)</h2>
+            </div>
+
+            <p>يعتبر سجل العمليات أداة أمنية ورقابية مهمة تسجل كل شاردة وواردة في النظام. من خلاله يمكنك معرفة:</p>
+            <ul>
+                <li><strong>من؟</strong> اسم المستخدم الذي قام بالعملية.</li>
+                <li><strong>متى؟</strong> التاريخ والوقت الدقيق.</li>
+                <li><strong>ماذا؟</strong> نوع العملية (إضافة مريض، حذف فاتورة, تعديل موعد) والبيانات القديمة والجديدة.
+                </li>
+            </ul>
+
+            <h3>تصفية السجل</h3>
+            <p>نظراً لكثرة السجلات، توفّر الشاشة مجموعة من المرشّحات (الفلاتر) لتضييق نطاق العرض:</p>
+            <ul>
+                <li><strong>نوع السجل (log_name):</strong> تصفية حسب نوع/تصنيف العملية.</li>
+                <li><strong>الحدث (event):</strong> نوع الحدث (إنشاء/تعديل/حذف...).</li>
+                <li><strong>المستخدم:</strong> اختيار المستخدم الذي نفّذ العملية.</li>
+                <li><strong>النطاق الزمني:</strong> من تاريخ (date_from) وإلى تاريخ (date_to).</li>
+                <li><strong>بحث نصي حر:</strong> بحث ضمن وصف العملية وبياناتها.</li>
+            </ul>
+
+            <div class="screenshot-wrapper">
+                <img src="images/admin_audit_logs.png" alt="سجل العمليات">
+                <div class="screenshot-caption">سجل العمليات مع شريط المرشّحات</div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="manual-footer">
+        <p>دليل المستخدم لنظام DentalCare لإدارة العيادات © 2026. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+
+</html>

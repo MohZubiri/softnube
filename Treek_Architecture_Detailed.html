@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Treek – مخطط معماري تفصيلي</title>
+    <style>
+        body {
+            font-family: 'Cairo', 'Tahoma', Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.7;
+            direction: rtl;
+            background: #fafafa;
+            color: #222;
+        }
+        h1, h2 {
+            color: #004d40;
+            margin-top: 40px;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 20px;
+            border-bottom: 2px solid #004d40;
+            padding-bottom: 4px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .legend {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .legend ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .legend li {
+            margin-bottom: 10px;
+            padding-right: 20px;
+            position: relative;
+        }
+        .legend li:before {
+            content: "■";
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .legend li:nth-child(1):before {
+            color: #f0f3f7;
+        }
+        .legend li:nth-child(2):before {
+            color: #eef9f0;
+        }
+        .legend li:nth-child(3):before {
+            color: #f7eef9;
+        }
+        .legend li:nth-child(4):before {
+            color: #fdf5e6;
+        }
+        .architecture-diagram {
+            margin: 30px 0;
+            position: relative;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .box {
+            border: 1px solid #000;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .box-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .box-desc {
+            font-size: 0.8em;
+            color: #555;
+        }
+        .ui-layer {
+            background-color: #f0f3f7;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        .service-layer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .service-box {
+            background-color: #eef9f0;
+            width: 30%;
+            margin-bottom: 10px;
+        }
+        .adapter-layer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        .adapter-box {
+            background-color: #f7eef9;
+            width: 22%;
+            margin-bottom: 10px;
+        }
+        .infra-layer {
+            background-color: #fdf5e6;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .infra-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .infra-box {
+            background-color: white;
+            width: 30%;
+            margin-bottom: 10px;
+        }
+        .arrow {
+            position: absolute;
+            border-left: 1px solid black;
+            height: 15px;
+        }
+        .notes {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #004d40;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-button:hover {
+            background-color: #00695c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Treek – مخطط معماري تفصيلي</h1>
+        
+        <h2>نظرة عامة</h2>
+        <p>
+            هذا المخطط يوضح الطبقات والمكونات الرئيسية للنظام وكيفية تفاعلها: الواجهات، طبقة الخدمات داخل Laravel، طبقة التكاملات الخارجية، والبنية التحتية (Redis, DB, Storage, Monitoring, CI/CD).
+        </p>
+        
+        <div class="legend">
+            <h3>الرموز:</h3>
+            <ul>
+                <li>واجهات المستخدم (لوحات التحكم) – Filament/Livewire</li>
+                <li>خدمات المجال (Laravel Services) – Orders/Shipments/Pricing/Notifications/Webhooks</li>
+                <li>موائمات التكامل – شركات الشحن والمتاجر الإلكترونية وبوابات الدفع</li>
+                <li>البنية التحتية – Redis/Queues, MySQL, Object Storage, Monitoring, CI/CD, Docker</li>
+            </ul>
+        </div>
+        
+        <h2>المخطط التفصيلي</h2>
+        
+        <div class="architecture-diagram">
+            <!-- UI Layer -->
+            <div class="ui-layer box">
+                <div class="box-title">واجهات المستخدم: Admin Panel (Filament) | Merchant Portal (Livewire) | Public API</div>
+            </div>
+            
+            <!-- API Gateway Layer -->
+            <div class="ui-layer box">
+                <div class="box-title">Laravel App / API Gateway + Routing + Middleware (Sanctum, Rate Limiting, CSRF)</div>
+            </div>
+            
+            <!-- Services Layer 1 -->
+            <div class="service-layer">
+                <div class="service-box box">
+                    <div class="box-title">Order Service</div>
+                    <div class="box-desc">إنشاء/إدارة الطلبات<br>Business Rules</div>
+                </div>
+                <div class="service-box box">
+                    <div class="box-title">Shipment Service</div>
+                    <div class="box-desc">إنشاء شحنات | تتبع | أحداث</div>
+                </div>
+                <div class="service-box box">
+                    <div class="box-title">Pricing Service</div>
+                    <div class="box-desc">حساب الأسعار والقواعد<br>Dynamic Rates</div>
+                </div>
+            </div>
+            
+            <!-- Services Layer 2 -->
+            <div class="service-layer">
+                <div class="service-box box">
+                    <div class="box-title">Notification Service</div>
+                    <div class="box-desc">Email | SMS | Push<br>Queues + Templates</div>
+                </div>
+                <div class="service-box box">
+                    <div class="box-title">Webhooks Service</div>
+                    <div class="box-desc">متابعة أحداث المتاجر<br>Salla/Shopify/Zid</div>
+                </div>
+                <div class="service-box box">
+                    <div class="box-title">Reconciliation Service</div>
+                    <div class="box-desc">تسويات المدفوعات<br>Wallets/Transactions</div>
+                </div>
+            </div>
+            
+            <!-- Adapters Layer -->
+            <div class="adapter-layer">
+                <div class="adapter-box box">
+                    <div class="box-title">Aramex Adapter</div>
+                    <div class="box-desc">REST API / OAuth</div>
+                </div>
+                <div class="adapter-box box">
+                    <div class="box-title">Barq Adapter</div>
+                    <div class="box-desc">REST API</div>
+                </div>
+                <div class="adapter-box box">
+                    <div class="box-title">JT Express Adapter</div>
+                    <div class="box-desc">REST API</div>
+                </div>
+                <div class="adapter-box box">
+                    <div class="box-title">Salla Adapter</div>
+                    <div class="box-desc">Webhooks + REST</div>
+                </div>
+            </div>
+            
+            <div class="adapter-layer">
+                <div class="adapter-box box">
+                    <div class="box-title">Shopify Adapter</div>
+                    <div class="box-desc">Webhooks + REST</div>
+                </div>
+                <div class="adapter-box box">
+                    <div class="box-title">Zid Adapter</div>
+                    <div class="box-desc">Webhooks + REST</div>
+                </div>
+                <div class="adapter-box box">
+                    <div class="box-title">Payment Gateway</div>
+                    <div class="box-desc">Capture/Refund</div>
+                </div>
+            </div>
+            
+            <!-- Infrastructure Layer -->
+            <div class="infra-layer box">
+                <div class="box-title">البنية التحتية</div>
+                
+                <div class="infra-boxes">
+                    <div class="infra-box box">
+                        <div class="box-title">MySQL</div>
+                        <div class="box-desc">Relational DB<br>ACID, Indexes, Partitions</div>
+                    </div>
+                    <div class="infra-box box">
+                        <div class="box-title">Redis</div>
+                        <div class="box-desc">Cache + Queues (Horizon)</div>
+                    </div>
+                    <div class="infra-box box">
+                        <div class="box-title">Object Storage</div>
+                        <div class="box-desc">S3-compatible<br>Invoices/Labels/Logs</div>
+                    </div>
+                </div>
+                
+                <div class="infra-boxes">
+                    <div class="infra-box box">
+                        <div class="box-title">Monitoring</div>
+                        <div class="box-desc">Sentry + Telescope</div>
+                    </div>
+                    <div class="infra-box box">
+                        <div class="box-title">CI/CD</div>
+                        <div class="box-desc">Pipelines + Tests (Pest)</div>
+                    </div>
+                    <div class="infra-box box">
+                        <div class="box-title">Docker/Orchestrator</div>
+                        <div class="box-desc">Compose/K8s-ready</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes">
+            <h3>ملاحظات:</h3>
+            <ul>
+                <li>يدير Horizon الطوابير الخاصة بالإشعارات والتكاملات الثقيلة (مثل إنشاء الشحنات وتتبعها).</li>
+                <li>يتم عزل أسرار الاتصال عبر .env واستخدام مفاتيح منفصلة لكل تكامل.</li>
+                <li>يوصى بإضافة 2FA للتجار والإدارة، وتمكين Webhook signature validation للتكاملات.</li>
+            </ul>
+        </div>
+        
+        <a href="Treek.html" class="back-button">العودة إلى صفحة التقييم</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المستخدم — إدارة المرضى | نظام DentalCare</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-primary: #0d9488;
+            --clr-primary-dark: #0f766e;
+            --clr-primary-darker: #115e59;
+            --clr-primary-light: #ccfbf1;
+            --clr-primary-50: #f0fdfa;
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-text: #1e293b;
+            --clr-text-secondary: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-border-light: #f1f5f9;
+            --clr-success: #16a34a;
+            --clr-success-bg: #dcfce7;
+            --clr-warning: #ca8a04;
+            --clr-warning-bg: #fef9c3;
+            --clr-danger: #dc2626;
+            --clr-danger-bg: #fee2e2;
+            --clr-info: #2563eb;
+            --clr-info-bg: #dbeafe;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Header / Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ─── TOC ─── */
+        .toc {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 32px 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .toc h2 {
+            font-size: 1.3rem;
+            color: var(--clr-primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            color: var(--clr-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: var(--clr-primary-50);
+            border-color: var(--clr-primary-light);
+            color: var(--clr-primary-dark);
+            transform: translateX(-4px);
+        }
+
+        .toc-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ─── Container ─── */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* ─── Sections ─── */
+        .section {
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 40px 36px;
+            margin-bottom: 32px;
+            border: 1px solid var(--clr-border-light);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--clr-primary-light);
+        }
+
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-primary-darker);
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            color: var(--clr-primary-dark);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--clr-text);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 16px;
+            padding-right: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: var(--clr-primary-darker);
+        }
+
+        /* ─── Steps Block ─── */
+        .steps-block {
+            background: var(--clr-primary-50);
+            border-right: 4px solid var(--clr-primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .steps-block .steps-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--clr-primary-darker);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .steps-block ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .steps-block ol li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-right: 40px;
+            margin-bottom: 12px;
+        }
+
+        .steps-block ol li::before {
+            content: counter(step-counter);
+            position: absolute;
+            right: 0;
+            top: 2px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--clr-primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ─── Expected Output Block ─── */
+        .expected-output {
+            background: var(--clr-success-bg);
+            border-right: 4px solid var(--clr-success);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 15px 0 25px;
+            color: #14532d;
+            font-size: 0.95rem;
+        }
+
+        .expected-output strong {
+            color: #166534;
+        }
+
+        /* ─── Placeholder Screenshot ─── */
+        .placeholder-screenshot {
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            margin: 24px 0;
+            color: #475569;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        .screenshot-caption {
+            font-size: 0.88rem;
+            color: var(--clr-text-secondary);
+            margin-top: -12px;
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ─── Badges ─── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .badge-success {
+            background: var(--clr-success-bg);
+            color: #166534;
+        }
+
+        .badge-warning {
+            background: var(--clr-warning-bg);
+            color: #854d0e;
+        }
+
+        .badge-danger {
+            background: var(--clr-danger-bg);
+            color: #991b1b;
+        }
+
+        .badge-info {
+            background: var(--clr-info-bg);
+            color: #1e40af;
+        }
+
+        /* ─── Callouts ─── */
+        .callout {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .callout-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-tip {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .callout-note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+        }
+
+        .callout-warning {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+        }
+
+        .manual-footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--clr-border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <a href="index.html" class="back-link">← العودة للقائمة الرئيسية</a>
+        <h1>دليل المستخدم</h1>
+        <div class="subtitle">إدارة المرضى والملفات الطبية (Patients Management)</div>
+    </header>
+
+    <div class="toc">
+        <h2>محتويات الدليل - إدارة المرضى</h2>
+        <div class="toc-grid">
+            <a href="#sec-overview" class="toc-item">
+                <span class="toc-num">1</span>
+                نظرة عامة على إدارة المرضى
+            </a>
+            <a href="#sec-register" class="toc-item">
+                <span class="toc-num">2</span>
+                تسجيل مريض جديد والتحقق من الهاتف
+            </a>
+            <a href="#sec-profile" class="toc-item">
+                <span class="toc-num">3</span>
+                الملف الشامل للمريض والمؤشرات المالية
+            </a>
+            <a href="#sec-files" class="toc-item">
+                <span class="toc-num">4</span>
+                رفع وإدارة المرفقات والملفات الطبية
+            </a>
+            <a href="#sec-constraints" class="toc-item">
+                <span class="toc-num">5</span>
+                محددات الحذف وإدارة البيانات
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Overview -->
+        <section id="sec-overview" class="section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2>نظرة عامة على إدارة المرضى</h2>
+            </div>
+            <p>
+                يُعد تبويب <strong>«المرضى»</strong> قاعدة الأساس التي ينبني عليها نظام DentalCare بالكامل. من خلال هذا
+                القسم، يمكن تسجيل الحالات المرضية الجديدة ومتابعة تاريخ زياراتهم العلاجية، والاطلاع على موقفهم المالي،
+                وحفظ صور الأشعة وملفاتهم الطبية. يهدف هذا التصميم إلى جمع كل ما يتعلق بالمريض في شاشة موحدة تضمن السرعة
+                والدقة للطبيب والإدارة المالية.
+            </p>
+
+            <div class="screenshot-wrapper">
+                <img src="images/shot-patients-list.png"
+                    alt="لقطة شاشة لقائمة المرضى الرئيسية تعرض جدولاً بأسماء المرضى، أرقام هواتفهم، عدد خطط العلاج النشطة، وتاريخ التسجيل">
+            </div>
+            <div class="screenshot-caption">شكل 1: القائمة الرئيسية لإدارة المرضى وتصفح الحالات</div>
+        </section>
+
+        <!-- 2. Registration & Phone Validation -->
+        <section id="sec-register" class="section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2>تسجيل مريض جديد والتحقق من الهاتف</h2>
+            </div>
+            <p>
+                عند حضور مريض جديد للعيادة لأول مرة، يجب تسجيل بياناته الأساسية. يفرض النظام قواعد تحقق صارمة لضمان صحة
+                البيانات وعدم تكرارها، وبخاصة <strong>رقم الهاتف</strong> الذي يعتبر المعرّف الأساسي للتواصل والبحث.
+            </p>
+
+            <div class="steps-block">
+                <div class="steps-title">خطوات تسجيل مريض جديد وتجاوز تكرار الهاتف:</div>
+                <ol>
+                    <li>
+                        اضغط على زر <strong>«إضافة مريض جديد»</strong> في أعلى الصفحة الرئيسية لقسم المرضى (أو عبر
+                        الإجراءات السريعة في لوحة القيادة).
+                    </li>
+                    <li>
+                        أدخل <strong>«الاسم الكامل»</strong> (حقل إجباري)، و <strong>«رقم الهاتف»</strong> (حقل إجباري).
+                    </li>
+                    <li>
+                        أدخل البيانات الاختيارية: <strong>«العمر»</strong> (يجب أن يكون بين 0 و 120)،
+                        <strong>«الجنس»</strong> (ذكر/أنثى)، و <strong>«الملاحظات الطبية العامة»</strong> (مثل إصابة
+                        المريض بالسكري أو الضغط).
+                    </li>
+                    <li>
+                        بمجرد كتابة رقم الهاتف، ستقوم تقنية AJAX في الخلفية بالتحقق الفوري من قاعدة البيانات. إذا كان
+                        الرقم مسجلاً لمريض آخر، سيعرض النظام تحذيراً فورياً يسرد أسماء المرضى المالكين لنفس الرقم لمنع
+                        الازدواجية الخطأ.
+                    </li>
+                    <li>
+                        إذا تبين أن التكرار مقصود (كأن يكون المريض الجديد تابعاً لنفس العائلة ويستخدم نفس الهاتف)، قم
+                        بتفعيل خيار <strong>«تأكيد تكرار الهاتف» (Force Duplicate Phone)</strong> لتخطي قاعدة المنع.
+                    </li>
+                    <li>
+                        اضغط على زر <strong>«حفظ»</strong>.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="expected-output">
+                <strong>النتيجة المتوقعة:</strong> عند إتمام التسجيل بنجاح، يقوم النظام بحفظ المريض وتوجيهك فوراً إلى
+                صفحة <strong>«الملف الشامل للمريض»</strong> الجديد مع إظهار رسالة تأكيد خضراء تفيد بنجاح العملية. وفي
+                حال وجود تكرار غير مؤكد للهاتف، يمنع النظام الحفظ ويظهر رسالة خطأ حمراء بجانب حقل رقم الهاتف.
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/shot-patients-list.png"
+                    alt="لقطة شاشة لنموذج إضافة مريض جديد توضح الحقول الإلزامية وخيار تأكيد تكرار الهاتف ومربعات التنبيهات المرتبطة بنظام التحقق الفوري">
+            </div>
+            <div class="screenshot-caption">شكل 2: نموذج تسجيل المريض مع آلية التحقق التلقائي من رقم الهاتف</div>
+        </section>
+
+        <!-- 3. Comprehensive Profile & Financial Summary -->
+        <section id="sec-profile" class="section">
+            <div class="section-header">
+                <span class="section-num">3</span>
+                <h2>الملف الشامل للمريض والمؤشرات المالية</h2>
+            </div>
+            <p>
+                تمثل شاشة <strong>«عرض المريض»</strong> الملف الطبي والمالي الموحد للحالة. يتم تجميع البيانات من كافة
+                جداول النظام لتعرض في صفحة واحدة مقسمة تنظيمياً كالتالي:
+            </p>
+
+            <div class="steps-block">
+                <div class="steps-title">كيفية قراءة محتويات الملف الشامل للمريض ومؤشراته:</div>
+                <ol>
+                    <li>
+                        <strong>البطاقات المالية السريعة:</strong> تظهر في أعلى الملف وتوضح الموقف المالي للمريض بدقة:
+                        <ul>
+                            <li><strong>إجمالي المفوتر (Total Billed):</strong> مجموع قيم الفواتير الصادرة باسم المريض.
+                            </li>
+                            <li><strong>إجمالي المدفوع (Total Paid):</strong> مجموع الدفعات وسندات القبض المسددة.</li>
+                            <li><strong>الرصيد المتبقي (Balance):</strong> الفارق المالي المتبقي على المريض كمديونية
+                                مستحقة.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>تبويب خطط العلاج:</strong> يسرد جميع خطط العلاج المسجلة للحالة، موضحاً اسم الخطة، تاريخ
+                        بدئها، وعدد الجلسات الإجمالي مقارنةً بالجلسات المكتملة.
+                    </li>
+                    <li>
+                        <strong>تبويب سجل المواعيد:</strong> يظهر جدولاً تاريخياً بكافة مواعيد المريض بالعيادة
+                        (المستقبلية والسابقة) مع حالاتها (مجدول/مكتمل/ملغي).
+                    </li>
+                    <li>
+                        <strong>تبويب الفواتير والدفعات:</strong> يعرض آخر 10 فواتير صدرت للمريض مع تفاصيل المدفوعات
+                        والوصول المباشر لطباعتها.
+                    </li>
+                    <li>
+                        <strong>تبويب المرفقات والصور الطبية:</strong> يعرض آخر 20 ملفاً أو صورة أشعة تم رفعها في ملف
+                        المريض.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="expected-output">
+                <strong>النتيجة المتوقعة:</strong> يعاد حساب المؤشرات المالية للمريض (المفوتر، المدفوع، المتبقي) بشكل
+                تلقائي ولحظي بمجرد إضافة أي فاتورة جديدة أو تسجيل سند قبض مالي، مما يضمن عرضاً دقيقاً للمستحقات في كل
+                مرة يتم فيها فتح الملف.
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/shot-patient-show.png"
+                    alt="لقطة شاشة لملف المريض الشامل تركز على قسم الإحصائيات المالية الملونة (المفوتر باللون الأزرق، المدفوع باللون الأخضر، والمتبقي باللون البرتقالي التحذيري)">
+            </div>
+            <div class="screenshot-caption">شكل 3: واجهة ملف المريض الشامل وتلخيص الذمم المالية والخطط</div>
+        </section>
+
+        <!-- 4. Upload & Manage Medical Files -->
+        <section id="sec-files" class="section">
+            <div class="section-header">
+                <span class="section-num">4</span>
+                <h2>رفع وإدارة المرفقات والملفات الطبية</h2>
+            </div>
+            <p>
+                يتيح النظام إمكانية أرشفة الملفات الطبية الرقمية للمريض وصور الأشعة السينية (X-Rays) وتقارير التحاليل
+                مباشرة في حسابه، مما يغني عن الملفات الورقية المعرضة للتلف أو الضياع.
+            </p>
+
+            <div class="steps-block">
+                <div class="steps-title">خطوات رفع وتنزيل وتحديث المرفقات الطبية:</div>
+                <ol>
+                    <li>
+                        انتقل إلى قسم <strong>«الملفات الطبية»</strong> داخل ملف المريض واضغط على زر <strong>«رفع ملف
+                            جديد»</strong>.
+                    </li>
+                    <li>
+                        أدخل <strong>«اسم الملف»</strong> (مثال: أشعة بانوراما للفك السفلي)، واكتب
+                        <strong>«الوصف»</strong> لتوضيح تفاصيل الملف (اختياري).
+                    </li>
+                    <li>
+                        اضغط على حقل الملف واختر الملف المطلوب من جهازك. يجب ألا يتجاوز حجم الملف <strong>10 ميجابايت
+                            (10240KB)</strong>، وأن يكون من الصيغ المدعومة حصراً: <span
+                            class="badge-success badge">PDF</span>, <span class="badge-success badge">JPG</span>, <span
+                            class="badge-success badge">JPEG</span>, <span class="badge-success badge">PNG</span>, <span
+                            class="badge-success badge">WEBP</span>, <span class="badge-success badge">GIF</span>.
+                    </li>
+                    <li>
+                        اضغط على زر <strong>«رفع وتخزين»</strong> ليقوم النظام بتخزينه بشكل آمن تحت مجلد خاص بهوية
+                        المريض.
+                    </li>
+                    <li>
+                        <strong>لتنزيل ملف:</strong> اضغط على زر <strong>«تنزيل»</strong> أو أيقونة التحميل المجاورة
+                        للملف، وسيقوم النظام بتنزيله بجودته الأصلية مع الحفاظ على امتداده وتسميته الطبية المعتمدة.
+                    </li>
+                    <li>
+                        <strong>لتحديث بيانات ملف:</strong> اضغط على زر <strong>«تعديل»</strong> بجانب المرفق لتغيير
+                        عنوانه أو وصفه، أو استبدال الملف المرفوع بملف جديد كلياً.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="expected-output">
+                <strong>النتيجة المتوقعة:</strong> عند رفع الملف بنجاح، يتم تحديث جدول الملفات الطبية فوراً ليظهر الملف
+                الجديد، حجمه، نوعه، وتاريخ رفعه، ويظهر رابط مباشر لتنزيله. يمنع النظام رفع أي ملف يتجاوز الحد الأقصى
+                للحجم أو يحمل امتداداً غير معتمد لأسباب أمنية.
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/shot-patient-show.png"
+                    alt="لقطة شاشة لقسم الملفات الطبية داخل ملف المريض يظهر خيارات رفع الملفات وجدول المرفقات المرفوعة مع أزرار التعديل والتنزيل">
+            </div>
+            <div class="screenshot-caption">شكل 4: واجهة إدارة المرفقات وصور الأشعة والتقارير الطبية الخاصة بالمريض
+            </div>
+        </section>
+
+        <!-- 5. Constraints & Data Management -->
+        <section id="sec-constraints" class="section">
+            <div class="section-header">
+                <span class="section-num">5</span>
+                <h2>محددات الحذف وإدارة البيانات</h2>
+            </div>
+            <p>
+                لحماية البيانات المالية وضمان عدم التلاعب بالسجلات الحسابية، يطبق النظام قيوداً صارمة على عمليات حذف
+                ملفات المرضى.
+            </p>
+
+            <div class="callout callout-warning">
+                <span class="callout-icon">⚠️</span>
+                <div>
+                    <strong>قيد الأمان لمنع حذف المرضى:</strong>
+                    يمنع النظام تماماً حذف ملف أي مريض إذا تم إصدار <strong>فاتورة مالية واحدة على الأقل</strong> باسمه
+                    (حتى لو كانت الفاتورة غير مدفوعة أو ملغاة). يضمن هذا القيد عدم حدوث أي خلل في تقارير الإيرادات
+                    السنوية، والاحتفاظ بالسجل المالي سليمًا لأغراض المراجعة والضرائب.
+                </div>
+            </div>
+
+            <div class="steps-block">
+                <div class="steps-title">طريقة التعامل مع حالات حذف وتعديل الحسابات:</div>
+                <ol>
+                    <li>
+                        إذا كان المريض مسجلاً بالخطأ ولم تصدر له أي فواتير في النظام، يمكنك حذفه بالضغط على زر
+                        <strong>«حذف»</strong> من قائمة المرضى أو شاشة التعديل وتأكيد الطلب.
+                    </li>
+                    <li>
+                        إذا كان المريض يملك فواتير سابقة وترغب في إيقاف التعامل معه دون حذف سجلاته المالية، يفضل تعديل
+                        اسمه بإضافة كلمة (موقوف) أو كتابة ذلك في الملاحظات الطبية لمنع حجز مواعيد جديدة له.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="expected-output">
+                <strong>النتيجة المتوقعة:</strong> عند محاولة حذف مريض يملك فواتير سابقة، يرفض النظام العملية فوراً
+                ويعرض رسالة تحذير حمراء تفيد بـ <strong>«تعذر حذف المريض لوجود سجلات مالية وفواتير مرتبطة به»</strong>.
+                أما بالنسبة للمرضى بلا فواتير، فيتم حذفهم وإزالتهم من القائمة مباشرة مع إرجاعك لجدول الحالات الرئيسي.
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/shot-patients-list.png"
+                    alt="لقطة شاشة لرسالة الخطأ التحذيرية الحمراء التي تظهر عند محاولة حذف مريض يملك معاملات مالية سابقة في النظام">
+            </div>
+            <div class="screenshot-caption">شكل 5: رسالة منع حذف المرضى ذوي السجلات المالية النشطة</div>
+        </section>
+
+    </div>
+
+    <footer class="manual-footer">
+        <p>دليل المستخدم لنظام DentalCare لإدارة العيادات © 2026. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+
+</html>

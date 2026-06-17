@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <title>تصميم مواقع الكترونية | انشاء موقع الكتروني للشركات والأفراد</title>
+  <meta name="google-site-verification" content="R6WmDIZMZlfrd97L9AXX-G6ObpgMJpaH9NqWtbQU1zw" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta
+    content="شركة تصميم مواقع إلكترونية في صنعاء متخصصة في تصميم وإستضافة مواقع الويب والتسويق الإلكتروني وتصميم تطبيقات الموبايل والهويات التجارية"
+    name="description">
+  <meta name="keywords"
+    content="تصميم مواقع, تطوير مواقع, استضافة مواقع, تسويق إلكتروني, تحسين محركات البحث, تطبيقات الموبايل, تصميم الهويات التجارية, سوفت ناب">
+
+  <meta name='logo:' content='https://softnube.site/logo.png'>
+  <meta name='author' content='softnube'>
+  <meta name='publisher' content='softnube'>
+  <meta name='type:' content='HTML,CSS,bootstrap'>
+  <meta name='copyright' content='جمي
+        ع الحقوق محفوظة2024 سوفت ناب'>
+  <meta property='og:type' content='website' />
+  <meta property='og:logo' content='https://softnube.site/logo.png' />
+  <meta property='og:image' content='https://softnube.site/YE/logo.png' />
+  <meta property='og:title' content='سوفت ناب | شركة تصميم مواقع إلكترونية' />
+  <meta property='og:url' content='https://softnube.site/index_ar.html' />
+  <meta property='og:site_name' content='softnube'>
+  <meta property='og:description'
+    content='شركة تصميم مواقع إلكترونية في صنعاء متخصصة في تصميم وإستضافة مواقع الويب والتسويق الإلكتروني وتصميم تطبيقات الموبايل والهويات التجارية' />
+
+
+
+  <!-- Favicons -->
+  <link href="YE/logo.png" rel="icon">
+  <link href="YE/logo.png" rel="apple-touch-icon">
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="ar" href="https://softnube.site/index_ar.html">
+  <link rel="alternate" hreflang="en" href="https://softnube.site/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://softnube.site/index.html">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700|Roboto:300,400,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS File -->
+  <link href="YE/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="YE/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="YE/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="YE/vendor/aos/aos.css" rel="stylesheet">
+  <link href="YE/vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="YE/css/style.css" rel="stylesheet">
+  <style>
+    body,
+    h1,
+    h3,
+    h4,
+    a,
+    p,
+    span {
+
+      text-align: right;
+      direction: rtl;
+    }
+
+    /* ===== أعمالنا / Our Work ===== */
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 12px 30px rgba(39, 70, 133, .12);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 25px;
+      background: linear-gradient(to top, rgba(39, 70, 133, .92), rgba(45, 113, 161, .35) 55%, transparent);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay .cat {
+      color: #FF8803;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .portfolio-overlay h3 {
+      color: #fff;
+      font-size: 20px;
+      margin: 0 0 14px;
+    }
+
+    .portfolio-overlay .view {
+      display: inline-block;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .75);
+      padding: 7px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      transition: all .3s ease;
+    }
+
+    .portfolio-overlay .view:hover {
+      background: #fff;
+      color: #274685;
+      text-decoration: none;
+    }
+
+    /* ===== WhatsApp floating button ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      width: 55px;
+      height: 55px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      line-height: 56px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+      z-index: 9999;
+      transition: transform .3s ease;
+    }
+
+    .whatsapp-float:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* ===== Call button in navbar ===== */
+    .nav-call {
+      background: #274685;
+      color: #fff !important;
+      border-radius: 30px;
+      padding: 6px 16px !important;
+    }
+
+    .nav-call:hover {
+      background: #1391a5;
+      color: #fff !important;
+    }
+  </style>
+  <!-- =======================================================
+    Template Name: SoftNube
+    Template URL: https://bootstrapmade.com/SoftNube-bootstrap-app-landing-page-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com/
+  ======================================================= -->
+</head>
+
+<body lang="ar">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-lg-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="mb-0"><img src="YE/logo.png" alt="logo"
+                  width="100%"></a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-lg-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="#Services" class="nav-link">الخدمات</a></li>
+                <li><a href="#Work" class="nav-link">أعمالنا</a></li>
+                <!-- <li><a href="pricing.html" class="nav-link">Pricing</a></li> has-children -->
+
+                <li class="">
+                  <a href="#About" class="nav-link">من نحن</a>
+                  <!-- <ul class="dropdown">
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="blog-single.html" class="nav-link">Blog Sigle</a></li>
+                  </ul>-->
+                </li>
+                <li><a href="#Contact" class="nav-link">تواصل معنا</a></li>
+                <li><a href="tel:+967777066658" class="nav-link nav-call"><i class="fa fa-phone"></i> 967777066658</a>
+                </li>
+                <li><a href="index.html" class="nav-link">English</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-lg-none ml-md-0 py-3" style="position: relative; top: 3px;">
+
+            <a href="#" class="burger site-menu-toggle js-menu-toggle" data-toggle="collapse"
+              data-target="#main-navbar">
+              <span></span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+
+    <main id="main">
+      <div class="hero-section">
+        <div class="wave">
+
+          <svg width="100%" height="355px" viewBox="0 0 1920 355" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
+                <path
+                  d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,757 L1017.15166,757 L0,757 L0,439.134243 Z"
+                  id="Path"></path>
+              </g>
+            </g>
+          </svg>
+
+        </div>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 hero-text-image">
+              <div class="row">
+                <div class="col-lg-7 text-center text-lg-left">
+                  <h1 data-aos="fade-right">أنشئ تطبيقك مع SoftNube</h1>
+                  <p class="mb-5" data-aos="fade-right" data-aos-delay="100">إذا كنت ترغب في إنشاء موقع ويب احترافي
+                    وتطبيق محمول أو مشروع سحابي، فأنت في المكان المناسب.</p>
+                  <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#"
+                      class="btn btn-outline-white">ابدأ الان</a></p>
+                </div>
+                <div class="col-lg-5 iphone-wrap">
+                  <img src="YE/img/undraw_svg_99.svg" alt="رسم توضيحي لتطوير المواقع وتطبيقات الموبايل" class=""
+                    data-aos="fade-right">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-section" id="About">
+        <div class="container">
+
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-5" data-aos="fade-up">
+              <h2 class="section-heading">من نحن؟</h2>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-5 me-auto">
+
+
+              <p class="mb-4">
+                SoftNube هي شركة<b>خدمات رقمية</b>مدعومة بأشخاص مبدعين ومتحمسين. نحن نؤمن ببناء علامات تجارية قوية،
+                وتصميم نظيف وجيد، ومحتوى مصقول بعناية، واستراتيجيات متكاملة. من التسويق الرقمي إلى تطوير المواقع
+                الإلكترونية، نحن أكثر من مجرد شركة أخرى. نحن شريكك الرقمي التالي.
+
+              </p>
+              <!-- <p><a href="#" class="btn btn-primary"></a></p> -->
+            </div>
+            <div class="col-md-1 me-auto"></div>
+            <div class="col-md-6 aos-init aos-animate" data-aos="fade-left">
+              <img src="YE/img/undraw_svg_3.svg" alt="رسم توضيحي لخدمات سوفت ناب الرقمية" class="img-fluid"
+                loading="lazy">
+            </div>
+          </div>
+          <!--  <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="">
+              <div class="feature-1 text-center">
+                <div class="wrap-icon icon-1">
+                  <span class="icon la la-users"></span>
+                </div>
+                <h3 class="mb-3">Explore Your Team</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-1 text-center">
+                <div class="wrap-icon icon-1">
+                  <span class="icon la la-toggle-off"></span>
+                </div>
+                <h3 class="mb-3">Digital Whiteboard</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-1 text-center">
+                <div class="wrap-icon icon-1">
+                  <span class="icon la la-umbrella"></span>
+                </div>
+                <h3 class="mb-3">Design To Development</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, optio.</p>
+              </div>
+            </div>
+          </div>-->
+
+        </div>
+      </div> <!-- .site-section -->
+
+      <div class="site-section" id="Services">
+        <div class="container">
+          <!-- <div class="row justify-content-center text-center mb-5" data-aos="fade">
+            <div class="col-md-6 mb-5">
+              <img src="img/undraw_svg_1.svg" alt="Image" class="img-fluid">
+            </div>
+          </div>-->
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8" data-aos="fade-up">
+              <h2 class="section-heading">خدماتنا المذهلة</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="step">
+                <div class="service-content">
+                  <div class="service-icon">
+                    <i class="fa fa-desktop"></i>
+                  </div>
+                  <!-- service-icon -->
+                  <h3 class="service-title">تصميم المواقع الإلكترونية</h3>
+                  <p class="service-description">لدينا فريق من مصممي الويب المحترفين الذين يصممون أفضل مواقع الويب في
+                    العالم بتصميم رائع، وسرعة سريعة، ومحسّنة لمحركات البحث. </p>
+                  <p style="padding: 5px;"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step">
+                <div class="service-content">
+                  <div class="service-icon">
+                    <i class="fa fa-code"></i>
+                  </div>
+                  <!-- service-icon -->
+                  <h3 class="service-title">تطوير المواقع الإلكترونية</h3>
+                  <p class="service-description">فريقنا لا يعمل بجد لكتابة شيء ما. نحن دائماً نحاول البرمجة بذكاء، وهذا
+                    ما يجعلنا نواصل التفكير في أفكار وحلول أفضل لكل مشكلة.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step">
+                <div class="service-content">
+                  <div class="service-icon">
+                    <i class="fa fa-image"></i>
+                  </div>
+                  <!-- .s-icon -->
+                  <h3 class="service-title">تصميم الجرافيكس</h3>
+                  <p class="service-description">الإبداع هو ما يدفع بالابتكار والتقدم. من خلال الإبداع، نعني أن لدينا
+                    نهج فريد، وكتابة إبداعية، وأنماط عرض فريدة.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-4">
+              <div class="step">
+                <div class="service-content">
+                  <div class="service-icon">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </div>
+                  <!-- .s-icon -->
+                  <h3 class="service-title">التسويق الرقمي</h3>
+                  <p class="service-description">نركز على استراتيجيات التسويق التي تجذب الانتباه وتحل مشكلات لتقديم قيمة
+                    للعملاء. فريقنا ذو الخبرة يعمل على أحدث تقنيات التسويق.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step">
+                <div class="service-content">
+                  <div class="service-icon">
+                    <!-- <i class="fa fa-pencil"></i> -->
+                    <i class="fa fa-line-chart"></i>
+                  </div>
+                  <!-- .s-icon -->
+                  <h3 class="service-title">تحسين محركات البحث</h3>
+                  <p class="service-description">لدينا فريق متخصص وذو خبرة في تحسين محركات البحث، ويتمتع بمعرفة عميقة
+                    بخوارزميات Google، Bing، و Yahoo. نعمل على تحسين كل نوع من أنواع المحتوى.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step">
+                <div class="service-content">
+                  <div class="service-icon">
+                    <i class="fa fa-pencil"></i>
+                  </div>
+                  <!-- .s-icon -->
+                  <h3 class="service-title">المدونات &amp; وكتابة المحتوى</h3>
+                  <p class="service-description">نركز دائمًا على إنشاء محتوى جذاب يلفت الانتباه ويحل المشكلات لتقديم
+                    قيمة للعملاء. يعمل فريقنا ذو الخبرة على أحدث تقنيات التسويق.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- .site-section -->
+
+      <!--
+
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 mr-auto">
+              <h2 class="mb-4">Seamlessly Communicate</h2>
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at reprehenderit optio,
+                laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit incidunt
+                dolore mollitia esse natus beatae.</p>
+              <p><a href="#">Download Now</a></p>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+              <img src="img/undraw_svg_2.svg" alt="Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div> .site-section
+
+      <div class="site-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 ml-auto order-2">
+              <h2 class="mb-4">Gather Feedback</h2>
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur at reprehenderit optio,
+                laudantium eius quod, eum maxime molestiae porro omnis. Dolores aspernatur delectus impedit incidunt
+                dolore mollitia esse natus beatae.</p>
+              <p><a href="#">Download Now</a></p>
+            </div>
+            <div class="col-md-6" data-aos="fade-right">
+              <img src="img/undraw_svg_3.svg" alt="Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div> .site-section -->
+
+
+      <div class="site-section" id="Work">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8" data-aos="fade-up">
+              <h2 class="section-heading">أعمالنا</h2>
+              <p>مجموعة مختارة من المشاريع التي صممناها وطوّرناها لعملائنا بكل فخر.</p>
+            </div>
+          </div>
+          <div class="row">
+
+            <!-- استبدل الصورة (YE/img/...) والعنوان والرابط لكل عنصر بمشروعك الحقيقي -->
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+              <div class="portfolio-item">
+                <img src="Shipment/screenshots/02-dashboard.png" alt="نظام إدارة الشحنات الجمركية">
+                <div class="portfolio-overlay">
+                  <span class="cat">ادارة الشحنات الجمركية </span>
+                  <h3>نظام لادارة الشحنات الجمركية</h3>
+                  <a href="Shipment/features-ar.html"   target="_blank" class="view">عرض المشروع</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="portfolio-item">
+                <img src="Dentalcare/images/dashboard.png" alt="نظام إدارة عيادات الأسنان">
+                <div class="portfolio-overlay">
+                  <span class="cat">ادارة عيادات الاسنان</span>
+                  <h3> نظام ادارة عيادات الاسنان المتخصص </h3>
+                  <a href="Dentalcare/features-ar.html"  target="_blank" class="view">عرض المشروع</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="portfolio-item">
+                <img src="pos/assets/images/Capture.PNG" alt="نظام إدارة المبيعات">
+                <div class="portfolio-overlay">
+                  <span class="cat">إدارة المبيعات</span>
+                  <h3> نظام إدارة المبيعات </h3>
+                  <a href="pos/index.html"  target="_blank" class="view">عرض المشروع</a>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div> <!-- .site-section #Work -->
+
+      <div class="site-section border-top border-bottom" style="direction: ltr; text-">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8">
+              <h2 class="section-heading">آراء العملاء</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center text-center">
+            <div class="col-md-7">
+              <div class="owl-carousel testimonial-carousel">
+                <div class="review text-center">
+                  <p class="stars">
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star muted"></span>
+                  </p>
+                  <h3> تحسين تجربة المستخدم</h3>
+                  <blockquote>
+                    <p>أنا ممتن لفريق الموقع على جهودهم في تحسين تجربة المستخدم لموقعنا. كانوا يستمعون بعناية إلى
+                      متطلباتنا ويعملون بجد لتنفيذ التغييرات المطلوبة. الآن، أصبح موقعنا أكثر سهولة في التصفح وأكثر
+                      جاذبية للزوار. شكرًا لجهودكم الرائعة!</p>
+                  </blockquote>
+
+
+
+                  <p class="review-user">
+                    <img src="YE/img/person_1.jpg" alt="شركة سما" class="img-fluid rounded-circle mb-3" loading="lazy">
+                    <span class="d-block">
+                      <span class="text-black">شركة سما</span>
+                    </span>
+                  </p>
+
+                </div>
+
+                <div class="review text-center">
+                  <p class="stars">
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star muted"></span>
+                  </p>
+                  <h3>استجابة سريعة!</h3>
+                  <blockquote>
+                    <p>لقد كان فريق الموقع سريع الاستجابة لاحتياجاتنا. في كل مرة كنا بحاجة إلى تعديلات أو تغييرات، كانوا
+                      دائمًا متواجدين للمساعدة. هذا النوع من الدعم والاهتمام يعطينا الثقة في خدماتهم ويجعلنا نوصي بهم
+                      للجميع!.</p>
+                  </blockquote>
+
+
+
+                  <p class="review-user">
+                    <img src="YE/img/person_2.jpg" alt="محمد علي" class="img-fluid rounded-circle mb-3" loading="lazy">
+                    <span class="d-block">
+                      <span class="text-black">محمد علي </span>
+                    </span>
+                  </p>
+
+                </div>
+
+
+                <div class="review text-center">
+                  <p class="stars">
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star"></span>
+                    <span class="icofont-star muted"></span>
+                  </p>
+                  <h3>محترفون وموهوبون!</h3>
+                  <blockquote>
+                    <p>تعاملنا مع فريق الموقع كان تجربة رائعة بالفعل. كانوا ليس فقط محترفين في عملهم، بل كانوا أيضًا
+                      موهوبين في فهم احتياجاتنا وتحويلها إلى حقيقة. أنجزوا عملًا رائعًا في وقت قياسي، ونحن سعداء للغاية
+                      بالنتيجة النهائية. لن نتردد في التعامل معهم مرة أخرى في المستقبل.</p>
+                  </blockquote>
+
+
+
+                  <p class="review-user">
+                    <img src="YE/img/person_3.jpg" alt="سمية علي" class="img-fluid rounded-circle mb-3" loading="lazy">
+                    <span class="d-block">
+                      <span class="text-black">سمية علي </span>
+                    </span>
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <section class="section" id="Contact">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8" data-aos="fade-up">
+              <h2 class="section-heading">تواصل بنا </h2>
+            </div>
+          </div>
+          <div class="row mb-5 align-items-end">
+            <div class="col-md-6 aos-init aos-animate" data-aos="fade-up">
+
+              <h2>اطلب استشارة مجانية</h2>
+              <p class="mb-0">املأ النموذج للحصول على عرض مجاني ونصائح تجارية.</p>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 ms-auto order-2 aos-init aos-animate" data-aos="fade-up">
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                  <strong class="d-block mb-1">العنوان </strong>
+                  <span>شارع حدة - بجانب مركز العزاني </span>
+                </li>
+                <li class="mb-3">
+                  <strong class="d-block mb-1">الهاتف</strong>
+                  <span>+967 777066658</span>
+                </li>
+                <li class="mb-3">
+                  <strong class="d-block mb-1">البريد الالكتروني</strong>
+                  <span>support@SoftNube.com</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 mb-5 mb-md-0 aos-init aos-animate" data-aos="fade-up">
+              <form action="YE/forms/contact.php" method="post" role="form" class="php-email-form">
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="name">الاسم</label>
+                    <input type="text" name="name" class="form-control" id="name" required="">
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="name">البريد الالكتروني</label>
+                    <input type="email" class="form-control" name="email" id="email" required="">
+                  </div>
+                  <div class="col-md-12 form-group mt-3">
+                    <label for="name">الموضوع</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required="">
+                  </div>
+                  <div class="col-md-12 form-group mt-3">
+                    <label for="name">الرسالة</label>
+                    <textarea class="form-control" name="message" required=""></textarea>
+                  </div>
+
+                  <div class="col-md-12 mb-3">
+                    <div class="loading">تحميل</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">تم إرسال رسالتك. شكرًا لك!!</div>
+                  </div>
+
+                  <div class="col-md-6 form-group">
+                    <input type="submit" class="btn btn-primary d-block w-100" value="ارسال الرسالة">
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- تمت إزالة قسم App Store / Google Play لعدم ملاءمته لشركة تصميم مواقع (وللتطابق مع النسخة الإنجليزية) -->
+
+
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h3>عن SoftNube</h3>
+            <p>SoftNube هي شركة خدمات رقمية مدعومة بأشخاص مبدعين ومتحمسين. نحن نؤمن ببناء علامات تجارية قوية، وتصميم
+              نظيف وجيد، ومحتوى مصقول بعناية، واستراتيجيات متكاملة. من التسويق الرقمي إلى تطوير المواقع الإلكترونية، نحن
+              أكثر من مجرد شركة أخرى. نحن شريكك الرقمي التالي.
+            </p>
+            <!-- <p class="social">
+              <a href="#"><span class="icofont-twitter"></span></a>
+              <a href="#"><span class="icofont-facebook"></span></a>
+              <a href="#"><span class="icofont-dribbble"></span></a>
+              <a href="#"><span class="icofont-behance"></span></a>
+            </p>-->
+          </div>
+          <div class="col-md-8 ml-auto">
+            <div class="row site-section pt-0">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <h3>التنقل</h3>
+                <ul class="list-unstyled">
+                  <li><a href="#">الأسعار</a></li>
+                  <li><a href="#">الميزات</a></li>
+                  <li><a href="#">المدونة</a></li>
+                  <li><a href="#">اتصل</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <h3>الخدمات</h3>
+                <ul class="list-unstyled">
+                  <li><a href="#">الفريق</a></li>
+                  <li><a href="#">التعاون</a></li>
+                  <li><a href="#">المهام</a></li>
+                  <li><a href="#">الأحداث</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <h3>التواصل الاجتماعي</h3>
+                <p class="social">
+                  <a href="https://www.youtube.com/channel/UCC4sNgTIP11jct5CgLFqZdA/featured"><span
+                      class="icofont-youtube"></span></a>
+                  <a href="https://twitter.com/_softnube"><span class="icofont-twitter"></span></a>
+                  <a href="https://www.facebook.com/softnube"><span class="icofont-facebook"></span></a>
+                  <a href="https://www.instagram.com/_softnube/"><span class="icofont-instagram"></span></a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+          <div class="col-md-7">
+            <p class="copyright">&copy; حقوق النشر SoftNube <span id="year"></span>. جميع الحقوق محفوظة</p>
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=SoftNube
+              -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div> <!-- .site-wrap -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="https://wa.me/967777066658" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="YE/vendor/jquery/jquery.min.js"></script>
+  <script src="YE/vendor/jquery/jquery-migrate.min.js"></script>
+  <script src="YE/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="YE/vendor/easing/easing.min.js"></script>
+  <script src="YE/vendor/php-email-form/validate.js"></script>
+  <script src="YE/vendor/sticky/sticky.js"></script>
+  <script src="YE/vendor/aos/aos.js"></script>
+  <script src="YE/vendor/owlcarousel/owl.carousel.min.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26579458.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <!-- Template Main JS File -->
+  <script src="YE/js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+
+</html>

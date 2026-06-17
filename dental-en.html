@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dental Clinic Management System — Features</title>
+    <meta name="description" content="A comprehensive system for managing patients, appointments, invoicing, inventory and financial reports, designed specifically for dental clinics.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac',
+                            400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d',
+                            800: '#166534', 900: '#14532d', 950: '#052e16',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .grad-hero { background: radial-gradient(1200px 600px at 20% -10%, #dcfce7 0%, transparent 55%), radial-gradient(900px 500px at 90% 10%, #f0fdf4 0%, transparent 50%), #fbfcff; }
+        .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(22,163,74,.35); }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- ===================== Header ===================== -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="h-9 w-9 rounded-xl bg-brand-600 text-white grid place-items-center font-extrabold">🦷</div>
+                <span class="font-extrabold text-lg text-slate-900">DentalCare</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#features" class="hover:text-brand-700">Features</a>
+                <a href="#why" class="hover:text-brand-700">Why for Clinics</a>
+                <a href="#faq" class="hover:text-brand-700">FAQ</a>
+            </nav>
+            <a href="/dashboard" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-white text-sm font-bold shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition">
+                Try Now
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 19l7-7-7-7M5 19l7-7-7-7"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===================== Hero Section ===================== -->
+    <section class="grad-hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-brand-100 text-brand-800 px-4 py-1.5 text-sm font-bold mb-6">
+                    <span class="h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
+                    Complete clinic management solution
+                </span>
+                <h1 class="text-4xl lg:text-5xl font-black leading-[1.25] text-slate-900">
+                    Manage Your Clinic From Patients to Reports
+                    <span class="text-brand-600"> in One Platform</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+                    A system that combines patient management, appointments, invoicing, inventory, and financial reports, with complete tracking of clinic operations,
+                    smart alerts, and accurate reports — designed specifically for dental clinics.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="/dashboard" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-white font-bold shadow-xl shadow-brand-600/30 hover:bg-brand-700 transition">
+                        Start Free Trial
+                    </a>
+                    <a href="#user-manual" class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 px-6 py-3.5 font-bold text-slate-700 hover:border-brand-300 hover:text-brand-700 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        User Guide
+                    </a>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-8">
+                    <div><div class="text-3xl font-black text-slate-900">6</div><div class="text-sm text-slate-500 font-semibold">Main Features</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">∞</div><div class="text-sm text-slate-500 font-semibold">Unlimited Patients</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">PDF/Excel</div><div class="text-sm text-slate-500 font-semibold">Instant Export</div></div>
+                </div>
+            </div>
+
+            <!-- Dashboard Screenshot -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-200/50 to-transparent blur-2xl rounded-3xl"></div>
+                <div class="relative rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-brand-900/10 overflow-hidden">
+                    <div class="flex items-center gap-1.5 px-4 py-3 bg-slate-50 border-b border-slate-100">
+                        <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                        <span class="ml-3 text-xs text-slate-400 font-semibold">Dashboard — Overview</span>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-brand-50 p-4">
+                                <div class="text-xs text-brand-700 font-bold">Active Patients</div>
+                                <div class="text-2xl font-black text-brand-900 mt-1">245</div>
+                            </div>
+                            <div class="rounded-xl bg-amber-50 p-4">
+                                <div class="text-xs text-amber-700 font-bold">Today's Appointments</div>
+                                <div class="text-2xl font-black text-amber-900 mt-1">12</div>
+                            </div>
+                            <div class="rounded-xl bg-emerald-50 p-4">
+                                <div class="text-xs text-emerald-700 font-bold">Pending Invoices</div>
+                                <div class="text-2xl font-black text-emerald-900 mt-1">8</div>
+                            </div>
+                            <div class="rounded-xl bg-slate-100 p-4">
+                                <div class="text-xs text-slate-600 font-bold">Today's Revenue</div>
+                                <div class="text-2xl font-black text-slate-900 mt-1">$1.2k</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-slate-100 p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-slate-700">Service Distribution</span>
+                                <span class="text-[10px] text-slate-400">2026</span>
+                            </div>
+                            <div class="flex items-end gap-2 h-24">
+                                <div class="flex-1 rounded-t bg-brand-600" style="height:80%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:55%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:70%"></div>
+                                <div class="flex-1 rounded-t bg-brand-500" style="height:40%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:62%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:48%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Trust Bar ===================== -->
+    <section class="border-y border-slate-100 bg-slate-50/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="font-extrabold text-slate-900">Arabic Full Support</div>
+                <div class="text-sm text-slate-500 mt-1">Interface optimized for Arabic and RTL writing</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">Multi-User</div>
+                <div class="text-sm text-slate-500 mt-1">Support for multiple doctors and staff with different permissions</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">Precise Permissions</div>
+                <div class="text-sm text-slate-500 mt-1">Complete control over roles and what each user can see</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">Audit Log</div>
+                <div class="text-sm text-slate-500 mt-1">Track every add, edit, and delete operation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Why for Clinics ===================== -->
+    <section id="why" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="rounded-2xl border border-slate-200 bg-white shadow-xl p-6 space-y-4">
+                    <div class="text-sm font-bold text-slate-700 mb-2">Patient Care Journey — Complete Services</div>
+
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Patient Reception & Registration</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Initial Exam & Diagnosis</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-brand-600 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-brand-600" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Treatment Plan</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-amber-500 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-amber-500" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Treatment Sessions</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-slate-300 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-slate-300" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Invoicing & Follow-up</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-brand-600 font-bold">Why This System?</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2 leading-snug">
+                    Built for Dental Clinic Operations
+                </h2>
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    A clinic doesn't just manage "patients"; it needs to track medical records, treatment plans, invoices, inventory, and financial reports
+                    — with smart alerts and timely notifications. This system was built around this reality.
+                </p>
+                <ul class="mt-6 space-y-4">
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Complete Patient & Medical Records</div>
+                            <div class="text-sm text-slate-600">Comprehensive patient profile with history, dental chart, and treatment plans.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Smart Appointment Scheduling</div>
+                            <div class="text-sm text-slate-600">Interactive calendar prevents conflicts and sends smart reminders.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Flexible Payment Plans</div>
+                            <div class="text-sm text-slate-600">Create professional invoices with support for multi-payment treatment plans.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Financial Reports & Analytics</div>
+                            <div class="text-sm text-slate-600">Instant export to PDF or Excel by period, doctor, and service type.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Features ===================== -->
+    <section id="features" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-brand-600 font-bold">Main Features</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Everything Your Clinic Needs in One Platform</h2>
+                <p class="mt-4 text-slate-600">Integrated modules covering the complete workflow from patient reception to reporting.</p>
+            </div>
+
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👥</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Patient Management</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Complete patient records with medical history, allergies, blood type, and treatment plans.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📅</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Appointments & Scheduling</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Interactive calendar with advanced scheduling and smart notification system.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🦷</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Dental Chart</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Precise tooth recording using FDI notation with complete modification history.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📄</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Invoicing & Payments</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Professional invoices with support for multi-payment treatment plans and payment tracking.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📦</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Inventory Management</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Track medical supplies with low-stock alerts and complete transaction history.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📊</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Financial Reports</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Comprehensive analytics with charts and instant export to Excel and PDF.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🔔</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Smart Alerts</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Instant notifications for appointments, pending payments, and low supplies.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👨‍⚕️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Doctor & Staff Management</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Manage doctors and staff with work tracking and productivity statistics.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🛡️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Security & Backup</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Data backups and complete audit log for every operation on the system.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-12">
+                <span class="text-brand-600 font-bold">FAQ</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Common Questions About System Features</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I add a new patient?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Add a new patient from the Patient section with one click. Enter basic information (name, phone, address), then add medical history and allergies. Data is saved instantly and you can start scheduling appointments.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I schedule an appointment?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Use the interactive calendar to select date and time. The system shows available doctors and rooms. Click your desired appointment and add notes if needed. You can automatically notify the patient.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I create multi-payment treatment plans?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Go to Treatment Plans and create a new plan. Add services and total cost, then set the number of payments and amount per payment. The system tracks payments automatically and sends reminders.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I track medical supplies?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">In the Inventory section, add products and set minimum stock levels. You'll receive automatic alerts when stock drops below the threshold. Complete transaction history is maintained.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I create professional invoices?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Go to Invoices, select the patient and services. The system calculates costs automatically. Add discounts or notes, then print or export as PDF. You can also save as draft and update later.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I view financial reports?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">The Reports section shows revenue and expenses summaries by period. Filter by doctor, service, or payment type. Print or export as Excel or PDF for review or archiving.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA Section ===================== -->
+    <section id="user-manual" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="rounded-3xl bg-gradient-to-tl from-brand-700 via-brand-600 to-brand-500 p-10 lg:p-14 text-white relative overflow-hidden">
+            <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
+            <div class="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-black leading-snug">Ready to Start? Try the System and Read the Guide</h2>
+                    <p class="mt-4 text-brand-50/90 leading-relaxed">
+                        Access the system and explore the modules yourself, or open the user guide to learn each feature step by step.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row lg:justify-end gap-4">
+                    <a href="/dashboard" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 font-extrabold text-brand-700 shadow-xl hover:bg-brand-50 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        Try System
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/60 px-7 py-4 font-extrabold text-white hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        User Guide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-lg bg-brand-600 text-white grid place-items-center font-extrabold">🦷</div>
+                <span class="font-bold text-slate-700">DentalCare — Dental Clinic Management System</span>
+            </div>
+            <div>© 2026 — All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

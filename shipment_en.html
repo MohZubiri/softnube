@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shipments &amp; Customs Clearance System — Features</title>
+    <meta name="description"
+        content="An all-in-one system for managing sea, land and local customs shipments and customs declarations, built specifically for customs clearance offices.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef6ff', 100: '#d9eaff', 200: '#bcd9ff', 300: '#8ec0ff',
+                            400: '#599dff', 500: '#3578f6', 600: '#1f59e0', 700: '#1846b4',
+                            800: '#1a3c90', 900: '#1b3672', 950: '#142149',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .grad-hero { background: radial-gradient(1200px 600px at 80% -10%, #d9eaff 0%, transparent 55%), radial-gradient(900px 500px at 10% 10%, #eef6ff 0%, transparent 50%), #fbfcff; }
+        .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(24,70,180,.35); }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- ===================== Top bar ===================== -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="h-9 w-9 rounded-xl bg-brand-600 text-white grid place-items-center font-extrabold">C</div>
+                <span class="font-extrabold text-lg text-slate-900">Customs Clearance System</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#features" class="hover:text-brand-700">Features</a>
+                <a href="#why" class="hover:text-brand-700">Why customs offices</a>
+                <a href="#screens" class="hover:text-brand-700">Screenshots</a>
+                <a href="#faq" class="hover:text-brand-700">FAQ</a>
+            </nav>
+            <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20try%20the%20Customs%20Clearance%20System" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-white text-sm font-bold shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition">
+                Try the system
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M20 12H4"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===================== Hero ===================== -->
+    <section class="grad-hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-brand-100 text-brand-800 px-4 py-1.5 text-sm font-bold mb-6">
+                    <span class="h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
+                    An all-in-one customs clearance solution
+                </span>
+                <h1 class="text-4xl lg:text-5xl font-black leading-[1.2] text-slate-900">
+                    Manage your shipments from factory to warehouse
+                    <span class="text-brand-600"> in one platform</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+                    A single system that brings together sea, land and local customs shipping plus customs declarations —
+                    with full shipment-stage tracking, smart alerts and accurate reports. Built specifically for the needs
+                    of customs clearance offices.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20try%20the%20Customs%20Clearance%20System" target="_blank" rel="noopener"
+                        class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-white font-bold shadow-xl shadow-brand-600/30 hover:bg-brand-700 transition">
+                        Start the demo
+                    </a>
+                    <a href="#user-manual"
+                        class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 px-6 py-3.5 font-bold text-slate-700 hover:border-brand-300 hover:text-brand-700 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        User guide
+                    </a>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-8">
+                    <div><div class="text-3xl font-black text-slate-900">9</div><div class="text-sm text-slate-500 font-semibold">shipment tracking stages</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">3</div><div class="text-sm text-slate-500 font-semibold">transport types: sea · land · local</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">PDF/Excel</div><div class="text-sm text-slate-500 font-semibold">instant report export</div></div>
+                </div>
+            </div>
+
+            <!-- Dashboard preview -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-200/50 to-transparent blur-2xl rounded-3xl"></div>
+                <div class="relative rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-brand-900/10 overflow-hidden">
+                    <div class="flex items-center gap-1.5 px-4 py-3 bg-slate-50 border-b border-slate-100">
+                        <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                        <span class="ms-3 text-xs text-slate-400 font-semibold">Dashboard — overview</span>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-brand-50 p-4">
+                                <div class="text-xs text-brand-700 font-bold">Active shipments</div>
+                                <div class="text-2xl font-black text-brand-900 mt-1">128</div>
+                            </div>
+                            <div class="rounded-xl bg-amber-50 p-4">
+                                <div class="text-xs text-amber-700 font-bold">Near deadline</div>
+                                <div class="text-2xl font-black text-amber-900 mt-1">7</div>
+                            </div>
+                            <div class="rounded-xl bg-emerald-50 p-4">
+                                <div class="text-xs text-emerald-700 font-bold">Awaiting release</div>
+                                <div class="text-2xl font-black text-emerald-900 mt-1">23</div>
+                            </div>
+                            <div class="rounded-xl bg-slate-100 p-4">
+                                <div class="text-xs text-slate-600 font-bold">Completed today</div>
+                                <div class="text-2xl font-black text-slate-900 mt-1">14</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-slate-100 p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-slate-700">Shipments by company</span>
+                                <span class="text-[10px] text-slate-400">2026</span>
+                            </div>
+                            <div class="flex items-end gap-2 h-24">
+                                <div class="flex-1 rounded-t bg-brand-600" style="height:80%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:55%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:70%"></div>
+                                <div class="flex-1 rounded-t bg-brand-500" style="height:40%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:62%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:48%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Trust bar ===================== -->
+    <section class="border-y border-slate-100 bg-slate-50/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="font-extrabold text-slate-900">Full Arabic (RTL)</div>
+                <div class="text-sm text-slate-500 mt-1">Interface tuned for Arabic and right-to-left writing</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">Multi-year</div>
+                <div class="text-sm text-slate-500 mt-1">Each fiscal year's data kept separate</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">Granular permissions</div>
+                <div class="text-sm text-slate-500 mt-1">Full control over roles and what each employee sees</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">Audit log</div>
+                <div class="text-sm text-slate-500 mt-1">Tracks every create, update and delete</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Why customs clearance offices ===================== -->
+    <section id="why" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="rounded-2xl border border-slate-200 bg-white shadow-xl p-6 space-y-4">
+                    <div class="text-sm font-bold text-slate-700 mb-2">Shipment journey — stage tracking</div>
+
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-48 text-right">Manufacturing &amp; factory departure</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-48 text-right">Source port / in transit</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-brand-600 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-brand-600" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-48 text-right">Port arrival</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-amber-500 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-amber-500" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-48 text-right">Customs &amp; release</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-slate-300 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-slate-300" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-48 text-right">Transport &amp; warehouse arrival</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-brand-600 font-bold">Why this system?</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2 leading-snug">
+                    Designed to fit how customs clearance offices actually work
+                </h2>
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    A clearance office needs more than just managing "shipments" — it has to track legal deadlines, the status
+                    of the customs declaration, containers, trucks and local permits, with alerts before time runs out. This
+                    system was built around exactly that reality.
+                </p>
+                <ul class="mt-6 space-y-4">
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">All transport types in one place</div>
+                            <div class="text-sm text-slate-600">Sea by containers, land by trucks, and local vehicle clearance — instead of scattered systems.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Alerts before the deadline</div>
+                            <div class="text-sm text-slate-600">The system flags shipments whose remaining days are running low and surfaces them on the dashboard.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Customs declaration linked to the shipment</div>
+                            <div class="text-sm text-slate-600">Record customs data, the customs port and its status, tied directly to each shipment.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">Reports ready for clients and management</div>
+                            <div class="text-sm text-slate-600">Instant export to PDF or Excel by company, department or shipping type.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Features ===================== -->
+    <section id="features" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-brand-600 font-bold">Key features</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Everything the office needs in one place</h2>
+                <p class="mt-4 text-slate-600">Integrated modules covering the full workflow from receiving a shipment to delivering it and issuing reports.</p>
+            </div>
+
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🚢</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Sea freight</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Manage sea shipments by container, shipping lines, vessels and voyage numbers, plus documents attached to each shipment.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🚚</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Land freight</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Record land shipments with trucks and trailers, and track their movement stage by stage to the destination.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🚗</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Local clearance</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Manage local clearance vehicles and issue permits, ready to download and print.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📋</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Customs declarations</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Record customs declarations and customs ports, and link them to shipments and their statuses.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🧭</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Stage tracking</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">9 stages from manufacturing to the warehouse, with dates for each stage and a complete tracking history.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📊</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Dashboard &amp; analytics</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Live indicators: active shipments, near deadline, awaiting release, and distribution by company and department.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🔔</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Alerts &amp; warnings</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Detect shipments whose deadline is approaching and surface them before time runs out.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📑</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Reports &amp; export</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Reports for sea, land and local clearance with PDF and Excel export.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👥</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Users &amp; permissions</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Manage users, roles and permissions precisely for every module and function.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🗄️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Flexible master data</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Companies, departments, warehouses, shipping lines, shipping types and statuses are all configurable.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🗓️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Multi-year</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Separate each fiscal year's data, with easy switching between years.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🛡️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Backup &amp; audit</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Email-based data backup, plus an audit log for every operation on the system.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Screenshots ===================== -->
+    <section id="screens" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-brand-600 font-bold">System screenshots</span>
+            <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">See the interface before you try it</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Screenshot: shipments table -->
+            <div class="rounded-2xl border border-slate-200 bg-white shadow-lg overflow-hidden">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-100 text-sm font-bold text-slate-700">Shipments list</div>
+                <div class="p-5">
+                    <div class="grid grid-cols-4 gap-2 text-[11px] font-bold text-slate-400 pb-2 border-b">
+                        <span>Shipment #</span><span>Company</span><span>Stage</span><span class="text-right">Deadline</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2041</span><span class="text-slate-600">Gulf Trading</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Customs</span></span><span class="text-right text-slate-500 text-xs">2 days</span></div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2042</span><span class="text-slate-600">Al-Noor Import</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-100 text-brand-700">Port arrival</span></span><span class="text-right text-slate-500 text-xs">5 days</span></div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2043</span><span class="text-slate-600">Al-Madar Global</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Released</span></span><span class="text-right text-slate-500 text-xs">—</span></div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2044</span><span class="text-slate-600">East Gate</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">In transit</span></span><span class="text-right text-slate-500 text-xs">9 days</span></div>
+                </div>
+            </div>
+
+            <!-- Screenshot: alerts -->
+            <div class="rounded-2xl border border-slate-200 bg-white shadow-lg overflow-hidden">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-100 text-sm font-bold text-slate-700">Near-deadline alerts</div>
+                <div class="p-5 space-y-3">
+                    <div class="flex items-center gap-3 rounded-xl bg-rose-50 border border-rose-100 p-3"><span class="h-9 w-9 grid place-items-center rounded-full bg-rose-500 text-white">!</span><div><div class="font-bold text-slate-800 text-sm">SH-2041 — Gulf Trading</div><div class="text-xs text-rose-700">2 days left until the deadline</div></div></div>
+                    <div class="flex items-center gap-3 rounded-xl bg-amber-50 border border-amber-100 p-3"><span class="h-9 w-9 grid place-items-center rounded-full bg-amber-500 text-white">!</span><div><div class="font-bold text-slate-800 text-sm">SH-2039 — Al-Madar Global</div><div class="text-xs text-amber-700">3 days left until the deadline</div></div></div>
+                    <div class="flex items-center gap-3 rounded-xl bg-amber-50 border border-amber-100 p-3"><span class="h-9 w-9 grid place-items-center rounded-full bg-amber-500 text-white">!</span><div><div class="font-bold text-slate-800 text-sm">SH-2050 — East Gate</div><div class="text-xs text-amber-700">3 days left until the deadline</div></div></div>
+                    <div class="rounded-xl bg-slate-50 p-3 text-center text-xs text-slate-400 font-semibold">Alerts update automatically based on the remaining deadline days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-12">
+                <span class="text-brand-600 font-bold">FAQ</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Common questions about how the system works</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">Does the system support different shipping types?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Yes. The system manages three independent tracks: sea freight (by container and shipping lines), land freight (by trucks and trailers with tracking), and local vehicle clearance with permit issuance — all shown together in a single dashboard.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How does shipment-stage tracking work?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Each shipment has 9 stages from "Manufacturing" to "Warehouse arrival" (factory departure, source port, in transit, port arrival, customs, released, transport…). Each stage records its date and owner, and a complete tracking history is kept that you can return to at any time.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How does the system warn me before the deadline?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">The system calculates the remaining days for each shipment, and when the deadline gets close (for example within 3 days) the shipment appears in the alerts list on the dashboard, sorted from the nearest to expire — so you never miss a legal deadline.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">Can customs declarations be recorded and linked to shipments?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Yes. There is a dedicated customs-data module that lets you record the customs declaration, the customs port and its status, and link it to the relevant shipment, so everything about the shipment is in one place.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">What reports are available and how do I export them?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">The system provides reports for sea, land and local clearance, plus summaries by company and department. Any report can be exported instantly as PDF for printing or Excel for further processing.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">Can I control employee permissions?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Yes. The system uses a precise roles-and-permissions model; you create roles (such as data entry, supervisor, manager) and define for each role what it can view or edit in every module, with an audit log documenting every operation.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">What does "multi-year" mean?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Each fiscal year's data is stored separately, and you can switch between years to view a given year's shipments without mixing them with others — which keeps records organized year after year.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">Is my data safe and backed up?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">The system supports sending a data backup by email, in addition to an audit log that records create, update and delete operations — preserving data integrity and the ability to review it.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Try & user guide ===================== -->
+    <section id="user-manual" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="rounded-3xl bg-gradient-to-tr from-brand-700 via-brand-600 to-brand-500 p-10 lg:p-14 text-white relative overflow-hidden">
+            <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
+            <div class="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-black leading-snug">Ready to start? Try the system and read the guide</h2>
+                    <p class="mt-4 text-brand-50/90 leading-relaxed">
+                        Log in and explore the modules yourself, or open the user guide to learn every function step by step.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row lg:justify-end gap-4">
+                    <!-- Try the system link -->
+                    <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20try%20the%20Customs%20Clearance%20System" target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 font-extrabold text-brand-700 shadow-xl hover:bg-brand-50 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        Try the system
+                    </a>
+                    <!-- User guide link — replace # with the real guide URL -->
+                    <a href="index.html"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/60 px-7 py-4 font-extrabold text-white hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        User guide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-lg bg-brand-600 text-white grid place-items-center font-extrabold">C</div>
+                <span class="font-bold text-slate-700">Shipments &amp; Customs Clearance System</span>
+            </div>
+            <div>© 2026 — All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

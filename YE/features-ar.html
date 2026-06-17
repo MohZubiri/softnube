@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>نظام إدارة الشحنات والتخليص الجمركي — المميزات</title>
+    <meta name="description"
+        content="نظام متكامل لإدارة الشحنات البحرية والبرية والتخليص المحلي والبيانات الجمركية، مصمّم خصيصاً لمكاتب التخليص الجمركي.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef6ff', 100: '#d9eaff', 200: '#bcd9ff', 300: '#8ec0ff',
+                            400: '#599dff', 500: '#3578f6', 600: '#1f59e0', 700: '#1846b4',
+                            800: '#1a3c90', 900: '#1b3672', 950: '#142149',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; }
+        .grad-hero { background: radial-gradient(1200px 600px at 80% -10%, #d9eaff 0%, transparent 55%), radial-gradient(900px 500px at 10% 10%, #eef6ff 0%, transparent 50%), #fbfcff; }
+        .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(24,70,180,.35); }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- ===================== الشريط العلوي ===================== -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="h-9 w-9 rounded-xl bg-brand-600 text-white grid place-items-center font-extrabold">و</div>
+                <span class="font-extrabold text-lg text-slate-900">نظام التخليص الجمركي</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#features" class="hover:text-brand-700">المميزات</a>
+                <a href="#why" class="hover:text-brand-700">لماذا لمكاتب التخليص</a>
+                <a href="#screens" class="hover:text-brand-700">لقطات النظام</a>
+                <a href="#faq" class="hover:text-brand-700">أسئلة وأجوبة</a>
+            </nav>
+            <a href="https://wa.me/967782558484?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AE%D9%84%D9%8A%D8%B5%20%D8%A7%D9%84%D8%AC%D9%85%D8%B1%D9%83%D9%8A" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-white text-sm font-bold shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition">
+                تجربة النظام
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7M4 12h16"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===================== الواجهة الرئيسية ===================== -->
+    <section class="grad-hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-brand-100 text-brand-800 px-4 py-1.5 text-sm font-bold mb-6">
+                    <span class="h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
+                    حلٌّ متكامل للتخليص الجمركي
+                </span>
+                <h1 class="text-4xl lg:text-5xl font-black leading-[1.25] text-slate-900">
+                    أدِر شحناتك من المصنع حتى المخزن
+                    <span class="text-brand-600"> في منصّة واحدة</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+                    نظام يجمع الشحن البحري والبري والتخليص المحلي والبيانات الجمركية، مع تتبّعٍ كامل لمراحل الشحنة،
+                    وتنبيهات ذكية، وتقارير دقيقة — مصمّمٌ خصيصاً لاحتياجات مكاتب التخليص الجمركي.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/967782558484?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AE%D9%84%D9%8A%D8%B5%20%D8%A7%D9%84%D8%AC%D9%85%D8%B1%D9%83%D9%8A" target="_blank" rel="noopener"
+                        class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-white font-bold shadow-xl shadow-brand-600/30 hover:bg-brand-700 transition">
+                        ابدأ التجربة الآن
+                    </a>
+                    <a href="#user-manual"
+                        class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 px-6 py-3.5 font-bold text-slate-700 hover:border-brand-300 hover:text-brand-700 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        دليل المستخدم
+                    </a>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-8">
+                    <div><div class="text-3xl font-black text-slate-900">9</div><div class="text-sm text-slate-500 font-semibold">مراحل تتبّع للشحنة</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">3</div><div class="text-sm text-slate-500 font-semibold">أنواع نقل: بحري · بري · محلي</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">PDF/Excel</div><div class="text-sm text-slate-500 font-semibold">تصدير فوري للتقارير</div></div>
+                </div>
+            </div>
+
+            <!-- لقطة لوحة التحكم -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-200/50 to-transparent blur-2xl rounded-3xl"></div>
+                <div class="relative rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-brand-900/10 overflow-hidden">
+                    <div class="flex items-center gap-1.5 px-4 py-3 bg-slate-50 border-b border-slate-100">
+                        <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                        <span class="ms-3 text-xs text-slate-400 font-semibold">لوحة التحكم — نظرة عامة</span>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-brand-50 p-4">
+                                <div class="text-xs text-brand-700 font-bold">شحنات نشطة</div>
+                                <div class="text-2xl font-black text-brand-900 mt-1">128</div>
+                            </div>
+                            <div class="rounded-xl bg-amber-50 p-4">
+                                <div class="text-xs text-amber-700 font-bold">قرب انتهاء المهلة</div>
+                                <div class="text-2xl font-black text-amber-900 mt-1">7</div>
+                            </div>
+                            <div class="rounded-xl bg-emerald-50 p-4">
+                                <div class="text-xs text-emerald-700 font-bold">بانتظار الإفراج</div>
+                                <div class="text-2xl font-black text-emerald-900 mt-1">23</div>
+                            </div>
+                            <div class="rounded-xl bg-slate-100 p-4">
+                                <div class="text-xs text-slate-600 font-bold">منجزة اليوم</div>
+                                <div class="text-2xl font-black text-slate-900 mt-1">14</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-slate-100 p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-slate-700">توزيع الشحنات حسب الشركة</span>
+                                <span class="text-[10px] text-slate-400">2026</span>
+                            </div>
+                            <div class="flex items-end gap-2 h-24">
+                                <div class="flex-1 rounded-t bg-brand-600" style="height:80%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:55%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:70%"></div>
+                                <div class="flex-1 rounded-t bg-brand-500" style="height:40%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:62%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:48%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== شريط ثقة ===================== -->
+    <section class="border-y border-slate-100 bg-slate-50/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="font-extrabold text-slate-900">عربي بالكامل (RTL)</div>
+                <div class="text-sm text-slate-500 mt-1">واجهة مهيّأة للغة العربية واتجاه الكتابة من اليمين</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">متعدد السنوات</div>
+                <div class="text-sm text-slate-500 mt-1">فصل بيانات كل سنة مالية على حِدة</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">صلاحيات دقيقة</div>
+                <div class="text-sm text-slate-500 mt-1">تحكّم كامل بالأدوار وما يراه كل موظف</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">سجل تدقيق</div>
+                <div class="text-sm text-slate-500 mt-1">تتبّع كل عملية إضافة وتعديل وحذف</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== لماذا لمكاتب التخليص الجمركي ===================== -->
+    <section id="why" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="rounded-2xl border border-slate-200 bg-white shadow-xl p-6 space-y-4">
+                    <div class="text-sm font-bold text-slate-700 mb-2">رحلة الشحنة — تتبّع المراحل</div>
+
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">تصنيع ومغادرة المصنع</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">في الميناء المصدر / في الطريق</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-brand-600 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-brand-600" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">وصول الميناء</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-amber-500 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-amber-500" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">الجمارك والإفراج</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-slate-300 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-slate-300" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">النقل والوصول للمخزن</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-brand-600 font-bold">لماذا هذا النظام؟</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2 leading-snug">
+                    مصمَّمٌ على مقاس عمل مكاتب التخليص الجمركي
+                </h2>
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    لا يكفي مكتب التخليص أن يدير «شحنات» فقط؛ بل يحتاج إلى متابعة المهل القانونية، وحالة البيان الجمركي،
+                    والحاويات، والقاطرات، والتصاريح المحلية — مع تنبيهات قبل فوات الوقت. هذا النظام بُني حول هذا الواقع تحديداً.
+                </p>
+                <ul class="mt-6 space-y-4">
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">تجميع كل أنواع النقل في مكان واحد</div>
+                            <div class="text-sm text-slate-600">بحري بالحاويات، بري بالقاطرات، وتخليص محلي للمركبات — بدل أنظمة متفرقة.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">تنبيهات قبل انتهاء المهلة</div>
+                            <div class="text-sm text-slate-600">النظام يرصد الشحنات التي اقتربت أيام مهلتها من النفاد ويُبرزها في لوحة التحكم.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">ربط البيان الجمركي بالشحنة</div>
+                            <div class="text-sm text-slate-600">تسجيل بيانات الجمارك والمنفذ الجمركي وحالتها مرتبطةً مباشرة بكل شحنة.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">تقارير جاهزة للعميل والإدارة</div>
+                            <div class="text-sm text-slate-600">تصدير فوري بصيغة PDF أو Excel حسب الشركة أو القسم أو نوع الشحن.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== المميزات ===================== -->
+    <section id="features" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-brand-600 font-bold">المميزات الرئيسية</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">كل ما يحتاجه المكتب في وحدةٍ واحدة</h2>
+                <p class="mt-4 text-slate-600">وحدات متكاملة تغطّي دورة العمل من استلام الشحنة حتى تسليمها وإصدار التقارير.</p>
+            </div>
+
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🚢</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">الشحن البحري</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">إدارة الشحنات البحرية بالحاويات، خطوط الملاحة، السفن وأرقام الرحلات، والمستندات المرفقة لكل شحنة.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🚚</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">الشحن البري</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تسجيل الشحنات البرية مع القاطرات والمقطورات، وتتبّع تحرّكها مرحلةً بمرحلة حتى الوجهة.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🚗</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">التخليص المحلي</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">إدارة مركبات التخليص المحلي وإصدار التصاريح وتنزيلها جاهزةً للطباعة.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📋</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">البيانات الجمركية</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تسجيل البيانات الجمركية والمنافذ الجمركية وربطها بالشحنات وحالاتها.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🧭</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">تتبّع المراحل</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">9 مراحل من التصنيع حتى المخزن، مع تواريخ كل مرحلة وسجلّ تتبّع كامل.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📊</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">لوحة تحكم وإحصائيات</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">مؤشرات حيّة: شحنات نشطة، قرب انتهاء، بانتظار الإفراج، وتوزيع حسب الشركة والقسم.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🔔</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">التنبيهات والإنذارات</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">رصد الشحنات التي اقتربت مهلتها من الانتهاء وإبرازها قبل فوات الأوان.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📑</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">التقارير والتصدير</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تقارير الشحن البحري والبري والتخليص المحلي مع تصدير PDF و Excel.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👥</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">المستخدمون والصلاحيات</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">إدارة المستخدمين والأدوار والصلاحيات بدقّة لكل وحدة ووظيفة.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🗄️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">بيانات أساسية مرنة</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">الشركات، الأقسام، المخازن، خطوط الملاحة، أنواع وحالات الشحن قابلة للتهيئة.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🗓️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">تعدد السنوات</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">فصل بيانات كل سنة مالية، مع إمكانية التنقّل بين السنوات بسهولة.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🛡️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">النسخ الاحتياطي والتدقيق</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">نسخ احتياطي للبيانات عبر البريد، وسجل تدقيق لكل عملية على النظام.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== لقطات النظام ===================== -->
+    <section id="screens" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-brand-600 font-bold">لقطات من النظام</span>
+            <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">شاهد الواجهات قبل التجربة</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- لقطة: جدول الشحنات -->
+            <div class="rounded-2xl border border-slate-200 bg-white shadow-lg overflow-hidden">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-100 text-sm font-bold text-slate-700">قائمة الشحنات</div>
+                <div class="p-5">
+                    <div class="grid grid-cols-4 gap-2 text-[11px] font-bold text-slate-400 pb-2 border-b">
+                        <span>رقم الشحنة</span><span>الشركة</span><span>المرحلة</span><span class="text-left">المهلة</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2041</span><span class="text-slate-600">الخليج للتجارة</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">الجمارك</span></span><span class="text-left text-slate-500 text-xs">يومان</span></div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2042</span><span class="text-slate-600">النور للاستيراد</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-100 text-brand-700">وصول الميناء</span></span><span class="text-left text-slate-500 text-xs">5 أيام</span></div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2043</span><span class="text-slate-600">المدار العالمية</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">إفراج</span></span><span class="text-left text-slate-500 text-xs">—</span></div>
+                    <div class="grid grid-cols-4 gap-2 items-center py-2.5 border-b border-slate-50 text-sm"><span class="font-bold text-slate-800">SH-2044</span><span class="text-slate-600">بوابة الشرق</span><span><span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">في الطريق</span></span><span class="text-left text-slate-500 text-xs">9 أيام</span></div>
+                </div>
+            </div>
+
+            <!-- لقطة: تنبيهات -->
+            <div class="rounded-2xl border border-slate-200 bg-white shadow-lg overflow-hidden">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-100 text-sm font-bold text-slate-700">تنبيهات قرب انتهاء المهلة</div>
+                <div class="p-5 space-y-3">
+                    <div class="flex items-center gap-3 rounded-xl bg-rose-50 border border-rose-100 p-3"><span class="h-9 w-9 grid place-items-center rounded-full bg-rose-500 text-white">!</span><div><div class="font-bold text-slate-800 text-sm">SH-2041 — الخليج للتجارة</div><div class="text-xs text-rose-700">متبقٍ يومان على انتهاء المهلة</div></div></div>
+                    <div class="flex items-center gap-3 rounded-xl bg-amber-50 border border-amber-100 p-3"><span class="h-9 w-9 grid place-items-center rounded-full bg-amber-500 text-white">!</span><div><div class="font-bold text-slate-800 text-sm">SH-2039 — المدار العالمية</div><div class="text-xs text-amber-700">متبقٍ 3 أيام على انتهاء المهلة</div></div></div>
+                    <div class="flex items-center gap-3 rounded-xl bg-amber-50 border border-amber-100 p-3"><span class="h-9 w-9 grid place-items-center rounded-full bg-amber-500 text-white">!</span><div><div class="font-bold text-slate-800 text-sm">SH-2050 — بوابة الشرق</div><div class="text-xs text-amber-700">متبقٍ 3 أيام على انتهاء المهلة</div></div></div>
+                    <div class="rounded-xl bg-slate-50 p-3 text-center text-xs text-slate-400 font-semibold">يتم تحديث التنبيهات تلقائياً حسب أيام المهلة المتبقية</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== الأسئلة والأجوبة ===================== -->
+    <section id="faq" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-12">
+                <span class="text-brand-600 font-bold">أسئلة وأجوبة</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">أسئلة شائعة عن وظائف النظام</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">هل يدعم النظام أنواع الشحن المختلفة؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">نعم. يدير النظام ثلاثة مسارات مستقلة: الشحن البحري (بالحاويات وخطوط الملاحة)، والشحن البري (بالقاطرات والمقطورات مع التتبّع)، والتخليص المحلي للمركبات مع إصدار التصاريح — وكلها تظهر مجمّعةً في لوحة تحكم واحدة.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف يعمل تتبّع مراحل الشحنة؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">لكل شحنة 9 مراحل من «التصنيع» وحتى «وصول المخزن» (مغادرة المصنع، الميناء المصدر، في الطريق، وصول الميناء، الجمارك، الإفراج، النقل…). يسجَّل لكل مرحلة تاريخها ومسؤولها، ويُحفظ سجلّ تتبّع كامل يمكن الرجوع إليه في أي وقت.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف ينبّهني النظام قبل انتهاء المهلة؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">يحسب النظام الأيام المتبقية لكل شحنة، وعندما تقترب المهلة من النفاد (مثلاً خلال 3 أيام) تظهر الشحنة ضمن قائمة التنبيهات في لوحة التحكم، مرتّبةً من الأقرب انتهاءً — حتى لا تفوت أي مهلة قانونية.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">هل يمكن تسجيل البيانات الجمركية وربطها بالشحنات؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">نعم. توجد وحدة مستقلة للبيانات الجمركية تتيح تسجيل بيان الجمارك والمنفذ الجمركي وحالته، وربطه بالشحنة المعنية، ليكون كل ما يخصّ الشحنة في مكان واحد.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">ما التقارير المتوفّرة وكيف أصدّرها؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">يوفّر النظام تقارير للشحن البحري والبري والتخليص المحلي، وملخّصات حسب الشركة والقسم. يمكن تصدير أي تقرير فوراً بصيغة PDF للطباعة أو Excel لمزيد من المعالجة.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">هل يمكن التحكّم في صلاحيات الموظفين؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">نعم. يعتمد النظام نظام أدوار وصلاحيات دقيق؛ تُنشئ أدواراً (مثل: مُدخل بيانات، مشرف، مدير) وتحدّد لكل دور ما يمكنه رؤيته أو تعديله في كل وحدة، مع سجل تدقيق يوثّق كل عملية.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">ماذا يعني «تعدد السنوات»؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">تُحفظ بيانات كل سنة مالية بشكل منفصل، ويمكنك التنقّل بين السنوات لعرض شحنات سنة معيّنة دون اختلاطها بغيرها — وهو ما يبقي السجلّات منظّمة عاماً بعد عام.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">هل بياناتي آمنة وقابلة للنسخ الاحتياطي؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">يدعم النظام إرسال نسخة احتياطية من البيانات عبر البريد الإلكتروني، إضافةً إلى سجل تدقيق يسجّل عمليات الإضافة والتعديل والحذف، ما يحافظ على سلامة البيانات وإمكانية مراجعتها.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== التجربة ودليل المستخدم ===================== -->
+    <section id="user-manual" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="rounded-3xl bg-gradient-to-tl from-brand-700 via-brand-600 to-brand-500 p-10 lg:p-14 text-white relative overflow-hidden">
+            <div class="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
+            <div class="absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-black leading-snug">جاهز للبدء؟ جرّب النظام واطّلع على الدليل</h2>
+                    <p class="mt-4 text-brand-50/90 leading-relaxed">
+                        ادخل إلى النظام واستكشف الوحدات بنفسك، أو افتح دليل المستخدم لتتعرّف على كل وظيفة خطوةً بخطوة.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row lg:justify-end gap-4">
+                    <!-- رابط تجربة النظام -->
+                    <a href="https://wa.me/967782558484?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AE%D9%84%D9%8A%D8%B5%20%D8%A7%D9%84%D8%AC%D9%85%D8%B1%D9%83%D9%8A" target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 font-extrabold text-brand-700 shadow-xl hover:bg-brand-50 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        تجربة النظام
+                    </a>
+                    <!-- رابط دليل المستخدم — استبدل # برابط الدليل الفعلي -->
+                    <a href="index.html"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/60 px-7 py-4 font-extrabold text-white hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        دليل المستخدم
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== التذييل ===================== -->
+    <footer class="border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-lg bg-brand-600 text-white grid place-items-center font-extrabold">و</div>
+                <span class="font-bold text-slate-700">نظام إدارة الشحنات والتخليص الجمركي</span>
+            </div>
+            <div>© 2026 — جميع الحقوق محفوظة.</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تقرير تقييم نظام Treek</title>
+<style>
+    body{
+        font-family: 'Cairo', 'Tahoma', Arial, sans-serif;
+        margin: 40px;
+        line-height: 1.7;
+        direction: rtl;
+        background:#fafafa;
+        color:#222;
+    }
+    h1, h2{
+        color:#004d40;
+        margin-top:40px;
+    }
+    h1{font-size:24px;text-align:center;}
+    h2{font-size:20px;border-bottom:2px solid #004d40;padding-bottom:4px;}
+    .pros-cons{
+        width:100%;
+        border-collapse:collapse;
+        margin-top:10px;
+    }
+    .pros-cons th, .pros-cons td{
+        border:1px solid #999;
+        padding:10px;
+        vertical-align:top;
+    }
+    .pros-cons th{
+        background:#004d40;
+        color:#fff;
+        text-align:center;
+        font-size:18px;
+    }
+    .pros-cons td{
+        background:#f5f5f5;
+        width:50%;
+    }
+    pre{
+        background:#00000008;
+        padding:10px;
+        border-radius:4px;
+        overflow-x:auto;
+        font-size:14px;
+        line-height:1.5;
+    }
+    ul{
+        margin:0 20px;
+    }
+    .architecture-button-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .architecture-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #004d40;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .architecture-button:hover {
+        background-color: #00695c;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .bug-evaluation {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    
+    .bug-evaluation h3 {
+        color: #004d40;
+        border-bottom: 1px solid #004d40;
+        padding-bottom: 8px;
+        margin-top: 25px;
+    }
+    
+    .bug-evaluation h4 {
+        color: #00695c;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+    
+    .test-cases, .bugs-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-size: 15px;
+    }
+    
+    .test-cases th, .bugs-table th {
+        background-color: #004d40;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-weight: bold;
+    }
+    
+    .test-cases td, .bugs-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: right;
+    }
+    
+    .test-cases tr:nth-child(even), .bugs-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .test-cases tr:hover, .bugs-table tr:hover {
+        background-color: #e6f2f0;
+    }
+    
+    .testing-steps {
+        list-style-type: none;
+        padding-right: 20px;
+    }
+    
+    .testing-steps li {
+        position: relative;
+        padding: 8px 30px 8px 0;
+    }
+    
+    .testing-steps li:before {
+        content: "\2713";
+        position: absolute;
+        right: 0;
+        color: #004d40;
+        font-weight: bold;
+    }
+    
+    .testing-types {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 15px 0;
+    }
+    
+    .testing-type {
+        flex: 1;
+        min-width: 300px;
+        background-color: #e6f2f0;
+        padding: 15px;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .final-evaluation li {
+        margin-bottom: 12px;
+    }
+</style>
+</head>
+<body>
+
+<h1>تقرير تقييم نظام Treek</h1>
+
+<h2>1. ملخص تنفيذي</h2>
+<p>
+نظام Treek هو منصة متكاملة لإدارة الشحنات والتكامل مع المتاجر الإلكترونية، مبني باستخدام Laravel 12, PHP 8.3, Filament, Livewire, MySQL.  
+بعد مراجعة شاملة، تبين أن النظام جاهز للإطلاق التجريبي، مع بعض التحسينات المطلوبة للأمان والأداء.
+</p>
+
+<h2>2. التقييم الحالي</h2>
+<table class="pros-cons">
+<thead>
+<tr>
+    <th>✅ نقاط القوة</th>
+    <th>⚠️ التحديات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>
+        • هيكل تقني حديث (Laravel 12 + PHP 8.3 + Redis + Horizon)<br>
+        • قابلية التوسع (Docker + CI/CD + Redis Cache)<br>
+        • المراقبة (Sentry + Telescope)<br>
+        • الاختبارات (Pest PHP)<br>
+        • التكاملات (Aramex, Barq, JT, Salla, Shopify, Zid)<br>
+        • الأمان الأساسي (Sanctum + CSRF)
+    </td>
+    <td>
+        • ضعف تغطية الاختبارات لبعض التكاملات<br>
+      
+        • الحاجة لتحسين واجهة المستخدم (UX/UI)<br>
+        • لم يتم اختبار التوسع الأفقي بعد<br>
+        • محدودية التحليلات (بدون توقعات مستقبلية)
+    </td>
+</tr>
+</tbody>
+</table>
+
+<h2>3. الاستنتاج</h2>
+<p>
+النظام قابل للاستخدام الآن (Pilot Launch) مع عدد محدود من التجار.  
+يتطلب خطة تحسين تدريجية لتقوية الأمان والأداء ودعم النمو المستقبلي.
+</p>
+
+<h2>4. خطة العمل الحالية</h2>
+<p>
+<b>المرحلة 1: التحقق قبل الإطلاق (Go-Live Readiness)</b><br>
+- اختبارات تكامل مع جميع شركات الشحن والمتاجر<br>
+- اختبار بوابات الدفع<br>
+- تنفيذ اختبارات تحميل أولية (500–1000 طلب يومياً)<br>
+- فحص أمني باستخدام OWASP ZAP<br><br>
+
+<b>المرحلة 2: الإطلاق الأولي (Pilot Launch)</b><br>
+- تشغيل النظام مع 10–20 تاجر<br>
+- متابعة الأداء عبر Sentry + Telescope<br>
+- جمع ملاحظات على تجربة المستخدم (UI/UX)<br><br>
+
+<b>المرحلة 3: ما بعد الإطلاق (Post Launch)</b><br>
+
+- تحسين التحليلات لتشمل توقعات الطلب<br>
+- تحسين نظام الإشعارات (Email + SMS + Push)<br>
+- دعم شركات شحن إضافية<br>
+- وضع خطة للتوسع الأفقي عند زيادة الحمل
+</p>
+
+<h2>5. المخططات الداعمة</h2>
+
+<h3>5.1 بنية النظام (Architecture Diagram)</h3>
+<div class="architecture-button-container">
+    <a href="Treek_Architecture_Detailed.html" class="architecture-button">عرض المخطط المعماري التفصيلي</a>
+</div>
+<pre>
+[ المستخدمون ]
+   ↓
+[ واجهة ويب (Filament + Livewire) ]
+   ↓
+[ تطبيق Laravel 12 ]
+   ├─ طبقة التطبيق (Controllers/Services)
+   ├─ طبقة المجال (Models/Enums)
+   └─ طبقة البنية التحتية (Integrations)
+   ↓
+[ قاعدة البيانات MySQL ]   [ Redis (Cache + Queue) ]
+   ↓
+[ تكامل خارجي: Aramex, Barq, JT, Salla, Shopify, Zid, بوابات الدفع ]
+</pre>
+
+<h3>5.2 خطة العمل (Roadmap Diagram)</h3>
+<pre>
+المرحلة 1 (قبل الإطلاق)
+ └─ اختبارات تكامل + تحميل + فحص أمني
+المرحلة 2 (الإطلاق الأولي)
+ └─ تشغيل محدود + مراقبة + ملاحظات UX
+المرحلة 3 (بعد الإطلاق)
+ └─ 2FA + تحليلات + توسع + إشعارات
+</pre>
+
+
+
+أداء.
+</p>
+
+<h2>6. خطة الاختبار النهائية</h2>
+<ul>
+    <li><strong>1. اختبار نهاية-ل-نهاية للمسارات الرئيسية</strong>
+        <ul>
+            <li>طلب شحنة جديدة</li>
+            <li>تتبع الشحنة</li>
+            <li>معالجة الدفع</li>
+            <li>تكامل مع Shopify/Salla</li>
+        </ul>
+    </li>
+    <li><strong>2. اختبار التكامل مع شركات الشحن</strong>
+        <ul>
+            <li>اختبار واجهات API الحية</li>
+            <li>التحقق من حسابات API لدى شركات الشحن</li>
+        </ul>
+    </li>
+    <li><strong>3. اختبار الأداء الأساسي</strong>
+        <ul>
+            <li>اختبار مع 100 مستخدم متزامن</li>
+            <li>قياس زمن تحميل الصفحات (&lt; 3 ثوانٍ)</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>7. إجراءات تقييم الأخطاء (Bugs) في مشروع Treek</h2>
+<div class="bug-evaluation">
+    <h3>1. وضع خطة اختبار شاملة</h3>
+    <p>لضمان جودة المشروع، يجب إنشاء حالات اختبار دقيقة لكل وظيفة رئيسية في النظام:</p>
+    
+    <div class="table-container">
+        <table class="test-cases">
+            <thead>
+                <tr>
+                    <th>الوظيفة</th>
+                    <th>طريقة التحقق</th>
+                    <th>النتيجة المتوقعة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>إنشاء شحنة جديدة</strong></td>
+                    <td>إنشاء شحنة من لوحة التاجر</td>
+                    <td>يجب أن تُنشأ وتظهر برقم تتبع</td>
+                </tr>
+                <tr>
+                    <td><strong>تتبع الشحنة</strong></td>
+                    <td>البحث برقم التتبع في لوحة التاجر والعميل</td>
+                    <td>يجب أن تظهر حالة محدثة</td>
+                </tr>
+                <tr>
+                    <td><strong>الدفع الإلكتروني</strong></td>
+                    <td>محاكاة دفعة من المحفظة أو بطاقة</td>
+                    <td>يجب أن تُخصم المبلغ وتظهر في السجل</td>
+                </tr>
+                <tr>
+                    <td><strong>تكامل Salla</strong></td>
+                    <td>ربط متجر Salla واختبار جلب طلب جديد</td>
+                    <td>يجب أن يظهر الطلب تلقائياً في النظام</td>
+                </tr>
+                <tr>
+                    <td><strong>تكامل Shopify</strong></td>
+                    <td>ربط متجر Shopify واختبار جلب طلب</td>
+                    <td>يجب أن يظهر الطلب تلقائياً</td>
+                </tr>
+                <tr>
+                    <td><strong>تكامل Aramex</strong></td>
+                    <td>إرسال شحنة لعنوان حقيقي عبر Aramex</td>
+                    <td>يجب أن تُرسل ويُستلم رقم تتبع</td>
+                </tr>
+                <tr>
+                    <td><strong>تكامل Barq</strong></td>
+                    <td>نفس الخطوة السابقة</td>
+                    <td>يجب أن تعمل بدون أخطاء</td>
+                </tr>
+                <tr>
+                    <td><strong>تكامل JT Express</strong></td>
+                    <td>نفس الخطوة السابقة</td>
+                    <td>يجب أن تعمل بدون أخطاء</td>
+                </tr>
+                <tr>
+                    <td><strong>إشعارات التاجر</strong></td>
+                    <td>إنشاء شحنة جديدة</td>
+                    <td>يجب أن يصل إشعار للتاجر</td>
+                </tr>
+                <tr>
+                    <td><strong>إشعارات العميل</strong></td>
+                    <td>تغيير حالة الشحنة</td>
+                    <td>يجب أن يصل إشعار SMS أو بريد</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>2. تنفيذ الاختبارات وتوثيق النتائج</h3>
+    
+    <h4>الاختبار الوظيفي (Functional Testing)</h4>
+    <p>يجب تجربة كل ميزة يدوياً للتأكد من أنها تعمل كما هو متوقع:</p>
+    <ul class="testing-steps">
+        <li>تسجيل تاجر جديد</li>
+        <li>إنشاء شحنة</li>
+        <li>تغيير حالة الشحنة</li>
+        <li>تتبع الشحنة من رابط عام</li>
+        <li>تسجيل دخول عميل والتحقق من شحناته</li>
+    </ul>
+    
+    <h4>توثيق الأخطاء</h4>
+    <div class="table-container">
+        <table class="bugs-table">
+            <thead>
+                <tr>
+                    <th>التاريخ</th>
+                    <th>الوظيفة</th>
+                    <th>الخطأ</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-08-26</td>
+                    <td>تكامل Salla</td>
+                    <td>لا يجلب الطلبات الجديدة</td>
+                    <td>تحت المراجعة</td>
+                </tr>
+                <tr>
+                    <td>2025-08-26</td>
+                    <td>إشعارات SMS</td>
+                    <td>لا يصل إشعار للعميل</td>
+                    <td>تحت التحقيق</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>3. الاختبار الآلي والتكامل</h3>
+    <div class="testing-types">
+        <div class="testing-type">
+            <h4>الاختبار الآلي (Automated Testing)</h4>
+            <p>تشغيل الاختبارات الآلية الموجودة (Pest PHP) للتأكد من أن الوظائف الأساسية ما زالت تعمل بعد أي تغييرات في الكود.</p>
+        </div>
+        
+        <div class="testing-type">
+            <h4>اختبارات التكامل (Integration Testing)</h4>
+            <p>اختبار تدفق العمل الكامل، مثل: إنشاء طلب في متجر Salla، التأكد من ظهوره في لوحة تحكم Treek، ثم إرسال الشحنة عبر API شركة شحن، وأخيراً تتبع حالة الشحنة للتأكد من أنها تتغير بشكل صحيح.</p>
+        </div>
+    </div>
+
+    <h3>4. تحديث التقييم النهائي</h3>
+    <p>بعد الانتهاء من الاختبار وتوثيق الأخطاء، يجب تعديل التقرير الأولي ليتضمن:</p>
+    <ul class="final-evaluation">
+        <li><strong>قسم جديد بعنوان "المشكلات والأخطاء المكتشفة":</strong> يضم قائمة بالأخطاء التي تم العثور عليها وتصنيفها حسب الخطورة.</li>
+        <li><strong>تعديل قسم "جاهزية المشروع للإطلاق":</strong> بناءً على الأخطاء التي تم العثور عليها، قم بتغيير التقييم. على سبيل المثال، إذا كانت هناك أخطاء حرجة، لا يمكن أن يكون المشروع "جاهزاً للإطلاق الفوري". بدلاً من ذلك، سيكون التقييم هو أن المشروع جاهز للإطلاق بعد حل الأخطاء الحرجة المكتشفة.</li>
+        <li><strong>إضافة خطة "حل الأخطاء والإطلاق":</strong> اقتراح خطوات عملية لحل المشكلات المكتشفة، مع تقدير للوقت اللازم قبل الإطلاق.</li>
+    </ul>
+</div>
+<h2>8. التوصيات النهائية</h2>
+<p>
+- النظام جاهز للإطلاق بشكل تجريبي.<br>
+- الخطوة التالية: تنفيذ الاختبارات النهائية + إطلاق تجريبي مع مجموعة محدودة من التجار.<br>
+- بعد الإطلاق: تطبيق خطة التحسين التدريجية للأمان والأداء ودعم النمو المستقبلي.
+</p>
+</body>
+</html>

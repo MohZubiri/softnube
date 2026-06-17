@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة دليل المستخدم | نظام DentalCare لإدارة العيادات</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-primary: #0d9488;
+            --clr-primary-dark: #0f766e;
+            --clr-primary-darker: #115e59;
+            --clr-primary-light: #ccfbf1;
+            --clr-primary-50: #f0fdfa;
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-text: #1e293b;
+            --clr-text-secondary: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-border-light: #f1f5f9;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+            color: white;
+            padding: 80px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            backdrop-filter: blur(8px);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ─── Intro Section ─── */
+        .intro-section {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 40px;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+        .intro-section h2 {
+            color: var(--clr-primary-darker);
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+        .intro-section p {
+            color: var(--clr-text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* ─── Modules Grid ─── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--clr-text);
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .module-card {
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            text-align: center;
+            border: 1px solid var(--clr-border-light);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--clr-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: center;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--clr-primary-light);
+        }
+
+        .module-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .icon-wrapper {
+            width: 72px;
+            height: 72px;
+            background: var(--clr-primary-50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--clr-primary);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover .icon-wrapper {
+            background: var(--clr-primary);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .module-title {
+            color: var(--clr-text);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .module-desc {
+            color: var(--clr-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .enter-btn {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--clr-primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding-top: 16px;
+        }
+        
+        .module-card:hover .enter-btn {
+            color: var(--clr-primary-darker);
+        }
+
+        .enter-btn span {
+            transition: transform 0.2s ease;
+        }
+
+        .module-card:hover .enter-btn span {
+            transform: translateX(-4px);
+        }
+
+        /* ─── Footer ─── */
+        .manual-footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--clr-border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">الإصدار 1.0</span>
+            <h1>دليل المستخدم الشامل</h1>
+            <p>نظام DentalCare لإدارة العيادات الطبية، الدليل الكامل خطوة بخطوة لاستخدام كافة مميزات النظام باحترافية.</p>
+        </div>
+    </header>
+
+    <div class="intro-section">
+        <h2>مرحباً بك في نظام DentalCare</h2>
+        <p>
+            لقد تم تصميم هذا النظام بأحدث التقنيات ليكون الحل الأمثل والشامل لإدارة العيادات ومراكز طب الأسنان. يوفر النظام أدوات متقدمة لتنظيم المواعيد، إدارة ملفات المرضى، متابعة الخطط العلاجية، والتحكم التام في الموارد المالية والمخزون.<br>
+            <strong>اختر التبويب الذي ترغب في تصفح دليله من القائمة أدناه للبدء.</strong>
+        </p>
+    </div>
+
+    <div class="container">
+        <h3 class="section-title">شرح التبويبات ووحدات النظام</h3>
+        
+        <div class="modules-grid">
+            
+            <!-- Dashboard -->
+            <a href="dashboard.html" class="module-card">
+                <div class="icon-wrapper">💻</div>
+                <h3 class="module-title">لوحة التحكم</h3>
+                <p class="module-desc">شرح واجهة لوحة القيادة، المؤشرات الإحصائية، تنبيهات المخزون، وجدول مواعيد اليوم.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Patients -->
+            <a href="patients.html" class="module-card">
+                <div class="icon-wrapper">🤕</div>
+                <h3 class="module-title">إدارة المرضى</h3>
+                <p class="module-desc">تسجيل المرضى، التحقق من تكرار الهاتف، الملف المالي الشامل، وإدارة المرفقات وصور الأشعة.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Appointments -->
+            <a href="appointments.html" class="module-card">
+                <div class="icon-wrapper">📅</div>
+                <h3 class="module-title">إدارة المواعيد</h3>
+                <p class="module-desc">التقويم اليومي، حجز موعد جديد وربطه بالطبيب والغرفة، والألوان الدلالية لحالات المواعيد.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Treatment Plans -->
+            <a href="treatment-plans.html" class="module-card">
+                <div class="icon-wrapper">🦷</div>
+                <h3 class="module-title">خطط العلاج والجلسات</h3>
+                <p class="module-desc">إنشاء الخطط العلاجية وتحديد تكلفتها، إدارة وتسجيل الجلسات، والمحددات المالية لخطط العلاج.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Dental Chart & Medical History -->
+            <a href="dental-chart.html" class="module-card">
+                <div class="icon-wrapper">🩺</div>
+                <h3 class="module-title">مخطط الأسنان والسجل الطبي</h3>
+                <p class="module-desc">تسجيل حالات الأسنان والأسطح المصابة على خريطة تفاعلية، وتوثيق الحساسية والأمراض المزمنة وفصيلة الدم.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Financials (Core Modules) -->
+            <a href="core-modules.html" class="module-card">
+                <div class="icon-wrapper">💰</div>
+                <h3 class="module-title">الإدارة المالية</h3>
+                <p class="module-desc">إصدار الفواتير، سندات القبض والدفعات، تسجيل المصروفات، وإغلاق الصندوق اليومي.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Inventory -->
+            <a href="inventory.html" class="module-card">
+                <div class="icon-wrapper">📦</div>
+                <h3 class="module-title">إدارة المخزون</h3>
+                <p class="module-desc">متابعة المواد الطبية، طلبات الصرف والتوريد، إدارة الموردين، وإشعارات انخفاض الكميات.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Doctors -->
+            <a href="doctors.html" class="module-card">
+                <div class="icon-wrapper">👨‍⚕️</div>
+                <h3 class="module-title">إدارة الأطباء</h3>
+                <p class="module-desc">إضافة الأطباء الجدد، تعيين تخصصاتهم، ربطهم بالعيادات، وإدارة بيانات التواصل الخاصة بهم.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Staff -->
+            <a href="staff.html" class="module-card">
+                <div class="icon-wrapper">👥</div>
+                <h3 class="module-title">إدارة الموظفين</h3>
+                <p class="module-desc">إعداد طاقم العمل من إداريين وممرضين وموظفي استقبال، مع إعطاء كل منهم الصلاحيات المناسبة.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Rooms -->
+            <a href="rooms.html" class="module-card">
+                <div class="icon-wrapper">🚪</div>
+                <h3 class="module-title">غرف العيادات</h3>
+                <p class="module-desc">تهيئة العيادات الفعلية داخل المركز، وتحديد حالة كل غرفة (نشطة/صيانة) لتنظيم المواعيد.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Reports -->
+            <a href="reports.html" class="module-card">
+                <div class="icon-wrapper">📊</div>
+                <h3 class="module-title">التقارير المالية</h3>
+                <p class="module-desc">استخراج تقارير شاملة عن أداء العيادة، ومتابعة الإيرادات والمصروفات، مع إمكانية التصدير.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Settings -->
+            <a href="settings.html" class="module-card">
+                <div class="icon-wrapper">⚙️</div>
+                <h3 class="module-title">إعدادات النظام</h3>
+                <p class="module-desc">ضبط تفضيلات الملف الشخصي، وإدارة الهوية البصرية للعيادة (اللوجو، اسم المركز، واللغة).</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+            <!-- Admin -->
+            <a href="admin.html" class="module-card">
+                <div class="icon-wrapper">🛡️</div>
+                <h3 class="module-title">الإدارة والصلاحيات</h3>
+                <p class="module-desc">لوحة تحكم المدراء للتحكم بالأدوار الأمنية (Roles)، إدارة قائمة الخدمات والأسعار، والمراقبة.</p>
+                <div class="enter-btn">عرض الدليل <span>←</span></div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer class="manual-footer">
+        <p>دليل المستخدم لنظام DentalCare لإدارة العيادات © 2026. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المستخدم — إدارة الموظفين | نظام العيادات</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-primary: #0d9488;
+            --clr-primary-dark: #0f766e;
+            --clr-primary-darker: #115e59;
+            --clr-primary-light: #ccfbf1;
+            --clr-primary-50: #f0fdfa;
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-text: #1e293b;
+            --clr-text-secondary: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-border-light: #f1f5f9;
+            --clr-success: #16a34a;
+            --clr-success-bg: #dcfce7;
+            --clr-warning: #ca8a04;
+            --clr-warning-bg: #fef9c3;
+            --clr-danger: #dc2626;
+            --clr-danger-bg: #fee2e2;
+            --clr-info: #2563eb;
+            --clr-info-bg: #dbeafe;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Header / Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ─── TOC ─── */
+        .toc {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 32px 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .toc h2 {
+            font-size: 1.3rem;
+            color: var(--clr-primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            color: var(--clr-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: var(--clr-primary-50);
+            border-color: var(--clr-primary-light);
+            color: var(--clr-primary-dark);
+            transform: translateX(-4px);
+        }
+
+        .toc-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ─── Container ─── */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* ─── Sections ─── */
+        .section {
+            background: var(--clr-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 40px 36px;
+            margin-bottom: 32px;
+            border: 1px solid var(--clr-border-light);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--clr-primary-light);
+        }
+
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-primary-darker);
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            color: var(--clr-primary-dark);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--clr-text);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 16px;
+            padding-right: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: var(--clr-primary-darker);
+        }
+
+        /* ─── Steps Block ─── */
+        .steps-block {
+            background: var(--clr-primary-50);
+            border-right: 4px solid var(--clr-primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .steps-block .steps-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--clr-primary-darker);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .steps-block ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .steps-block ol li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-right: 40px;
+            margin-bottom: 12px;
+        }
+
+        .steps-block ol li::before {
+            content: counter(step-counter);
+            position: absolute;
+            right: 0;
+            top: 2px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--clr-primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ─── Screenshot ─── */
+        .screenshot-wrapper {
+            text-align: center;
+            margin: 24px 0;
+            padding: 16px;
+            background: var(--clr-border-light);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.01);
+        }
+
+        .screenshot-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            cursor: zoom-in;
+        }
+
+        .screenshot-caption {
+            font-size: 0.88rem;
+            color: var(--clr-text-secondary);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* ─── Callouts ─── */
+        .callout {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .callout-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-tip {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .callout-note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+        }
+
+        /* ─── Footer ─── */
+        .manual-footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--clr-border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <a href="index.html" class="back-link">← العودة للقائمة الرئيسية</a>
+        <h1>دليل المستخدم</h1>
+        <div class="subtitle">تبويب إدارة الموظفين</div>
+    </header>
+
+    <div class="toc">
+        <h2>محتويات الدليل - إدارة الموظفين</h2>
+        <div class="toc-grid">
+            <a href="#sec-overview" class="toc-item">
+                <span class="toc-num">1</span>
+                نظرة عامة على الموظفين
+            </a>
+            <a href="#sec-add" class="toc-item">
+                <span class="toc-num">2</span>
+                إضافة موظف جديد
+            </a>
+            <a href="#sec-manage" class="toc-item">
+                <span class="toc-num">3</span>
+                إدارة المهام والصلاحيات
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Overview -->
+        <section id="sec-overview" class="section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2>نظرة عامة على الموظفين</h2>
+            </div>
+
+            <p>تبويب "الموظفين" مخصص لإدارة دليل الكادر الإداري والمساعدين، مثل موظفي الاستقبال، الممرضين، وفنيي
+                المختبر. هذا القسم يحفظ السجلات الأساسية لكل موظف، وهو منفصل تماماً عن حسابات الدخول والصلاحيات.</p>
+
+            <div class="screenshot-wrapper">
+                <img src="images/staff_main.png" alt="واجهة إدارة الموظفين الرئيسية">
+                <div class="screenshot-caption">شكل 1: القائمة الشاملة لكافة الموظفين الإداريين والمساعدين</div>
+            </div>
+
+            <p>تعرض القائمة:</p>
+            <ul>
+                <li><strong>الاسم:</strong> الاسم الكامل للموظف.</li>
+                <li><strong>رقم الهاتف:</strong> رقم التواصل المباشر.</li>
+                <li><strong>المؤهل العلمي:</strong> الدرجة أو الشهادة العلمية للموظف.</li>
+                <li><strong>التخصص:</strong> مجال عمل الموظف.</li>
+                <li><strong>الحالة:</strong> لبيان ما إذا كان الموظف نشطاً أم معطلاً.</li>
+            </ul>
+
+            <p>كما تعرض أعلى الصفحة عدّادات سريعة توضح: إجمالي عدد الموظفين، وعدد النشطين، وعدد المعطلين.</p>
+        </section>
+
+        <!-- 2. Add -->
+        <section id="sec-add" class="section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2>إضافة موظف جديد</h2>
+            </div>
+
+            <p>يتم إضافة الموظفين الجدد لحفظ سجلاتهم في دليل الكادر. نموذج الإضافة بسيط ويجمع البيانات الأساسية فقط، وهو
+                مطابق تماماً لنموذج إضافة الطبيب (الفرق بينهما داخلي في النظام عبر نوع الموظف فقط).</p>
+
+            <div class="steps-block">
+                <div class="steps-title">خطوات إضافة موظف:</div>
+                <ol>
+                    <li>الضغط على زر <strong>إضافة موظف جديد</strong>.</li>
+                    <li>إدخال <strong>الاسم</strong> (حقل مطلوب).</li>
+                    <li>إدخال <strong>رقم الهاتف</strong> للتواصل.</li>
+                    <li>إدخال <strong>المؤهل العلمي</strong> و<strong>التخصص</strong>.</li>
+                    <li>تحديد <strong>حالة التفعيل</strong> (نشط / معطل).</li>
+                    <li>الضغط على زر <strong>حفظ</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div>
+                    <strong>ملاحظة مهمة:</strong> نموذج إضافة الموظف لا يحتوي على بريد إلكتروني أو كلمة مرور أو دور
+                    (Role)، ولا يُنشئ حساب دخول للنظام. سجل الموظف هنا هو سجل في الدليل فقط ولا يساوي حساب مستخدم.
+                </div>
+            </div>
+
+            <div class="screenshot-wrapper">
+                <img src="images/staff_add.png" alt="إضافة موظف جديد">
+                <div class="screenshot-caption">شكل 2: نموذج إضافة موظف جديد بالنظام</div>
+            </div>
+        </section>
+
+        <!-- 3. Manage -->
+        <section id="sec-manage" class="section">
+            <div class="section-header">
+                <span class="section-num">3</span>
+                <h2>إدارة المهام والصلاحيات</h2>
+            </div>
+
+            <p>سجل الموظف في هذا الدليل لا يساوي حساب دخول للنظام. فإضافة موظف هنا لا تتيح له تسجيل الدخول ولا تمنحه أي
+                صلاحيات.</p>
+
+            <div class="callout callout-note">
+                <span class="callout-icon">🔐</span>
+                <div>
+                    <strong>منح الدخول والصلاحيات:</strong> لإعطاء أحد الموظفين القدرة على تسجيل الدخول وتحديد ما يستطيع
+                    رؤيته أو فعله، يجب إنشاء <strong>حساب مستخدم له من تبويب "الإدارة ← المستخدمون"</strong> ثم إسناد
+                    <strong>دور (Role)</strong> له من هناك. تُدار الأدوار والصلاحيات عبر نظام الأدوار والصلاحيات (Roles
+                    &amp; Permissions) بشكل مستقل عن دليل الموظفين.
+                </div>
+            </div>
+
+            <p>يمكن تعديل بيانات الموظف (الاسم، رقم الهاتف، المؤهل، التخصص، الحالة) في أي وقت بالضغط على أيقونة التعديل
+                ✏️ بجانب اسم الموظف.</p>
+        </section>
+
+    </div>
+
+    <footer class="manual-footer">
+        <p>دليل المستخدم لنظام DentalCare لإدارة العيادات © 2026. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+
+</html>

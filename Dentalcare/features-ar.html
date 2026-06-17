@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>نظام إدارة عيادات الأسنان — المميزات</title>
+    <meta name="description" content="نظام متكامل لإدارة المرضى والمواعيد والفواتير والمخزون والتقارير المالية، مصمّم خصيصاً لعيادات الأسنان.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+                            400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+                            800: '#115e59', 900: '#134e4a', 950: '#042f2e',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; }
+        .grad-hero { background: radial-gradient(1200px 600px at 80% -10%, #ccfbf1 0%, transparent 55%), radial-gradient(900px 500px at 10% 10%, #f0fdfa 0%, transparent 50%), #fbfcff; }
+        .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(13,148,136,.35); }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- ===================== الشريط العلوي ===================== -->
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="h-9 w-9 rounded-xl bg-brand-600 text-white grid place-items-center font-extrabold">🦷</div>
+                <span class="font-extrabold text-lg text-slate-900">DentalCare</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#features" class="hover:text-brand-700">المميزات</a>
+                <a href="#why" class="hover:text-brand-700">لماذا للعيادات</a>
+                <a href="#faq" class="hover:text-brand-700">أسئلة وأجوبة</a>
+            </nav>
+            <a href="https://wa.me/967782558484" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-white text-sm font-bold shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition">
+                تجربة النظام
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7M4 12h16"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===================== الواجهة الرئيسية ===================== -->
+    <section class="grad-hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-brand-100 text-brand-800 px-4 py-1.5 text-sm font-bold mb-6">
+                    <span class="h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
+                    حلٌّ متكامل لإدارة العيادات
+                </span>
+                <h1 class="text-4xl lg:text-5xl font-black leading-[1.25] text-slate-900">
+                    أدِر عيادتك من المرضى حتى التقارير
+                    <span class="text-brand-600"> في منصّة واحدة</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+                    نظام يجمع إدارة المرضى والمواعيد والفواتير والمخزون والتقارير المالية، مع تتبّعٍ كامل لخدمات العيادة،
+                    وتنبيهات ذكية، وتقارير دقيقة — مصمّمٌ خصيصاً لاحتياجات عيادات الأسنان.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/967782558484" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-white font-bold shadow-xl shadow-brand-600/30 hover:bg-brand-700 transition">
+                        ابدأ التجربة الآن
+                    </a>
+                    <a href="index.html" target="_blank"  class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 px-6 py-3.5 font-bold text-slate-700 hover:border-brand-300 hover:text-brand-700 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        دليل المستخدم
+                    </a>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-8">
+                    <div><div class="text-3xl font-black text-slate-900">6</div><div class="text-sm text-slate-500 font-semibold">مميزات رئيسية</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">∞</div><div class="text-sm text-slate-500 font-semibold">مرضى غير محدود</div></div>
+                    <div><div class="text-3xl font-black text-slate-900">PDF/Excel</div><div class="text-sm text-slate-500 font-semibold">تصدير فوري للتقارير</div></div>
+                </div>
+            </div>
+
+            <!-- لقطة لوحة التحكم -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-200/50 to-transparent blur-2xl rounded-3xl"></div>
+                <div class="relative rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-brand-900/10 overflow-hidden">
+                    <div class="flex items-center gap-1.5 px-4 py-3 bg-slate-50 border-b border-slate-100">
+                        <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                        <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                        <span class="ms-3 text-xs text-slate-400 font-semibold">لوحة التحكم — نظرة عامة</span>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-brand-50 p-4">
+                                <div class="text-xs text-brand-700 font-bold">المرضى النشطون</div>
+                                <div class="text-2xl font-black text-brand-900 mt-1">245</div>
+                            </div>
+                            <div class="rounded-xl bg-amber-50 p-4">
+                                <div class="text-xs text-amber-700 font-bold">المواعيد اليوم</div>
+                                <div class="text-2xl font-black text-amber-900 mt-1">12</div>
+                            </div>
+                            <div class="rounded-xl bg-emerald-50 p-4">
+                                <div class="text-xs text-emerald-700 font-bold">الفواتير المعلقة</div>
+                                <div class="text-2xl font-black text-emerald-900 mt-1">8</div>
+                            </div>
+                            <div class="rounded-xl bg-slate-100 p-4">
+                                <div class="text-xs text-slate-600 font-bold">الإيراد اليوم</div>
+                                <div class="text-2xl font-black text-slate-900 mt-1">$1.2k</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-slate-100 p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold text-slate-700">توزيع الخدمات</span>
+                                <span class="text-[10px] text-slate-400">2026</span>
+                            </div>
+                            <div class="flex items-end gap-2 h-24">
+                                <div class="flex-1 rounded-t bg-brand-600" style="height:80%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:55%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:70%"></div>
+                                <div class="flex-1 rounded-t bg-brand-500" style="height:40%"></div>
+                                <div class="flex-1 rounded-t bg-brand-400" style="height:62%"></div>
+                                <div class="flex-1 rounded-t bg-brand-300" style="height:48%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== شريط ثقة ===================== -->
+    <section class="border-y border-slate-100 bg-slate-50/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="font-extrabold text-slate-900">عربي بالكامل (RTL)</div>
+                <div class="text-sm text-slate-500 mt-1">واجهة مهيّأة للغة العربية واتجاه الكتابة من اليمين</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">متعدد المستخدمين</div>
+                <div class="text-sm text-slate-500 mt-1">دعم كامل لعدة طبيب وموظف مع صلاحيات مختلفة</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">صلاحيات دقيقة</div>
+                <div class="text-sm text-slate-500 mt-1">تحكّم كامل بالأدوار وما يراه كل موظف</div>
+            </div>
+            <div>
+                <div class="font-extrabold text-slate-900">سجل تدقيق</div>
+                <div class="text-sm text-slate-500 mt-1">تتبّع كل عملية إضافة وتعديل وحذف</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== لماذا للعيادات ===================== -->
+    <section id="why" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="rounded-2xl border border-slate-200 bg-white shadow-xl p-6 space-y-4">
+                    <div class="text-sm font-bold text-slate-700 mb-2">دورة العناية — الخدمات الشاملة</div>
+
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">استقبال وتسجيل المريض</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">فحص أولي وتشخيص</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-brand-600 text-white text-xs font-bold">✓</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-brand-600" style="width:100%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">خطة العلاج المقترحة</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-amber-500 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-amber-500" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">تنفيذ جلسات العلاج</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="h-8 w-8 grid place-items-center rounded-full bg-slate-300 text-white text-xs font-bold">…</span>
+                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-slate-300" style="width:45%"></div></div>
+                        <span class="text-sm font-semibold text-slate-600 w-44 text-left">الفواتير والمتابعة</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-brand-600 font-bold">لماذا هذا النظام؟</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2 leading-snug">
+                    مصمَّمٌ على مقاس عمل عيادات الأسنان
+                </h2>
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    العيادة لا تحتاج فقط إلى إدارة «مرضى»؛ بل تحتاج إلى متابعة السجل الطبي والخطط العلاجية والفواتير والمخزون والتقارير المالية
+                    — مع تنبيهات ذكية قبل انتهاء المهل. هذا النظام بُني حول هذا الواقع تحديداً.
+                </p>
+                <ul class="mt-6 space-y-4">
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">إدارة المرضى والملفات الطبية</div>
+                            <div class="text-sm text-slate-600">سجل شامل لكل مريض يتضمن البيانات والسجل الطبي والحساسيات والخطط العلاجية.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">جدولة المواعيد الذكية</div>
+                            <div class="text-sm text-slate-600">تقويم تفاعلي يمنع تضارب المواعيد ويرسل تنبيهات للمرضى.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">فواتير وخطط دفع مرنة</div>
+                            <div class="text-sm text-slate-600">إنشاء فواتير احترافية مع دعم خطط علاج متعددة الدفعات.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                        <div>
+                            <div class="font-bold text-slate-900">تقارير مالية وإحصائيات</div>
+                            <div class="text-sm text-slate-600">تصدير فوري بصيغة PDF أو Excel حسب الفترة والطبيب والخدمة.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== المميزات ===================== -->
+    <section id="features" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-brand-600 font-bold">المميزات الرئيسية</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">كل ما تحتاجه العيادة في وحدةٍ واحدة</h2>
+                <p class="mt-4 text-slate-600">وحدات متكاملة تغطّي دورة العمل من استقبال المريض حتى إصدار التقارير.</p>
+            </div>
+
+            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👥</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">إدارة المرضى</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">سجل شامل لكل مريض يتضمن المعلومات الأساسية والسجل الطبي والحساسيات وفصيلة الدم.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📅</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">المواعيد والجدولة</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تقويم تفاعلي متقدم لجدولة المواعيد مع تنبيهات ذكية وتتبع كامل.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🦷</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">الخريطة السنية</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تسجيل حالة الأسنان بدقة باستخدام نظام ترقيم FDI الدولي مع سجل كامل.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📄</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">الفواتير والدفع</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">إنشاء فواتير احترافية وتسجيل المدفوعات مع دعم خطط علاج متعددة الدفعات.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📦</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">إدارة المخزون</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تتبع المستلزمات الطبية مع تنبيهات المخزون المنخفض وسجل المعاملات الكامل.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📊</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">التقارير المالية</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تحليلات شاملة مع رسوم بيانية وتصدير فوري إلى Excel و PDF.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🔔</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">التنبيهات الذكية</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">تنبيهات فورية للمواعيد والدفعات المعلقة والمستلزمات التي بدأت تنتهي.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👨‍⚕️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">إدارة الأطباء والموظفين</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">إدارة الأطباء والموظفين مع تتبع أعمالهم وإحصائيات الإنتاجية.</p></div>
+                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🛡️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">الأمان والنسخ الاحتياطي</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">نسخ احتياطي للبيانات وسجل تدقيق لكل عملية على النظام لضمان الأمان.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== الأسئلة والأجوبة ===================== -->
+    <section id="faq" class="bg-slate-50/70 border-y border-slate-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-12">
+                <span class="text-brand-600 font-bold">أسئلة وأجوبة</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">أسئلة شائعة عن وظائف النظام</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف يمكنني إضافة مريض جديد؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">يمكنك إضافة مريض جديد من قسم المرضى بنقرة واحدة. أدخل البيانات الأساسية (الاسم والهاتف والعنوان)، ثم أضف السجل الطبي والحساسيات. سيتم حفظ البيانات فوراً ويمكنك البدء في جدولة المواعيد.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف أجدول موعداً للمريض؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">استخدم التقويم التفاعلي لاختيار التاريخ والوقت. سيعرض لك النظام الأطباء المتاحين والغرف الخالية. انقر على الموعد المطلوب وأضف ملاحظات إن لزم الأمر. يمكنك إرسال تنبيه للمريض تلقائياً.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف أنشئ خطة علاج متعددة الدفعات؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">انتقل إلى قسم خطط العلاج وأنشئ خطة جديدة. أضف الخدمات المطلوبة والتكلفة الإجمالية، ثم حدد عدد الدفعات والمبلغ لكل دفعة. سيتتبع النظام الدفعات تلقائياً ويرسل تنبيهات عند استحقاق كل دفعة.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف أتتبع المخزون الطبي؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">في قسم المخزون، أضف المنتجات وحدد مستوى المخزون الأدنى. سيرسل لك النظام تنبيهات تلقائية عندما ينخفض المخزون عن الحد المطلوب. يمكنك تتبع كل عملية صرف أو توريد بسجل كامل.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف أصدر فاتورة احترافية؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">انتقل إلى قسم الفواتير واختر المريض والخدمات المقدمة. سيحسب النظام التكلفة تلقائياً. أضف أي خصومات أو ملاحظات، ثم اطبع الفاتورة أو صدّرها كـ PDF. يمكنك أيضاً حفظ الفاتورة كمسودة وتحديثها لاحقاً.</div>
+                </details>
+                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">كيف أرى التقارير المالية؟</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
+                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">قسم التقارير يعرض لك ملخص الإيرادات والمصروفات حسب الفترة. يمكنك تصفية التقارير حسب الطبيب أو الخدمة أو نوع الدفع. اطبع التقرير أو صدّره كـ Excel أو PDF للمراجعة أو الأرشفة.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== التجربة ودليل المستخدم ===================== -->
+    <section id="user-manual" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="rounded-3xl bg-gradient-to-tl from-brand-700 via-brand-600 to-brand-500 p-10 lg:p-14 text-white relative overflow-hidden">
+            <div class="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
+            <div class="absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-black leading-snug">جاهز للبدء؟ جرّب النظام واطّلع على الدليل</h2>
+                    <p class="mt-4 text-brand-50/90 leading-relaxed">
+                        ادخل إلى النظام واستكشف الوحدات بنفسك، أو افتح دليل المستخدم لتتعرّف على كل وظيفة خطوةً بخطوة.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row lg:justify-end gap-4">
+                    <a href="https://wa.me/967782558484" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 font-extrabold text-brand-700 shadow-xl hover:bg-brand-50 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        تجربة النظام
+                    </a>
+                    <a href="index.html" target="_blank"  class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/60 px-7 py-4 font-extrabold text-white hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
+                        دليل المستخدم
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== التذييل ===================== -->
+    <footer class="border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-lg bg-brand-600 text-white grid place-items-center font-extrabold">🦷</div>
+                <span class="font-bold text-slate-700">نظام إدارة عيادات الأسنان DentalCare</span>
+            </div>
+            <div>© 2026 — جميع الحقوق محفوظة.</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
