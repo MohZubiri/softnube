@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المستخدم — قائمة الانتظار | نظام العيادات</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-primary: #0d9488;
+            --clr-primary-dark: #0f766e;
+            --clr-primary-darker: #115e59;
+            --clr-primary-light: #ccfbf1;
+            --clr-primary-50: #f0fdfa;
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-text: #1e293b;
+            --clr-text-secondary: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-border-light: #f1f5f9;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 500px; height: 500px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); }
+        .hero::after { content: ''; position: absolute; bottom: -40%; left: -10%; width: 400px; height: 400px; border-radius: 50%; background: rgba(255, 255, 255, 0.03); }
+        .hero h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 12px; position: relative; z-index: 1; }
+        .hero .subtitle { font-size: 1.15rem; opacity: 0.9; font-weight: 500; position: relative; z-index: 1; }
+        .back-link { position: absolute; top: 20px; right: 20px; color: white; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; backdrop-filter: blur(4px); z-index: 10; transition: background 0.3s; }
+        .back-link:hover { background: rgba(255, 255, 255, 0.3); }
+
+        .toc { max-width: 900px; margin: -40px auto 40px; background: var(--clr-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); padding: 32px 36px; position: relative; z-index: 2; }
+        .toc h2 { font-size: 1.3rem; color: var(--clr-primary-dark); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+        .toc-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); color: var(--clr-text); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease; border: 1px solid transparent; }
+        .toc-item:hover { background: var(--clr-primary-50); border-color: var(--clr-primary-light); color: var(--clr-primary-dark); transform: translateX(-4px); }
+        .toc-num { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark)); color: white; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+
+        .container { max-width: 100%; margin: 0 auto; padding: 0 24px 80px; }
+        .section { background: var(--clr-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 40px 36px; margin-bottom: 32px; border: 1px solid var(--clr-border-light); transition: box-shadow 0.3s ease; }
+        .section:hover { box-shadow: var(--shadow-lg); }
+        .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--clr-primary-light); }
+        .section-num { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius); background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark)); color: white; font-size: 1.2rem; font-weight: 800; flex-shrink: 0; }
+        .section-header h2 { font-size: 1.5rem; font-weight: 700; color: var(--clr-primary-darker); margin: 0; }
+
+        h3 { font-size: 1.15rem; color: var(--clr-primary-dark); margin-top: 28px; margin-bottom: 12px; font-weight: 700; }
+        p { margin-bottom: 14px; color: var(--clr-text); }
+        ul, ol { margin-bottom: 16px; padding-right: 24px; }
+        li { margin-bottom: 8px; }
+        li strong { color: var(--clr-primary-darker); }
+
+        .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; }
+        .badge-wait { background: #e0e7ff; color: #3730a3; }
+        .badge-called { background: #fef9c3; color: #854d0e; }
+        .badge-progress { background: #dbeafe; color: #1e40af; }
+        .badge-done { background: #dcfce7; color: #166534; }
+        .badge-normal { background: #f1f5f9; color: #475569; }
+        .badge-urgent { background: #ffedd5; color: #9a3412; }
+        .badge-emergency { background: #fee2e2; color: #991b1b; }
+
+        .screenshot-wrapper { text-align: center; margin: 24px 0; padding: 16px; background: var(--clr-border-light); border: 1px solid var(--clr-border); border-radius: var(--radius); transition: transform 0.3s ease; }
+        .screenshot-wrapper:hover { transform: scale(1.01); }
+        .screenshot-wrapper img { max-width: 100%; height: auto; border: 1px solid var(--clr-border); border-radius: var(--radius-sm); box-shadow: var(--shadow-md); cursor: zoom-in; }
+        .screenshot-caption { font-size: 0.88rem; color: var(--clr-text-secondary); margin-top: 10px; font-weight: 500; }
+
+        .callout { display: flex; gap: 14px; padding: 16px 20px; border-radius: var(--radius-sm); margin: 20px 0; font-size: 0.95rem; }
+        .callout-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+        .callout-tip { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+        .callout-note { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+        .callout-warning { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+
+        .manual-footer { text-align: center; padding: 32px 24px; color: var(--clr-text-secondary); font-size: 0.9rem; border-top: 1px solid var(--clr-border); margin-top: 40px; }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <a href="index.html" class="back-link">← العودة للقائمة الرئيسية</a>
+        <h1>دليل المستخدم</h1>
+        <div class="subtitle">قائمة انتظار المرضى (الطابور)</div>
+    </header>
+
+    <div class="toc">
+        <h2>محتويات الدليل — قائمة الانتظار</h2>
+        <div class="toc-grid">
+            <a href="#sec-overview" class="toc-item"><span class="toc-num">1</span> نظرة عامة</a>
+            <a href="#sec-checkin" class="toc-item"><span class="toc-num">2</span> تسجيل وصول مريض</a>
+            <a href="#sec-manage" class="toc-item"><span class="toc-num">3</span> إدارة الطابور والحالات</a>
+            <a href="#sec-priority" class="toc-item"><span class="toc-num">4</span> الأولويات والبطاقات الإحصائية</a>
+            <a href="#sec-from-appointment" class="toc-item"><span class="toc-num">5</span> التسجيل من شاشة المواعيد</a>
+            <a href="#sec-display" class="toc-item"><span class="toc-num">6</span> شاشة العرض العامة</a>
+            <a href="#sec-permissions" class="toc-item"><span class="toc-num">7</span> الصلاحيات</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Overview -->
+        <section id="sec-overview" class="section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2>نظرة عامة</h2>
+            </div>
+            <p>تُنظّم <strong>قائمة الانتظار</strong> تدفّق المرضى داخل العيادة من لحظة وصولهم إلى صالة الاستقبال وحتى انتهاء جلستهم. يستخدمها موظف الاستقبال لتسجيل وصول المرضى، إعطائهم أرقام دور، استدعائهم بالترتيب وحسب الأولوية، ومتابعة حالة كل مريض لحظياً.</p>
+            <p>تتكوّن الوحدة من شاشتين:</p>
+            <ul>
+                <li><strong>شاشة الإدارة</strong> (للموظفين): لتسجيل الوصول والتحكم في الطابور — يصلها الموظف من رابط <strong>قائمة الانتظار</strong> في القائمة الجانبية.</li>
+                <li><strong>شاشة العرض العامة</strong>: تُعرض على شاشة في صالة الانتظار وتظهر الرقم الجاري استدعاؤه والأرقام التالية (انظر القسم 6).</li>
+            </ul>
+            <div class="screenshot-wrapper">
+                <img src="images/waiting_list_main.png" alt="شاشة إدارة قائمة الانتظار">
+                <div class="screenshot-caption">شكل 1: شاشة إدارة قائمة الانتظار — البطاقات الإحصائية، طابور اليوم، ونموذج تسجيل الوصول</div>
+            </div>
+        </section>
+
+        <!-- 2. Check-in -->
+        <section id="sec-checkin" class="section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2>تسجيل وصول مريض</h2>
+            </div>
+            <p>عند وصول مريض إلى العيادة، استخدم بطاقة <strong>"تسجيل وصول"</strong> على يسار الشاشة لإضافته إلى طابور اليوم:</p>
+            <ol>
+                <li>اختر <strong>المريض</strong> من القائمة المنسدلة (بحث بالاسم).</li>
+                <li>اختر <strong>الطبيب</strong> المعالج (اختياري — يمكن تركه "بدون طبيب محدد").</li>
+                <li>حدّد <strong>الأولوية</strong>: عادي / عاجل / طارئ (انظر القسم 4).</li>
+                <li>أضف <strong>ملاحظات</strong> اختيارية (سبب الزيارة أو ملاحظة استقبال).</li>
+                <li>اضغط <strong>"تسجيل الوصول"</strong> — يُضاف المريض إلى الطابور ويحصل تلقائياً على <strong>رقم دور</strong> متسلسل لهذا اليوم.</li>
+            </ol>
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div><strong>منع التكرار:</strong> لا يمكن تسجيل وصول نفس المريض مرتين في نفس اليوم طالما حالته ما زالت نشطة (منتظر/تم الاستدعاء/قيد الجلسة).</div>
+            </div>
+        </section>
+
+        <!-- 3. Manage -->
+        <section id="sec-manage" class="section">
+            <div class="section-header">
+                <span class="section-num">3</span>
+                <h2>إدارة الطابور والحالات</h2>
+            </div>
+            <p>يعرض جدول <strong>"طابور اليوم"</strong> كل الحالات النشطة والمكتملة لليوم الحالي، مرتّبة تلقائياً حسب الحالة ثم الأولوية ثم وقت الوصول. لكل صف أزرار إجراءات تنقل المريض عبر مراحل الجلسة:</p>
+            <ul>
+                <li><span class="badge badge-wait">منتظر</span> الحالة الابتدائية بعد تسجيل الوصول — في انتظار الاستدعاء.</li>
+                <li><span class="badge badge-called">تم الاستدعاء</span> بعد الضغط على <strong>"استدعاء"</strong> — يظهر رقم المريض على شاشة العرض العامة.</li>
+                <li><span class="badge badge-progress">قيد الجلسة</span> بعد الضغط على <strong>"بدء الجلسة"</strong> — المريض دخل غرفة الكشف.</li>
+                <li><span class="badge badge-done">مكتمل</span> بعد الضغط على <strong>"إكمال"</strong> — انتهت الجلسة.</li>
+            </ul>
+            <p>كما يمكنك <strong>"إلغاء"</strong> أي حالة قبل إكمالها (يُطلب تأكيد قبل الإلغاء).</p>
+            <div class="callout callout-tip">
+                <span class="callout-icon">💡</span>
+                <div><strong>سير العمل النموذجي:</strong> تسجيل الوصول ← استدعاء (يظهر الرقم في الصالة) ← بدء الجلسة ← إكمال. لكل خطوة يُسجَّل وقتها (وقت الوصول، وقت الاستدعاء، وقت البدء، وقت الإكمال).</div>
+            </div>
+        </section>
+
+        <!-- 4. Priority & stats -->
+        <section id="sec-priority" class="section">
+            <div class="section-header">
+                <span class="section-num">4</span>
+                <h2>الأولويات والبطاقات الإحصائية</h2>
+            </div>
+            <h3>مستويات الأولوية</h3>
+            <ul>
+                <li><span class="badge badge-normal">عادي</span> الحالة الافتراضية.</li>
+                <li><span class="badge badge-urgent">عاجل</span> يُقدَّم في ترتيب الطابور على الحالات العادية.</li>
+                <li><span class="badge badge-emergency">طارئ</span> أعلى أولوية — يتصدّر الطابور.</li>
+            </ul>
+            <p>يستخدم النظام الأولوية لترتيب الطابور تلقائياً، فلا حاجة لإعادة الترتيب يدوياً.</p>
+            <h3>البطاقات الإحصائية</h3>
+            <p>أعلى الشاشة ست بطاقات تعرض عدّادات لحظية لليوم: <strong>منتظر</strong>، <strong>تم الاستدعاء</strong>، <strong>قيد الجلسة</strong>، <strong>عاجل</strong>، <strong>طارئ</strong>، و<strong>مكتمل</strong> — لمتابعة ضغط العمل في الصالة بنظرة واحدة.</p>
+        </section>
+
+        <!-- 5. From appointment -->
+        <section id="sec-from-appointment" class="section">
+            <div class="section-header">
+                <span class="section-num">5</span>
+                <h2>التسجيل من شاشة المواعيد</h2>
+            </div>
+            <p>إذا كان المريض لديه <strong>موعد مجدول</strong> اليوم، يمكنك تسجيل وصوله إلى قائمة الانتظار مباشرةً من شاشة <a href="appointments.html">المواعيد اليومية</a> دون إعادة إدخال بياناته:</p>
+            <ol>
+                <li>افتح شاشة المواعيد اليومية للتاريخ المطلوب.</li>
+                <li>عند موعد المريض، اضغط زر <strong>"تسجيل في قائمة الانتظار"</strong>.</li>
+                <li>يُضاف المريض فوراً إلى الطابور بنفس الطبيب المرتبط بالموعد، ويحصل على رقم دور.</li>
+            </ol>
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div>يعمل هذا الزر فقط للمواعيد <strong>المجدولة</strong>؛ وإذا كان المريض مسجّلاً بالفعل في طابور اليوم تظهر إشارة بذلك بدلاً من تكرار التسجيل.</div>
+            </div>
+        </section>
+
+        <!-- 6. Public display -->
+        <section id="sec-display" class="section">
+            <div class="section-header">
+                <span class="section-num">6</span>
+                <h2>شاشة العرض العامة</h2>
+            </div>
+            <p>شاشة العرض مصمَّمة لتُعرض على تلفاز أو شاشة في <strong>صالة الانتظار</strong>. افتحها بالضغط على زر <strong>"شاشة العرض"</strong> أعلى شاشة الإدارة، أو مباشرةً عبر الرابط <strong>/waiting-list/display</strong>.</p>
+            <ul>
+                <li>تعرض <strong>رقم الدور الجاري استدعاؤه</strong> بخط كبير في المنتصف.</li>
+                <li>تعرض قائمة <strong>الأرقام التالية</strong> مع أولوية كل منها.</li>
+                <li>تعرض عدّادات حية (منتظر / تم الاستدعاء / قيد الجلسة).</li>
+                <li><strong>تتحدّث تلقائياً كل 10 ثوانٍ</strong> دون أي تدخل.</li>
+            </ul>
+            <div class="callout callout-tip">
+                <span class="callout-icon">🔒</span>
+                <div><strong>خصوصية المرضى:</strong> شاشة العرض تُظهر <strong>أرقام الدور فقط ولا تعرض أسماء المرضى</strong>، فهي آمنة للعرض العلني. كما أن هذه الشاشة عامة (لا تتطلب تسجيل دخول) لتسهيل عرضها على جهاز مخصّص في الصالة.</div>
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/waiting_list_display.png" alt="شاشة العرض العامة لقائمة الانتظار">
+                <div class="screenshot-caption">شكل 2: شاشة العرض العامة — الرقم الحالي، الأرقام التالية، والعدّادات الحية (تحديث كل 10 ثوانٍ)</div>
+            </div>
+        </section>
+
+        <!-- 7. Permissions -->
+        <section id="sec-permissions" class="section">
+            <div class="section-header">
+                <span class="section-num">7</span>
+                <h2>الصلاحيات</h2>
+            </div>
+            <p>يتحكّم في الوصول لهذه الوحدة صلاحيتان تُسندان عبر <a href="admin.html">الأدوار</a>:</p>
+            <ul>
+                <li><strong>عرض قائمة الانتظار</strong> (waiting-list.view): لفتح شاشة الإدارة ومتابعة الطابور.</li>
+                <li><strong>إدارة قائمة الانتظار</strong> (waiting-list.manage): لتسجيل الوصول والاستدعاء وبدء/إكمال/إلغاء الجلسات، وكذلك التسجيل من شاشة المواعيد.</li>
+            </ul>
+            <div class="callout callout-note">
+                <span class="callout-icon">ℹ️</span>
+                <div>شاشة العرض العامة وحدها لا تتطلب صلاحية أو تسجيل دخول.</div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="manual-footer">
+        <p>دليل المستخدم لنظام DentalCare لإدارة العيادات © 2026. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+
+</html>
