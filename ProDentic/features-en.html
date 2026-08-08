@@ -4,619 +4,1075 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Professional Dental Management — Features</title>
-    <meta name="description" content="A comprehensive system for managing patients, appointments, invoicing, inventory and financial reports, designed specifically for dental clinics.">
+    <title>ProDentic | Dental Clinic Management System</title>
+    <meta name="description" content="Manage patient records, appointments, dental charts, treatment plans, billing, inventory, and reporting in one system built for dental clinics.">
+    <meta name="theme-color" content="#0b2d47">
+    <link rel="canonical" href="https://softnube.site/ProDentic/features-en.html">
+    <link rel="alternate" hreflang="en" href="https://softnube.site/ProDentic/features-en.html">
+    <link rel="alternate" hreflang="ar" href="https://softnube.site/ProDentic/features-ar.html">
+    <link rel="icon" href="images/prodentic.png" type="image/png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_AR">
+    <meta property="og:title" content="ProDentic | From the First Appointment to the Final Payment">
+    <meta property="og:description" content="See how ProDentic connects patient records, appointments, treatment, billing, and inventory in one clear dental clinic management system.">
+    <meta property="og:url" content="https://softnube.site/ProDentic/features-en.html">
+    <meta property="og:image" content="https://softnube.site/ProDentic/images/prodentic.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                fontFamily: { sans: ['Inter', 'sans-serif'] },
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
-                            400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
-                            800: '#115e59', 900: '#134e4a', 950: '#042f2e',
-                        },
-                    },
-                },
-            },
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>document.documentElement.classList.add('js');</script>
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
-        .grad-hero { background: radial-gradient(1200px 600px at 20% -10%, #ccfbf1 0%, transparent 55%), radial-gradient(900px 500px at 90% 10%, #f0fdfa 0%, transparent 50%), #fbfcff; }
-        .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
-        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(13,148,136,.35); }
-        details > summary { list-style: none; cursor: pointer; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .faq-icon { transform: rotate(45deg); }
+        :root {
+            --navy-950: #071e31;
+            --navy-900: #0b2d47;
+            --navy-800: #123d5c;
+            --teal-700: #087c75;
+            --teal-600: #079b90;
+            --teal-500: #10aaa0;
+            --teal-100: #d8f4f1;
+            --teal-50: #eefaf9;
+            --coral-600: #e85e50;
+            --coral-50: #fff1ef;
+            --ink: #102a3e;
+            --muted: #5c7182;
+            --line: #dce7ec;
+            --surface: #f6f9fa;
+            --white: #ffffff;
+            --shadow-sm: 0 10px 30px rgba(11, 45, 71, .07);
+            --shadow-lg: 0 28px 70px rgba(11, 45, 71, .14);
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --container: 1180px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: var(--white);
+            color: var(--ink);
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        body.menu-open { overflow: hidden; }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        button, select { font: inherit; }
+        button, summary, a { -webkit-tap-highlight-color: transparent; }
+        button { color: inherit; }
+        :focus-visible { outline: 3px solid rgba(7, 155, 144, .36); outline-offset: 4px; }
+        ::selection { background: var(--teal-100); color: var(--navy-950); }
+
+        .skip-link {
+            position: fixed;
+            z-index: 200;
+            top: 12px;
+            left: 12px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: var(--navy-950);
+            color: var(--white);
+            transform: translateY(-150%);
+            transition: transform .2s ease;
+        }
+        .skip-link:focus { transform: translateY(0); }
+
+        .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
+        .section { padding-block: 104px; }
+        .section--soft { background: var(--teal-50); }
+        .section-heading { max-width: 760px; margin: 0 auto 54px; text-align: center; }
+        .section-heading--right { margin-inline: 0; text-align: left; }
+        .section-heading h2 {
+            margin: 0;
+            color: var(--navy-900);
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 900;
+            letter-spacing: -.035em;
+            line-height: 1.2;
+        }
+        .section-heading p { margin: 16px auto 0; max-width: 650px; color: var(--muted); font-size: 1.06rem; }
+        .section-heading--right p { margin-inline: 0; }
+
+        .site-header {
+            position: sticky;
+            z-index: 100;
+            top: 0;
+            border-bottom: 1px solid rgba(220, 231, 236, .82);
+            background: rgba(255, 255, 255, .94);
+            backdrop-filter: blur(16px);
+        }
+        .header-inner { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .brand { display: inline-flex; width: 190px; height: 54px; align-items: center; overflow: hidden; flex: 0 0 auto; }
+        .brand img { width: 190px; height: 54px; object-fit: cover; object-position: center; }
+        .main-nav { display: flex; align-items: center; gap: 32px; }
+        .main-nav a {
+            position: relative;
+            color: #35536a;
+            font-size: .92rem;
+            font-weight: 700;
+            transition: color .2s ease;
+        }
+        .main-nav a::after {
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--teal-600);
+            content: "";
+            transition: width .2s ease;
+        }
+        .main-nav a:hover { color: var(--teal-700); }
+        .main-nav a:hover::after { width: 100%; }
+
+        .button {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 800;
+            line-height: 1.35;
+            transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+        }
+        .button svg { width: 20px; height: 20px; flex: 0 0 auto; }
+        .button:hover { transform: translateY(-2px); }
+        .button--primary { background: var(--teal-600); color: var(--white); box-shadow: 0 12px 26px rgba(7, 155, 144, .22); }
+        .button--primary:hover { background: var(--teal-700); box-shadow: 0 16px 32px rgba(7, 155, 144, .28); }
+        .button--outline { border-color: #a9d8d4; background: var(--white); color: var(--teal-700); }
+        .button--outline:hover { border-color: var(--teal-600); background: var(--teal-50); }
+        .button--light { background: var(--white); color: var(--navy-900); box-shadow: var(--shadow-sm); }
+        .button--light:hover { color: var(--teal-700); }
+        .header-cta { min-height: 46px; padding: 10px 18px; font-size: .9rem; }
+        .menu-toggle {
+            display: none;
+            width: 46px;
+            height: 46px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--white);
+            cursor: pointer;
+        }
+        .menu-toggle svg { width: 22px; height: 22px; }
+
+        .hero { position: relative; padding-block: 74px 44px; }
+        .hero::after {
+            position: absolute;
+            z-index: -1;
+            left: 54%;
+            bottom: 92px;
+            width: 470px;
+            height: 360px;
+            border-radius: 36px;
+            background: var(--teal-50);
+            content: "";
+        }
+        .hero-grid { display: grid; grid-template-columns: .94fr 1.06fr; align-items: center; gap: clamp(48px, 7vw, 92px); }
+        .hero-copy h1 {
+            margin: 0;
+            max-width: 650px;
+            color: var(--navy-900);
+            font-size: clamp(2.55rem, 4.4vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -.055em;
+            line-height: 1.1;
+        }
+        .hero-copy h1 span { display: block; }
+        .hero-copy p { margin: 24px 0 0; max-width: 620px; color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.18rem); line-height: 1.75; }
+        .hero-actions { display: flex; flex-wrap: nowrap; gap: 12px; margin-top: 30px; }
+        .hero-actions .button { padding-inline: 17px; font-size: .88rem; }
+        .hero-note { display: flex; align-items: flex-start; gap: 9px; margin-top: 18px; color: #6b7f8f; font-size: .88rem; font-weight: 600; }
+        .hero-note svg { width: 18px; height: 18px; margin-top: 5px; color: var(--teal-600); flex: 0 0 auto; }
+
+        .product-visual { position: relative; padding-block: 28px; }
+        .product-rail {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: -26px;
+            display: grid;
+            gap: 5px;
+            padding: 14px 9px;
+            border-radius: 16px;
+            background: var(--navy-900);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-50%);
+        }
+        .product-rail span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; color: #d7e8f2; }
+        .product-rail span:first-child { background: rgba(255,255,255,.12); color: var(--white); }
+        .product-rail svg { width: 18px; height: 18px; }
+        .product-window { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); box-shadow: var(--shadow-lg); }
+        .product-window__bar { display: flex; height: 44px; align-items: center; justify-content: space-between; padding-inline: 16px; border-bottom: 1px solid var(--line); background: var(--surface); }
+        .product-window__bar strong { color: var(--navy-900); font-size: .78rem; }
+        .window-dots { display: flex; direction: ltr; gap: 6px; }
+        .window-dots i { width: 8px; height: 8px; border-radius: 50%; background: #bdcbd3; }
+        .window-dots i:nth-child(2) { background: var(--teal-500); }
+        .product-window__viewport { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--surface); }
+        .product-window__viewport img { width: 100%; height: 112%; max-width: none; object-fit: cover; object-position: center 46%; transform: translateY(-7%); }
+        .product-stamp {
+            position: absolute;
+            z-index: 3;
+            left: 18px;
+            bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 11px;
+            border: 1px solid rgba(220,231,236,.9);
+            border-radius: 10px;
+            background: rgba(255,255,255,.94);
+            color: var(--teal-700);
+            font-size: .72rem;
+            font-weight: 800;
+            box-shadow: var(--shadow-sm);
+        }
+        .product-stamp::before { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-500); content: ""; }
+
+        .trust-rail {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 60px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--white);
+            box-shadow: 0 8px 24px rgba(11,45,71,.04);
+        }
+        .trust-item { display: flex; min-height: 86px; align-items: center; justify-content: center; gap: 12px; padding: 18px; color: var(--navy-800); font-size: .9rem; font-weight: 800; text-align: center; }
+        .trust-item + .trust-item { border-left: 1px solid var(--line); }
+        .trust-item svg { width: 25px; height: 25px; color: var(--teal-600); flex: 0 0 auto; }
+        .trust-item small { display: block; color: var(--muted); font-size: .7rem; font-weight: 600; }
+
+        .workflow { overflow: hidden; background: var(--teal-50); }
+        .journey { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 6px 0 54px; }
+        .journey::before { position: absolute; top: 26px; right: 10%; left: 10%; height: 2px; background: #8fd8d2; content: ""; }
+        .journey-step { position: relative; z-index: 1; text-align: center; }
+        .journey-number { display: grid; width: 52px; height: 52px; margin-inline: auto; place-items: center; border: 2px solid var(--teal-600); border-radius: 50%; background: var(--white); color: var(--teal-700); font-size: 1.08rem; font-weight: 900; box-shadow: 0 5px 16px rgba(7,155,144,.1); }
+        .journey-step svg { width: 26px; height: 26px; margin: 17px auto 8px; color: var(--navy-900); }
+        .journey-step strong { display: block; color: var(--navy-900); font-size: .88rem; }
+
+        .workflow-grid { display: grid; grid-template-columns: 1.8fr .78fr; gap: 34px; align-items: stretch; }
+        .screen-pair { display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; align-items: center; }
+        .screen-frame { overflow: hidden; border: 1px solid #bfe3df; border-radius: 18px; background: var(--white); box-shadow: var(--shadow-sm); }
+        .screen-frame:nth-child(1) { transform: translateY(18px); }
+        .screen-frame__top { display: flex; height: 40px; align-items: center; justify-content: space-between; padding-inline: 13px; border-bottom: 1px solid var(--line); color: var(--navy-800); font-size: .72rem; font-weight: 800; }
+        .screen-frame__top span { color: var(--teal-700); }
+        .screen-crop { overflow: hidden; aspect-ratio: 16 / 10; }
+        .screen-crop img { width: 100%; height: 112%; object-fit: cover; object-position: center 52%; transform: translateY(-7%); }
+        .problem-list { display: grid; align-content: center; gap: 0; }
+        .problem-pair { padding: 23px 0; border-bottom: 1px solid rgba(11,45,71,.12); }
+        .problem-pair:last-child { border-bottom: 0; }
+        .problem-pair del { display: block; color: var(--coral-600); font-size: .9rem; font-weight: 800; text-decoration-thickness: 1px; text-decoration-color: rgba(232,94,80,.42); }
+        .problem-pair strong { display: block; margin-top: 4px; color: var(--teal-700); font-size: 1.05rem; }
+        .problem-pair p { margin: 5px 0 0; color: var(--muted); font-size: .83rem; line-height: 1.75; }
+        .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; color: var(--teal-700); font-weight: 800; text-decoration: underline; text-decoration-color: #8fd8d2; text-underline-offset: 6px; }
+        .inline-link svg { width: 18px; height: 18px; transition: transform .2s ease; }
+        .inline-link:hover svg { transform: translateX(4px); }
+
+        .demo-tabs { display: flex; max-width: 820px; margin: 0 auto 16px; overflow-x: auto; border: 1px solid var(--line); border-radius: 15px; background: var(--white); scrollbar-width: none; }
+        .demo-tabs::-webkit-scrollbar { display: none; }
+        .demo-tab { display: inline-flex; min-width: 155px; flex: 1 0 auto; align-items: center; justify-content: center; gap: 8px; padding: 14px 18px; border: 0; border-right: 1px solid var(--line); background: transparent; color: #405b70; cursor: pointer; font-weight: 800; transition: background-color .2s ease, color .2s ease; }
+        .demo-tab:last-child { border-right: 0; }
+        .demo-tab[aria-selected="true"] { background: var(--teal-600); color: var(--white); }
+        .demo-tab svg { width: 19px; height: 19px; }
+        .demo-caption { min-height: 34px; margin: 0 auto 22px; color: var(--teal-700); font-size: .94rem; font-weight: 700; text-align: center; }
+        .demo-layout { display: grid; grid-template-columns: 1fr 3fr; gap: 38px; align-items: center; }
+        .demo-stage { grid-column: 2; }
+        .role-list { grid-column: 1; grid-row: 1; }
+        .demo-stage { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-lg); }
+        .demo-stage__bar { display: flex; height: 46px; align-items: center; justify-content: space-between; padding-inline: 16px; border-bottom: 1px solid var(--line); background: var(--white); color: var(--navy-800); font-size: .76rem; font-weight: 800; }
+        .demo-stage__bar span { color: var(--teal-700); }
+        .demo-stage__image { overflow: hidden; aspect-ratio: 16 / 9; }
+        .demo-stage__image img { width: 100%; height: 114%; object-fit: cover; object-position: center 50%; transform: translateY(-7%); transition: opacity .18s ease; }
+        .demo-stage__image img.is-switching { opacity: .2; }
+        .role-list h3 { margin: 0 0 12px; color: var(--navy-900); font-size: 1.45rem; font-weight: 900; }
+        .role-item { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding-block: 19px; border-bottom: 1px solid var(--line); }
+        .role-item:last-child { border-bottom: 0; }
+        .role-item svg { width: 30px; height: 30px; color: var(--teal-700); }
+        .role-item strong { display: block; color: var(--navy-900); }
+        .role-item p { margin: 3px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.7; }
+        .demo-cta { margin-top: 28px; text-align: center; }
+
+        .capability-list { border-top: 1px solid var(--line); }
+        .capability-row { display: grid; grid-template-columns: 84px .8fr 1.5fr; gap: 28px; align-items: start; padding-block: 34px; border-bottom: 1px solid var(--line); }
+        .capability-number { color: var(--teal-600); font-size: 1rem; font-weight: 900; letter-spacing: .08em; }
+        .capability-row h3 { margin: 0; color: var(--navy-900); font-size: 1.35rem; font-weight: 900; line-height: 1.4; }
+        .capability-row p { margin: 0; color: var(--muted); }
+        .capability-points { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 13px; }
+        .capability-points span { display: inline-flex; align-items: center; gap: 7px; color: #38566c; font-size: .82rem; font-weight: 700; }
+        .capability-points span::before { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-500); content: ""; }
+
+        .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .option-card { display: flex; min-height: 430px; flex-direction: column; padding: 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+        .option-card:hover { transform: translateY(-4px); border-color: #a9d8d4; box-shadow: var(--shadow-sm); }
+        .option-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 15px; background: var(--teal-50); color: var(--navy-900); }
+        .option-icon svg { width: 28px; height: 28px; }
+        .option-card h3 { margin: 20px 0 0; color: var(--navy-900); font-size: 1.45rem; font-weight: 900; }
+        .option-capacity { min-height: 78px; margin: 15px 0 0; color: #38566c; font-size: .92rem; font-weight: 700; }
+        .option-divider { height: 1px; margin-block: 23px; background: var(--line); }
+        .option-extra { margin: 0 0 26px; color: var(--muted); font-size: .86rem; }
+        .option-card .button { width: 100%; margin-top: auto; }
+
+        .guide-panel { margin-top: 42px; padding: 42px; border-radius: 24px; background: var(--navy-900); color: var(--white); box-shadow: var(--shadow-lg); }
+        .guide-grid { display: grid; grid-template-columns: .75fr 1.7fr; gap: 38px; align-items: center; }
+        .guide-copy h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 900; line-height: 1.4; }
+        .guide-copy p { margin: 10px 0 0; color: #c6d7e2; font-size: .9rem; }
+        .guide-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .field label { display: block; margin-bottom: 6px; color: #dbe8ef; font-size: .75rem; font-weight: 800; }
+        .field select { width: 100%; min-height: 50px; padding: 9px 12px; border: 1px solid #31536b; border-radius: 11px; background: var(--white); color: var(--ink); cursor: pointer; }
+        .guide-submit { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; margin-top: 8px; }
+        .guide-result { color: #b8d1dd; font-size: .77rem; }
+        .guide-submit .button { min-width: 260px; }
+
+        .faq-list { max-width: 900px; margin-inline: auto; border-top: 1px solid var(--line); }
+        .faq-item { border-bottom: 1px solid var(--line); }
+        .faq-item summary { display: flex; min-height: 74px; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; color: var(--navy-900); font-weight: 800; list-style: none; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-icon { position: relative; width: 24px; height: 24px; color: var(--teal-600); flex: 0 0 auto; }
+        .faq-icon::before, .faq-icon::after { position: absolute; top: 11px; left: 3px; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; transition: transform .2s ease; }
+        .faq-icon::after { transform: rotate(90deg); }
+        .faq-item[open] .faq-icon::after { transform: rotate(0); }
+        .faq-answer { max-width: 760px; padding: 0 0 24px; color: var(--muted); font-size: .92rem; }
+
+        .final-cta { padding-block: 78px; border-top: 1px solid var(--line); }
+        .final-grid { display: grid; grid-template-columns: 250px 1fr auto; gap: 42px; align-items: center; }
+        .final-logo { width: 220px; height: 120px; overflow: hidden; }
+        .final-logo img { width: 220px; height: 120px; object-fit: cover; object-position: center; }
+        .final-copy h2 { margin: 0; color: var(--navy-900); font-size: clamp(1.75rem, 3vw, 2.6rem); font-weight: 900; line-height: 1.4; }
+        .final-copy p { margin: 10px 0 0; color: var(--muted); }
+        .site-footer { padding-block: 24px 84px; color: #718594; font-size: .78rem; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; border-top: 1px solid var(--line); padding-top: 24px; }
+        .footer-inner a { color: var(--teal-700); font-weight: 800; }
+
+        .mobile-whatsapp { display: none; }
+
+        .js [data-reveal] { opacity: 1; transform: translateY(14px); transition: transform .65s ease; }
+        .js [data-reveal].is-visible { transform: none; }
+
+        @media (max-width: 1020px) {
+            .main-nav { gap: 20px; }
+            .main-nav a { font-size: .82rem; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-copy { max-width: 780px; }
+            .hero-copy h1 { max-width: 740px; }
+            .hero::after { left: 10%; bottom: 210px; width: 76%; }
+            .product-visual { max-width: 830px; margin-inline: auto; }
+            .workflow-grid, .demo-layout { grid-template-columns: 1fr; }
+            .demo-stage, .role-list { grid-column: auto; grid-row: auto; }
+            .problem-list { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .problem-pair { border-bottom: 0; border-right: 1px solid rgba(11,45,71,.12); }
+            .problem-pair:last-child { border-right: 0; }
+            .role-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+            .role-list h3 { grid-column: 1 / -1; }
+            .options-grid { gap: 14px; }
+            .option-card { padding: 24px; }
+            .guide-grid { grid-template-columns: 1fr; }
+            .final-grid { grid-template-columns: 180px 1fr; }
+            .final-grid > .button { grid-column: 2; justify-self: start; }
+            .final-logo { grid-row: 1 / span 2; width: 180px; }
+        }
+
+        @media (max-width: 820px) {
+            .section { padding-block: 78px; }
+            .container { width: min(calc(100% - 32px), var(--container)); }
+            .main-nav {
+                position: fixed;
+                inset: 78px 0 auto;
+                display: grid;
+                gap: 0;
+                padding: 12px 22px 22px;
+                border-bottom: 1px solid var(--line);
+                background: var(--white);
+                box-shadow: 0 18px 40px rgba(11,45,71,.12);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-12px);
+                transition: opacity .2s ease, transform .2s ease;
+            }
+            .main-nav.is-open { opacity: 1; pointer-events: auto; transform: none; }
+            .main-nav a { padding: 13px 4px; border-bottom: 1px solid var(--line); font-size: .92rem; }
+            .main-nav a:last-child { border-bottom: 0; }
+            .main-nav a::after { display: none; }
+            .menu-toggle { display: inline-flex; }
+            .header-cta { display: none; }
+            .brand { width: 162px; }
+            .brand img { width: 162px; }
+            .hero { padding-top: 54px; }
+            .hero-actions .button { flex: 1 1 220px; }
+            .trust-rail { grid-template-columns: 1fr 1fr; }
+            .trust-item + .trust-item { border-left: 0; }
+            .trust-item:nth-child(even) { border-left: 1px solid var(--line); }
+            .trust-item:nth-child(n+3) { border-top: 1px solid var(--line); }
+            .screen-pair { grid-template-columns: 1fr; }
+            .screen-frame:nth-child(1) { display: none; transform: none; }
+            .problem-list { grid-template-columns: 1fr; gap: 0; }
+            .problem-pair { border-bottom: 1px solid rgba(11,45,71,.12); border-right: 0; }
+            .role-list { grid-template-columns: 1fr; }
+            .role-list h3 { grid-column: auto; }
+            .capability-row { grid-template-columns: 60px 1fr; }
+            .capability-row > div:last-child { grid-column: 2; }
+            .options-grid { grid-template-columns: 1fr; }
+            .option-card { min-height: auto; }
+            .option-capacity { min-height: auto; }
+            .guide-form { grid-template-columns: 1fr; }
+            .guide-submit { grid-column: auto; grid-template-columns: 1fr; }
+            .guide-submit .button { width: 100%; min-width: 0; }
+            .final-grid { grid-template-columns: 1fr; text-align: center; }
+            .final-logo { grid-row: auto; width: 200px; height: 100px; margin-inline: auto; }
+            .final-logo img { width: 200px; height: 100px; }
+            .final-grid > .button { grid-column: auto; justify-self: center; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .mobile-whatsapp {
+                position: fixed;
+                z-index: 90;
+                right: 14px;
+                bottom: 14px;
+                left: 14px;
+                display: flex;
+                min-height: 54px;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                border-radius: 14px;
+                background: var(--teal-600);
+                color: var(--white);
+                font-weight: 900;
+                box-shadow: 0 16px 38px rgba(7, 58, 74, .28);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(82px);
+                transition: opacity .22s ease, transform .22s ease;
+            }
+            .mobile-whatsapp.is-active { opacity: 1; pointer-events: auto; transform: none; }
+            .mobile-whatsapp svg { width: 22px; height: 22px; }
+        }
+
+        @media (max-width: 560px) {
+            .container { width: min(calc(100% - 24px), var(--container)); }
+            .header-inner { height: 70px; }
+            .main-nav { inset-block-start: 70px; }
+            .brand { width: 146px; height: 48px; }
+            .brand img { width: 146px; height: 48px; }
+            .hero { padding-block: 40px 34px; }
+            .hero-copy h1 { font-size: clamp(2.15rem, 11vw, 2.9rem); }
+            .hero-copy p { line-height: 1.85; }
+            .hero-actions { display: grid; grid-template-columns: 1fr; }
+            .hero-actions .button { width: 100%; }
+            .product-visual { padding: 10px 0 24px; }
+            .product-rail { display: none; }
+            .product-window { border-radius: 15px; }
+            .product-window__bar { height: 38px; }
+            .product-stamp { left: 10px; bottom: 10px; font-size: .62rem; }
+            .trust-rail { margin-top: 36px; }
+            .trust-item { min-height: 94px; flex-direction: column; gap: 5px; padding: 12px 8px; font-size: .78rem; }
+            .trust-item small { font-size: .62rem; }
+            .section { padding-block: 68px; }
+            .section-heading { margin-bottom: 38px; }
+            .section-heading h2 { font-size: clamp(1.85rem, 9vw, 2.45rem); }
+            .journey { grid-template-columns: 1fr; gap: 0; margin-bottom: 36px; }
+            .journey::before { top: 26px; right: auto; bottom: 26px; left: 25px; width: 2px; height: auto; }
+            .journey-step { display: grid; grid-template-columns: 52px 34px 1fr; align-items: center; gap: 12px; text-align: left; }
+            .journey-number { margin: 0; }
+            .journey-step svg { margin: 0; }
+            .journey-step strong { padding-block: 15px; }
+            .demo-tabs { justify-content: flex-start; }
+            .demo-tab { min-width: 138px; }
+            .demo-stage { border-radius: 14px; }
+            .demo-stage__image { aspect-ratio: 4 / 3; }
+            .capability-row { grid-template-columns: 44px 1fr; gap: 16px; padding-block: 26px; }
+            .capability-number { font-size: .8rem; }
+            .capability-row h3 { font-size: 1.12rem; }
+            .capability-row p { font-size: .86rem; }
+            .guide-panel { padding: 28px 20px; border-radius: 18px; }
+            .faq-item summary { min-height: 68px; font-size: .9rem; }
+            .final-cta { padding-block: 62px; }
+            .site-footer { padding-bottom: 96px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+            .js [data-reveal] { opacity: 1; transform: none; }
+        }
     </style>
 </head>
 
-<body class="bg-white text-slate-800 antialiased">
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- ===================== Header ===================== -->
-    <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <img src="images/prodentic.png" alt="ProDentic Logo" class="h-9 w-auto">
-                <span class="font-extrabold text-lg text-slate-900">ProDentic</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
-                <a href="#features" class="hover:text-brand-700">Features</a>
-                <a href="#why" class="hover:text-brand-700">Why for Clinics</a>
-                <a href="#pricing" class="hover:text-brand-700">Pricing Plans</a>
-                <a href="#faq" class="hover:text-brand-700">FAQ</a>
-            </nav>
-            <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20try%20the%20Dental%20Clinic%20Management%20System" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-white text-sm font-bold shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition">
-                Try Now
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 19l7-7-7-7M5 19l7-7-7-7"/></svg>
+    <header class="site-header" aria-label="Primary navigation">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="ProDentic — Back to the top">
+                <img src="images/prodentic.png" alt="ProDentic" width="190" height="54">
             </a>
+
+            <nav class="main-nav" id="main-nav" aria-label="Page sections">
+                <a href="#how">How it helps</a>
+                <a href="#tour">Product tour</a>
+                <a href="#features">Features</a>
+                <a href="#options">Options</a>
+            </nav>
+
+            <a class="button button--primary header-cta js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="header" data-cta="header-whatsapp">
+                Book a demo
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
         </div>
     </header>
 
-    <!-- ===================== Hero Section ===================== -->
-    <section class="grad-hero">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-flex items-center gap-2 rounded-full bg-brand-100 text-brand-800 px-4 py-1.5 text-sm font-bold mb-6">
-                    <span class="h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
-                    Complete clinic management solution
-                </span>
-                <h1 class="text-4xl lg:text-5xl font-black leading-[1.25] text-slate-900">
-                    Manage Your Clinic From Patients to Reports
-                    <span class="text-brand-600"> in One Platform</span>
-                </h1>
-                <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
-                    A system that combines patient management, appointments, invoicing, inventory, and financial reports, with complete tracking of clinic operations,
-                    smart alerts, and accurate reports — designed specifically for dental clinics.
-                </p>
-                <div class="mt-8 flex flex-wrap items-center gap-4">
-                    <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20try%20the%20Dental%20Clinic%20Management%20System" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-white font-bold shadow-xl shadow-brand-600/30 hover:bg-brand-700 transition">
-                        Start Free Trial
-                    </a>
-                    <a href="index.html" target="_blank"  class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 px-6 py-3.5 font-bold text-slate-700 hover:border-brand-300 hover:text-brand-700 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
-                        User Guide
-                    </a>
-                </div>
-                <div class="mt-10 flex flex-wrap gap-8">
-                    <div><div class="text-3xl font-black text-slate-900">6</div><div class="text-sm text-slate-500 font-semibold">Main Features</div></div>
-                    <div><div class="text-3xl font-black text-slate-900">∞</div><div class="text-sm text-slate-500 font-semibold">Unlimited Patients</div></div>
-                    <div><div class="text-3xl font-black text-slate-900">PDF/Excel</div><div class="text-sm text-slate-500 font-semibold">Instant Export</div></div>
-                </div>
-            </div>
-
-            <!-- Dashboard Screenshot -->
-            <div class="relative">
-                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-200/50 to-transparent blur-2xl rounded-3xl"></div>
-                <div class="relative rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-brand-900/10 overflow-hidden">
-                    <div class="flex items-center gap-1.5 px-4 py-3 bg-slate-50 border-b border-slate-100">
-                        <span class="h-3 w-3 rounded-full bg-rose-400"></span>
-                        <span class="h-3 w-3 rounded-full bg-amber-400"></span>
-                        <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
-                        <span class="ml-3 text-xs text-slate-400 font-semibold">Dashboard — Overview</span>
-                    </div>
-                    <div class="p-5 space-y-4">
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="rounded-xl bg-brand-50 p-4">
-                                <div class="text-xs text-brand-700 font-bold">Active Patients</div>
-                                <div class="text-2xl font-black text-brand-900 mt-1">245</div>
-                            </div>
-                            <div class="rounded-xl bg-amber-50 p-4">
-                                <div class="text-xs text-amber-700 font-bold">Today's Appointments</div>
-                                <div class="text-2xl font-black text-amber-900 mt-1">12</div>
-                            </div>
-                            <div class="rounded-xl bg-emerald-50 p-4">
-                                <div class="text-xs text-emerald-700 font-bold">Pending Invoices</div>
-                                <div class="text-2xl font-black text-emerald-900 mt-1">8</div>
-                            </div>
-                            <div class="rounded-xl bg-slate-100 p-4">
-                                <div class="text-xs text-slate-600 font-bold">Today's Revenue</div>
-                                <div class="text-2xl font-black text-slate-900 mt-1">$1.2k</div>
-                            </div>
-                        </div>
-                        <div class="rounded-xl border border-slate-100 p-4">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-bold text-slate-700">Service Distribution</span>
-                                <span class="text-[10px] text-slate-400">2026</span>
-                            </div>
-                            <div class="flex items-end gap-2 h-24">
-                                <div class="flex-1 rounded-t bg-brand-600" style="height:80%"></div>
-                                <div class="flex-1 rounded-t bg-brand-400" style="height:55%"></div>
-                                <div class="flex-1 rounded-t bg-brand-300" style="height:70%"></div>
-                                <div class="flex-1 rounded-t bg-brand-500" style="height:40%"></div>
-                                <div class="flex-1 rounded-t bg-brand-400" style="height:62%"></div>
-                                <div class="flex-1 rounded-t bg-brand-300" style="height:48%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== Trust Bar ===================== -->
-    <section class="border-y border-slate-100 bg-slate-50/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-                <div class="font-extrabold text-slate-900">Arabic Full Support</div>
-                <div class="text-sm text-slate-500 mt-1">Interface optimized for Arabic and RTL writing</div>
-            </div>
-            <div>
-                <div class="font-extrabold text-slate-900">Multi-User</div>
-                <div class="text-sm text-slate-500 mt-1">Support for multiple doctors and staff with different permissions</div>
-            </div>
-            <div>
-                <div class="font-extrabold text-slate-900">Precise Permissions</div>
-                <div class="text-sm text-slate-500 mt-1">Complete control over roles and what each user can see</div>
-            </div>
-            <div>
-                <div class="font-extrabold text-slate-900">Audit Log</div>
-                <div class="text-sm text-slate-500 mt-1">Track every add, edit, and delete operation</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== Why for Clinics ===================== -->
-    <section id="why" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="order-2 lg:order-1">
-                <div class="rounded-2xl border border-slate-200 bg-white shadow-xl p-6 space-y-4">
-                    <div class="text-sm font-bold text-slate-700 mb-2">Patient Care Journey — Complete Services</div>
-
-                    <div class="flex items-center gap-3">
-                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
-                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
-                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Patient Reception & Registration</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="h-8 w-8 grid place-items-center rounded-full bg-emerald-500 text-white text-xs font-bold">✓</span>
-                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
-                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Initial Exam & Diagnosis</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="h-8 w-8 grid place-items-center rounded-full bg-brand-600 text-white text-xs font-bold">✓</span>
-                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-brand-600" style="width:100%"></div></div>
-                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Treatment Plan</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="h-8 w-8 grid place-items-center rounded-full bg-amber-500 text-white text-xs font-bold">…</span>
-                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-amber-500" style="width:45%"></div></div>
-                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Treatment Sessions</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="h-8 w-8 grid place-items-center rounded-full bg-slate-300 text-white text-xs font-bold">…</span>
-                        <div class="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-slate-300" style="width:45%"></div></div>
-                        <span class="text-sm font-semibold text-slate-600 w-44 text-right">Invoicing & Follow-up</span>
-                    </div>
-                </div>
-            </div>
-            <div class="order-1 lg:order-2">
-                <span class="text-brand-600 font-bold">Why This System?</span>
-                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2 leading-snug">
-                    Built for Dental Clinic Operations
-                </h2>
-                <p class="mt-4 text-slate-600 leading-relaxed">
-                    A clinic doesn't just manage "patients"; it needs to track medical records, treatment plans, invoices, inventory, and financial reports
-                    — with smart alerts and timely notifications. This system was built around this reality.
-                </p>
-                <ul class="mt-6 space-y-4">
-                    <li class="flex gap-3">
-                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                        <div>
-                            <div class="font-bold text-slate-900">Complete Patient & Medical Records</div>
-                            <div class="text-sm text-slate-600">Comprehensive patient profile with history, dental chart, and treatment plans.</div>
-                        </div>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                        <div>
-                            <div class="font-bold text-slate-900">Smart Appointment Scheduling</div>
-                            <div class="text-sm text-slate-600">Interactive calendar prevents conflicts and sends smart reminders.</div>
-                        </div>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                        <div>
-                            <div class="font-bold text-slate-900">Flexible Payment Plans</div>
-                            <div class="text-sm text-slate-600">Create professional invoices with support for multi-payment treatment plans.</div>
-                        </div>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="mt-1 h-6 w-6 shrink-0 grid place-items-center rounded-full bg-brand-100 text-brand-700"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                        <div>
-                            <div class="font-bold text-slate-900">Financial Reports & Analytics</div>
-                            <div class="text-sm text-slate-600">Instant export to PDF or Excel by period, doctor, and service type.</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== Features ===================== -->
-    <section id="features" class="bg-slate-50/70 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center max-w-2xl mx-auto">
-                <span class="text-brand-600 font-bold">Main Features</span>
-                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Everything Your Clinic Needs in One Platform</h2>
-                <p class="mt-4 text-slate-600">Integrated modules covering the complete workflow from patient reception to reporting.</p>
-            </div>
-
-            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👥</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Patient Management</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Complete patient records with medical history, allergies, blood type, and treatment plans.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📅</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Appointments & Scheduling</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Interactive calendar with advanced scheduling and smart notification system.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🦷</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Dental Chart</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Precise tooth recording using FDI notation with complete modification history.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📄</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Invoicing & Payments</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Professional invoices with support for multi-payment treatment plans and payment tracking.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📦</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Inventory Management</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Track medical supplies with low-stock alerts and complete transaction history.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">📊</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Financial Reports</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Comprehensive analytics with charts and instant export to Excel and PDF.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🔔</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Smart Alerts</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Instant notifications for appointments, pending payments, and low supplies.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">👨‍⚕️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Doctor & Staff Management</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Manage doctors and staff with work tracking and productivity statistics.</p></div>
-                <div class="card-hover rounded-2xl border border-slate-200 bg-white p-6"><div class="h-12 w-12 grid place-items-center rounded-xl bg-brand-50 text-2xl">🛡️</div><h3 class="mt-4 font-extrabold text-lg text-slate-900">Security & Backup</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Data backups and complete audit log for every operation on the system.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== Pricing Plans ===================== -->
-    <section id="pricing" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-600 font-bold tracking-wide uppercase">Pricing Plans</span>
-                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Flexible Plans for Every Clinic Scale</h2>
-                <p class="mt-4 text-slate-600 text-base lg:text-lg">Choose the subscription plan that fits your business goals. Upgrade or adjust whenever your clinic expands.</p>
-            </div>
-
-            <!-- Pricing Cards Grid -->
-            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                
-                <!-- Basic Plan -->
-                <div class="card-hover rounded-3xl border border-slate-200 bg-white p-8 flex flex-col justify-between relative shadow-sm">
-                    <div>
-                        <div class="mb-6">
-                            <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-800 px-3 py-1 text-xs font-bold mb-3">Small Clinics</span>
-                            <h3 class="text-2xl font-black text-slate-900">Basic Plan</h3>
-                            <p class="text-sm text-slate-500 mt-1">Perfect for individual dentists managing basic daily operations.</p>
-                        </div>
-                        <div class="flex items-baseline gap-1 mb-6 border-b border-slate-100 pb-6">
-                            <span class="text-4xl lg:text-5xl font-black text-slate-900">$150</span>
-                            <span class="text-slate-500 font-medium">/ year</span>
-                        </div>
-                        
-                        <!-- Operational Limits -->
-                        <div class="mb-6">
-                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Operational Limits</h4>
-                            <ul class="space-y-2 text-sm text-slate-700">
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Branches:</strong> 1 Branch only</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Rooms/Clinics:</strong> 1 Room per branch</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Doctors:</strong> 1 Doctor only</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Total Users:</strong> Max 5 Users</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Staff Members:</strong> Max 3 Staff</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Included Features -->
-                        <div class="mb-6 border-t border-slate-100 pt-6">
-                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Included Features</h4>
-                            <ul class="space-y-2.5 text-sm text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Main Overview Dashboard</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Patient Profiles & Medical History</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Appointment Booking & Calendar</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Invoicing, Payments & Expenses</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Treatment Plans & Sessions</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Daily Closing & Base Price Lists</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>General Settings & Payment Methods</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Tooth Reference & Dental Chart</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20subscribe%20to%20the%20Basic%20plan%20of%20ProDentic" target="_blank" class="w-full inline-flex items-center justify-center rounded-xl border-2 border-slate-200 px-4 py-3 font-bold text-slate-700 hover:border-brand-600 hover:text-brand-700 hover:bg-slate-50 transition duration-150">
-                            Subscribe Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Standard Plan -->
-                <div class="card-hover rounded-3xl border-2 border-brand-500 bg-white p-8 flex flex-col justify-between relative shadow-md ring-4 ring-brand-500/10">
-                    <span class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600 text-white px-4 py-1 text-xs font-bold uppercase tracking-wider">Most Popular</span>
-                    <div>
-                        <div class="mb-6">
-                            <span class="inline-flex items-center rounded-full bg-brand-100 text-brand-800 px-3 py-1 text-xs font-bold mb-3">Medium Centers</span>
-                            <h3 class="text-2xl font-black text-slate-900">Standard Plan</h3>
-                            <p class="text-sm text-slate-500 mt-1">Designed for medium centers managing multiple clinics or rooms.</p>
-                        </div>
-                        <div class="flex items-baseline gap-1 mb-6 border-b border-slate-100 pb-6">
-                            <span class="text-4xl lg:text-5xl font-black text-slate-900">$300</span>
-                            <span class="text-slate-500 font-medium">/ year</span>
-                        </div>
-                        
-                        <!-- Operational Limits -->
-                        <div class="mb-6">
-                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Operational Limits</h4>
-                            <ul class="space-y-2 text-sm text-slate-700">
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Branches:</strong> Max 2 Branches</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Rooms/Clinics:</strong> 3 Rooms per branch</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Doctors:</strong> Max 10 Doctors</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Total Users:</strong> Max 20 Users</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Staff Members:</strong> Max 10 Staff</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Included Features -->
-                        <div class="mb-6 border-t border-slate-100 pt-6">
-                            <h4 class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-3">Includes all Basic features, plus:</h4>
-                            <ul class="space-y-2.5 text-sm text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-brand-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">Waiting List Flow Management</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-brand-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">Advanced Financial & Operations Reports</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-brand-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">Inventory, Suppliers & Stock Tracking</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-brand-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">Multiple Price Tiers (Insurances & Discounts)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20subscribe%20to%20the%20Standard%20plan%20of%20ProDentic" target="_blank" class="w-full inline-flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 font-bold text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 transition">
-                            Subscribe Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Advanced Plan -->
-                <div class="card-hover rounded-3xl border border-slate-200 bg-white p-8 flex flex-col justify-between relative shadow-sm">
-                    <div>
-                        <div class="mb-6">
-                            <span class="inline-flex items-center rounded-full bg-slate-900 text-white px-3 py-1 text-xs font-bold mb-3">Large Centers & Hospitals</span>
-                            <h3 class="text-2xl font-black text-slate-900">Advanced Plan</h3>
-                            <p class="text-sm text-slate-500 mt-1">Full control and capabilities for large scale operations & hospitals.</p>
-                        </div>
-                        <div class="flex items-baseline gap-1 mb-6 border-b border-slate-100 pb-6">
-                            <span class="text-4xl lg:text-5xl font-black text-slate-900">$500</span>
-                            <span class="text-slate-500 font-medium">/ year</span>
-                        </div>
-                        
-                        <!-- Operational Limits -->
-                        <div class="mb-6">
-                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Operational Limits</h4>
-                            <ul class="space-y-2 text-sm text-slate-700">
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Branches:</strong> Max 5 Branches</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Rooms/Clinics:</strong> 5 Rooms per branch</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Doctors:</strong> Max 20 Doctors</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Total Users:</strong> Max 40 Users</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-brand-600 font-bold">●</span>
-                                    <span><strong>Staff Members:</strong> Max 40 Staff</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Included Features -->
-                        <div class="mb-6 border-t border-slate-100 pt-6">
-                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Includes all Standard features, plus:</h4>
-                            <ul class="space-y-2.5 text-sm text-slate-600">
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">Advanced Roles & Custom Permissions</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">Audit Logs (Track adjustments & actions)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                    <span class="font-semibold text-slate-800">System Database Backup & Scheduling</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20subscribe%20to%20the%20Advanced%20plan%20of%20ProDentic" target="_blank" class="w-full inline-flex items-center justify-center rounded-xl border-2 border-slate-200 px-4 py-3 font-bold text-slate-700 hover:border-slate-900 hover:text-slate-900 hover:bg-slate-50 transition">
-                            Contact Us
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Mockup Graphic and Note on Custom Services -->
-            <div class="mt-16 rounded-3xl bg-slate-50 border border-slate-200 overflow-hidden shadow-sm">
-                <div class="grid lg:grid-cols-12 gap-8 items-center p-8 lg:p-12">
-                    
-                    <!-- Text and Warning Side -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <div class="inline-flex items-center gap-2 rounded-xl bg-amber-50 text-amber-800 px-4 py-1.5 text-xs font-bold">
-                            ⚠️ IMPORTANT NOTICE
-                        </div>
-                        <h3 class="text-2xl font-black text-slate-900">Custom Services & Software Tailoring</h3>
-                        <p class="text-slate-600 leading-relaxed text-sm lg:text-base">
-                            We are committed to delivering the best solutions for your medical centers. Please note that custom development services, bespoke features, and integrations with third-party software or medical devices are available and are <span class="text-brand-600 font-bold underline">not subject to the standard pricing tiers above</span>.
-                        </p>
-                        <div class="p-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm flex items-start gap-3">
-                            <span class="text-xl">✨</span>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm">Examples of Custom Services:</h4>
-                                <p class="text-xs text-slate-500 mt-1">Bespoke feature implementation, hardware sync plugins, unique patient workflow designs, and personal team-training sessions.</p>
-                            </div>
-                        </div>
-                        <div class="pt-2">
-                            <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20custom%20services%20for%20ProDentic" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-white text-sm font-bold hover:bg-slate-800 transition">
-                                Inquire Now
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+    <main id="main-content">
+        <section class="hero" id="top">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-copy" data-reveal>
+                        <h1><span>Run your clinic</span><span>from first visit</span><span>to final payment</span></h1>
+                        <p>ProDentic brings patient records, appointments, dental charts, treatment plans, billing, and inventory into one clear system, so your team can find the details they need in one place.</p>
+                        <div class="hero-actions">
+                            <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="hero" data-cta="hero-whatsapp">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+                                Book a demo on WhatsApp
                             </a>
+                            <a class="button button--outline" href="#tour" data-cta="hero-tour">See the system in action</a>
+                        </div>
+                        <div class="hero-note">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+                            <span>Tell us how many dentists and branches you have, and what you want to organize first.</span>
                         </div>
                     </div>
 
-                    <!-- Mockup Graphic Side -->
-                    <div class="lg:col-span-5 relative">
-                        <div class="absolute -inset-4 bg-gradient-to-tr from-brand-300/30 to-transparent blur-xl rounded-full"></div>
-                        <div class="relative rounded-2xl border border-slate-200 overflow-hidden shadow-lg bg-white p-2">
-                            <img src="images/pricing_plans_mockup.png" alt="ProDentic Pricing Plans Mockup" class="w-full h-auto rounded-xl object-cover hover:scale-[1.02] transition duration-300">
+                    <div class="product-visual" data-reveal>
+                        <div class="product-rail" aria-hidden="true">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11h6M9 15h6"/><path d="M6 3h12a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z"/></svg></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 16-4 4-4-4"/><path d="M17 20V4M3 8l4-4 4 4M7 4v16"/></svg></span>
+                        </div>
+                        <div class="product-window">
+                            <div class="product-window__bar">
+                                <strong>Dashboard — Daily overview</strong>
+                                <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                            </div>
+                            <div class="product-window__viewport">
+                                <img src="images/shot-dashboard.png" alt="ProDentic dashboard shown in Arabic" width="1440" height="900" decoding="async" fetchpriority="high">
+                                <span class="product-stamp">Actual Arabic interface</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-rail" data-reveal aria-label="Verified capabilities">
+                    <div class="trust-item">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+                        <span>Arabic & English interface</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>
+                        <span>Role-based permissions</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+                        <span>PDF & Excel reports</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+                        <span>WhatsApp when enabled</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workflow" id="how">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <h2>From the first call to the end‑of‑day close</h2>
+                    <p>Each step connects to the next, so you can see where every patient is in their journey and what your team needs to do next.</p>
+                </div>
+
+                <div class="journey" data-reveal aria-label="Patient journey inside the system">
+                    <div class="journey-step">
+                        <span class="journey-number">1</span>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+                        <strong>Patient registration</strong>
+                    </div>
+                    <div class="journey-step">
+                        <span class="journey-number">2</span>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+                        <strong>Appointment booking</strong>
+                    </div>
+                    <div class="journey-step">
+                        <span class="journey-number">3</span>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c-2-2-7-1-8 3-1 5 3 14 5 14 1 0 1-5 3-5s2 5 3 5c2 0 6-9 5-14-1-4-6-5-8-3Z"/><path d="M17 2v4M15 4h4"/></svg>
+                        <strong>Dental chart</strong>
+                    </div>
+                    <div class="journey-step">
+                        <span class="journey-number">4</span>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3V1h6v2M9 8h6M9 12h6M9 16h4"/></svg>
+                        <strong>Treatment plan</strong>
+                    </div>
+                    <div class="journey-step">
+                        <span class="journey-number">5</span>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10v18l-2-1.5L12 21l-3-1.5L7 21V3Z"/><path d="M10 8h4M10 12h4"/></svg>
+                        <strong>Invoice & payment</strong>
+                    </div>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="screen-pair" data-reveal>
+                        <figure class="screen-frame">
+                            <figcaption class="screen-frame__top"><strong>Daily schedule</strong><span>Quick booking</span></figcaption>
+                            <div class="screen-crop"><img src="images/shot-appointments.png" alt="ProDentic daily appointments screen" width="1440" height="900" loading="lazy" decoding="async"></div>
+                        </figure>
+                        <figure class="screen-frame">
+                            <figcaption class="screen-frame__top"><strong>Dental chart</strong><span>Change history</span></figcaption>
+                            <div class="screen-crop"><img src="images/shot-dental-chart.png" alt="ProDentic interactive dental chart" width="1440" height="900" loading="lazy" decoding="async"></div>
+                        </figure>
+                    </div>
+
+                    <div class="problem-list" data-reveal>
+                        <div class="problem-pair">
+                            <del>Scattered records</del>
+                            <strong>One connected patient record</strong>
+                            <p>Medical information, attachments, treatment, and account balance stay in context.</p>
+                        </div>
+                        <div class="problem-pair">
+                            <del>Hard-to-track appointments</del>
+                            <strong>A clear daily schedule</strong>
+                            <p>Patient, dentist, room, and visit status are visible to the front desk.</p>
+                        </div>
+                        <div class="problem-pair">
+                            <del>Numbers that surface too late</del>
+                            <strong>A clearer financial picture</strong>
+                            <p>Collections, expenses, payments, balances, and period reports stay in one view.</p>
+                        </div>
+                        <a class="inline-link" href="#tour">See the patient journey in ProDentic
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="tour">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <h2>See it before you decide</h2>
+                    <p>Explore the key screens and see how each part of the clinic's day connects.</p>
+                </div>
+
+                <div class="demo-tabs" role="tablist" aria-label="Product screen tour" data-reveal>
+                    <button class="demo-tab" type="button" role="tab" aria-selected="true" aria-controls="demo-panel" data-screen="dashboard">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        Dashboard
+                    </button>
+                    <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" data-screen="patient">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+                        Patient record
+                    </button>
+                    <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" data-screen="treatment">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3V1h6v2M9 8h6M9 12h6"/></svg>
+                        Treatment plan
+                    </button>
+                    <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" data-screen="reports">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                        Reports
+                    </button>
+                </div>
+                <p class="demo-caption" id="demo-caption" data-reveal>Today’s essentials at a glance: appointments, collections, unpaid invoices, and low-stock alerts.</p>
+
+                <div class="demo-layout">
+                    <div class="demo-stage" id="demo-panel" role="tabpanel" data-reveal>
+                        <div class="demo-stage__bar"><strong id="demo-title">Dashboard</strong><span>Actual Arabic interface</span></div>
+                        <div class="demo-stage__image">
+                            <img id="demo-image" src="images/shot-dashboard.png" alt="ProDentic dashboard" width="1440" height="900" loading="lazy" decoding="async">
                         </div>
                     </div>
 
+                    <aside class="role-list" aria-label="Benefits by team role" data-reveal>
+                        <h3>Everyone sees what they need</h3>
+                        <div class="role-item">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+                            <div><strong>Front desk</strong><p>Patients, bookings, daily schedule, and waiting list.</p></div>
+                        </div>
+                        <div class="role-item">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>
+                            <div><strong>Dentist</strong><p>Medical history, dental chart, and treatment sessions.</p></div>
+                        </div>
+                        <div class="role-item">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 18h5"/></svg>
+                            <div><strong>Management</strong><p>Invoices, payments, expenses, and reports.</p></div>
+                        </div>
+                        <div class="role-item">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 8-9 5-9-5 9-5 9 5Z"/><path d="m3 8 9 5 9-5v8l-9 5-9-5V8Z"/></svg>
+                            <div><strong>Inventory</strong><p>Supplies, suppliers, stock receipts, and issues.</p></div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="demo-cta" data-reveal>
+                    <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="demo" data-cta="tour-whatsapp">Request a demo with sample data</a>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- ===================== FAQ ===================== -->
-    <section id="faq" class="bg-slate-50/70 border-y border-slate-100">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center mb-12">
-                <span class="text-brand-600 font-bold">FAQ</span>
-                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mt-2">Common Questions About System Features</h2>
-            </div>
-
-            <div class="space-y-4">
-                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I add a new patient?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
-                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Add a new patient from the Patient section with one click. Enter basic information (name, phone, address), then add medical history and allergies. Data is saved instantly and you can start scheduling appointments.</div>
-                </details>
-                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I schedule an appointment?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
-                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Use the interactive calendar to select date and time. The system shows available doctors and rooms. Click your desired appointment and add notes if needed. You can automatically notify the patient.</div>
-                </details>
-                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I create multi-payment treatment plans?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
-                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Go to Treatment Plans and create a new plan. Add services and total cost, then set the number of payments and amount per payment. The system tracks payments automatically and sends reminders.</div>
-                </details>
-                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I track medical supplies?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
-                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">In the Inventory section, add products and set minimum stock levels. You'll receive automatic alerts when stock drops below the threshold. Complete transaction history is maintained.</div>
-                </details>
-                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I create professional invoices?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
-                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">Go to Invoices, select the patient and services. The system calculates costs automatically. Add discounts or notes, then print or export as PDF. You can also save as draft and update later.</div>
-                </details>
-                <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="flex items-center justify-between gap-4 p-5"><span class="font-bold text-slate-900">How do I view financial reports?</span><span class="faq-icon shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-700 text-xl font-bold transition-transform">+</span></summary>
-                    <div class="px-5 pb-5 -mt-1 text-slate-600 leading-relaxed text-sm">The Reports section shows revenue and expenses summaries by period. Filter by doctor, service, or payment type. Print or export as Excel or PDF for review or archiving.</div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== CTA Section ===================== -->
-    <section id="user-manual" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="rounded-3xl bg-gradient-to-tl from-brand-700 via-brand-600 to-brand-500 p-10 lg:p-14 text-white relative overflow-hidden">
-            <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
-            <div class="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
-            <div class="relative grid lg:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="text-3xl lg:text-4xl font-black leading-snug">Ready to Start? Try the System and Read the Guide</h2>
-                    <p class="mt-4 text-brand-50/90 leading-relaxed">
-                        Access the system and explore the modules yourself, or open the user guide to learn each feature step by step.
-                    </p>
+        <section class="section section--soft" id="features">
+            <div class="container">
+                <div class="section-heading section-heading--right" data-reveal>
+                    <h2>Everything you need to keep the details connected</h2>
+                    <p>Not a collection of disconnected tools—each area supports the patient journey and gives management a clearer view.</p>
                 </div>
-                <div class="flex flex-col sm:flex-row lg:justify-end gap-4">
-                    <a href="https://wa.me/967782558484?text=Hello%2C%20I%20would%20like%20to%20try%20the%20Dental%20Clinic%20Management%20System" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 font-extrabold text-brand-700 shadow-xl hover:bg-brand-50 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                        Try System
-                    </a>
-                    <a href="index.html" target="_blank"  class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/60 px-7 py-4 font-extrabold text-white hover:bg-white/10 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.247"/></svg>
-                        User Guide
-                    </a>
+
+                <div class="capability-list">
+                    <article class="capability-row" data-reveal>
+                        <span class="capability-number">01</span>
+                        <h3>Patient record & care</h3>
+                        <div>
+                            <p>Return to medical, treatment, and financial information from one organized record instead of searching through scattered papers and messages.</p>
+                            <div class="capability-points"><span>Medical history & allergies</span><span>Attachments & images</span><span>Adult & pediatric dental charts</span><span>Dental chart change history</span></div>
+                        </div>
+                    </article>
+                    <article class="capability-row" data-reveal>
+                        <span class="capability-number">02</span>
+                        <h3>Appointments & front desk</h3>
+                        <div>
+                            <p>Organize the daily schedule and each patient's movement through the clinic, from booking to being called and starting treatment.</p>
+                            <div class="capability-points"><span>Daily schedule & calendar</span><span>Dentist & treatment room</span><span>Prioritized waiting list</span><span>WhatsApp when enabled</span></div>
+                        </div>
+                    </article>
+                    <article class="capability-row" data-reveal>
+                        <span class="capability-number">03</span>
+                        <h3>Treatment & collections</h3>
+                        <div>
+                            <p>Connect each treatment plan to its sessions, invoices, and payments, and see the total cost, amount paid, and balance due at every stage.</p>
+                            <div class="capability-points"><span>Treatment plans & sessions</span><span>Invoices & service line items</span><span>Payments & receipts</span><span>Pricing tiers & discounts</span></div>
+                        </div>
+                    </article>
+                    <article class="capability-row" data-reveal>
+                        <span class="capability-number">04</span>
+                        <h3>Operations & oversight</h3>
+                        <div>
+                            <p>Track finances, inventory, and branches according to user permissions, with reports you can save and review.</p>
+                            <div class="capability-points"><span>Expenses & end-of-day closing</span><span>PDF & Excel reports</span><span>Inventory, suppliers & alerts</span><span>Branches, permissions & audit log</span></div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===================== Footer ===================== -->
-    <footer class="border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <div class="flex items-center gap-2">
-                <img src="images/prodentic.png" alt="ProDentic Logo" class="h-8 w-auto">
-                <span class="font-bold text-slate-700">ProDentic — Professional Dental Management</span>
+        <section class="section" id="options">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <h2>Options that fit your clinic</h2>
+                    <p>Choose the capacity closest to your needs, or let us help after a short product walkthrough.</p>
+                </div>
+
+                <div class="options-grid">
+                    <article class="option-card" data-reveal>
+                        <span class="option-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+                        <h3>Basic</h3>
+                        <p class="option-capacity">1 branch • 1 room • 1 dentist • 5 users</p>
+                        <div class="option-divider"></div>
+                        <p class="option-extra">For a solo clinic that wants to organize patient records, appointments, treatment, billing, and daily operations.</p>
+                        <button class="button button--outline option-button" type="button" data-plan="Basic">Ask about this option</button>
+                    </article>
+
+                    <article class="option-card" data-reveal>
+                        <span class="option-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M17 11h6"/></svg></span>
+                        <h3>Standard</h3>
+                        <p class="option-capacity">2 branches • 3 rooms per branch • Up to 10 dentists • 20 users</p>
+                        <div class="option-divider"></div>
+                        <p class="option-extra">Adds the waiting list, financial reports, inventory, suppliers, and pricing tiers.</p>
+                        <button class="button button--outline option-button" type="button" data-plan="Standard">Ask about this option</button>
+                    </article>
+
+                    <article class="option-card" data-reveal>
+                        <span class="option-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h.01M15 10h.01M9 14h.01M15 14h.01M9 18h.01M15 18h.01"/></svg></span>
+                        <h3>Advanced</h3>
+                        <p class="option-capacity">Up to 5 branches • 5 rooms per branch • 20 dentists • 40 users</p>
+                        <div class="option-divider"></div>
+                        <p class="option-extra">Adds role-based access, granular permissions, the audit log, and backup support.</p>
+                        <button class="button button--outline option-button" type="button" data-plan="Advanced">Ask about this option</button>
+                    </article>
+                </div>
+
+                <div class="guide-panel" id="contact-guide" data-reveal>
+                    <div class="guide-grid">
+                        <div class="guide-copy">
+                            <h3>Not sure which option fits?</h3>
+                            <p>Answer three quick questions and we'll prepare a WhatsApp message with the details.</p>
+                        </div>
+
+                        <form class="guide-form" id="lead-guide">
+                            <div class="field">
+                                <label for="clinic-size">Clinic size</label>
+                                <select id="clinic-size" name="clinic-size">
+                                    <option value="Solo clinic">Solo clinic</option>
+                                    <option value="Clinic with multiple rooms">Clinic with multiple rooms</option>
+                                    <option value="Two-branch center">Two-branch center</option>
+                                    <option value="Multi-branch center">Multi-branch center</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="doctor-count">Number of dentists</label>
+                                <select id="doctor-count" name="doctor-count">
+                                    <option value="1 dentist">1 dentist</option>
+                                    <option value="2–5 dentists">2–5 dentists</option>
+                                    <option value="6–10 dentists">6–10 dentists</option>
+                                    <option value="11–20 dentists">11–20 dentists</option>
+                                    <option value="More than 20 dentists">More than 20 dentists</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="priority">What do you want to organize first?</label>
+                                <select id="priority" name="priority">
+                                    <option value="Appointments & front desk">Appointments & front desk</option>
+                                    <option value="Patient records & treatment">Patient records & treatment</option>
+                                    <option value="Billing & reports">Billing & reports</option>
+                                    <option value="Inventory & suppliers">Inventory & suppliers</option>
+                                    <option value="All of the above">All of the above</option>
+                                </select>
+                            </div>
+                            <div class="guide-submit">
+                                <span class="guide-result" id="guide-result" aria-live="polite">A ready-to-edit message will open before you send it.</span>
+                                <a class="button button--primary" id="guided-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-cta="guided-whatsapp">
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+                                    Prepare my WhatsApp message
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div>© <script>document.write(new Date().getFullYear())</script> — All rights reserved.</div>
+        </section>
+
+        <section class="section section--soft" id="faq">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <h2>Questions before you get started</h2>
+                    <p>Clear answers to the questions clinic owners ask before seeing the system.</p>
+                </div>
+
+                <div class="faq-list" data-reveal>
+                    <details class="faq-item">
+                        <summary><span>Is it suitable for a small clinic?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-answer">Yes. The Basic option is set up for one branch, one room, and one dentist, and includes patient records, appointments, treatment plans, billing, and core daily operations.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>Is the interface available in Arabic and English?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-answer">Yes. ProDentic includes a complete right-to-left Arabic interface, and users can switch to English from within the system.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>Can I see the system before deciding?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-answer">Yes. Book a demo on WhatsApp and tell us your number of dentists, branches, and top priority so we can focus the walkthrough on your clinic's workflow.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary><span>How do I know which option fits?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-answer">It depends on the number of branches, rooms, dentists, and users, and whether you need reports, inventory, a waiting list, or advanced permissions. Use the form above to send the details in one message.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" aria-labelledby="final-title">
+            <div class="container final-grid" data-reveal>
+                <div class="final-logo"><img src="images/prodentic.png" alt="ProDentic" width="220" height="120" loading="lazy" decoding="async"></div>
+                <div class="final-copy">
+                    <h2 id="final-title">See ProDentic through a workflow like your own</h2>
+                    <p>Start with a short conversation, then see the system through steps that reflect your team's day-to-day work.</p>
+                </div>
+                <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="final" data-cta="final-whatsapp">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+                    Book a demo on WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© <span id="year">2026</span> ProDentic — All rights reserved.</span>
+            <a class="js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="footer" data-cta="footer-whatsapp">Contact us on WhatsApp</a>
         </div>
     </footer>
 
+    <a class="mobile-whatsapp js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="mobile" data-cta="mobile-sticky-whatsapp">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+        Book a demo on WhatsApp
+    </a>
+
+    <script>
+        (() => {
+            const whatsappNumber = '967782558484';
+            const baseMessage = 'Hello, I would like to book a ProDentic demo.\n\nNumber of dentists: \nNumber of branches: \nWhat I want to organize first: ';
+            const makeWhatsAppUrl = (message) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            document.querySelectorAll('.js-whatsapp').forEach((link) => {
+                link.href = makeWhatsAppUrl(baseMessage);
+            });
+
+            const menuButton = document.querySelector('.menu-toggle');
+            const nav = document.getElementById('main-nav');
+            const closeMenu = () => {
+                nav.classList.remove('is-open');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open navigation menu');
+                document.body.classList.remove('menu-open');
+            };
+
+            menuButton.addEventListener('click', () => {
+                const willOpen = !nav.classList.contains('is-open');
+                nav.classList.toggle('is-open', willOpen);
+                menuButton.setAttribute('aria-expanded', String(willOpen));
+                menuButton.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
+                document.body.classList.toggle('menu-open', willOpen);
+            });
+            nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+            document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+
+            const screens = {
+                dashboard: {
+                    title: 'Dashboard',
+                    src: 'images/shot-dashboard.png',
+                    alt: 'ProDentic dashboard',
+                    caption: 'Today’s essentials at a glance: appointments, collections, unpaid invoices, and low-stock alerts.'
+                },
+                patient: {
+                    title: 'Patient record',
+                    src: 'images/shot-patient-show.png',
+                    alt: 'Patient record in ProDentic',
+                    caption: 'Patient details, treatment plans, invoices, files, and financial indicators stay in one context.'
+                },
+                treatment: {
+                    title: 'Treatment plan',
+                    src: 'images/shot-tp-show.png',
+                    alt: 'Treatment plan and session details in ProDentic',
+                    caption: 'Track sessions, status, dentist, and room alongside the plan total, paid amount, and balance.'
+                },
+                reports: {
+                    title: 'Financial reports',
+                    src: 'images/shot-reports.png',
+                    alt: 'Financial reports in ProDentic',
+                    caption: 'Filter reports by period, review revenue and expenses, then export to PDF or Excel.'
+                }
+            };
+
+            const demoImage = document.getElementById('demo-image');
+            const demoTitle = document.getElementById('demo-title');
+            const demoCaption = document.getElementById('demo-caption');
+            document.querySelectorAll('.demo-tab').forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    const screen = screens[tab.dataset.screen];
+                    if (!screen || tab.getAttribute('aria-selected') === 'true') return;
+
+                    document.querySelectorAll('.demo-tab').forEach((item) => item.setAttribute('aria-selected', 'false'));
+                    tab.setAttribute('aria-selected', 'true');
+                    demoImage.classList.add('is-switching');
+
+                    const preload = new Image();
+                    preload.onload = () => {
+                        demoImage.src = screen.src;
+                        demoImage.alt = screen.alt;
+                        demoTitle.textContent = screen.title;
+                        demoCaption.textContent = screen.caption;
+                        requestAnimationFrame(() => demoImage.classList.remove('is-switching'));
+                    };
+                    preload.onerror = () => demoImage.classList.remove('is-switching');
+                    preload.src = screen.src;
+                });
+            });
+
+            const leadGuide = document.getElementById('lead-guide');
+            const clinicSize = document.getElementById('clinic-size');
+            const doctorCount = document.getElementById('doctor-count');
+            const priority = document.getElementById('priority');
+            const guidedWhatsApp = document.getElementById('guided-whatsapp');
+            const guideResult = document.getElementById('guide-result');
+            let selectedOption = '';
+
+            const suggestedOption = () => {
+                if (clinicSize.value === 'Solo clinic' && doctorCount.value === '1 dentist') return 'Basic';
+                if (clinicSize.value === 'Multi-branch center' || doctorCount.value === '11–20 dentists' || doctorCount.value === 'More than 20 dentists') return 'Advanced';
+                return 'Standard';
+            };
+
+            const updateGuidedMessage = () => {
+                const option = selectedOption || suggestedOption();
+                const message = [
+                    'Hello, I would like to book a ProDentic demo.',
+                    '',
+                    `Clinic size: ${clinicSize.value}`,
+                    `Number of dentists: ${doctorCount.value}`,
+                    `Top priority: ${priority.value}`,
+                    `Option I'd like to ask about: ${option}`,
+                    '',
+                    'Clinic name: '
+                ].join('\n');
+                guidedWhatsApp.href = makeWhatsAppUrl(message);
+                guideResult.textContent = `We'll include these details. The closest starting option is: ${option}.`;
+            };
+
+            leadGuide.addEventListener('submit', (event) => event.preventDefault());
+            [clinicSize, doctorCount, priority].forEach((field) => field.addEventListener('change', () => {
+                selectedOption = '';
+                updateGuidedMessage();
+            }));
+
+            document.querySelectorAll('.option-button').forEach((button) => {
+                button.addEventListener('click', () => {
+                    selectedOption = button.dataset.plan;
+                    updateGuidedMessage();
+                    document.getElementById('contact-guide').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+                    window.setTimeout(() => clinicSize.focus({ preventScroll: true }), 450);
+                });
+            });
+            updateGuidedMessage();
+
+            const revealItems = document.querySelectorAll('[data-reveal]');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: .12, rootMargin: '0px 0px -50px' });
+                revealItems.forEach((item) => observer.observe(item));
+            } else {
+                revealItems.forEach((item) => item.classList.add('is-visible'));
+            }
+
+            const mobileWhatsApp = document.querySelector('.mobile-whatsapp');
+            const heroActions = document.querySelector('.hero-actions');
+            if ('IntersectionObserver' in window) {
+                const mobileCtaObserver = new IntersectionObserver(([entry]) => {
+                    mobileWhatsApp.classList.toggle('is-active', !entry.isIntersecting);
+                }, { threshold: .05 });
+                mobileCtaObserver.observe(heroActions);
+            }
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
+    </script>
 </body>
 
 </html>
