@@ -1,558 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ProDentic | Dental Clinic Management System</title>
-    <meta name="description" content="Manage patient records, appointments, dental charts, treatment plans, billing, inventory, and reporting in one system built for dental clinics.">
-    <meta name="theme-color" content="#0b2d47">
+    <title>ProDentic | Clear dental clinic management, from booking to payment</title>
+    <meta name="description" content="Explore ProDentic for patient records, appointments, dental charting, treatment plans, lab orders, installments, billing, inventory, and reporting in one connected workflow.">
+    <meta name="theme-color" content="#061b2b">
     <link rel="canonical" href="https://softnube.site/ProDentic/features-en.html">
     <link rel="alternate" hreflang="en" href="https://softnube.site/ProDentic/features-en.html">
     <link rel="alternate" hreflang="ar" href="https://softnube.site/ProDentic/features-ar.html">
     <link rel="icon" href="images/prodentic.png" type="image/png">
-
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ar_AR">
-    <meta property="og:title" content="ProDentic | From the First Appointment to the Final Payment">
-    <meta property="og:description" content="See how ProDentic connects patient records, appointments, treatment, billing, and inventory in one clear dental clinic management system.">
+    <meta property="og:title" content="ProDentic | Every clinic detail, kept in context">
+    <meta property="og:description" content="From the patient record and dental chart to lab work, installments, and financial reporting — see the real ProDentic workflow.">
     <meta property="og:url" content="https://softnube.site/ProDentic/features-en.html">
-    <meta property="og:image" content="https://softnube.site/ProDentic/images/prodentic.png">
+    <meta property="og:image" content="https://softnube.site/ProDentic/images/shot-dashboard-live.png">
     <meta name="twitter:card" content="summary_large_image">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <script>document.documentElement.classList.add('js');</script>
-    <style>
-        :root {
-            --navy-950: #071e31;
-            --navy-900: #0b2d47;
-            --navy-800: #123d5c;
-            --teal-700: #087c75;
-            --teal-600: #079b90;
-            --teal-500: #10aaa0;
-            --teal-100: #d8f4f1;
-            --teal-50: #eefaf9;
-            --coral-600: #e85e50;
-            --coral-50: #fff1ef;
-            --ink: #102a3e;
-            --muted: #5c7182;
-            --line: #dce7ec;
-            --surface: #f6f9fa;
-            --white: #ffffff;
-            --shadow-sm: 0 10px 30px rgba(11, 45, 71, .07);
-            --shadow-lg: 0 28px 70px rgba(11, 45, 71, .14);
-            --radius-sm: 12px;
-            --radius-md: 18px;
-            --radius-lg: 28px;
-            --container: 1180px;
-        }
-
-        *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-        body {
-            margin: 0;
-            overflow-x: hidden;
-            background: var(--white);
-            color: var(--ink);
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-        }
-        body.menu-open { overflow: hidden; }
-        img { display: block; max-width: 100%; }
-        a { color: inherit; text-decoration: none; }
-        button, select { font: inherit; }
-        button, summary, a { -webkit-tap-highlight-color: transparent; }
-        button { color: inherit; }
-        :focus-visible { outline: 3px solid rgba(7, 155, 144, .36); outline-offset: 4px; }
-        ::selection { background: var(--teal-100); color: var(--navy-950); }
-
-        .skip-link {
-            position: fixed;
-            z-index: 200;
-            top: 12px;
-            left: 12px;
-            padding: 10px 16px;
-            border-radius: 10px;
-            background: var(--navy-950);
-            color: var(--white);
-            transform: translateY(-150%);
-            transition: transform .2s ease;
-        }
-        .skip-link:focus { transform: translateY(0); }
-
-        .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
-        .section { padding-block: 104px; }
-        .section--soft { background: var(--teal-50); }
-        .section-heading { max-width: 760px; margin: 0 auto 54px; text-align: center; }
-        .section-heading--right { margin-inline: 0; text-align: left; }
-        .section-heading h2 {
-            margin: 0;
-            color: var(--navy-900);
-            font-size: clamp(2rem, 4vw, 3.25rem);
-            font-weight: 900;
-            letter-spacing: -.035em;
-            line-height: 1.2;
-        }
-        .section-heading p { margin: 16px auto 0; max-width: 650px; color: var(--muted); font-size: 1.06rem; }
-        .section-heading--right p { margin-inline: 0; }
-
-        .site-header {
-            position: sticky;
-            z-index: 100;
-            top: 0;
-            border-bottom: 1px solid rgba(220, 231, 236, .82);
-            background: rgba(255, 255, 255, .94);
-            backdrop-filter: blur(16px);
-        }
-        .header-inner { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-        .brand { display: inline-flex; width: 190px; height: 54px; align-items: center; overflow: hidden; flex: 0 0 auto; }
-        .brand img { width: 190px; height: 54px; object-fit: cover; object-position: center; }
-        .main-nav { display: flex; align-items: center; gap: 32px; }
-        .main-nav a {
-            position: relative;
-            color: #35536a;
-            font-size: .92rem;
-            font-weight: 700;
-            transition: color .2s ease;
-        }
-        .main-nav a::after {
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 0;
-            height: 2px;
-            border-radius: 999px;
-            background: var(--teal-600);
-            content: "";
-            transition: width .2s ease;
-        }
-        .main-nav a:hover { color: var(--teal-700); }
-        .main-nav a:hover::after { width: 100%; }
-
-        .button {
-            display: inline-flex;
-            min-height: 52px;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 22px;
-            border: 1px solid transparent;
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            font-weight: 800;
-            line-height: 1.35;
-            transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
-        }
-        .button svg { width: 20px; height: 20px; flex: 0 0 auto; }
-        .button:hover { transform: translateY(-2px); }
-        .button--primary { background: var(--teal-600); color: var(--white); box-shadow: 0 12px 26px rgba(7, 155, 144, .22); }
-        .button--primary:hover { background: var(--teal-700); box-shadow: 0 16px 32px rgba(7, 155, 144, .28); }
-        .button--outline { border-color: #a9d8d4; background: var(--white); color: var(--teal-700); }
-        .button--outline:hover { border-color: var(--teal-600); background: var(--teal-50); }
-        .button--light { background: var(--white); color: var(--navy-900); box-shadow: var(--shadow-sm); }
-        .button--light:hover { color: var(--teal-700); }
-        .header-cta { min-height: 46px; padding: 10px 18px; font-size: .9rem; }
-        .menu-toggle {
-            display: none;
-            width: 46px;
-            height: 46px;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            background: var(--white);
-            cursor: pointer;
-        }
-        .menu-toggle svg { width: 22px; height: 22px; }
-
-        .hero { position: relative; padding-block: 74px 44px; }
-        .hero::after {
-            position: absolute;
-            z-index: -1;
-            left: 54%;
-            bottom: 92px;
-            width: 470px;
-            height: 360px;
-            border-radius: 36px;
-            background: var(--teal-50);
-            content: "";
-        }
-        .hero-grid { display: grid; grid-template-columns: .94fr 1.06fr; align-items: center; gap: clamp(48px, 7vw, 92px); }
-        .hero-copy h1 {
-            margin: 0;
-            max-width: 650px;
-            color: var(--navy-900);
-            font-size: clamp(2.55rem, 4.4vw, 4rem);
-            font-weight: 900;
-            letter-spacing: -.055em;
-            line-height: 1.1;
-        }
-        .hero-copy h1 span { display: block; }
-        .hero-copy p { margin: 24px 0 0; max-width: 620px; color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.18rem); line-height: 1.75; }
-        .hero-actions { display: flex; flex-wrap: nowrap; gap: 12px; margin-top: 30px; }
-        .hero-actions .button { padding-inline: 17px; font-size: .88rem; }
-        .hero-note { display: flex; align-items: flex-start; gap: 9px; margin-top: 18px; color: #6b7f8f; font-size: .88rem; font-weight: 600; }
-        .hero-note svg { width: 18px; height: 18px; margin-top: 5px; color: var(--teal-600); flex: 0 0 auto; }
-
-        .product-visual { position: relative; padding-block: 28px; }
-        .product-rail {
-            position: absolute;
-            z-index: 2;
-            top: 50%;
-            left: -26px;
-            display: grid;
-            gap: 5px;
-            padding: 14px 9px;
-            border-radius: 16px;
-            background: var(--navy-900);
-            color: var(--white);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-50%);
-        }
-        .product-rail span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; color: #d7e8f2; }
-        .product-rail span:first-child { background: rgba(255,255,255,.12); color: var(--white); }
-        .product-rail svg { width: 18px; height: 18px; }
-        .product-window { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--white); box-shadow: var(--shadow-lg); }
-        .product-window__bar { display: flex; height: 44px; align-items: center; justify-content: space-between; padding-inline: 16px; border-bottom: 1px solid var(--line); background: var(--surface); }
-        .product-window__bar strong { color: var(--navy-900); font-size: .78rem; }
-        .window-dots { display: flex; direction: ltr; gap: 6px; }
-        .window-dots i { width: 8px; height: 8px; border-radius: 50%; background: #bdcbd3; }
-        .window-dots i:nth-child(2) { background: var(--teal-500); }
-        .product-window__viewport { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--surface); }
-        .product-window__viewport img { width: 100%; height: 112%; max-width: none; object-fit: cover; object-position: center 46%; transform: translateY(-7%); }
-        .product-stamp {
-            position: absolute;
-            z-index: 3;
-            left: 18px;
-            bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 11px;
-            border: 1px solid rgba(220,231,236,.9);
-            border-radius: 10px;
-            background: rgba(255,255,255,.94);
-            color: var(--teal-700);
-            font-size: .72rem;
-            font-weight: 800;
-            box-shadow: var(--shadow-sm);
-        }
-        .product-stamp::before { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-500); content: ""; }
-
-        .trust-rail {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            margin-top: 60px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--white);
-            box-shadow: 0 8px 24px rgba(11,45,71,.04);
-        }
-        .trust-item { display: flex; min-height: 86px; align-items: center; justify-content: center; gap: 12px; padding: 18px; color: var(--navy-800); font-size: .9rem; font-weight: 800; text-align: center; }
-        .trust-item + .trust-item { border-left: 1px solid var(--line); }
-        .trust-item svg { width: 25px; height: 25px; color: var(--teal-600); flex: 0 0 auto; }
-        .trust-item small { display: block; color: var(--muted); font-size: .7rem; font-weight: 600; }
-
-        .workflow { overflow: hidden; background: var(--teal-50); }
-        .journey { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 6px 0 54px; }
-        .journey::before { position: absolute; top: 26px; right: 10%; left: 10%; height: 2px; background: #8fd8d2; content: ""; }
-        .journey-step { position: relative; z-index: 1; text-align: center; }
-        .journey-number { display: grid; width: 52px; height: 52px; margin-inline: auto; place-items: center; border: 2px solid var(--teal-600); border-radius: 50%; background: var(--white); color: var(--teal-700); font-size: 1.08rem; font-weight: 900; box-shadow: 0 5px 16px rgba(7,155,144,.1); }
-        .journey-step svg { width: 26px; height: 26px; margin: 17px auto 8px; color: var(--navy-900); }
-        .journey-step strong { display: block; color: var(--navy-900); font-size: .88rem; }
-
-        .workflow-grid { display: grid; grid-template-columns: 1.8fr .78fr; gap: 34px; align-items: stretch; }
-        .screen-pair { display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; align-items: center; }
-        .screen-frame { overflow: hidden; border: 1px solid #bfe3df; border-radius: 18px; background: var(--white); box-shadow: var(--shadow-sm); }
-        .screen-frame:nth-child(1) { transform: translateY(18px); }
-        .screen-frame__top { display: flex; height: 40px; align-items: center; justify-content: space-between; padding-inline: 13px; border-bottom: 1px solid var(--line); color: var(--navy-800); font-size: .72rem; font-weight: 800; }
-        .screen-frame__top span { color: var(--teal-700); }
-        .screen-crop { overflow: hidden; aspect-ratio: 16 / 10; }
-        .screen-crop img { width: 100%; height: 112%; object-fit: cover; object-position: center 52%; transform: translateY(-7%); }
-        .problem-list { display: grid; align-content: center; gap: 0; }
-        .problem-pair { padding: 23px 0; border-bottom: 1px solid rgba(11,45,71,.12); }
-        .problem-pair:last-child { border-bottom: 0; }
-        .problem-pair del { display: block; color: var(--coral-600); font-size: .9rem; font-weight: 800; text-decoration-thickness: 1px; text-decoration-color: rgba(232,94,80,.42); }
-        .problem-pair strong { display: block; margin-top: 4px; color: var(--teal-700); font-size: 1.05rem; }
-        .problem-pair p { margin: 5px 0 0; color: var(--muted); font-size: .83rem; line-height: 1.75; }
-        .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; color: var(--teal-700); font-weight: 800; text-decoration: underline; text-decoration-color: #8fd8d2; text-underline-offset: 6px; }
-        .inline-link svg { width: 18px; height: 18px; transition: transform .2s ease; }
-        .inline-link:hover svg { transform: translateX(4px); }
-
-        .demo-tabs { display: flex; max-width: 820px; margin: 0 auto 16px; overflow-x: auto; border: 1px solid var(--line); border-radius: 15px; background: var(--white); scrollbar-width: none; }
-        .demo-tabs::-webkit-scrollbar { display: none; }
-        .demo-tab { display: inline-flex; min-width: 155px; flex: 1 0 auto; align-items: center; justify-content: center; gap: 8px; padding: 14px 18px; border: 0; border-right: 1px solid var(--line); background: transparent; color: #405b70; cursor: pointer; font-weight: 800; transition: background-color .2s ease, color .2s ease; }
-        .demo-tab:last-child { border-right: 0; }
-        .demo-tab[aria-selected="true"] { background: var(--teal-600); color: var(--white); }
-        .demo-tab svg { width: 19px; height: 19px; }
-        .demo-caption { min-height: 34px; margin: 0 auto 22px; color: var(--teal-700); font-size: .94rem; font-weight: 700; text-align: center; }
-        .demo-layout { display: grid; grid-template-columns: 1fr 3fr; gap: 38px; align-items: center; }
-        .demo-stage { grid-column: 2; }
-        .role-list { grid-column: 1; grid-row: 1; }
-        .demo-stage { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-lg); }
-        .demo-stage__bar { display: flex; height: 46px; align-items: center; justify-content: space-between; padding-inline: 16px; border-bottom: 1px solid var(--line); background: var(--white); color: var(--navy-800); font-size: .76rem; font-weight: 800; }
-        .demo-stage__bar span { color: var(--teal-700); }
-        .demo-stage__image { overflow: hidden; aspect-ratio: 16 / 9; }
-        .demo-stage__image img { width: 100%; height: 114%; object-fit: cover; object-position: center 50%; transform: translateY(-7%); transition: opacity .18s ease; }
-        .demo-stage__image img.is-switching { opacity: .2; }
-        .role-list h3 { margin: 0 0 12px; color: var(--navy-900); font-size: 1.45rem; font-weight: 900; }
-        .role-item { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding-block: 19px; border-bottom: 1px solid var(--line); }
-        .role-item:last-child { border-bottom: 0; }
-        .role-item svg { width: 30px; height: 30px; color: var(--teal-700); }
-        .role-item strong { display: block; color: var(--navy-900); }
-        .role-item p { margin: 3px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.7; }
-        .demo-cta { margin-top: 28px; text-align: center; }
-
-        .capability-list { border-top: 1px solid var(--line); }
-        .capability-row { display: grid; grid-template-columns: 84px .8fr 1.5fr; gap: 28px; align-items: start; padding-block: 34px; border-bottom: 1px solid var(--line); }
-        .capability-number { color: var(--teal-600); font-size: 1rem; font-weight: 900; letter-spacing: .08em; }
-        .capability-row h3 { margin: 0; color: var(--navy-900); font-size: 1.35rem; font-weight: 900; line-height: 1.4; }
-        .capability-row p { margin: 0; color: var(--muted); }
-        .capability-points { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 13px; }
-        .capability-points span { display: inline-flex; align-items: center; gap: 7px; color: #38566c; font-size: .82rem; font-weight: 700; }
-        .capability-points span::before { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-500); content: ""; }
-
-        .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-        .option-card { display: flex; min-height: 430px; flex-direction: column; padding: 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-        .option-card:hover { transform: translateY(-4px); border-color: #a9d8d4; box-shadow: var(--shadow-sm); }
-        .option-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 15px; background: var(--teal-50); color: var(--navy-900); }
-        .option-icon svg { width: 28px; height: 28px; }
-        .option-card h3 { margin: 20px 0 0; color: var(--navy-900); font-size: 1.45rem; font-weight: 900; }
-        .option-capacity { min-height: 78px; margin: 15px 0 0; color: #38566c; font-size: .92rem; font-weight: 700; }
-        .option-divider { height: 1px; margin-block: 23px; background: var(--line); }
-        .option-extra { margin: 0 0 26px; color: var(--muted); font-size: .86rem; }
-        .option-card .button { width: 100%; margin-top: auto; }
-
-        .guide-panel { margin-top: 42px; padding: 42px; border-radius: 24px; background: var(--navy-900); color: var(--white); box-shadow: var(--shadow-lg); }
-        .guide-grid { display: grid; grid-template-columns: .75fr 1.7fr; gap: 38px; align-items: center; }
-        .guide-copy h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 900; line-height: 1.4; }
-        .guide-copy p { margin: 10px 0 0; color: #c6d7e2; font-size: .9rem; }
-        .guide-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-        .field label { display: block; margin-bottom: 6px; color: #dbe8ef; font-size: .75rem; font-weight: 800; }
-        .field select { width: 100%; min-height: 50px; padding: 9px 12px; border: 1px solid #31536b; border-radius: 11px; background: var(--white); color: var(--ink); cursor: pointer; }
-        .guide-submit { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; margin-top: 8px; }
-        .guide-result { color: #b8d1dd; font-size: .77rem; }
-        .guide-submit .button { min-width: 260px; }
-
-        .faq-list { max-width: 900px; margin-inline: auto; border-top: 1px solid var(--line); }
-        .faq-item { border-bottom: 1px solid var(--line); }
-        .faq-item summary { display: flex; min-height: 74px; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; color: var(--navy-900); font-weight: 800; list-style: none; }
-        .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-icon { position: relative; width: 24px; height: 24px; color: var(--teal-600); flex: 0 0 auto; }
-        .faq-icon::before, .faq-icon::after { position: absolute; top: 11px; left: 3px; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; transition: transform .2s ease; }
-        .faq-icon::after { transform: rotate(90deg); }
-        .faq-item[open] .faq-icon::after { transform: rotate(0); }
-        .faq-answer { max-width: 760px; padding: 0 0 24px; color: var(--muted); font-size: .92rem; }
-
-        .final-cta { padding-block: 78px; border-top: 1px solid var(--line); }
-        .final-grid { display: grid; grid-template-columns: 250px 1fr auto; gap: 42px; align-items: center; }
-        .final-logo { width: 220px; height: 120px; overflow: hidden; }
-        .final-logo img { width: 220px; height: 120px; object-fit: cover; object-position: center; }
-        .final-copy h2 { margin: 0; color: var(--navy-900); font-size: clamp(1.75rem, 3vw, 2.6rem); font-weight: 900; line-height: 1.4; }
-        .final-copy p { margin: 10px 0 0; color: var(--muted); }
-        .site-footer { padding-block: 24px 84px; color: #718594; font-size: .78rem; }
-        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; border-top: 1px solid var(--line); padding-top: 24px; }
-        .footer-inner a { color: var(--teal-700); font-weight: 800; }
-
-        .mobile-whatsapp { display: none; }
-
-        .js [data-reveal] { opacity: 1; transform: translateY(14px); transition: transform .65s ease; }
-        .js [data-reveal].is-visible { transform: none; }
-
-        @media (max-width: 1020px) {
-            .main-nav { gap: 20px; }
-            .main-nav a { font-size: .82rem; }
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-copy { max-width: 780px; }
-            .hero-copy h1 { max-width: 740px; }
-            .hero::after { left: 10%; bottom: 210px; width: 76%; }
-            .product-visual { max-width: 830px; margin-inline: auto; }
-            .workflow-grid, .demo-layout { grid-template-columns: 1fr; }
-            .demo-stage, .role-list { grid-column: auto; grid-row: auto; }
-            .problem-list { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-            .problem-pair { border-bottom: 0; border-right: 1px solid rgba(11,45,71,.12); }
-            .problem-pair:last-child { border-right: 0; }
-            .role-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
-            .role-list h3 { grid-column: 1 / -1; }
-            .options-grid { gap: 14px; }
-            .option-card { padding: 24px; }
-            .guide-grid { grid-template-columns: 1fr; }
-            .final-grid { grid-template-columns: 180px 1fr; }
-            .final-grid > .button { grid-column: 2; justify-self: start; }
-            .final-logo { grid-row: 1 / span 2; width: 180px; }
-        }
-
-        @media (max-width: 820px) {
-            .section { padding-block: 78px; }
-            .container { width: min(calc(100% - 32px), var(--container)); }
-            .main-nav {
-                position: fixed;
-                inset: 78px 0 auto;
-                display: grid;
-                gap: 0;
-                padding: 12px 22px 22px;
-                border-bottom: 1px solid var(--line);
-                background: var(--white);
-                box-shadow: 0 18px 40px rgba(11,45,71,.12);
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(-12px);
-                transition: opacity .2s ease, transform .2s ease;
-            }
-            .main-nav.is-open { opacity: 1; pointer-events: auto; transform: none; }
-            .main-nav a { padding: 13px 4px; border-bottom: 1px solid var(--line); font-size: .92rem; }
-            .main-nav a:last-child { border-bottom: 0; }
-            .main-nav a::after { display: none; }
-            .menu-toggle { display: inline-flex; }
-            .header-cta { display: none; }
-            .brand { width: 162px; }
-            .brand img { width: 162px; }
-            .hero { padding-top: 54px; }
-            .hero-actions .button { flex: 1 1 220px; }
-            .trust-rail { grid-template-columns: 1fr 1fr; }
-            .trust-item + .trust-item { border-left: 0; }
-            .trust-item:nth-child(even) { border-left: 1px solid var(--line); }
-            .trust-item:nth-child(n+3) { border-top: 1px solid var(--line); }
-            .screen-pair { grid-template-columns: 1fr; }
-            .screen-frame:nth-child(1) { display: none; transform: none; }
-            .problem-list { grid-template-columns: 1fr; gap: 0; }
-            .problem-pair { border-bottom: 1px solid rgba(11,45,71,.12); border-right: 0; }
-            .role-list { grid-template-columns: 1fr; }
-            .role-list h3 { grid-column: auto; }
-            .capability-row { grid-template-columns: 60px 1fr; }
-            .capability-row > div:last-child { grid-column: 2; }
-            .options-grid { grid-template-columns: 1fr; }
-            .option-card { min-height: auto; }
-            .option-capacity { min-height: auto; }
-            .guide-form { grid-template-columns: 1fr; }
-            .guide-submit { grid-column: auto; grid-template-columns: 1fr; }
-            .guide-submit .button { width: 100%; min-width: 0; }
-            .final-grid { grid-template-columns: 1fr; text-align: center; }
-            .final-logo { grid-row: auto; width: 200px; height: 100px; margin-inline: auto; }
-            .final-logo img { width: 200px; height: 100px; }
-            .final-grid > .button { grid-column: auto; justify-self: center; }
-            .footer-inner { flex-direction: column; text-align: center; }
-            .mobile-whatsapp {
-                position: fixed;
-                z-index: 90;
-                right: 14px;
-                bottom: 14px;
-                left: 14px;
-                display: flex;
-                min-height: 54px;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-                border-radius: 14px;
-                background: var(--teal-600);
-                color: var(--white);
-                font-weight: 900;
-                box-shadow: 0 16px 38px rgba(7, 58, 74, .28);
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(82px);
-                transition: opacity .22s ease, transform .22s ease;
-            }
-            .mobile-whatsapp.is-active { opacity: 1; pointer-events: auto; transform: none; }
-            .mobile-whatsapp svg { width: 22px; height: 22px; }
-        }
-
-        @media (max-width: 560px) {
-            .container { width: min(calc(100% - 24px), var(--container)); }
-            .header-inner { height: 70px; }
-            .main-nav { inset-block-start: 70px; }
-            .brand { width: 146px; height: 48px; }
-            .brand img { width: 146px; height: 48px; }
-            .hero { padding-block: 40px 34px; }
-            .hero-copy h1 { font-size: clamp(2.15rem, 11vw, 2.9rem); }
-            .hero-copy p { line-height: 1.85; }
-            .hero-actions { display: grid; grid-template-columns: 1fr; }
-            .hero-actions .button { width: 100%; }
-            .product-visual { padding: 10px 0 24px; }
-            .product-rail { display: none; }
-            .product-window { border-radius: 15px; }
-            .product-window__bar { height: 38px; }
-            .product-stamp { left: 10px; bottom: 10px; font-size: .62rem; }
-            .trust-rail { margin-top: 36px; }
-            .trust-item { min-height: 94px; flex-direction: column; gap: 5px; padding: 12px 8px; font-size: .78rem; }
-            .trust-item small { font-size: .62rem; }
-            .section { padding-block: 68px; }
-            .section-heading { margin-bottom: 38px; }
-            .section-heading h2 { font-size: clamp(1.85rem, 9vw, 2.45rem); }
-            .journey { grid-template-columns: 1fr; gap: 0; margin-bottom: 36px; }
-            .journey::before { top: 26px; right: auto; bottom: 26px; left: 25px; width: 2px; height: auto; }
-            .journey-step { display: grid; grid-template-columns: 52px 34px 1fr; align-items: center; gap: 12px; text-align: left; }
-            .journey-number { margin: 0; }
-            .journey-step svg { margin: 0; }
-            .journey-step strong { padding-block: 15px; }
-            .demo-tabs { justify-content: flex-start; }
-            .demo-tab { min-width: 138px; }
-            .demo-stage { border-radius: 14px; }
-            .demo-stage__image { aspect-ratio: 4 / 3; }
-            .capability-row { grid-template-columns: 44px 1fr; gap: 16px; padding-block: 26px; }
-            .capability-number { font-size: .8rem; }
-            .capability-row h3 { font-size: 1.12rem; }
-            .capability-row p { font-size: .86rem; }
-            .guide-panel { padding: 28px 20px; border-radius: 18px; }
-            .faq-item summary { min-height: 68px; font-size: .9rem; }
-            .final-cta { padding-block: 62px; }
-            .site-footer { padding-bottom: 96px; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-            .js [data-reveal] { opacity: 1; transform: none; }
-        }
-    </style>
-
+    <link rel="stylesheet" href="features.css">
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '804359142740520');
-    fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','804359142740520');fbq('track','PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=804359142740520&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
-
 <body>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=804359142740520&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header" aria-label="Primary navigation">
+    <svg class="icon-sprite" aria-hidden="true" width="0" height="0">
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 3v4M8 3v4M3 10h18" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7.4 3.8c1.7-.7 3 .2 4.6.2s2.9-.9 4.6-.2c3.2 1.3 3.4 5.1 2.2 8-.9 2.2-1.1 7.2-3.3 8.7-1.9 1.2-1.9-4.8-3.5-4.8s-1.6 6-3.5 4.8c-2.2-1.5-2.4-6.5-3.3-8.7-1.2-2.9-1-6.7 2.2-8Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-plan" viewBox="0 0 24 24"><path d="M8 3h8l1 3h3v15H4V6h3l1-3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11h8M8 15h6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 6h16a2 2 0 0 1 2 2v11H5a2 2 0 0 1-2-2V6Zm0 0 13-3v3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12h5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 16h10" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4-9 4-9-4Zm0 0v10l9 4 9-4V7M12 11v10" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6V2Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 2v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    </svg>
+
+    <header class="site-header" aria-label="Main navigation">
         <div class="container header-inner">
-            <a class="brand" href="#top" aria-label="ProDentic — Back to the top">
-                <img src="images/prodentic.png" alt="ProDentic" width="190" height="54">
+            <a class="brand" href="#top" aria-label="ProDentic — back to top">
+                <img src="images/prodentic.png" alt="ProDentic" width="166" height="56">
             </a>
-
             <nav class="main-nav" id="main-nav" aria-label="Page sections">
-                <a href="#how">How it helps</a>
+                <a href="#workflow">Workflow</a>
+                <a href="#new">What’s new</a>
+                <a href="#features">Capabilities</a>
+                <a href="#options">Plans</a>
                 <a href="#tour">Product tour</a>
-                <a href="#features">Features</a>
-                <a href="#options">Options</a>
             </nav>
-
-            <a class="button button--primary header-cta js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="header" data-cta="header-whatsapp">
-                Book a demo
-            </a>
-
+            <a class="button button--primary header-cta js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer">Book a demo</a>
+            <a class="lang-switch" href="features-ar.html" lang="ar" hreflang="ar" aria-label="عرض الصفحة بالعربية">ع</a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
             </button>
         </div>
     </header>
@@ -562,535 +75,361 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-copy" data-reveal>
-                        <h1><span>Run your clinic</span><span>from first visit</span><span>to final payment</span></h1>
-                        <p>ProDentic brings patient records, appointments, dental charts, treatment plans, billing, and inventory into one clear system, so your team can find the details they need in one place.</p>
+                        <span class="eyebrow">Built around a real clinic day</span>
+                        <h1>Clearer decisions.<br><em>Connected care.</em></h1>
+                        <p class="hero-lead">ProDentic carries each patient from booking and diagnosis through treatment, lab work, and collection—keeping clinical and financial work in one shared context.</p>
                         <div class="hero-actions">
-                            <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="hero" data-cta="hero-whatsapp">
-                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
-                                Book a demo on WhatsApp
+                            <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer">
+                                <svg aria-hidden="true"><use href="#i-chat"/></svg> Book a WhatsApp demo
                             </a>
-                            <a class="button button--outline" href="#tour" data-cta="hero-tour">See the system in action</a>
+                            <a class="button button--ghost" href="#tour">See the product</a>
                         </div>
-                        <div class="hero-note">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
-                            <span>Tell us how many dentists and branches you have, and what you want to organize first.</span>
+                        <div class="hero-proof">
+                            <span><i></i>Clear Arabic interface</span>
+                            <span><i></i>Role-based access</span>
+                            <span><i></i>PDF and Excel exports</span>
                         </div>
                     </div>
-
-                    <div class="product-visual" data-reveal>
-                        <div class="product-rail" aria-hidden="true">
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11h6M9 15h6"/><path d="M6 3h12a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z"/></svg></span>
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 16-4 4-4-4"/><path d="M17 20V4M3 8l4-4 4 4M7 4v16"/></svg></span>
+                    <div class="hero-visual" data-reveal>
+                        <div class="visual-card">
+                            <div class="visual-bar"><span>ProDentic · Daily dashboard</span><span class="visual-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                            <img src="images/shot-dashboard-live.png" alt="ProDentic dashboard populated with demo data" width="1440" height="900" fetchpriority="high" decoding="async">
                         </div>
-                        <div class="product-window">
-                            <div class="product-window__bar">
-                                <strong>Dashboard — Daily overview</strong>
-                                <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                            </div>
-                            <div class="product-window__viewport">
-                                <img src="images/shot-dashboard.png" alt="ProDentic dashboard shown in Arabic" width="1440" height="900" decoding="async" fetchpriority="high">
-                                <span class="product-stamp">Actual Arabic interface</span>
-                            </div>
-                        </div>
+                        <div class="floating-note"><b>✓</b><span>Real interface with synthetic demo data</span></div>
                     </div>
                 </div>
-
-                <div class="trust-rail" data-reveal aria-label="Verified capabilities">
-                    <div class="trust-item">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-                        <span>Arabic & English interface</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>
-                        <span>Role-based permissions</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
-                        <span>PDF & Excel reports</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
-                        <span>WhatsApp when enabled</span>
-                    </div>
+                <div class="hero-strip" data-reveal>
+                    <article><strong>Front desk</strong><span>Bookings, queue, and patient records</span></article>
+                    <article><strong>Clinical care</strong><span>Dental chart, plans, and sessions</span></article>
+                    <article><strong>Collections</strong><span>Invoices, payments, and installments</span></article>
+                    <article><strong>Decisions</strong><span>Analytics, reporting, and exports</span></article>
                 </div>
             </div>
         </section>
 
-        <section class="section workflow" id="how">
+        <section class="section section--soft" id="workflow">
             <div class="container">
-                <div class="section-heading" data-reveal>
-                    <h2>From the first call to the end‑of‑day close</h2>
-                    <p>Each step connects to the next, so you can see where every patient is in their journey and what your team needs to do next.</p>
+                <div class="section-head center" data-reveal>
+                    <span class="kicker">One connected workflow</span>
+                    <h2>The patient journey never disappears between screens</h2>
+                    <p>Each stage builds on the last, so the right information appears in context without repeated entry or unnecessary searching.</p>
                 </div>
-
-                <div class="journey" data-reveal aria-label="Patient journey inside the system">
-                    <div class="journey-step">
-                        <span class="journey-number">1</span>
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-                        <strong>Patient registration</strong>
-                    </div>
-                    <div class="journey-step">
-                        <span class="journey-number">2</span>
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
-                        <strong>Appointment booking</strong>
-                    </div>
-                    <div class="journey-step">
-                        <span class="journey-number">3</span>
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c-2-2-7-1-8 3-1 5 3 14 5 14 1 0 1-5 3-5s2 5 3 5c2 0 6-9 5-14-1-4-6-5-8-3Z"/><path d="M17 2v4M15 4h4"/></svg>
-                        <strong>Dental chart</strong>
-                    </div>
-                    <div class="journey-step">
-                        <span class="journey-number">4</span>
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3V1h6v2M9 8h6M9 12h6M9 16h4"/></svg>
-                        <strong>Treatment plan</strong>
-                    </div>
-                    <div class="journey-step">
-                        <span class="journey-number">5</span>
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10v18l-2-1.5L12 21l-3-1.5L7 21V3Z"/><path d="M10 8h4M10 12h4"/></svg>
-                        <strong>Invoice & payment</strong>
-                    </div>
-                </div>
-
-                <div class="workflow-grid">
-                    <div class="screen-pair" data-reveal>
-                        <figure class="screen-frame">
-                            <figcaption class="screen-frame__top"><strong>Daily schedule</strong><span>Quick booking</span></figcaption>
-                            <div class="screen-crop"><img src="images/shot-appointments.png" alt="ProDentic daily appointments screen" width="1440" height="900" loading="lazy" decoding="async"></div>
-                        </figure>
-                        <figure class="screen-frame">
-                            <figcaption class="screen-frame__top"><strong>Dental chart</strong><span>Change history</span></figcaption>
-                            <div class="screen-crop"><img src="images/shot-dental-chart.png" alt="ProDentic interactive dental chart" width="1440" height="900" loading="lazy" decoding="async"></div>
-                        </figure>
-                    </div>
-
-                    <div class="problem-list" data-reveal>
-                        <div class="problem-pair">
-                            <del>Scattered records</del>
-                            <strong>One connected patient record</strong>
-                            <p>Medical information, attachments, treatment, and account balance stay in context.</p>
-                        </div>
-                        <div class="problem-pair">
-                            <del>Hard-to-track appointments</del>
-                            <strong>A clear daily schedule</strong>
-                            <p>Patient, dentist, room, and visit status are visible to the front desk.</p>
-                        </div>
-                        <div class="problem-pair">
-                            <del>Numbers that surface too late</del>
-                            <strong>A clearer financial picture</strong>
-                            <p>Collections, expenses, payments, balances, and period reports stay in one view.</p>
-                        </div>
-                        <a class="inline-link" href="#tour">See the patient journey in ProDentic
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
+                <div class="journey" data-reveal>
+                    <article><span class="journey-mark">1</span><h3>Register the patient</h3><p>One record for identity, medical history, and attachments.</p></article>
+                    <article><span class="journey-mark">2</span><h3>Schedule the visit</h3><p>Calendar, attendance states, and a structured waiting list.</p></article>
+                    <article><span class="journey-mark">3</span><h3>Document findings</h3><p>Multi-condition dental charting, surfaces, and root canals.</p></article>
+                    <article><span class="journey-mark">4</span><h3>Build the plan</h3><p>Services, sessions, dentist, room, cost, and progress.</p></article>
+                    <article><span class="journey-mark">5</span><h3>Deliver and collect</h3><p>Lab orders, invoices, installments, and partial payments.</p></article>
+                    <article><span class="journey-mark">6</span><h3>Review performance</h3><p>Operational and financial analytics with precise filters.</p></article>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="tour">
+        <section class="section" id="new">
             <div class="container">
-                <div class="section-heading" data-reveal>
-                    <h2>See it before you decide</h2>
-                    <p>Explore the key screens and see how each part of the clinic's day connects.</p>
+                <div class="section-head" data-reveal>
+                    <span class="kicker">Practical updates</span>
+                    <h2>New capabilities designed around everyday detail</h2>
+                    <p>These updates connect clinical delivery, collections, and follow-up instead of simply adding isolated screens.</p>
                 </div>
-
-                <div class="demo-tabs" role="tablist" aria-label="Product screen tour" data-reveal>
-                    <button class="demo-tab" type="button" role="tab" aria-selected="true" aria-controls="demo-panel" data-screen="dashboard">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-                        Dashboard
-                    </button>
-                    <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" data-screen="patient">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-                        Patient record
-                    </button>
-                    <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" data-screen="treatment">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3V1h6v2M9 8h6M9 12h6"/></svg>
-                        Treatment plan
-                    </button>
-                    <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" data-screen="reports">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                        Reports
-                    </button>
+                <div class="new-grid" data-reveal>
+                    <article class="new-card new-card--featured">
+                        <span class="new-label">New · Analytics</span>
+                        <h3>Read clinic performance from one focused view</h3>
+                        <p>Patient, visit, revenue, expense, receivable, and inventory indicators—with date controls that help you move from a number to the work behind it.</p>
+                    </article>
+                    <article class="new-card"><span class="new-label">Lab orders</span><h3>Track work from request to delivery</h3><p>Connect each order to its patient, plan, and supplier, then track status, cost, due date, and overdue work.</p></article>
+                    <article class="new-card"><span class="new-label">Treatment installments</span><h3>Flexible schedules, visible commitments</h3><p>Create automatic or custom schedules, collect full or partial payments, and keep overdue balances visible.</p></article>
+                    <article class="new-card"><span class="new-label">Dental chart</span><h3>Multiple conditions and root canals</h3><p>Record more than one condition per tooth, affected surfaces, and canal details including length, size, and notes.</p></article>
+                    <article class="new-card"><span class="new-label">More precise finance</span><h3>Every payment knows what it covered</h3><p>Allocate payments to invoice items and report on collections, delivered work, revenue, and commissions with clearer status.</p></article>
+                    <article class="new-card"><span class="new-label">Data migration</span><h3>A structured move through Excel</h3><p>Templates for patients, balances, services, inventory, and appointments—with validation before an import is committed.</p></article>
                 </div>
-                <p class="demo-caption" id="demo-caption" data-reveal>Today’s essentials at a glance: appointments, collections, unpaid invoices, and low-stock alerts.</p>
+            </div>
+        </section>
 
-                <div class="demo-layout">
-                    <div class="demo-stage" id="demo-panel" role="tabpanel" data-reveal>
-                        <div class="demo-stage__bar"><strong id="demo-title">Dashboard</strong><span>Actual Arabic interface</span></div>
-                        <div class="demo-stage__image">
-                            <img id="demo-image" src="images/shot-dashboard.png" alt="ProDentic dashboard" width="1440" height="900" loading="lazy" decoding="async">
-                        </div>
+        <section class="section section--tint" id="spotlights" aria-label="Highlighted capabilities">
+            <div class="container spotlights">
+                <article class="spotlight" data-reveal>
+                    <div class="spotlight-media">
+                        <figure class="screen-frame">
+                            <img src="images/shot-dental-chart-tooth-live.png" alt="Tooth conditions, surfaces, and root canal details" width="1440" height="900" loading="lazy" decoding="async">
+                            <figcaption class="screen-caption">Detailed clinical recording without leaving the patient record.</figcaption>
+                        </figure>
                     </div>
+                    <div class="spotlight-copy">
+                        <span class="spotlight-index">01 · Clinical care</span>
+                        <h3>A clinical record that explains the tooth—not just a color on a chart</h3>
+                        <p>The dental chart gives the dentist a structured place for diagnoses, surfaces, canal measurements, and notes, with a history that makes prior changes easy to review.</p>
+                        <ul class="check-list">
+                            <li>Adult and pediatric FDI charts.</li>
+                            <li>Multiple active conditions on one tooth.</li>
+                            <li>Up to ten root canals with per-canal details.</li>
+                        </ul>
+                    </div>
+                </article>
 
-                    <aside class="role-list" aria-label="Benefits by team role" data-reveal>
-                        <h3>Everyone sees what they need</h3>
-                        <div class="role-item">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-                            <div><strong>Front desk</strong><p>Patients, bookings, daily schedule, and waiting list.</p></div>
-                        </div>
-                        <div class="role-item">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>
-                            <div><strong>Dentist</strong><p>Medical history, dental chart, and treatment sessions.</p></div>
-                        </div>
-                        <div class="role-item">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 18h5"/></svg>
-                            <div><strong>Management</strong><p>Invoices, payments, expenses, and reports.</p></div>
-                        </div>
-                        <div class="role-item">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 8-9 5-9-5 9-5 9 5Z"/><path d="m3 8 9 5 9-5v8l-9 5-9-5V8Z"/></svg>
-                            <div><strong>Inventory</strong><p>Supplies, suppliers, stock receipts, and issues.</p></div>
-                        </div>
-                    </aside>
-                </div>
+                <article class="spotlight" data-reveal>
+                    <div class="spotlight-media">
+                        <figure class="screen-frame">
+                            <img src="images/shot-lab-orders-live.png" alt="Lab order list and workflow states" width="1440" height="900" loading="lazy" decoding="async">
+                            <figcaption class="screen-caption">Status, due date, and cost in one searchable, filterable list.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="spotlight-copy">
+                        <span class="spotlight-index">02 · Coordinated delivery</span>
+                        <h3>Lab work stays connected to the treatment plan</h3>
+                        <p>Create an order in the context of a treatment plan, specify the lab work and cost, then follow each stage through receipt and patient delivery.</p>
+                        <ul class="check-list">
+                            <li>Clear requested, in-progress, ready, received, and delivered states.</li>
+                            <li>Overdue lab alerts on the dashboard.</li>
+                            <li>Printable order details and a status timeline.</li>
+                        </ul>
+                    </div>
+                </article>
 
-                <div class="demo-cta" data-reveal>
-                    <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="demo" data-cta="tour-whatsapp">Request a demo with sample data</a>
-                </div>
+                <article class="spotlight" data-reveal>
+                    <div class="spotlight-media">
+                        <figure class="screen-frame">
+                            <img src="images/shot-installments-live.png" alt="Treatment installment schedule" width="1440" height="900" loading="lazy" decoding="async">
+                            <figcaption class="screen-caption">Due amounts, paid values, balances, and current installment status.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="spotlight-copy">
+                        <span class="spotlight-index">03 · Organized collections</span>
+                        <h3>The payment schedule moves with the treatment plan</h3>
+                        <p>Turn the remaining balance into clear commitments for the patient and front desk, and retain the history of every collection instead of tracking installments elsewhere.</p>
+                        <ul class="check-list">
+                            <li>Automatic distribution or custom amounts and dates.</li>
+                            <li>Full and partial payments with immediate status updates.</li>
+                            <li>Filters by patient, dentist, due date, and status.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="spotlight" data-reveal>
+                    <div class="spotlight-media">
+                        <figure class="screen-frame">
+                            <img src="images/shot-analytics-live.png" alt="ProDentic analytics dashboard" width="1440" height="900" loading="lazy" decoding="async">
+                            <figcaption class="screen-caption">Operational and financial indicators across a selectable date range.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="spotlight-copy">
+                        <span class="spotlight-index">04 · Data-informed decisions</span>
+                        <h3>Start with the question, then drill into the details that answer it</h3>
+                        <p>Analytics provides the overview, while reports support multi-select filters for dentists, patients, services, and payment methods, followed by share-ready exports.</p>
+                        <ul class="check-list">
+                            <li>Compare revenue, expenses, and net performance.</li>
+                            <li>Review collections, receivables, and daily payment detail.</li>
+                            <li>Export PDF and Excel using the selected filters.</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </section>
 
         <section class="section section--soft" id="features">
             <div class="container">
-                <div class="section-heading section-heading--right" data-reveal>
-                    <h2>Everything you need to keep the details connected</h2>
-                    <p>Not a collection of disconnected tools—each area supports the patient journey and gives management a clearer view.</p>
+                <div class="section-head center" data-reveal>
+                    <span class="kicker">A complete working system</span>
+                    <h2>Everything the team needs, without losing patient context</h2>
+                    <p>Tools are shown according to each user’s permissions, keeping the interface focused on the work in front of them.</p>
                 </div>
-
-                <div class="capability-list">
-                    <article class="capability-row" data-reveal>
-                        <span class="capability-number">01</span>
-                        <h3>Patient record & care</h3>
-                        <div>
-                            <p>Return to medical, treatment, and financial information from one organized record instead of searching through scattered papers and messages.</p>
-                            <div class="capability-points"><span>Medical history & allergies</span><span>Attachments & images</span><span>Adult & pediatric dental charts</span><span>Dental chart change history</span></div>
-                        </div>
-                    </article>
-                    <article class="capability-row" data-reveal>
-                        <span class="capability-number">02</span>
-                        <h3>Appointments & front desk</h3>
-                        <div>
-                            <p>Organize the daily schedule and each patient's movement through the clinic, from booking to being called and starting treatment.</p>
-                            <div class="capability-points"><span>Daily schedule & calendar</span><span>Dentist & treatment room</span><span>Prioritized waiting list</span><span>WhatsApp when enabled</span></div>
-                        </div>
-                    </article>
-                    <article class="capability-row" data-reveal>
-                        <span class="capability-number">03</span>
-                        <h3>Treatment & collections</h3>
-                        <div>
-                            <p>Connect each treatment plan to its sessions, invoices, and payments, and see the total cost, amount paid, and balance due at every stage.</p>
-                            <div class="capability-points"><span>Treatment plans & sessions</span><span>Invoices & service line items</span><span>Payments & receipts</span><span>Pricing tiers & discounts</span></div>
-                        </div>
-                    </article>
-                    <article class="capability-row" data-reveal>
-                        <span class="capability-number">04</span>
-                        <h3>Operations & oversight</h3>
-                        <div>
-                            <p>Track finances, inventory, and branches according to user permissions, with reports you can save and review.</p>
-                            <div class="capability-points"><span>Expenses & end-of-day closing</span><span>PDF & Excel reports</span><span>Inventory, suppliers & alerts</span><span>Branches, permissions & audit log</span></div>
-                        </div>
-                    </article>
+                <div class="feature-grid" data-reveal>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-user"/></svg></span><h3>Patient record</h3><p>Identity, history, attachments, plans, invoices, and payments in one place.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-calendar"/></svg></span><h3>Appointments &amp; calendar</h3><p>Book, edit, track attendance, and filter by dentist, room, and date.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-calendar"/></svg></span><h3>Waiting list</h3><p>Manage turns, call patients, and provide a clear reception display.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-tooth"/></svg></span><h3>Dental chart</h3><p>Conditions, surfaces, canals, notes, and history for adults and children.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-plan"/></svg></span><h3>Plans &amp; sessions</h3><p>Services, costs, dentists, rooms, sessions, and documented progress.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-lab"/></svg></span><h3>Lab orders</h3><p>Plan-linked requests with supplier, cost, due date, and workflow status.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-wallet"/></svg></span><h3>Billing &amp; payments</h3><p>Line items, discounts, payment methods, and precise service allocation.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-wallet"/></svg></span><h3>Treatment installments</h3><p>Due schedules, partial collection, and visibility into overdue balances.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-chart"/></svg></span><h3>Financial reporting</h3><p>Revenue, collections, expenses, and commissions with rich filters.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-box"/></svg></span><h3>Inventory</h3><p>Items, suppliers, stock-in, stock-out, movement, and reorder alerts.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-user"/></svg></span><h3>Team &amp; resources</h3><p>Dentists, staff, rooms, and the operational records around them.</p></article>
+                    <article class="feature-card"><span class="feature-icon"><svg><use href="#i-shield"/></svg></span><h3>Access &amp; audit</h3><p>Granular roles, sensitive-action history, and controlled settings.</p></article>
                 </div>
             </div>
         </section>
 
         <section class="section" id="options">
             <div class="container">
-                <div class="section-heading" data-reveal>
-                    <h2>Options that fit your clinic</h2>
-                    <p>Choose the capacity closest to your needs, or let us help after a short product walkthrough.</p>
+                <div class="section-head center" data-reveal>
+                    <span class="kicker">Subscription plans</span>
+                    <h2>Plans shaped around the way your clinic works</h2>
+                    <p>Select the closest fit, then share a few clinic details so the demo can follow your needs instead of a generic script.</p>
                 </div>
 
-                <div class="options-grid">
-                    <article class="option-card" data-reveal>
-                        <span class="option-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
-                        <h3>Basic</h3>
-                        <p class="option-capacity">1 branch • 1 room • 1 dentist • 5 users</p>
-                        <div class="option-divider"></div>
-                        <p class="option-extra">For a solo clinic that wants to organize patient records, appointments, treatment, billing, and daily operations.</p>
-                        <button class="button button--outline option-button" type="button" data-plan="Basic">Ask about this option</button>
+                <div class="plans-grid" data-reveal>
+                    <article class="plan-card">
+                        <span>Basic</span>
+                        <h3>A structured start</h3>
+                        <p>Core day-to-day workflows for a team bringing patient records, appointments, treatment, and collection together.</p>
+                        <ul class="plan-list">
+                            <li>Patient records and medical history</li>
+                            <li>Appointments and calendar</li>
+                            <li>Dental chart and treatment plans</li>
+                            <li>Core billing and payments</li>
+                        </ul>
+                        <button class="button plan-select" type="button" data-plan="Basic">Choose Basic</button>
                     </article>
 
-                    <article class="option-card" data-reveal>
-                        <span class="option-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M17 11h6"/></svg></span>
-                        <h3>Standard</h3>
-                        <p class="option-capacity">2 branches • 3 rooms per branch • Up to 10 dentists • 20 users</p>
-                        <div class="option-divider"></div>
-                        <p class="option-extra">Adds the waiting list, financial reports, inventory, suppliers, and pricing tiers.</p>
-                        <button class="button button--outline option-button" type="button" data-plan="Standard">Ask about this option</button>
+                    <article class="plan-card is-highlighted">
+                        <span class="plan-ribbon">Balanced choice</span>
+                        <span>Standard</span>
+                        <h3>More connected operations</h3>
+                        <p>Add the operational and financial follow-up a team needs as everyday detail expands.</p>
+                        <ul class="plan-list">
+                            <li>Everything in Basic</li>
+                            <li>Installments and lab orders</li>
+                            <li>Inventory, suppliers, and requests</li>
+                            <li>Reports, permissions, and audit history</li>
+                        </ul>
+                        <button class="button plan-select" type="button" data-plan="Standard">Choose Standard</button>
                     </article>
 
-                    <article class="option-card" data-reveal>
-                        <span class="option-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h.01M15 10h.01M9 14h.01M15 14h.01M9 18h.01M15 18h.01"/></svg></span>
-                        <h3>Advanced</h3>
-                        <p class="option-capacity">Up to 5 branches • 5 rooms per branch • 20 dentists • 40 users</p>
-                        <div class="option-divider"></div>
-                        <p class="option-extra">Adds role-based access, granular permissions, the audit log, and backup support.</p>
-                        <button class="button button--outline option-button" type="button" data-plan="Advanced">Ask about this option</button>
+                    <article class="plan-card">
+                        <span>Advanced</span>
+                        <h3>Control and decisions</h3>
+                        <p>Deeper tools for measurement, analysis, financial policy, and efficient control of complex detail.</p>
+                        <ul class="plan-list">
+                            <li>Everything in Standard</li>
+                            <li>Analytics and performance overview</li>
+                            <li>Advanced finance and commission policies</li>
+                            <li>Data migration and expanded reporting</li>
+                        </ul>
+                        <button class="button plan-select" type="button" data-plan="Advanced">Choose Advanced</button>
                     </article>
                 </div>
 
-                <div class="guide-panel" id="contact-guide" data-reveal>
-                    <div class="guide-grid">
-                        <div class="guide-copy">
-                            <h3>Not sure which option fits?</h3>
-                            <p>Answer three quick questions and we'll prepare a WhatsApp message with the details.</p>
-                        </div>
+                <div class="plans-download" data-reveal>
+                    <a class="button button--download" href="pdf/Details.pdf" download="ProDentic-Subscription-Plans.pdf"><svg aria-hidden="true"><use href="#i-file"/></svg> Download subscription plan details</a>
+                    <span class="download-meta">PDF · 3.8 MB</span>
+                </div>
 
-                        <form class="guide-form" id="lead-guide">
-                            <div class="field">
-                                <label for="clinic-size">Clinic size</label>
-                                <select id="clinic-size" name="clinic-size">
-                                    <option value="Solo clinic">Solo clinic</option>
-                                    <option value="Clinic with multiple rooms">Clinic with multiple rooms</option>
-                                    <option value="Two-branch center">Two-branch center</option>
-                                    <option value="Multi-branch center">Multi-branch center</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label for="doctor-count">Number of dentists</label>
-                                <select id="doctor-count" name="doctor-count">
-                                    <option value="1 dentist">1 dentist</option>
-                                    <option value="2–5 dentists">2–5 dentists</option>
-                                    <option value="6–10 dentists">6–10 dentists</option>
-                                    <option value="11–20 dentists">11–20 dentists</option>
-                                    <option value="More than 20 dentists">More than 20 dentists</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label for="priority">What do you want to organize first?</label>
-                                <select id="priority" name="priority">
-                                    <option value="Appointments & front desk">Appointments & front desk</option>
-                                    <option value="Patient records & treatment">Patient records & treatment</option>
-                                    <option value="Billing & reports">Billing & reports</option>
-                                    <option value="Inventory & suppliers">Inventory & suppliers</option>
-                                    <option value="All of the above">All of the above</option>
-                                </select>
-                            </div>
-                            <div class="guide-submit">
-                                <span class="guide-result" id="guide-result" aria-live="polite">A ready-to-edit message will open before you send it.</span>
-                                <a class="button button--primary" id="guided-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-cta="guided-whatsapp">
-                                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
-                                    Prepare my WhatsApp message
-                                </a>
-                            </div>
-                        </form>
+                <div class="selector-shell" id="contact-guide" data-reveal>
+                    <div class="selector-copy">
+                        <span class="kicker">A useful first message</span>
+                        <h3>Add your clinic details before opening WhatsApp</h3>
+                        <p>Your clinic name, dentist and room counts, preferred option, and first priority will be placed in the message automatically.</p>
                     </div>
+                    <form class="lead-form" id="lead-form">
+                        <div class="form-grid">
+                            <div class="form-field form-field--wide">
+                                <label for="clinic-name">Clinic name</label>
+                                <input id="clinic-name" name="clinic_name" type="text" placeholder="Example: Bright Smile Clinic" autocomplete="organization" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="dentist-count">Number of dentists</label>
+                                <input id="dentist-count" name="dentist_count" type="number" min="1" max="999" inputmode="numeric" placeholder="Example: 4" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="room-count">Number of clinic rooms</label>
+                                <input id="room-count" name="room_count" type="number" min="1" max="999" inputmode="numeric" placeholder="Example: 3" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="selected-plan">Preferred plan</label>
+                                <select id="selected-plan" name="selected_plan" required>
+                                    <option value="">Choose an option</option>
+                                    <option value="Basic">Basic</option>
+                                    <option value="Standard">Standard</option>
+                                    <option value="Advanced">Advanced</option>
+                                    <option value="I need a recommendation">I need a recommendation</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="priority">First workflow to improve</label>
+                                <select id="priority" name="priority" required>
+                                    <option value="">Choose a priority</option>
+                                    <option value="Appointments and front desk">Appointments and front desk</option>
+                                    <option value="Patient records and treatment">Patient records and treatment</option>
+                                    <option value="Billing, collections, and installments">Billing, collections, and installments</option>
+                                    <option value="Inventory and lab orders">Inventory and lab orders</option>
+                                    <option value="Reporting and analytics">Reporting and analytics</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="button button--primary" type="submit"><svg aria-hidden="true"><use href="#i-chat"/></svg> Prepare message and open WhatsApp</button>
+                            <p class="form-note" id="form-note" aria-live="polite">Nothing is sent automatically; you can review the message in WhatsApp first.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section tour-section" id="tour">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="kicker">Interactive tour</span>
+                    <h2>See the real interface before you decide</h2>
+                    <p>These screens come from a working demo with synthetic data, so you see the product in use—not design mockups.</p>
+                </div>
+                <div class="tour-layout" data-reveal>
+                    <div class="tour-tabs" role="tablist" aria-label="Product screens">
+                        <button class="tour-tab" type="button" role="tab" aria-selected="true" data-src="images/shot-dashboard-live.png" data-title="Daily dashboard" data-alt="Daily dashboard" data-caption="Appointments, alerts, indicators, and quick actions at the start of the day.">Dashboard</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" data-src="images/shot-analytics-live.png" data-title="Analytics" data-alt="Analytics dashboard" data-caption="Financial and operational trends across the date range you choose.">Analytics</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" data-src="images/shot-patient-profile-live.png" data-title="Unified patient record" data-alt="Unified patient record" data-caption="History, plans, sessions, invoices, and attachments in one patient context.">Patient record</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" data-src="images/shot-dental-chart-live.png" data-title="Dental chart" data-alt="Dental chart" data-caption="Clear adult and pediatric charts with conditions, surfaces, and canals.">Dental chart</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" data-src="images/shot-lab-orders-live.png" data-title="Lab orders" data-alt="Lab orders" data-caption="Track requests, expected dates, costs, and workflow status.">Lab orders</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" data-src="images/shot-installments-live.png" data-title="Treatment installments" data-alt="Treatment installments" data-caption="One list for due dates, paid amounts, remaining balances, and overdue items.">Installments</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" data-src="images/shot-financial-overview-live.png" data-title="Financial reports" data-alt="Financial reports" data-caption="Reports filtered by date, dentist, patient, service, and payment method.">Financial reports</button>
+                    </div>
+                    <div class="tour-stage">
+                        <img id="tour-image" src="images/shot-dashboard-live.png" alt="Daily dashboard" width="1440" height="900" loading="lazy" decoding="async">
+                        <div class="tour-stage-meta"><h3 id="tour-title">Daily dashboard</h3><p id="tour-caption">Appointments, alerts, indicators, and quick actions at the start of the day.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Control and accountability">
+            <div class="container confidence">
+                <div class="confidence-panel" data-reveal>
+                    <span class="kicker">Control without friction</span>
+                    <h2>The right information reaches the right person</h2>
+                    <p>Permissions, audit history, and financial controls help the team move quickly while keeping sensitive decisions traceable.</p>
+                </div>
+                <div class="confidence-list" data-reveal>
+                    <article><strong>Role-based permissions</strong><span>Control view, create, edit, delete, and export actions in detail.</span></article>
+                    <article><strong>Audit history</strong><span>Review important administrative and financial actions and their author.</span></article>
+                    <article><strong>Connected financial rules</strong><span>Invoice, item, payment, and revenue states update in one context.</span></article>
+                    <article><strong>Shareable exports</strong><span>PDF and Excel reports retain the selected date range and filters.</span></article>
                 </div>
             </div>
         </section>
 
         <section class="section section--soft" id="faq">
             <div class="container">
-                <div class="section-heading" data-reveal>
-                    <h2>Questions before you get started</h2>
-                    <p>Clear answers to the questions clinic owners ask before seeing the system.</p>
-                </div>
-
+                <div class="section-head center" data-reveal><span class="kicker">Before you begin</span><h2>Frequently asked questions</h2><p>Direct answers to what a clinic team usually needs while evaluating the product.</p></div>
                 <div class="faq-list" data-reveal>
-                    <details class="faq-item">
-                        <summary><span>Is it suitable for a small clinic?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-                        <div class="faq-answer">Yes. The Basic option is set up for one branch, one room, and one dentist, and includes patient records, appointments, treatment plans, billing, and core daily operations.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary><span>Is the interface available in Arabic and English?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-                        <div class="faq-answer">Yes. ProDentic includes a complete right-to-left Arabic interface, and users can switch to English from within the system.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary><span>Can I see the system before deciding?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-                        <div class="faq-answer">Yes. Book a demo on WhatsApp and tell us your number of dentists, branches, and top priority so we can focus the walkthrough on your clinic's workflow.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary><span>How do I know which option fits?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-                        <div class="faq-answer">It depends on the number of branches, rooms, dentists, and users, and whether you need reports, inventory, a waiting list, or advanced permissions. Use the form above to send the details in one message.</div>
-                    </details>
+                    <details class="faq-item"><summary>Are these screenshots from the real product?</summary><div class="faq-answer">Yes. They come from the ProDentic demo and use synthetic names and figures created for demonstration. Counts may change as demo data is refreshed.</div></details>
+                    <details class="faq-item"><summary>Can each user’s access be tailored?</summary><div class="faq-answer">Yes. Screen and action access is role- and permission-based, so team members can receive the tools they need without unrelated functions.</div></details>
+                    <details class="faq-item"><summary>Does ProDentic support partial payments and installments?</summary><div class="faq-answer">Yes. You can record partial or full payments, build automatic or custom installment schedules for treatment plans, and follow due and overdue balances.</div></details>
+                    <details class="faq-item"><summary>How is dental lab work tracked?</summary><div class="faq-answer">A lab order is linked to its patient, treatment plan, and supplier, with workflow status, cost, expected date, and overdue alerts.</div></details>
+                    <details class="faq-item"><summary>Can existing data be imported?</summary><div class="faq-answer">Excel templates are available for several data types, with validation and error preview before an import is committed. A planned migration and current backup are recommended.</div></details>
+                    <details class="faq-item"><summary>Can reports be exported?</summary><div class="faq-answer">Yes. Financial and operational reports can be filtered and exported to PDF or Excel according to the user’s permissions.</div></details>
                 </div>
             </div>
         </section>
 
-        <section class="final-cta" aria-labelledby="final-title">
-            <div class="container final-grid" data-reveal>
-                <div class="final-logo"><img src="images/prodentic.png" alt="ProDentic" width="220" height="120" loading="lazy" decoding="async"></div>
-                <div class="final-copy">
-                    <h2 id="final-title">See ProDentic through a workflow like your own</h2>
-                    <p>Start with a short conversation, then see the system through steps that reflect your team's day-to-day work.</p>
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-card" data-reveal>
+                    <div class="cta-copy"><h2>See ProDentic through a workflow that resembles your day</h2><p>Tell us your dentist count and the first process you want to improve, and we’ll start the demo there.</p></div>
+                    <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-chat"/></svg> Book your demo</a>
                 </div>
-                <a class="button button--primary js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="final" data-cta="final-whatsapp">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
-                    Book a demo on WhatsApp
-                </a>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
-            <span>© <span id="year">2026</span> ProDentic — All rights reserved.</span>
-            <a class="js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="footer" data-cta="footer-whatsapp">Contact us on WhatsApp</a>
-        </div>
+        <div class="container footer-inner"><span>© <span id="year">2026</span> ProDentic. All rights reserved.</span><a class="js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer">Contact us on WhatsApp</a></div>
     </footer>
-
-    <a class="mobile-whatsapp js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer" data-context="mobile" data-cta="mobile-sticky-whatsapp">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6A8.38 8.38 0 0 1 12.5 3h.5a8.48 8.48 0 0 1 8 8z"/></svg>
-        Book a demo on WhatsApp
-    </a>
-
-    <script>
-        (() => {
-            const whatsappNumber = '967782558484';
-            const baseMessage = 'Hello, I would like to book a ProDentic demo.\n\nNumber of dentists: \nNumber of branches: \nWhat I want to organize first: ';
-            const makeWhatsAppUrl = (message) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-            document.querySelectorAll('.js-whatsapp').forEach((link) => {
-                link.href = makeWhatsAppUrl(baseMessage);
-            });
-
-            const menuButton = document.querySelector('.menu-toggle');
-            const nav = document.getElementById('main-nav');
-            const closeMenu = () => {
-                nav.classList.remove('is-open');
-                menuButton.setAttribute('aria-expanded', 'false');
-                menuButton.setAttribute('aria-label', 'Open navigation menu');
-                document.body.classList.remove('menu-open');
-            };
-
-            menuButton.addEventListener('click', () => {
-                const willOpen = !nav.classList.contains('is-open');
-                nav.classList.toggle('is-open', willOpen);
-                menuButton.setAttribute('aria-expanded', String(willOpen));
-                menuButton.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
-                document.body.classList.toggle('menu-open', willOpen);
-            });
-            nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-            document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
-
-            const screens = {
-                dashboard: {
-                    title: 'Dashboard',
-                    src: 'images/shot-dashboard.png',
-                    alt: 'ProDentic dashboard',
-                    caption: 'Today’s essentials at a glance: appointments, collections, unpaid invoices, and low-stock alerts.'
-                },
-                patient: {
-                    title: 'Patient record',
-                    src: 'images/shot-patient-show.png',
-                    alt: 'Patient record in ProDentic',
-                    caption: 'Patient details, treatment plans, invoices, files, and financial indicators stay in one context.'
-                },
-                treatment: {
-                    title: 'Treatment plan',
-                    src: 'images/shot-tp-show.png',
-                    alt: 'Treatment plan and session details in ProDentic',
-                    caption: 'Track sessions, status, dentist, and room alongside the plan total, paid amount, and balance.'
-                },
-                reports: {
-                    title: 'Financial reports',
-                    src: 'images/shot-reports.png',
-                    alt: 'Financial reports in ProDentic',
-                    caption: 'Filter reports by period, review revenue and expenses, then export to PDF or Excel.'
-                }
-            };
-
-            const demoImage = document.getElementById('demo-image');
-            const demoTitle = document.getElementById('demo-title');
-            const demoCaption = document.getElementById('demo-caption');
-            document.querySelectorAll('.demo-tab').forEach((tab) => {
-                tab.addEventListener('click', () => {
-                    const screen = screens[tab.dataset.screen];
-                    if (!screen || tab.getAttribute('aria-selected') === 'true') return;
-
-                    document.querySelectorAll('.demo-tab').forEach((item) => item.setAttribute('aria-selected', 'false'));
-                    tab.setAttribute('aria-selected', 'true');
-                    demoImage.classList.add('is-switching');
-
-                    const preload = new Image();
-                    preload.onload = () => {
-                        demoImage.src = screen.src;
-                        demoImage.alt = screen.alt;
-                        demoTitle.textContent = screen.title;
-                        demoCaption.textContent = screen.caption;
-                        requestAnimationFrame(() => demoImage.classList.remove('is-switching'));
-                    };
-                    preload.onerror = () => demoImage.classList.remove('is-switching');
-                    preload.src = screen.src;
-                });
-            });
-
-            const leadGuide = document.getElementById('lead-guide');
-            const clinicSize = document.getElementById('clinic-size');
-            const doctorCount = document.getElementById('doctor-count');
-            const priority = document.getElementById('priority');
-            const guidedWhatsApp = document.getElementById('guided-whatsapp');
-            const guideResult = document.getElementById('guide-result');
-            let selectedOption = '';
-
-            const suggestedOption = () => {
-                if (clinicSize.value === 'Solo clinic' && doctorCount.value === '1 dentist') return 'Basic';
-                if (clinicSize.value === 'Multi-branch center' || doctorCount.value === '11–20 dentists' || doctorCount.value === 'More than 20 dentists') return 'Advanced';
-                return 'Standard';
-            };
-
-            const updateGuidedMessage = () => {
-                const option = selectedOption || suggestedOption();
-                const message = [
-                    'Hello, I would like to book a ProDentic demo.',
-                    '',
-                    `Clinic size: ${clinicSize.value}`,
-                    `Number of dentists: ${doctorCount.value}`,
-                    `Top priority: ${priority.value}`,
-                    `Option I'd like to ask about: ${option}`,
-                    '',
-                    'Clinic name: '
-                ].join('\n');
-                guidedWhatsApp.href = makeWhatsAppUrl(message);
-                guideResult.textContent = `We'll include these details. The closest starting option is: ${option}.`;
-            };
-
-            leadGuide.addEventListener('submit', (event) => event.preventDefault());
-            [clinicSize, doctorCount, priority].forEach((field) => field.addEventListener('change', () => {
-                selectedOption = '';
-                updateGuidedMessage();
-            }));
-
-            document.querySelectorAll('.option-button').forEach((button) => {
-                button.addEventListener('click', () => {
-                    selectedOption = button.dataset.plan;
-                    updateGuidedMessage();
-                    document.getElementById('contact-guide').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
-                    window.setTimeout(() => clinicSize.focus({ preventScroll: true }), 450);
-                });
-            });
-            updateGuidedMessage();
-
-            const revealItems = document.querySelectorAll('[data-reveal]');
-            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: .12, rootMargin: '0px 0px -50px' });
-                revealItems.forEach((item) => observer.observe(item));
-            } else {
-                revealItems.forEach((item) => item.classList.add('is-visible'));
-            }
-
-            const mobileWhatsApp = document.querySelector('.mobile-whatsapp');
-            const heroActions = document.querySelector('.hero-actions');
-            if ('IntersectionObserver' in window) {
-                const mobileCtaObserver = new IntersectionObserver(([entry]) => {
-                    mobileWhatsApp.classList.toggle('is-active', !entry.isIntersecting);
-                }, { threshold: .05 });
-                mobileCtaObserver.observe(heroActions);
-            }
-
-            document.getElementById('year').textContent = new Date().getFullYear();
-        })();
-    </script>
+    <dialog class="image-dialog" id="image-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-bar"><strong id="dialog-title">Full-size screenshot</strong><button class="dialog-close" type="button" aria-label="Close screenshot">×</button></div>
+        <img id="dialog-image" src="images/shot-dashboard-live.png" alt="">
+    </dialog>
+    <a class="button button--primary mobile-whatsapp js-whatsapp" href="https://wa.me/967782558484" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-chat"/></svg> Book a WhatsApp demo</a>
+    <script src="features.js" defer></script>
 </body>
-
 </html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>دليل لوحة المتابعة والإحصائيات | ProDentic</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="guide-2026.css">
+</head>
+<body>
+    <header class="hero compact">
+        <a class="back-link" href="index.html">← الدليل الرئيسي</a>
+        <div class="hero-inner">
+            <span class="eyebrow">وحدة جديدة · صلاحية analytics.view</span>
+            <h1>لوحة المتابعة والإحصائيات</h1>
+            <p>شاشة تنفيذية تجمع أداء المركز المالي والسريري والمخزني وتساعد الإدارة على اكتشاف ما يحتاج متابعة سريعة.</p>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <nav class="toc" aria-label="محتويات الصفحة">
+            <h2>محتويات الدليل</h2>
+            <ul class="toc-list">
+                <li><a href="#access">الدخول والصلاحية</a></li>
+                <li><a href="#kpis">بطاقات المؤشرات</a></li>
+                <li><a href="#tables">الجداول التشغيلية</a></li>
+                <li><a href="#charts">الرسوم البيانية</a></li>
+                <li><a href="#routine">روتين المتابعة</a></li>
+                <li><a href="#notes">ملاحظات مهمة</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-section" id="access">
+            <h2><span class="section-number">1</span>الدخول والصلاحية</h2>
+            <ol class="steps">
+                <li>من القائمة الجانبية اختر <strong>لوحة المتابعة والإحصائيات</strong> أسفل لوحة التحكم.</li>
+                <li>يلزم أن يملك الدور صلاحية <code>analytics.view</code>. إذا اختفى الرابط، اطلب من المدير مراجعة صلاحيات الدور.</li>
+                <li>تُعرض بيانات المركز والفرع الحاليين، لذا تأكد من اسم الفرع الظاهر أسفل القائمة قبل اتخاذ قرار تشغيلي.</li>
+            </ol>
+            <figure class="screenshot">
+                <img src="images/shot-analytics-live.png" alt="لوحة المتابعة والإحصائيات في مركز ProDentic التجريبي" loading="lazy">
+                <figcaption>لوحة المتابعة في بيئة الديمو: مؤشرات الشهر، أحدث المواعيد والإيرادات، الذمم، الخدمات والمخزون.</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section" id="kpis">
+            <h2><span class="section-number">2</span>قراءة بطاقات المؤشرات</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>المؤشر</th><th>ماذا يعني؟</th><th>الإجراء المقترح</th></tr></thead>
+                    <tbody>
+                        <tr><td>المرضى الجدد</td><td>عدد ملفات المرضى المنشأة خلال الشهر الحالي.</td><td>قارن الرقم بالشهر السابق وبمصدر الإحالات أو الحملات.</td></tr>
+                        <tr><td>عدد الزيارات</td><td>مواعيد الشهر الحالي، ومع حساب الطبيب تظهر مواعيده المرتبطة به.</td><td>راجع الجدول عند وجود فرق غير متوقع مع عدد الجلسات.</td></tr>
+                        <tr><td>إجمالي الإيرادات</td><td>مجموع الدفعات المقبوضة خلال الشهر.</td><td>استخدم التقرير المالي للتفصيل حسب طريقة الدفع أو الطبيب.</td></tr>
+                        <tr><td>إجمالي المصروفات</td><td>المصروفات المسجلة في الشهر.</td><td>افتح المصروفات حسب الفئة لمعرفة البنود الأعلى.</td></tr>
+                        <tr><td>صافي الربح</td><td>الإيرادات المقبوضة ناقص المصروفات للفترة المعروضة.</td><td>راقب الاتجاه على الرسم لستة أشهر، ولا تعتمد على يوم واحد.</td></tr>
+                        <tr><td>أعلى الخدمات طلبًا</td><td>الخدمات الأكثر تكرارًا في بنود الفواتير.</td><td>خطط للمخزون والكوادر المرتبطة بالخدمات الأعلى طلبًا.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section" id="tables">
+            <h2><span class="section-number">3</span>الجداول التشغيلية</h2>
+            <div class="feature-grid">
+                <article class="feature-card"><h3>أحدث المواعيد اليوم</h3><p>يعرض الوقت والطبيب ونوع الزيارة والحالة لآخر خمسة مواعيد، ويُستخدم لتقدير ضغط اليوم بسرعة.</p></article>
+                <article class="feature-card"><h3>أحدث وأعلى الإيرادات</h3><p>يمكن التبديل بين آخر الدفعات وأعلى الدفعات مع إظهار التاريخ والمبلغ وطريقة الدفع.</p></article>
+                <article class="feature-card"><h3>أعلى المصروفات</h3><p>يوضح أكبر البنود مع فئتها وقيمتها حتى يسهل اكتشاف المصروف غير المعتاد.</p></article>
+                <article class="feature-card"><h3>الذمم المدينة</h3><p>يعرض المرضى ذوي الفواتير غير المسددة أو المسددة جزئيًا، مع الإجمالي والمدفوع والمتبقي.</p></article>
+                <article class="feature-card"><h3>نواقص المخزون</h3><p>يظهر الصنف والكمية الحالية والحد الأدنى، ويشير إلى الأصناف التي تتطلب إعادة طلب.</p></article>
+            </div>
+        </section>
+
+        <section class="content-section" id="charts">
+            <h2><span class="section-number">4</span>الرسوم البيانية</h2>
+            <ul>
+                <li><strong>توزيع الإيرادات حسب نوع العلاج:</strong> دائرة توضح مساهمة كل خدمة في إجمالي بنود الخدمات الأعلى إيرادًا.</li>
+                <li><strong>الإيرادات والمصروفات:</strong> مقارنة شهرية لآخر ستة أشهر تساعد على معرفة الاتجاه وليس القيمة الحالية فقط.</li>
+                <li>مرّر المؤشر فوق الرسم في المتصفح لإظهار القيمة الدقيقة عندما تكون الرسوم تفاعلية.</li>
+            </ul>
+            <div class="notice tip"><strong>نصيحة:</strong> ظهور إيراد مرتفع مع ذمم مدينة كبيرة يستدعي مراجعة الفرق بين المبيعات المسجلة والتحصيل الفعلي من التقارير المالية.</div>
+        </section>
+
+        <section class="content-section" id="routine">
+            <h2><span class="section-number">5</span>روتين متابعة مقترح</h2>
+            <ol class="steps">
+                <li>صباحًا: راجع مواعيد اليوم ونواقص المخزون.</li>
+                <li>منتصف اليوم: راجع حالات المواعيد الملغاة أو غير المكتملة وأي طلبات معمل متأخرة من لوحة التحكم.</li>
+                <li>نهاية اليوم: قارن المقبوضات والمصروفات مع إغلاق اليوم والتقرير المالي.</li>
+                <li>أسبوعيًا: راجع الذمم وأعلى الخدمات، ثم حدّث خطة التحصيل والشراء.</li>
+            </ol>
+        </section>
+
+        <section class="content-section" id="notes">
+            <h2><span class="section-number">6</span>ملاحظات مهمة</h2>
+            <div class="notice warning">أرقام لوحة المتابعة مؤشرات تشغيلية سريعة. للقوائم المالية الرسمية والتصفية الدقيقة حسب الفرع والطبيب والمريض والخدمة استخدم <a href="finance-advanced.html">دليل المالية المتقدمة</a>.</div>
+            <ul>
+                <li>تتغير مؤشرات الشهر تلقائيًا عند حلول شهر جديد.</li>
+                <li>حساب الطبيب يرى الزيارات المرتبطة به في المؤشرات السريرية.</li>
+                <li>إذا لم توجد بيانات تشغيلية، قد تعرض الشاشة بيانات توضيحية بدل أن تكون فارغة.</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">ProDentic · دليل لوحة المتابعة والإحصائيات · سبتمبر 2026</footer>
+</body>
+</html>

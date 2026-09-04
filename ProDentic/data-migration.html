@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>دليل ترحيل البيانات السابقة | ProDentic</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="guide-2026.css">
+</head>
+<body>
+    <header class="hero compact">
+        <a class="back-link" href="index.html">← الدليل الرئيسي</a>
+        <div class="hero-inner">
+            <span class="eyebrow">تهيئة مركز جديد · Excel</span>
+            <h1>نقل واستيراد البيانات السابقة</h1>
+            <p>ترحيل سجلات النظام القديم إلى ProDentic بقوالب موحدة، مع تحديث السجلات المطابقة بدل تكرارها وإظهار أخطاء الصفوف.</p>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <nav class="toc" aria-label="محتويات الصفحة">
+            <h2>محتويات الدليل</h2>
+            <ul class="toc-list">
+                <li><a href="#before">قبل البدء</a></li>
+                <li><a href="#order">ترتيب الاستيراد</a></li>
+                <li><a href="#templates">القوالب والمطابقة</a></li>
+                <li><a href="#upload">طريقة الرفع</a></li>
+                <li><a href="#errors">قراءة النتيجة</a></li>
+                <li><a href="#checklist">التحقق النهائي</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-section" id="before">
+            <h2><span class="section-number">1</span>قبل البدء</h2>
+            <ul>
+                <li>تأكد من اختيار المركز والفرع الصحيحين؛ بعض البيانات مثل المخزون والمواعيد ترتبط بالفرع الحالي.</li>
+                <li>أنشئ نسخة احتياطية قبل الاستيراد الكبير.</li>
+                <li>يلزم حساب مخول بإعدادات النظام وصلاحية <code>settings.edit</code>.</li>
+                <li>الملفات المدعومة: <code>xlsx</code> و<code>xls</code> و<code>csv</code>، وبحد أقصى 10 ميجابايت لكل ملف.</li>
+            </ul>
+            <div class="notice danger">لا تستورد ملفًا حقيقيًا أول مرة بالكامل. اختبر 3–5 صفوف، راجع النتيجة داخل النظام، ثم نفذ الملف الكامل.</div>
+        </section>
+
+        <section class="content-section" id="order">
+            <h2><span class="section-number">2</span>ترتيب الاستيراد الموصى به</h2>
+            <ol class="steps">
+                <li><strong>المرضى:</strong> لأن الهاتف هو مفتاح الربط لبقية الملفات.</li>
+                <li><strong>الخدمات والأسعار:</strong> تجهيز كتالوج الفوترة.</li>
+                <li><strong>المخزون:</strong> الأصناف والوحدات والفئات والكميات الافتتاحية.</li>
+                <li><strong>الأرصدة والديون السابقة:</strong> بعد التأكد من وجود جميع المرضى.</li>
+                <li><strong>المواعيد القادمة:</strong> بعد تعريف الأطباء والغرف ومطابقة المرضى.</li>
+            </ol>
+            <figure class="screenshot">
+                <img src="images/shot-data-migration-live.png" alt="مركز ترحيل البيانات وقوالب Excel" loading="lazy">
+                <figcaption>قسم نقل البيانات داخل إعدادات النظام، ويحتوي بطاقة وقالبًا مستقلين لكل نوع.</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section" id="templates">
+            <h2><span class="section-number">3</span>القوالب وكيف يمنع النظام التكرار</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>القالب</th><th>أهم الحقول</th><th>قاعدة المطابقة/التحديث</th></tr></thead>
+                    <tbody>
+                        <tr><td>المرضى</td><td>الاسم، الهاتف، العمر، الجنس، فصيلة الدم، الحساسية، الأمراض، الملاحظات.</td><td>رقم الهاتف داخل المركز؛ السجل الموجود يُحدّث بدل إنشاء مريض مكرر.</td></tr>
+                        <tr><td>الأرصدة الافتتاحية</td><td>هاتف المريض، الاسم، المبلغ، التاريخ، الوصف.</td><td>الهاتف يحدد المريض، وفاتورة «رصيد افتتاحي / دين سابق» الموجودة تُحدّث.</td></tr>
+                        <tr><td>الخدمات والأسعار</td><td>اسم الخدمة، السعر، نطاق الفوترة، الحالة.</td><td>اسم الخدمة داخل المركز.</td></tr>
+                        <tr><td>المخزون</td><td>الصنف، الباركود، الوحدة، الفئة، الكمية، الحد الأدنى، الوصف.</td><td>اسم الصنف أو الباركود داخل الفرع؛ ينشئ الوحدة والفئة غير الموجودتين.</td></tr>
+                        <tr><td>المواعيد</td><td>هاتف المريض، الاسم، التاريخ، الوقت، الطبيب، الغرفة، الملاحظات.</td><td>المريض + التاريخ والوقت؛ يُحدّث الطبيب/الغرفة/الملاحظة عند التطابق.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="notice tip">حمّل القالب من زر <strong>تنزيل النموذج</strong> ولا تغيّر ترتيب الأعمدة. اترك صف التعليمات كما هو؛ يتجاوزه النظام تلقائيًا.</div>
+        </section>
+
+        <section class="content-section" id="upload">
+            <h2><span class="section-number">4</span>طريقة تجهيز ورفع الملف</h2>
+            <ol class="steps">
+                <li>افتح <strong>الإدارة ← إعدادات النظام</strong> وانتقل إلى قسم <strong>نقل واستيراد البيانات السابقة</strong>.</li>
+                <li>نزّل نموذج النوع المطلوب وافتحه في Excel.</li>
+                <li>الصق البيانات تحت العناوين دون دمج خلايا أو إضافة أعمدة في البداية.</li>
+                <li>استخدم أرقام هواتف متسقة؛ يحول النظام الأرقام العربية وينظف المسافات والرموز الشائعة.</li>
+                <li>احفظ الملف ثم اختره من البطاقة المناسبة واضغط <strong>استيراد</strong>.</li>
+                <li>انتظر رسالة الملخص ولا تغلق الصفحة أثناء الرفع.</li>
+            </ol>
+        </section>
+
+        <section class="content-section" id="errors">
+            <h2><span class="section-number">5</span>قراءة نتيجة الاستيراد ومعالجة الأخطاء</h2>
+            <ul>
+                <li>تعرض الرسالة عدد السجلات الجديدة وعدد السجلات التي تم تحديثها.</li>
+                <li>إذا وُجدت صفوف غير صالحة، يظهر رقم السطر وسبب الخطأ بينما تستمر معالجة الصفوف الصحيحة.</li>
+                <li>في الأرصدة والمواعيد، رسالة «المريض غير مسجل» تعني أن رقم الهاتف لم يطابق سجلًا؛ صحح الرقم أو استورد المرضى أولًا.</li>
+                <li>في المواعيد، راجع صيغة التاريخ والوقت. عند غياب الوقت يستخدم النظام وقتًا افتراضيًا، لكن الأفضل تعبئته صراحة.</li>
+                <li>في الأسماء الطبية، يطابق النظام اسم الطبيب والغرفة تقريبًا؛ راجع النتيجة عند اختلاف التهجئة.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="checklist">
+            <h2><span class="section-number">6</span>التحقق النهائي بعد الترحيل</h2>
+            <ol class="steps">
+                <li>افتح قائمة المرضى وابحث بعينة من الأسماء والهواتف.</li>
+                <li>راجع السجل المالي لمرضى لديهم ديون سابقة وتأكد من عدم مضاعفة الفاتورة.</li>
+                <li>قارن عدد الخدمات والأسعار بعينة من النظام القديم.</li>
+                <li>راجع كميات المخزون وحدود إعادة الطلب في الفرع الصحيح.</li>
+                <li>افتح التقويم وتحقق من مواعيد عدة أطباء وغرف.</li>
+                <li>نزّل تقريرًا ماليًا تجريبيًا واحتفظ بمحضر نتيجة الاستيراد.</li>
+            </ol>
+            <div class="notice warning">إعادة رفع الملف نفسه قد تحدّث السجلات المطابقة. مع ذلك، احتفظ بنسخة من الملف المستخدم وسجل وقت العملية لتسهيل المراجعة.</div>
+        </section>
+    </main>
+    <footer class="footer">ProDentic · دليل ترحيل البيانات · سبتمبر 2026</footer>
+</body>
+</html>

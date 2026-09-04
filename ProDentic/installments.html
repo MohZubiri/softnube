@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>دليل أقساط الخطط العلاجية | ProDentic</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="guide-2026.css">
+</head>
+<body>
+    <header class="hero compact">
+        <a class="back-link" href="index.html">← الدليل الرئيسي</a>
+        <div class="hero-inner">
+            <span class="eyebrow">الإدارة المالية · الخطط العلاجية</span>
+            <h1>سداد وأقساط الخطط العلاجية</h1>
+            <p>جدولة قيمة الخطة على دفعات، متابعة الاستحقاق، وتسجيل سند قبض مرتبط بالمريض والحسابات.</p>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <nav class="toc" aria-label="محتويات الصفحة">
+            <h2>محتويات الدليل</h2>
+            <ul class="toc-list">
+                <li><a href="#enable">التفعيل والصلاحيات</a></li>
+                <li><a href="#schedule">إنشاء جدول الأقساط</a></li>
+                <li><a href="#collection">شاشة التحصيل</a></li>
+                <li><a href="#pay">سداد قسط</a></li>
+                <li><a href="#edit">التعديل والحذف</a></li>
+                <li><a href="#rules">قواعد مالية مهمة</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-section" id="enable">
+            <h2><span class="section-number">1</span>التفعيل والصلاحيات</h2>
+            <ol class="steps">
+                <li>افتح <strong>الإعدادات ← الإعدادات المالية</strong>.</li>
+                <li>فعّل خيار <strong>تفعيل نظام الأقساط للخطط العلاجية</strong> ثم احفظ.</li>
+                <li>للعرض يلزم <code>installments.view</code> أو <code>accounting.view</code>. وللسداد والإدارة يلزم إحدى صلاحيات <code>installments.pay</code> أو إنشاء الدفعات أو تعديل الخطط.</li>
+            </ol>
+            <div class="notice warning">عند تعطيل الميزة تختفي من القائمة ومن صفحة الخطة، ويمنع النظام فتح روابطها مباشرة.</div>
+        </section>
+
+        <section class="content-section" id="schedule">
+            <h2><span class="section-number">2</span>إنشاء جدول أقساط داخل الخطة</h2>
+            <p>افتح الخطة العلاجية ثم انتقل إلى <strong>جدول أقساط الخطة العلاجية</strong> واضغط <strong>إعداد / تعديل جدول الأقساط</strong>.</p>
+            <h3>التوزيع التلقائي المنتظم</h3>
+            <ol class="steps">
+                <li>حدد عدد الأقساط من 1 إلى 60.</li>
+                <li>حدد تاريخ أول استحقاق والفاصل بالأيام من 1 إلى 365.</li>
+                <li>يضبط النظام قيمة الأقساط بالتساوي ويعالج فرق التقريب في القسط الأخير.</li>
+                <li>اضغط <strong>حفظ جدول الأقساط</strong>.</li>
+            </ol>
+            <h3>التحديد المخصص</h3>
+            <p>أضف كل قسط بقيمته وتاريخه وملاحظته. استخدم هذا النمط عندما تختلف الدفعة المقدمة أو المواعيد أو مبالغ الأقساط.</p>
+            <figure class="screenshot">
+                <img src="images/shot-installment-schedule-live.png" alt="جدول أقساط داخل خطة علاجية" loading="lazy">
+                <figcaption>جدول من أربع دفعات متساوية داخل الخطة، بجوار الفواتير وطلبات المعمل والملخص المالي.</figcaption>
+            </figure>
+            <div class="notice tip">القيمة التي يوزعها النظام مأخوذة من مجموع بنود فاتورة الخطة بعد الخصومات، وليست رقمًا منفصلًا يُكتب يدويًا.</div>
+        </section>
+
+        <section class="content-section" id="collection">
+            <h2><span class="section-number">3</span>شاشة التحصيل والمتابعة</h2>
+            <p>من القائمة اختر <strong>الإدارة المالية ← سداد وأقساط الخطط العلاجية</strong>. تعرض البطاقات إجمالي قيمة الأقساط، المحصّل، المتبقي للتحصيل، وعدد وقيمة الأقساط المتأخرة.</p>
+            <ul>
+                <li>البحث برقم المريض أو اسمه أو هاتفه، أو بعنوان/رقم الخطة.</li>
+                <li>التصفية حسب «مستحق/معلق»، «متأخر»، «مسدد» أو جميع الحالات.</li>
+                <li>تحديد نطاق تواريخ الاستحقاق.</li>
+                <li>من الجدول يمكن فتح الخطة، سداد القسط أو تعديل القسط المسموح.</li>
+            </ul>
+            <figure class="screenshot">
+                <img src="images/shot-installments-live.png" alt="قائمة أقساط الخطط العلاجية" loading="lazy">
+                <figcaption>لوحة تحصيل الأقساط مع المؤشرات والفلاتر وقيمة كل قسط والمدفوع والمتبقي.</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section" id="pay">
+            <h2><span class="section-number">4</span>تسجيل سداد قسط</h2>
+            <ol class="steps">
+                <li>اضغط <strong>سداد القسط</strong> في الصف المطلوب.</li>
+                <li>راجع اسم المريض والخطة وتاريخ الاستحقاق والمتبقي.</li>
+                <li>أدخل المبلغ؛ يمكن أن يكون جزئيًا، لكنه لا يتجاوز المتبقي على القسط.</li>
+                <li>اختر طريقة الدفع، وأدخل رقم المرجع عندما تكون الطريقة تحويلًا أو بطاقة حسب إعدادها.</li>
+                <li>أدخل تاريخ الدفع والملاحظة عند الحاجة ثم أكد العملية.</li>
+            </ol>
+            <p>ينشئ النظام دفعة للمريض، يسجل القيد المحاسبي، يعيد توزيع دفعات المريض على البنود، ثم يحدّث حالة القسط إلى <strong>مسدد جزئيًا</strong> أو <strong>مسدد بالكامل</strong>.</p>
+        </section>
+
+        <section class="content-section" id="edit">
+            <h2><span class="section-number">5</span>تعديل أو حذف القسط</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>الحالة</th><th>التعديل</th><th>الحذف</th></tr></thead>
+                    <tbody>
+                        <tr><td>غير مسدد</td><td>يمكن تعديل القيمة والتاريخ والملاحظة.</td><td>مسموح.</td></tr>
+                        <tr><td>مسدد جزئيًا</td><td>مسموح، لكن لا يمكن خفض القيمة دون المبلغ المدفوع.</td><td>غير مسموح.</td></tr>
+                        <tr><td>مسدد بالكامل</td><td>غير مسموح.</td><td>غير مسموح.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>عند إعادة إنشاء الجدول يحتفظ النظام بالأقساط المسددة بالكامل، ويستبدل الأقساط غير المسددة بالجدول الجديد.</p>
+        </section>
+
+        <section class="content-section" id="rules">
+            <h2><span class="section-number">6</span>قواعد مالية مهمة</h2>
+            <ul>
+                <li>تاريخ اليوم لا يعد متأخرًا؛ تصبح الحالة متأخرة بعد مرور تاريخ الاستحقاق والقسط ما زال معلقًا أو جزئيًا.</li>
+                <li>القسط وسيلة لتنظيم التحصيل ولا يغيّر وحده شروط الاعتراف بالإيراد أو استحقاق عمولة الطبيب.</li>
+                <li>أي دفعة قسط تظهر في سجل دفعات المريض وفي المحاسبة، ويجب عدم تسجيل الدفعة نفسها مرة أخرى من شاشة الفاتورة.</li>
+                <li>راجع <a href="finance-advanced.html">دليل المالية المتقدمة</a> لفهم توزيع الدفعات على البنود.</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">ProDentic · دليل أقساط الخطط العلاجية · سبتمبر 2026</footer>
+</body>
+</html>

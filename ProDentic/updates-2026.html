@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ملخص تحديثات ProDentic 2026</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=noto-sans-arabic:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="guide-2026.css">
+</head>
+<body>
+    <header class="hero compact">
+        <a class="back-link" href="index.html">← الدليل الرئيسي</a>
+        <div class="hero-inner">
+            <span class="eyebrow">ملخص الانتقال · إصدار سبتمبر 2026</span>
+            <h1>أهم التحديثات للمستخدم</h1>
+            <p>مرجع سريع للتغييرات التي تؤثر في العمل اليومي ولم تكن موثقة بالتفصيل في الإصدار السابق من الدليل.</p>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <nav class="toc" aria-label="محتويات الصفحة">
+            <h2>محتويات الدليل</h2>
+            <ul class="toc-list">
+                <li><a href="#navigation">القائمة ولوحة التحكم</a></li>
+                <li><a href="#dental">مخطط الأسنان المتقدم</a></li>
+                <li><a href="#doctor">ملف الطبيب</a></li>
+                <li><a href="#demo">بيئة العرض</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-section" id="navigation">
+            <h2><span class="section-number">1</span>القائمة الجديدة ولوحة التحكم</h2>
+            <p>أصبحت القائمة الجانبية مجمعة حسب طبيعة العمل لتقليل التشتت:</p>
+            <div class="feature-grid">
+                <article class="feature-card"><h3>إدارة الاستقبال</h3><p>المواعيد، التقويم، قائمة الانتظار، المرضى والخطط العلاجية.</p></article>
+                <article class="feature-card"><h3>الإدارة العامة</h3><p>الأطباء والموظفون والغرف وطلبات المعمل.</p></article>
+                <article class="feature-card"><h3>الإدارة المالية</h3><p>الفواتير والأقساط والمصروفات والإغلاق والحسابات والرواتب.</p></article>
+                <article class="feature-card"><h3>إدارة المخزون</h3><p>المنتجات وطلبات الصرف والتوريد والموردون والحركات والمرجعيات.</p></article>
+                <article class="feature-card"><h3>التقارير والإعدادات</h3><p>تقارير الدخل والتحصيل والمصروف، ثم الفروع والخدمات والأسعار والسياسات.</p></article>
+                <article class="feature-card"><h3>الإدارة</h3><p>المستخدمون والأدوار والصلاحيات وإعدادات النظام والنسخ وسجل المراجعة.</p></article>
+            </div>
+            <p>أضيف إلى لوحة التحكم تنبيه <strong>طلبات معامل متأخرة</strong> بجانب المرضى والمواعيد ونقص المخزون.</p>
+            <figure class="screenshot">
+                <img src="images/shot-dashboard-live.png" alt="لوحة تحكم ProDentic المحدثة" loading="lazy">
+                <figcaption>لوحة التحكم اليومية مع التنبيهات وجدول المواعيد والإجراءات السريعة.</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section" id="dental">
+            <h2><span class="section-number">2</span>مخطط الأسنان: حالات متعددة وعلاج العصب</h2>
+            <ol class="steps">
+                <li>افتح ملف المريض ثم تبويب <strong>مخطط الأسنان</strong>.</li>
+                <li>اختر مخطط بالغ (32 سنًا) أو طفل (20 سنًا).</li>
+                <li>اضغط السن، ثم حدد حالة واحدة أو عدة حالات. اختيار «سليم» يلغي الحالات المرضية الأخرى لذلك السن.</li>
+                <li>حدد الأسطح المتأثرة، وأدخل الملاحظات السريرية.</li>
+                <li>لعلاج العصب أضف القنوات، ثم اكتب اسم القناة وطولها ومقاسها وملاحظتها. الحد الأقصى 10 قنوات للسن.</li>
+                <li>اضغط حفظ؛ يتحدث لون السن ويُسجل التغيير في سجل المخطط.</li>
+            </ol>
+            <figure class="screenshot">
+                <img src="images/shot-dental-chart-tooth-live.png" alt="نافذة تسجيل حالات السن والأسطح وقنوات العصب" loading="lazy">
+                <figcaption>نافذة السن تدعم اختيار عدة حالات، وتحديد الأسطح، وإضافة قنوات علاج العصب وبياناتها.</figcaption>
+            </figure>
+            <figure class="screenshot">
+                <img src="images/shot-dental-chart-live.png" alt="مخطط أسنان محدث للبالغ" loading="lazy">
+                <figcaption>المخطط يدعم الترقيم FDI للبالغ والطفل ويعرض عدد الأسنان المعالجة ومؤشر قنوات العصب.</figcaption>
+            </figure>
+            <div class="notice tip">صلاحية الوصول هي <code>patients.dental_chart</code>. حالات الأسنان وأسـطحها النشطة تُدار من الإعدادات.</div>
+        </section>
+
+        <section class="content-section" id="doctor">
+            <h2><span class="section-number">3</span>ملف الطبيب وحالة سداد الخدمات</h2>
+            <p>صفحة الطبيب لم تعد مجرد بيانات تعريفية؛ أصبحت ملفًا تشغيليًا وماليًا يتضمن:</p>
+            <ul>
+                <li>عدد المرضى الذين عالجهم الطبيب والنشاط العلاجي.</li>
+                <li>قائمة المرضى المعالجين والخدمات المرتبطة بهم.</li>
+                <li>حالة سداد كل خدمة أو بند لمعرفة ما يغطيه التحصيل.</li>
+                <li>كشف الحساب المالي والعمولات المستحقة والمدفوعة وفق صلاحيات المستخدم.</li>
+                <li>نسبة العمولة الأساسية، مع أولوية نسبة الخدمة الخاصة عند تعريفها.</li>
+            </ul>
+            <figure class="screenshot">
+                <img src="images/shot-doctor-profile-live.png" alt="ملف طبيب مع المرضى المعالجين والحالة المالية" loading="lazy">
+                <figcaption>ملف الطبيب يجمع المرضى وحالات السداد وكشف الحساب والنشاط العلاجي في صفحة واحدة.</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-section" id="demo">
+            <h2><span class="section-number">4</span>بيئة العرض التجريبية</h2>
+            <ul>
+                <li>الصور في هذا الدليل مأخوذة من مركز <strong>ProDentic التجريبي</strong>.</li>
+                <li>جميع الأسماء والأرقام المعروضة بيانات اصطناعية مخصصة للشرح.</li>
+                <li>تتغير بيانات الديمو تلقائيًا؛ لذلك قد تختلف الأعداد عند فتح النظام لاحقًا.</li>
+                <li>لا تدخل بيانات شخصية أو صحية حقيقية في بيئة العرض المشتركة.</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">ProDentic · ملخص تحديثات 2026 · آخر مراجعة 4 سبتمبر 2026</footer>
+</body>
+</html>
