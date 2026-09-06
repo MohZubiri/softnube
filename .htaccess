@@ -1,7 +1,17 @@
 RewriteEngine On
 
-# Redirect all requests to /public folder
-RewriteCond %{REQUEST_URI} !^/YE/
+# 301 Redirects for uppercase folder paths to lowercase
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteRule ^(?:ProDentic|PRODENTIC|Prodentic)(?:/(.*))?$ /prodentic/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteRule ^(?:Shipment|SHIPMENT)(?:/(.*))?$ /shipment/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteRule ^YE(?:/(.*))?$ /ye/$1 [R=301,L]
+
+# Redirect other requests to /ye folder
+RewriteCond %{REQUEST_URI} !^/ye/ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /YE/$1 [L]
+RewriteRule ^(.*)$ /ye/$1 [L]
