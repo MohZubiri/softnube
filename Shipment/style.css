@@ -1,6 +1,6 @@
 /* Shared styles for the user manual module pages */
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Cairo',sans-serif;background:#f4f7fb;color:#0f172a;line-height:1.9;-webkit-font-smoothing:antialiased}
+body{font-family:'Almarai',sans-serif;background:#f4f7fb;color:#0f172a;line-height:1.9;-webkit-font-smoothing:antialiased}
 .topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0}
 .topbar .in{max-width:1000px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:8px;font-weight:800;color:#0f172a;text-decoration:none}

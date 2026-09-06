@@ -11,11 +11,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
-                fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                fontFamily: { sans: ['Almarai', 'sans-serif'] },
                 extend: {
                     colors: {
                         brand: {
@@ -30,7 +30,9 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Cairo', sans-serif; }
+        body { font-family: 'Almarai', sans-serif; }
+        .hero h1, .grad-hero h1 { font-size: 3rem; }
+        @media (max-width: 640px) { .hero h1, .grad-hero h1 { font-size: 2.15rem; } }
         .grad-hero { background: radial-gradient(1200px 600px at 80% -10%, #d9eaff 0%, transparent 55%), radial-gradient(900px 500px at 10% 10%, #eef6ff 0%, transparent 50%), #fbfcff; }
         .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
         .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(24,70,180,.35); }
@@ -64,7 +66,7 @@
     </header>
 
     <!-- ===================== الواجهة الرئيسية ===================== -->
-    <section class="grad-hero">
+    <section class="grad-hero hero">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
                 <span class="inline-flex items-center gap-2 rounded-full bg-brand-100 text-brand-800 px-4 py-1.5 text-sm font-bold mb-6">

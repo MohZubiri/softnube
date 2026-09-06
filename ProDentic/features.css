@@ -47,7 +47,7 @@ body {
 }
 
 html[lang="ar"] body {
-    font-family: "Marai", Tahoma, Arial, sans-serif;
+    font-family: "Almarai", Tahoma, Arial, sans-serif;
 }
 
 body.menu-open {
@@ -320,12 +320,13 @@ html[dir="rtl"] .hero-grid {
 .hero h1 {
     max-width: 650px;
     margin: 0;
-    font-size: clamp(2.5rem, 5.3vw, 4.8rem);
+    font-size: 3rem;
     line-height: 1.12;
     letter-spacing: -.045em;
 }
 
 html[lang="ar"] .hero h1 {
+    font-size: 3rem;
     letter-spacing: -.03em;
     line-height: 1.35;
 }
@@ -1536,7 +1537,7 @@ html[lang="ar"] .section h2 {
     }
 
     .hero h1 {
-        font-size: clamp(2.25rem, 12vw, 3.55rem);
+        font-size: clamp(2rem, 8vw, 3rem);
     }
 
     .hero-lead {
