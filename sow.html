@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoftNube – Scope of Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#39527b;--gold:#f2c75c}
+*{box-sizing:border-box}
+body{font-family:'Cairo',Tahoma,Arial,sans-serif;background:#e9ecf1;margin:0;padding:30px 15px 60px;color:#222;font-size:14px}
+
+/* ===== صفحة بمقاس A4 ===== */
+.page{width:210mm;max-width:100%;min-height:297mm;margin:auto;background:#fff;box-shadow:0 5px 25px rgba(0,0,0,.25)}
+
+.header{background:var(--blue);color:#fff;padding:12mm 13mm;border-radius:0 0 45px 45px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.logo{height:55px;background:#fff;padding:5px;border-radius:8px}
+/* الشعار: يُقرأ من ملف logo.png الموجود بجانب ملف HTML */
+h1{color:var(--gold);font-size:24px;line-height:1.6;margin:18px 0 12px}
+.meta{line-height:2}
+
+.content{padding:10mm 13mm 14mm}
+h2{color:var(--blue);border-right:8px solid var(--gold);padding-right:14px;margin:28px 0 10px;font-size:19px}
+h3{color:var(--blue);margin:20px 0 8px;font-size:16px}
+p{line-height:1.9;margin:8px 0}
+ul,ol{padding-right:24px;margin:6px 0 4px;line-height:1.9}
+li{margin-bottom:7px}
+
+/* ===== التعديل المباشر ===== */
+[contenteditable]{border-radius:5px}
+[contenteditable]:hover{outline:2px dashed var(--gold);outline-offset:3px;cursor:text}
+[contenteditable]:focus{outline:2px solid var(--gold);outline-offset:3px;background:#fffcf0}
+.header [contenteditable]:focus{background:rgba(255,255,255,.08)}
+
+.add-li{display:inline-flex;align-items:center;gap:6px;margin:2px 24px 10px 0;padding:4px 14px;border:1.5px dashed var(--blue);background:#fff;color:var(--blue);border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit}
+.add-li:hover{background:var(--gold);border-color:var(--gold);color:#222}
+
+/* شريط الأدوات والتلميح */
+.toolbar{position:fixed;top:15px;left:15px;z-index:50}
+.toolbar button{padding:11px 20px;border:0;border-radius:10px;background:var(--blue);color:#fff;font-size:15px;font-family:inherit;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.toolbar button:hover{background:#2c4062}
+.hint{width:210mm;max-width:100%;margin:0 auto 18px;background:#fff8e1;border:1px solid var(--gold);border-radius:10px;padding:12px 16px;font-size:13.5px;line-height:1.9}
+
+.footer{text-align:center;padding:16px;color:var(--blue);font-size:13px}
+
+/* ===== إعدادات الطباعة على A4 ===== */
+@page{size:A4;margin:12mm 0}
+@page :first{margin-top:0}
+@media print{
+  body{background:#fff;padding:0;margin:0}
+  .page{width:100%;min-height:auto;margin:0;box-shadow:none}
+  .no-print{display:none!important}
+  [contenteditable]:hover,[contenteditable]:focus{outline:none;background:transparent}
+  .header{border-radius:0 0 35px 35px;break-inside:avoid;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2,h3{break-after:avoid;page-break-after:avoid}
+  li,p{break-inside:avoid;page-break-inside:avoid}
+  p{orphans:3;widows:3}
+}
+</style>
+</head>
+<body>
+
+<div class="hint no-print">
+✏️ <b>للتعديل:</b> اضغط على أي عنوان أو فقرة أو نقطة لتعديلها مباشرة. داخل القوائم: اضغط <b>Enter</b> لإضافة نقطة جديدة، أو امسح نص النقطة ثم <b>Backspace</b> لحذفها، أو استخدم زر «＋ إضافة نقطة» أسفل كل قائمة.<br>
+🖨️ <b>للطباعة على A4:</b> اضغط زر «طباعة»، اختر حجم الورق <b>A4</b>، وفعّل خيار <b>Background graphics / طباعة الخلفيات</b> لتظهر الترويسة الزرقاء بالألوان. أزرار التعديل والتلميحات لا تظهر في الطباعة.
+</div>
+
+<div class="toolbar no-print">
+<button onclick="window.print()">🖨️ طباعة / حفظ PDF (A4)</button>
+</div>
+
+<div class="page">
+  <div class="header">
+    <img class="logo" src="logo.png" alt="SoftNube">
+    <h1 contenteditable="true">وثيقة نطاق العمل (Scope of Work) لعقد تطوير تطبيق «مصمم جرافيك»</h1>
+    <div class="meta" contenteditable="true">تاريخ التحرير: [يُكتب التاريخ]<br>الطرف الأول (العميل/صاحب التطبيق): [اسم العميل]<br>الطرف الثاني (المبرمج/شركة التطوير): [اسم المطور أو الشركة]</div>
+  </div>
+
+  <div class="content">
+
+    <h2 contenteditable="true">1. مقدمة المشروع</h2>
+    <p contenteditable="true">يهدف هذا المشروع إلى برمجة وتطوير تطبيق هواتف ذكية (يعمل على نظام Android وجاهز للنشر على Google Play) يحمل اسم «مصمم جرافيك». التطبيق عبارة عن منصة احترافية مدمجة تحتوي على واجهة مخصصة للزبائن لعرض وطلب خدمات التصميم، وواجهة إدارة (لوحة تحكم مخفية داخل نفس التطبيق) خاصة بصاحب التطبيق لإدارة المحتوى والطلبات.</p>
+
+    <h2 contenteditable="true">2. المواصفات التقنية والخصائص المطلوبة (نطاق العمل)</h2>
+    <p contenteditable="true">يلتزم الطرف الثاني (المطور) بتنفيذ الخصائص التالية بالكامل دون نقص، ويلتزم الطرف الأول (العميل) بأن هذه القائمة هي النطاق النهائي للمشروع:</p>
+
+    <h3 contenteditable="true">أ. نظام تسجيل الدخول والمصادقة (Authentication)</h3>
+    <ul contenteditable="true">
+      <li>تسجيل دخول وربط حساب حقيقي عبر Google.</li>
+      <li>تسجيل حساب جديد، وتسجيل الدخول باستخدام البريد الإلكتروني وكلمة المرور.</li>
+      <li>ميزة استعادة/نسيان كلمة المرور.</li>
+      <li>تسجيل الخروج وإعادة الدخول.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h3 contenteditable="true">ب. لوحة تحكم الإدارة</h3>
+    <ul contenteditable="true">
+      <li>إضافة، تعديل، وحذف الخدمات والأعمال والصور والفيديوهات.</li>
+      <li>استقبال طلبات الزبائن وإدارتها.</li>
+      <li>إدارة صفحة المصمم ومتابعة المحادثات.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h3 contenteditable="true">ج. معرض الأعمال الاحترافي (Portfolio)</h3>
+    <ul contenteditable="true">
+      <li>عرض الأعمال بصيغتي الصور والفيديوهات.</li>
+      <li>نظام تصنيفات، بحث، ومفضلة.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h3 contenteditable="true">د. قسم الخدمات ونظام الطلبات</h3>
+    <ul contenteditable="true">
+      <li>عرض خدمات التصميم مع إمكانية تعديلها من الإدارة.</li>
+      <li>رفع الملفات والمرفقات المطلوبة للتصميم.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h3 contenteditable="true">هـ. نظام المحادثة الموحد</h3>
+    <ul contenteditable="true">
+      <li>محادثة مركزية لكل زبون.</li>
+      <li>إرسال النصوص والصور والملفات وتعديل وحذف الرسائل.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h3 contenteditable="true">و. نظام الإشعارات الفورية</h3>
+    <ul contenteditable="true">
+      <li>إشعارات الرسائل والطلبات والخدمات الجديدة.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h3 contenteditable="true">ز. البنية التحتية وقاعدة البيانات</h3>
+    <ul contenteditable="true">
+      <li>قاعدة بيانات سحابية مثل Firebase أو ما يعادلها.</li>
+      <li>هيكلية قابلة للتحديث المستمر.</li>
+    </ul>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h2 contenteditable="true">3. حدود النطاق</h2>
+    <p contenteditable="true">أي ميزات غير مذكورة صراحة في هذا العقد تعتبر خارج نطاق العمل. إضافة أي ميزة جديدة تتطلب إصدار ملحق تعديل نطاق عمل وتحديد التكلفة والوقت.</p>
+
+    <h2 contenteditable="true">4. تسليمات المشروع (Deliverables)</h2>
+    <ol contenteditable="true">
+      <li>تطبيق جاهز بصيغة AAB / APK.</li>
+      <li>الكود المصدري كاملاً إن نص عليه العقد المالي.</li>
+      <li>تسليم حساب قاعدة البيانات والخوادم.</li>
+    </ol>
+    <button class="add-li no-print" onclick="addPoint(this)">＋ إضافة نقطة</button>
+
+    <h2 contenteditable="true">5. شروط وأحكام الإنجاز</h2>
+    <p contenteditable="true">يلتزم المطور بتنفيذ الميزات بشكل كامل واحترافي وخالٍ من الأخطاء البرمجية عند التسليم النهائي. ويقر العميل بأن هذه الوثيقة تمثل احتياجاته النهائية.</p>
+
+  </div>
+  <div class="footer" contenteditable="true">SoftNube - Scope of Work</div>
+</div>
+
+<script>
+function addPoint(btn){
+  var list = btn.previousElementSibling;
+  var li = document.createElement('li');
+  li.textContent = 'نقطة جديدة — اكتب هنا';
+  list.appendChild(li);
+  var r = document.createRange();
+  r.selectNodeContents(li);
+  var s = window.getSelection();
+  s.removeAllRanges();
+  s.addRange(r);
+  list.focus();
+}
+</script>
+</body>
+</html>
