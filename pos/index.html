@@ -1,687 +1,835 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Softnube pos</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام نقاط البيع POS — سوفت نيو | Softnube</title>
+    <meta name="description" content="نظام متطور لإدارة المبيعات والمخازن ونقاط البيع للمطاعم، البقالات، الصيدليات، ومحلات التجزئة من سوفت نيو. رقابة وأمان وسهولة استخدام.">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 
-    <!--Google fonts links-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
-        rel="stylesheet">
+    <!-- Google Fonts: Almarai & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-   
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-
-    <!--For Plugins external css-->
-    <link rel="stylesheet" href="assets/css/plugins.css" />
-    <link rel="stylesheet" href="assets/css/roboto-webfont.css" />
-
-    <!--Theme custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/ar-style.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-
-    <!--Theme Responsive css-->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="stylesheet" href="assets/css/clients.css">
-    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <!-- Apple-Inspired POS Modern CSS -->
+    <link rel="stylesheet" href="assets/css/pos-modern.css">
 </head>
-
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-    <!-- Sections -->
-    <section id="social" class="social">
+    <!-- Top Notice / Contact Bar -->
+    <div class="top-notice-bar">
         <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="social-wrapper">
-                    <div class="col-md-6">
-                        <div class="social-icon">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="social-contact">
-                            <a href="#"><i class="fa fa-phone"></i>+967 777066658</a>
-                            <a href="#"><i class="fa fa-envelope"></i>info@sofnube.site</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="top-notice-contacts">
+                <a href="tel:733006348" class="top-notice-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>733006348</span>
+                </a>
+                <a href="https://wa.me/967777066658" target="_blank" class="top-notice-link">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                    <span>+967 777066658</span>
+                </a>
+                <a href="mailto:info@softnube.site" class="top-notice-link">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>info@softnube.site</span>
+                </a>
             </div>
-        </div> <!-- /container -->
-    </section>
+            <div class="top-notice-social">
+                <a href="#" class="top-notice-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="top-notice-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="top-notice-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
 
-    <nav class="navbar navbar-default">
+    <!-- Apple-Style Glass Navbar -->
+    <header class="apple-navbar" id="appleNavbar">
         <div class="container">
+            <div class="nav-wrapper">
+                <a href="#home" class="nav-brand">
+                    <img src="assets/images/logo.png" alt="Softnube Logo">
+                    <span>سوفت نيو</span>
+                    <span class="badge-pos">نظام POS</span>
+                </a>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <nav class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-link active">الرئيسية</a>
+                    <a href="#features" class="nav-link">المميزات والحلول</a>
+                    <a href="#pricing" class="nav-link">الأسعار والخطط</a>
+                    <a href="#faq" class="nav-link">الأسئلة الشائعة</a>
+                    <a href="#contact" class="nav-link">تواصل معنا</a>
+                </nav>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="login"><a href="https://pos.softnube.site/">تجربة النظام</a></li>
-                    <li><a href="#contact">تواصل معنا</a></li>
-
-                    <li><a href="#price">الاسعار</a></li>
-
-
-                    <li><a href="#features">المنتجات</a></li>
-                    <li class="active"><a href="#home">الصفحة الرئيسية</a></li>
-                </ul>
-
-            </div><!-- /.navbar-collapse -->
-
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Logo" /></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
-    <!--Home page style-->
-    <header id="home" class="home">
-        <div class="overlay-fluid-block">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="home-wrapper">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="home-content">
-
-                                <h1>نظام نقاط البيع المتميز من سوفت ناب</h1>
-                                <p>نظام متطورلادارة المبيعات في جميع محلات البيع بالتجزئة ويحقق العديد من الفوائد
-                                    الفعلية لاصحاب الأعمال منها الرقابة والأمان والبيع بالاسعار الحقيقية للأصناف مهما
-                                    كانت اعدادها وانواع وتواريخ استيرادها واماكن تخزينها </p>
-
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-                                        <div class="home-contact">
-                                            <div class="input-group">
-                                                <input type="submit" class="form-control" value="تجربة النظام">
-                                                <input type="text" class="form-control"
-                                                    placeholder="إدخل بريدك الالكتروني ">
-
-
-                                            </div><!-- /input-group -->
-
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="nav-actions">
+                    <a href="https://pos.softnube.site/" target="_blank" class="btn-nav-demo">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>تجربة النظام</span>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="قائمة التنقل">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Sections -->
-    <section id="features" class="features sections">
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-ambient-glow"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-pill">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>الجيل الجديد من أنظمة نقاط البيع وإدارة المتاجر</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        نظام نقاط البيع المتميز<br>
+                        <span class="gradient-text">ذكاء، سرعة، وموثوقية بلا حدود</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        نظام متطور لإدارة المبيعات في جميع محلات البيع بالتجزئة، يحقق أقصى درجات الرقابة والأمان ويدير المخزون والأسعار الحقيقية بكل دقة واحترافية.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="https://pos.softnube.site/" target="_blank" class="btn-apple-primary">
+                            <i class="fa-solid fa-desktop"></i>
+                            <span>تجربة النظام مجاناً</span>
+                        </a>
+                        <a href="#contact" class="btn-apple-secondary">
+                            <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                            <span>طلب استشارة فورية</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges / Cards -->
+                    <div class="hero-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3>تقارير تفصيلية لحظية</h3>
+                            <p>متابعة دقيقة للأرباح والمبيعات والمخزون مع إحصائيات بيانية فورية على مدار الساعة.</p>
+                        </div>
+
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3>أمان عالي وصلاحيات متعددة</h3>
+                            <p>تحديد صلاحيات الكاشير والمشرفين بدقة وحماية بياناتك بنسخ احتياطي دوري وسحابي.</p>
+                        </div>
+
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+                            <h3>سحابي أو محلي</h3>
+                            <p>اختر ما يناسب طبيعة عملك، متاح بنسخة سحابية (Online) أو نسخة محلية للعمل دون إنترنت.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-tag">الحلول المبتكرة</span>
+                    <h2 class="section-title">صُمم ليتناسب مع مختلف أنشطتك التجارية</h2>
+                    <p class="section-desc">واجهات مستخدم سريعة وسلسة تلائم سرعة المحاسبة وحركة العملاء، مع تخصيصات تناسب مجالك.</p>
+                </div>
+
+                <!-- Feature 1: Retail & Supermarket -->
+                <div class="feature-block">
+                    <div class="feature-image-side">
+                        <div class="feature-img-card">
+                            <img src="assets/images/feature-2.jpg" alt="نظام نقاط البيع للمحلات التجارية والبقالات" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="feature-text-side">
+                        <h2>نظام نقاط البيع للتجزئة والبقالات والمطاعم</h2>
+                        <p class="lead-text">تجربة بيع سريعة خالية من الأخطاء تتيح لك خدمة العملاء بسرعة فائقة وبمرونة عالية.</p>
+
+                        <div class="feature-list">
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إضافة الأصناف وتصنيفها ضمن مجموعات لسهولة وسرعة الوصول.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إمكانية تفعيل أسعار ترويجية وعروض خاصة لكل صنف.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إتاحة تطبيق الخصومات على مستوى المنتج الواحد أو على مستوى الفاتورة كاملة.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>دعم أكثر من كاشير ومتابعة مبيعات وجرد كل نقطة بيع على حدة.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>تكامل سلس مع تطبيقات وشركات التوصيل وطلبات السفري.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>تقارير إجمالية وتفصيلية للمبيعات، الإيرادات، والمصروفات.</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn-apple-primary">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>طلب عرض سعر لهذا الحل</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Pharmacies -->
+                <div class="feature-block reversed">
+                    <div class="feature-image-side">
+                        <div class="feature-img-card">
+                            <img src="assets/images/feature-1.jpg" alt="نظام نقاط البيع للصيدليات والمستلزمات الطبية" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="feature-text-side">
+                        <h2>نظام نقاط البيع المخصص للصيدليات</h2>
+                        <p class="lead-text">حل متكامل مخصص لطبيعة عمل الصيدليات والمستودعات الطبية مع إدارة تواريخ الانتهاء والشركات الدوائية.</p>
+
+                        <div class="feature-list">
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>تصنيف الأدوية حسب المجموعات العلمية، الشركات المصنعة، والموردين.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إدارة الموردين والتوريدات المخزنية مع متابعة تواريخ الصلاحية وتنبيهاتها.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إدارة المشتريات ومردودات المشتريات بدقة وسهولة.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إدارة المخازن المتعددة وإمكانية البيع والصرف من أكثر من مستودع.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إصدار عروض أسعار وفواتير ضريبية رسمية للعملاء والجهات.</span>
+                            </div>
+                            <div class="feature-list-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>إدارة شاملة للحسابات، المصروفات، الموظفين، والتقارير المالية.</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn-apple-primary">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>استفسر عن نسخة الصيدليات</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-tag">باقات وأسعار واضحة</span>
+                    <h2 class="section-title">اختر الخطة المناسبة لحجم أعمالك</h2>
+                    <p class="section-desc">يتوفر النظام بنسختين: سحابية باشتراك شهري مرن، أو نسخة محلية تشتريها لمرة واحدة مع تملك كامل.</p>
+                </div>
+
+                <!-- Plan Switcher -->
+                <div class="pricing-toggle-wrap">
+                    <div class="pricing-toggle" role="tablist">
+                        <button class="toggle-btn active" id="btnCloud" onclick="switchPricing('monthly')">
+                            <i class="fa-solid fa-cloud"></i> نسخة سحابية (شهرياً)
+                        </button>
+                        <button class="toggle-btn" id="btnLocal" onclick="switchPricing('yearly')">
+                            <i class="fa-solid fa-server"></i> نسخة محلية (شراء لمرة واحدة)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pricing Cards Grid -->
+                <div class="pricing-grid">
+
+                    <!-- Plan 1: Restaurants & Groceries -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">المطاعم والكافتريات والبقالات</h3>
+                            <div class="plan-price-wrap">
+                                <span class="plan-currency">$</span>
+                                <span class="plan-amount" id="price-plan-1">30</span>
+                                <span class="plan-period" id="period-plan-1">/ شهرياً</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing-features">
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>الحصول على كل مكونات النظام</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-updates-1">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>الحصول على التحديثات مجاناً</span>
+                            </div>
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>نسخ احتياطية دورية لقواعد البيانات</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-tools-1">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>أدوات وإضافات مساعدة حين توفرها</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-support-1">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>دعم فني مستمر ومجاني</span>
+                            </div>
+                        </div>
+
+                        <button class="pricing-cta" onclick="inquirePlan('المطاعم والبقالات')">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span id="btn-text-1">إشترك الآن عبر واتساب</span>
+                        </button>
+                    </div>
+
+                    <!-- Plan 2: Pharmacies (Featured) -->
+                    <div class="pricing-card featured">
+                        <div class="featured-badge">الأكثر طلباً واكتمالاً</div>
+                        <div class="pricing-header">
+                            <h3 class="plan-name">نظام الصيدليات المتخصص</h3>
+                            <div class="plan-price-wrap">
+                                <span class="plan-currency">$</span>
+                                <span class="plan-amount" id="price-plan-2">60</span>
+                                <span class="plan-period" id="period-plan-2">/ شهرياً</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing-features">
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>الحصول على كل مكونات النظام الطبية</span>
+                            </div>
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>إدارة الصلاحيات والمجموعات الدوائية</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-updates-2">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>تحديثات مستمرة لقاعدة البيانات</span>
+                            </div>
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>نسخ احتياطية مشفرة لقواعد البيانات</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-tools-2">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>أدوات مساعدة للتسعير والجرد</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-support-2">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>دعم فني ذو أولوية على مدار الساعة</span>
+                            </div>
+                        </div>
+
+                        <button class="pricing-cta" onclick="inquirePlan('نظام الصيدليات المتخصص')">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span id="btn-text-2">إشترك الآن عبر واتساب</span>
+                        </button>
+                    </div>
+
+                    <!-- Plan 3: Complete Retail / Comprehensive -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">نظام المبيعات الشامل</h3>
+                            <div class="plan-price-wrap">
+                                <span class="plan-currency">$</span>
+                                <span class="plan-amount" id="price-plan-3">100</span>
+                                <span class="plan-period" id="period-plan-3">/ شهرياً</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing-features">
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>الحصول على النظام بكافة وحداته ومميزاته</span>
+                            </div>
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>إدارة نقاط بيع متعددة وفروع ومستودعات</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-updates-3">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>تحديثات مجانية مستمرة</span>
+                            </div>
+                            <div class="pricing-feature-item">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>نسخ احتياطية وتكامل مع الخدمات الخارجية</span>
+                            </div>
+                            <div class="pricing-feature-item" id="item-support-3">
+                                <i class="fa-solid fa-circle-check check"></i>
+                                <span>دعم فني وإشراف مخصص للأعمال</span>
+                            </div>
+                        </div>
+
+                        <button class="pricing-cta" onclick="inquirePlan('نظام المبيعات الشامل')">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span id="btn-text-3">إشترك الآن عبر واتساب</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-tag">إجابات واضحة</span>
+                    <h2 class="section-title">الأسئلة الأكثر تكراراً</h2>
+                    <p class="section-desc">إذا كان لديك أي استفسار، ستجد هنا إجابات تفصيلية عن الأسئلة الشائعة حول النظام.</p>
+                </div>
+
+                <div class="faq-container">
+
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item active">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>من يستهدف نظام نقاط البيع salemark من سوفت نيو؟</span>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer" style="max-height: 200px;">
+                            <div class="faq-answer-inner">
+                                يستهدف النظام كل مؤسسة أو متجر لديه منتجات وبحاجة إلى تنظيم مبيعاته أو مشترياته أو كليهما معاً. النظام موجّه لأصحاب المؤسسات الصغيرة (بوفية، مطاعم، كافتريات، بقالات) وأصحاب المنشآت المتوسطة والكبيرة (صيدليات، سوبرماركت، معارض ومحلات الأثاث، ومصانع المياه ومحلات التجزئة).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>هل يمكنني الحصول على نسخة تجريبية واختبار النظام؟</span>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                نعم، بكل تأكيد! تستطيع أن تجرّب كل مميزات النظام مباشرة عبر الدخول على الرابط التجريبي:
+                                <br>
+                                🔗 <strong>الرابط:</strong> <a href="https://pos.softnube.site/" target="_blank" style="color: var(--pos-primary); text-decoration: underline;">pos.softnube.site</a><br>
+                                👤 <strong>اسم المستخدم:</strong> admin<br>
+                                🔑 <strong>كلمة السر:</strong> admin
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>كيف يمكنني الحصول على نسختي وتفعيلها؟</span>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                يمكنك التواصل مباشرة مع موظف خدمة العملاء لتحديد النسخة والخيارات المناسبة لمجال عملك وتفعيل نسختك خلال دقائق:
+                                <br>
+                                📞 <strong>هاتف:</strong> <a href="tel:733006348" style="color: var(--pos-primary);">733006348</a><br>
+                                💬 <strong>واتساب:</strong> <a href="https://wa.me/967777066658" target="_blank" style="color: #25D366; font-weight: bold;">+967 777066658</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>هل هناك عدة نسخ وخيارات تثبيت من النظام؟</span>
+                            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                نعم، نوفر نسختين رئيسيتين تلبي كافة الاحتياجات:
+                                <br>
+                                1. <strong>نسخة سحابية (Online):</strong> ترفع للعميل على خوادم سحابية آمنة وتتيح لك المتابعة والإدارة من أي مكان وعبر أي جهاز.
+                                <br>
+                                2. <strong>نسخة محلية (Offline):</strong> تثبّت مباشرة على جهاز أو أجهزة العميل بالمتجر وتعمل دون الحاجة لشبكة إنترنت.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section with Direct WhatsApp Integration -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-tag">تواصل سريع ومباشر</span>
+                    <h2 class="section-title">ابدأ رحلتك معنا اليوم</h2>
+                    <p class="section-desc">فريق الدعم الفني والمبيعات جاهز للرد على كافة استفساراتكم عبر الواتساب والمكالمات في أسرع وقت.</p>
+                </div>
+
+                <div class="contact-card-wrapper">
+
+                    <!-- Contact Form (Direct to WhatsApp) -->
+                    <div class="contact-form-side">
+                        <h3>أرسل استفسارك مباشرة عبر واتساب</h3>
+                        <p>املأ البيانات أدناه وسيتم فتح محادثة واتساب جاهزة بالرسالة فوراً على الرقم <strong>777066658</strong>.</p>
+
+                        <form id="posWhatsAppForm" onsubmit="handleContactSubmit(event)">
+                            <div class="form-group">
+                                <label class="form-label" for="contactName">الاسم الكامل *</label>
+                                <input type="text" id="contactName" class="form-control-apple" placeholder="مثال: محمد العمري" required minlength="2">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contactEmail">البريد الإلكتروني (اختياري)</label>
+                                <input type="email" id="contactEmail" class="form-control-apple" placeholder="name@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contactSubject">نوع النشاط / موضوع الاستفسار *</label>
+                                <input type="text" id="contactSubject" class="form-control-apple" placeholder="مثال: طلب نظام صيدلية / استفسار عن الأسعار" required minlength="3">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contactMessage">نص الرسالة أو متطلباتك *</label>
+                                <textarea id="contactMessage" class="form-control-apple" placeholder="اكتب تفاصيل استفسارك أو عدد الفروع ونوع الأجهزة التي ترغب باستخدامها..." required minlength="5"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-whatsapp-submit">
+                                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+                                <span>إرسال الرسالة إلى واتساب (777066658)</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information Sidebar -->
+                    <div class="contact-info-side">
+                        <div class="contact-info-header">
+                            <h3>معلومات التواصل</h3>
+                            <p>يسعدنا استقبال زيارتكم واتصالاتكم للإجابة عن أي تساؤل وتقديم الدعم المتكامل لمنشأتكم.</p>
+                        </div>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <strong>العنوان الرئيسي:</strong>
+                                    صنعاء — حزيز — جوار الجبري لزينة السيارات
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <strong>أيام العمل:</strong>
+                                    من السبت إلى الخميس
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <strong>أوقات العمل:</strong>
+                                    8:00 صباحاً — 4:00 مساءً
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <strong>واتساب مباشر:</strong>
+                                    <a href="https://wa.me/967777066658" target="_blank" style="color: #34d399; font-weight: 700; font-size: 1.05rem;">
+                                        +967 777066658
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <strong>الهاتف:</strong>
+                                    <a href="tel:733006348" style="color: #e2e8f0;">733006348</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div class="contact-info-text">
+                                    <strong>البريد الإلكتروني:</strong>
+                                    <a href="mailto:info@softnube.site" style="color: #e2e8f0;">info@softnube.site</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-bar">
+                            <a href="#" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/967777066658" target="_blank" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Apple-Style Modern Footer -->
+    <footer class="apple-footer">
         <div class="container">
-            <div class="row">
-                <div class="main_features_content2">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Softnube">
+                    <span>سوفت نيو | Softnube</span>
+                </div>
 
-                    <div class="col-sm-6">
-                        <div class="single_features_left text-center">
-                            <img src="assets/images/feature-2.jpg" alt="" />
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 margin-top-60">
-                        <div class="single_features_right ">
-                         
-                            <p>يتميز النظام بالعديد من المميزات لتجعله سهل الاستخدام </p>
-                            <ul>
-                                <li>اتاحة اضافة الاصناف ضمن مجموعات لسهولة الوصول الى الصنف</li>
-                                <li>امكانية اضافة سعر ترويجي للصنف </li>
-                                <li>إمكانية اضافة خصم على مستوى المنتج او على مستوى الفاتورة</li>
-                                <li>إمكانية إضافة اكثر من كاشير ومتابعة مبيعات كل كاشير على حدة</li>
-                                <li>يتيح النظام امكانية التعامل مع شركات التوصيل</li>
-                                <li>يقدم النظام العديد من التقارير الاجمالية او التفصلية </li>
-
-                            </ul>
-                            <div class="features_buttom">
-                                <a href="" class="btn btn-default">المزيد من التفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="footer-links">
+                    <a href="#home">الرئيسية</a>
+                    <a href="#features">المميزات</a>
+                    <a href="#pricing">الأسعار</a>
+                    <a href="#faq">الأسئلة الشائعة</a>
+                    <a href="#contact">تواصل معنا</a>
+                    <a href="https://pos.softnube.site/" target="_blank">تجربة النظام</a>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--End of Features 2 Section -->
-    <section id="features" class="features sections">
-        <div class="container">
-            <div class="row">
-                <div class="main_features_content2">
 
-
-
-                    <div class="col-sm-6 margin-top-60">
-                        <div class="single_features_right ">
-                            <h2>نقاط البيع للصيدليات </h2>
-                            <p>يتميز نظام نقاط البيع الخاص بالصيدليات بالعديد من الخطائص نذكر اهمها</p>
-                            <ul>
-                                <li>اتاحة اضافة الاصناف ضمن مجموعات واضافة الشركات المصنعة لسهولة الوصول الى الصنف</li>
-                                <li>إدارة الموردين والتوريدات المخزنية </li>
-                                <li>إدارة المشترات ومرتجع المشتريات</li>
-                                <li>إدارة المخازن وامكانية البيع من اكثر من مخزن</li>
-                                <li>يتيح النظام تقديم عروض اسعار بشكل رسمي </li>
-                                <li>إدارة التحويلات المخزنية</li>
-                                <li>إدارة الحسابات </li>
-                                <li>إدارة المصروفات </li>
-                                <li> إدارة الموظفين والمستخدمين </li>
-                                <li> إدارة التقارير </li>
-                            </ul>
-                            <div class="features_buttom">
-                                <a href="" class="btn btn-default">المزيد من التفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="single_features_left text-center">
-                            <img src="assets/images/feature-1.jpg" alt="" />
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End of Features 2 Section -->
-
-
-    <section id="service" class="service2 sections lightbg">
-        <div class="head_title text-center">
-            <h1>اسعار النظام </h1>
-            <p>يتوفر النظام بنسختين نسخة سحابية ويتم التسجيل عبر اشتركات سنوية والنسخة الاخرى نسخة محلية ويتم شراءها</p>
-        </div>
-        <!-- Example row of columns -->
-        <div class="cd-pricing-container cd-has-margins">
-            <div class="cd-pricing-switcher">
-                <p class="fieldset">
-                    <input type="radio" name="duration-2" value="monthly" id="monthly-2" checked>
-                    <label for="monthly-2">نسخة سحابية</label>
-                    <input type="radio" name="duration-2" value="yearly" id="yearly-2">
-                    <label for="yearly-2">نسخة محلية</label>
-                    <span class="cd-switch"></span>
-                </p>
-            </div> <!-- .cd-pricing-switcher -->
-
-            <ul class="cd-pricing-list cd-bounce-invert">
-                <li>
-                    <ul class="cd-pricing-wrapper">
-                        <li data-type="monthly" class="is-visible">
-                            <header class="cd-pricing-header">
-                                <h2>نظام البيع للمطاعم والبقالات</h2>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency">$</span>
-                                    <span class="cd-value">30</span>
-                                    <span class="cd-duration">شهريا</span>
-                                </div>
-                            </header> <!-- .cd-pricing-header -->
-
-                            <div class="cd-pricing-body">
-                                <ul class="cd-pricing-features">
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على كل مكونات النظام</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على التحديثات مجانا</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على نسخ احتياطية لقواعد بيانات
-                                        النظام</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على ادوات مساعدة حين توفرها
-                                    </li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>دعم فني مجانا</li>
-                                </ul>
-                            </div> <!-- .cd-pricing-body -->
-
-                            <footer class="cd-pricing-footer">
-                                <a class="cd-select" href="#">إشترك الان</a>
-                            </footer> <!-- .cd-pricing-footer -->
-                        </li>
-
-                        <li data-type="yearly" class="is-hidden">
-                            <header class="cd-pricing-header">
-                                <h2>المطاعم والكافتريا</h2>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency">$</span>
-                                    <span class="cd-value">350</span>
-
-                                </div>
-                            </header> <!-- .cd-pricing-header -->
-
-                            <div class="cd-pricing-body">
-                                <ul class="cd-pricing-features">
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على كل مكونات النظام</li>
-                                    <li><em><i class="fa fa-remove"></i></em>الحصول على التحديثات مجانا</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على نسخ احتياطية لقواعد بيانات
-                                        النظام</li>
-                                    <li><em><i class="fa fa-remove"></i></em>الحصول على ادوات مساعدة حين توفرها</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em> دعم فني مجانا اول 3اشهر</li>
-
-
-                                </ul>
-                            </div> <!-- .cd-pricing-body -->
-
-                            <footer class="cd-pricing-footer">
-                                <a class="cd-select" href="#">إشتري الان </a>
-                            </footer> <!-- .cd-pricing-footer -->
-                        </li>
-                    </ul> <!-- .cd-pricing-wrapper -->
-                </li>
-
-                <li class="cd-popular">
-                    <ul class="cd-pricing-wrapper">
-                        <li data-type="monthly" class="is-visible">
-                            <header class="cd-pricing-header">
-                                <h2>الصيدليات</h2>
-                                <div class="cd-price">
-                                    <span class="cd-currency">$</span>
-                                    <span class="cd-value">60</span>
-                                    <span class="cd-duration">شهريا</span>
-                                </div>
-                            </header> <!-- .cd-pricing-header -->
-
-                            <div class="cd-pricing-body">
-                                <ul class="cd-pricing-features">
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على كل مكونات النظام</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على التحديثات مجانا</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على نسخ احتياطية لقواعد بيانات
-                                        النظام</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على ادوات مساعدة حين توفرها
-                                    </li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>دعم فني مجانا</li>
-                                </ul>
-                            </div> <!-- .cd-pricing-body -->
-
-                            <footer class="cd-pricing-footer">
-                                <a class="cd-select" href="#">إشترك الان</a>
-                            </footer> <!-- .cd-pricing-footer -->
-                        </li>
-
-                        <li data-type="yearly" class="is-hidden">
-                            <header class="cd-pricing-header">
-                                <h2>نظام الصيدليات</h2>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency">$</span>
-                                    <span class="cd-value">750</span>
-
-                                </div>
-                            </header> <!-- .cd-pricing-header -->
-
-                            <div class="cd-pricing-body">
-                                <ul class="cd-pricing-features">
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على كل مكونات النظام</li>
-                                    <li><em><i class="fa fa-remove"></i></em>الحصول على التحديثات مجانا</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على نسخ احتياطية لقواعد بيانات
-                                        النظام</li>
-                                    <li><em><i class="fa fa-remove"></i></em>الحصول على ادوات مساعدة حين توفرها</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em> دعم فني مجانا اول 3اشهر</li>
-
-                                </ul>
-                            </div> <!-- .cd-pricing-body -->
-
-                            <footer class="cd-pricing-footer">
-                                <a class="cd-select" href="#">إشتـري الان</a>
-                            </footer> <!-- .cd-pricing-footer -->
-                        </li>
-                    </ul> <!-- .cd-pricing-wrapper -->
-                </li>
-
-                <li>
-                    <ul class="cd-pricing-wrapper">
-                        <li data-type="monthly" class="is-visible">
-                            <header class="cd-pricing-header">
-                                <h2>نظام المبيعات</h2>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency">$</span>
-                                    <span class="cd-value">100</span>
-                                    <span class="cd-duration">شهريا</span>
-                                </div>
-                            </header> <!-- .cd-pricing-header -->
-
-                            <div class="cd-pricing-body">
-                                <ul class="cd-pricing-features">
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على كل مكونات النظام</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على التحديثات مجانا</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على نسخ احتياطية لقواعد بيانات
-                                        النظام</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على ادوات مساعدة حين توفرها
-                                    </li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>دعم فني مجانا</li>
-
-                                </ul>
-                            </div> <!-- .cd-pricing-body -->
-
-                            <footer class="cd-pricing-footer">
-                                <a class="cd-select" href="#">إشترك الان</a>
-                            </footer> <!-- .cd-pricing-footer -->
-                        </li>
-
-                        <li data-type="yearly" class="is-hidden">
-                            <header class="cd-pricing-header">
-                                <h2>نظام المبيعات</h2>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency">$</span>
-                                    <span class="cd-value">1150</span>
-
-                                </div>
-                            </header> <!-- .cd-pricing-header -->
-
-                            <div class="cd-pricing-body">
-                                <ul class="cd-pricing-features">
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على كل مكونات النظام</li>
-                                    <li><em><i class="fa fa-remove"></i></em>الحصول على التحديثات مجانا</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em>الحصول على نسخ احتياطية لقواعد بيانات
-                                        النظام</li>
-                                    <li><em><i class="fa fa-remove"></i></em>الحصول على ادوات مساعدة حين توفرها</li>
-                                    <li><em><i class="fa fa-check-circle"></i></em> دعم فني مجانا اول 3اشهر</li>
-
-                                </ul>
-                            </div> <!-- .cd-pricing-body -->
-
-                            <footer class="cd-pricing-footer">
-                                <a class="cd-select" href="#">إشتري الان</a>
-                            </footer> <!-- .cd-pricing-footer -->
-                        </li>
-                    </ul> <!-- .cd-pricing-wrapper -->
-                </li>
-            </ul> <!-- .cd-pricing-list -->
-        </div> <!-- .cd-pricing-container -->
-
-    </section><!-- End of Service2 Section -->
-
-
-
-    <!-- Sections 
-    
-    <section id="price" class="price sections">
-        <div class="container">
-            <section class="customer-logos slider">
-              <div class="slide"><img src="assets/images/king.jpg"></div>
-              <div class="slide"><img src="assets/images/lolo.jpg"></div>
-            
-              
-            </section>
-    </div>
--->
-
-    </section>
-
-    <!-- Sections -->
-    <section id="business" class="portfolio sections">
-        <div class="container">
-            <h2 class="u-custom-font u-font-montserrat u-text u-text-1">الاسئلة المتكررة </h2>
-            <div class="u-image u-image-circle u-image-1" alt="" data-image-width="721" data-image-height="1080"></div>
-            <p class="u-text u-text-grey-30 u-text-2">إذا كان لديك سؤال يمكنك ايجاد جوابة هنا </p>
-        <div class="panel-group" id="accordion">
-            
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false">من يستهدف نظام salemark؟ </a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                    <div class="panel-body">
-                        يستهدف النظام كل مؤسسة لديها منتجات وبحاجة الى تنظيم مبيعاتها او مشترياتها او كليهما معا هذا عموما وأيضا النظام موجه لا صحاب المؤسسات الصغيرة ( بوفية – مطعم – بقالات ) وأصحاب المؤسسات الكبيرة ( صيدليات – سوبر ماركت – محلات الأثاث – مصانع المياه      
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false">هل يمكنني الحصول على  نسخة تجريبية ؟</a>
-                    </h4>
-                </div>
-                <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                    <div class="panel-body">
-                        <p>نعم تستطيع ان تجرب كل مميزات النظام عبر الدخول على الرابط التالي : https://pos.softnube.site/</p>
-                        <p>اسم المستخدم :admin </p>
-                        <p>كلمة السر : admin</p>
-                          </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false">كيف يمكنني الحصول على نسخة من النظام ؟ </a>
-                    </h4>
-                </div>
-                <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                    <div class="panel-body">
-                        <p>يمكنك التواصل مع موظف خدمة العملاء للحصول على نسختك </p>
-                        <p>هاتف :733006348</p>
-                        <p>وتس :+967 777066658</p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven2" aria-expanded="false">هل هناك عدة  نسخ من النظام ؟</a>
-                    </h4>
-                </div>
-                <div id="collapseEleven2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                    <div class="panel-body">
-                        <p>نعم هناك نسختان من النظام نسخة online  ( ترفع للعميل على الانترنت ) ونسخة offline  تحمل على جهاز العميل او اجهزة العميل ولكل نسخة سعر خاص بها </p>
-                       
-                    </div>
-                </div>
-            </div>
-    
-</div>    
-</div>   
-    </section>
-
-
-    <section id="contact" class="contact sections">
-        <div class="container">
-            <div class="row">
-                <div class="main_contact whitebackground">
-                    <div class="head_title text-center">
-                        <h2>تواصل معنا</h2>
-                        <p>فريق الدعم الفني يعمل باستمرار عملك على النظام  أسهل, سنقوم بالرد على رسالتكم  واتصالاتكم خلال 24 ساعة</p>
-                    </div>
-                    <div class="contact_content" style="direction:rtl;">
-                        <div class="col-md-6">
-                            <div class="single_right_contact" style="direction:rtl;">
-                                <form action="http://localhost/php/send.php" method="post">
-
-                                    <div class="form-group">
-                                        <input type="text" required minlength="2" id="nameInput" class="form-control" maxlength="30" name="from_name" placeholder="اكتب الاسم كاملا" />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="email" id="emailInput" required minlength="10" class="form-control"  maxlength="30" name="email" placeholder="البريد الالكتروني  " />
-                                    </div>
-
-                                    <div class="form-group">
-                                    <input type="text" required minlength="4"  id="subjectInput" class="form-control" maxlength="100" name="subject" placeholder="عنوان الرسالة" />
-                                </div>
-                                    <div class="form-group">
-                                        <textarea  placeholder="نص الرسالة " id="msgInput" class="form-control"  required minlength="10"  maxlength="1000" cols="46" rows="3" name="msg"></textarea>
-  
-                                    </div>
-
-                                    <div class="center-content">
-                                        <input type="submit" value="إرسال" onclick="sendMail()" class="btn btn-default">
-                                    </div>
-                                    <div id="ajaxResponseSuccess" role="alert"> </div>
-    <div id="ajaxResponseFail" role="alert"></div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="single_right_contact">
-                                <p>نحن نرحب دائماً باستفساراتك ومشاركتنا كل مقترحاتك، يمكنك التواصل معنا</p>
-
-                                <div class="contact_address margin-top-40">
-                                    <span>العنوان : صنعاء - حزيز -جوار الجبري  لزينة السيارات</span>
-                                    <span>ايام العمل من السبت الى الخميس </span>
-                                    <span>اوقات العمل 8:00 الى 4:00 </span>
-                                    <span>الربيد الاكتروني  : info@softnube.site </span>
-                                    <span class="margin-top-20">هاتف  : 733006348</span>
-                                    <span>وتس :+967 777066658</span>
-                                </div>
-
-                                <div class="contact_socail_bookmark">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- End of Contact Section -->
-<!--
-
-    <section id="footer-menu" class="sections footer-menu">
-        <div class="container">
-            <div class="row">
-                <div class="footer-menu-wrapper">
-
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="menu-item">
-                                <h5>Quick Links</h5>
-                                <ul>
-                                    <li>POWER BI DESKTOP</li>
-                                    <li>MOBILE</li>
-                                    <li>SEE ALL DOWNLOADS</li>
-                                    <li>POWER BI DESKTOP</li>
-                                    <li>MOBILE</li>
-                                    <li>SEE ALL DOWNLOADS</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="menu-item">
-                                <h5>Legal</h5>
-                                <ul>
-                                    <li>PRIVACY & COOKIES</li>
-                                    <li>TERMS OF USE</li>
-                                    <li>TRADEMARKS</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="menu-item">
-                                <h5>Information</h5>
-                                <ul>
-                                    <li>SUPPORT</li>
-                                    <li>DEVELOPERS</li>
-                                    <li>BLOG</li>
-                                    <li>NEWSLETTER</li>
-                                    <li>PYRAMID ANALYTICS</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="menu-item">
-                            <h5>Newsletter</h5>
-                            <p>Insights await in your company's data. Bring them into focus with BlueLance.</p>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Enter your email address">
-                                <input type="submit" class="form-control" value="Use It Free">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
--->
-    <!--Footer-->
-    <footer id="footer" class="footer" style="background: #82ca9c;">
-        <div class="container">
-            <div class="row">
-                <div class="footer-wrapper">
-
-                    <div class="col-md-2 col-sm-6 col-xs-12">
-                        <div class="footer-brand">
-                            <img src="assets/images/logo.png" alt="logo" />
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="copyright">
-                            <p>Made with <i class="fa fa-heart"></i> by <a style="color:red" target="_blank"
-                                    href="https://softnube.site"><strong> softnube </strong></a>2022. All rights reserved.
-                            </p>
-                        </div>
-
-                      
-
-                    </div>
-
-
-                </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; <span id="currentYear"></span> <a href="https://softnube.site" target="_blank">Softnube</a></p>
+                <p>نظام نقاط البيع وإدارة المنشآت التجارية</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/967777066658?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%86%D8%B8%D8%A7%D9%85%20%D9%86%D9%82%D8%A7%D8%B7%20%D8%A7%D9%84%D8%A8%D9%8A%D8%B9%20POS" 
+       target="_blank" 
+       class="whatsapp-float-btn" 
+       aria-label="تواصل عبر واتساب"
+       title="تواصل معنا عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-    <div class="scrollup">
-        <a href="#"><i class="fa fa-chevron-up"></i></a>
-    </div>
+    <!-- Scroll To Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="الرجوع للأعلى" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-    <script src="assets/js/mailsend.js"></script>
-    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/modernizr.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/clients.js"></script>
-    
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('appleNavbar');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile nav on click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Pricing Switcher Logic (Cloud vs Local)
+        let currentPlanType = 'monthly'; // 'monthly' or 'yearly'
+
+        function switchPricing(type) {
+            currentPlanType = type;
+            const btnCloud = document.getElementById('btnCloud');
+            const btnLocal = document.getElementById('btnLocal');
+
+            const p1 = document.getElementById('price-plan-1');
+            const p2 = document.getElementById('price-plan-2');
+            const p3 = document.getElementById('price-plan-3');
+
+            const per1 = document.getElementById('period-plan-1');
+            const per2 = document.getElementById('period-plan-2');
+            const per3 = document.getElementById('period-plan-3');
+
+            const b1 = document.getElementById('btn-text-1');
+            const b2 = document.getElementById('btn-text-2');
+            const b3 = document.getElementById('btn-text-3');
+
+            const itemUp1 = document.getElementById('item-updates-1');
+            const itemTools1 = document.getElementById('item-tools-1');
+            const itemSup1 = document.getElementById('item-support-1');
+
+            if (type === 'monthly') {
+                btnCloud.classList.add('active');
+                btnLocal.classList.remove('active');
+
+                p1.textContent = '30';
+                p2.textContent = '60';
+                p3.textContent = '100';
+
+                per1.textContent = '/ شهرياً';
+                per2.textContent = '/ شهرياً';
+                per3.textContent = '/ شهرياً';
+
+                b1.textContent = 'إشترك الآن عبر واتساب';
+                b2.textContent = 'إشترك الآن عبر واتساب';
+                b3.textContent = 'إشترك الآن عبر واتساب';
+
+                if (itemUp1) itemUp1.innerHTML = '<i class="fa-solid fa-circle-check check"></i><span>الحصول على التحديثات مجاناً</span>';
+                if (itemTools1) itemTools1.innerHTML = '<i class="fa-solid fa-circle-check check"></i><span>أدوات وإضافات مساعدة حين توفرها</span>';
+                if (itemSup1) itemSup1.innerHTML = '<i class="fa-solid fa-circle-check check"></i><span>دعم فني مستمر ومجاني</span>';
+            } else {
+                btnLocal.classList.add('active');
+                btnCloud.classList.remove('active');
+
+                p1.textContent = '350';
+                p2.textContent = '750';
+                p3.textContent = '1150';
+
+                per1.textContent = '/ شراء لمرة واحدة';
+                per2.textContent = '/ شراء لمرة واحدة';
+                per3.textContent = '/ شراء لمرة واحدة';
+
+                b1.textContent = 'شراء النسخة المحلية عبر واتساب';
+                b2.textContent = 'شراء النسخة المحلية عبر واتساب';
+                b3.textContent = 'شراء النسخة المحلية عبر واتساب';
+
+                if (itemUp1) itemUp1.innerHTML = '<i class="fa-solid fa-circle-xmark cross"></i><span>التحديثات غير مشمولة بعد الشراء</span>';
+                if (itemTools1) itemTools1.innerHTML = '<i class="fa-solid fa-circle-xmark cross"></i><span>الأدوات المساعدة اختيارية</span>';
+                if (itemSup1) itemSup1.innerHTML = '<i class="fa-solid fa-circle-check check"></i><span>دعم فني مجاني لأول 3 أشهر</span>';
+            }
+        }
+
+        // Quick WhatsApp Plan Inquirer
+        function inquirePlan(planName) {
+            const planTypeText = currentPlanType === 'monthly' ? 'النسخة السحابية (شهرياً)' : 'النسخة المحلية (شراء دائم)';
+            const message = `مرحباً، أود الاستفسار والاشتراك في:
+*${planName}* (${planTypeText})
+نرجو تزويدنا بكافة التفاصيل والتثبيت.`;
+
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/967777066658?text=${encoded}`, '_blank');
+        }
+
+        // Apple Accordion FAQ Handler
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // If it wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 30 + 'px';
+            }
+        }
+
+        // Contact Form to WhatsApp Handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value.trim();
+            const msg = document.getElementById('contactMessage').value.trim();
+
+            if (!name || !subject || !msg) {
+                alert('يرجى ملء الحقول المطلوبة');
+                return;
+            }
+
+            const formattedMessage = 
+`👋 *طلب استشارة نظام نقاط البيع POS*
+━━━━━━━━━━━━━━━━━━
+👤 *الاسم:* ${name}
+${email ? `📧 *البريد الإلكتروني:* ${email}\n` : ''}📌 *الموضوع / النشاط:* ${subject}
+📝 *تفاصيل الرسالة:*
+${msg}
+━━━━━━━━━━━━━━━━━━
+🌐 *المصدر:* موقع Softnube POS`;
+
+            const encodedMsg = encodeURIComponent(formattedMessage);
+            const waUrl = `https://wa.me/967777066658?text=${encodedMsg}`;
+
+            window.open(waUrl, '_blank');
+        }
+    </script>
 </body>
-
 </html>
