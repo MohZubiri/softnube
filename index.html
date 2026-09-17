@@ -12,20 +12,61 @@
   <meta name="keywords"
     content="web design, website development, web hosting, digital marketing, SEO, mobile app development, brand identity, SoftNube">
 
-  <meta name='logo:' content='https://softnube.site/logo.png'>
-  <meta name='author' content='softnube'>
-  <meta name='publisher' content='softnube'>
-  <meta name='type:' content='HTML,CSS,bootstrap'>
-  <meta name='copyright' content='جمي
-        ع الحقوق محفوظة 2022 سوفت ناب'>
+  <meta name='image' content='https://softnube.site/logo.png'>
+  <meta name='author' content='SoftNube'>
+  <meta name='publisher' content='SoftNube'>
+  <meta name='classification' content='Software, Web Design &amp; Mobile App Development'>
+  <meta name='copyright' id='meta-copyright' content='SoftNube'>
   <meta property='og:type' content='website' />
-  <meta property='og:logo' content='https://softnube.site/logo.png' />
   <meta property='og:image' content='https://softnube.site/ye/logo.png' />
-  <meta property='og:title' content='SoftNube | Web Design &amp; Development Company' />
+  <meta property='og:title' content='SoftNube | Web Design, Custom Systems &amp; Mobile Apps' />
   <meta property='og:url' content='https://softnube.site' />
-  <meta property='og:site_name' content='softnube'>
+  <meta property='og:site_name' content='SoftNube'>
   <meta property='og:description'
-    content='Web design, hosting, digital marketing, mobile apps and brand identity company.' />
+    content='SoftNube specializes in custom web development, mobile apps, specialized ERP cloud solutions, and digital growth.' />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SoftNube",
+    "image": "https://softnube.site/logo.png",
+    "url": "https://softnube.site",
+    "telephone": "+967777066658",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hada street, Next Alzazany center",
+      "addressLocality": "Sana'a",
+      "addressCountry": "YE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 15.3694,
+      "longitude": 44.1910
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/softnube",
+      "https://twitter.com/_softnube",
+      "https://www.instagram.com/_softnube/",
+      "https://www.youtube.com/channel/UCC4sNgTIP11jct5CgLFqZdA/featured"
+    ]
+  }
+  </script>
 
   <!-- Favicons -->
   <link href="ye/logo.png" rel="icon">
@@ -52,21 +93,247 @@
   <!-- Template Main CSS File -->
   <link href="ye/css/style.css" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #Services,
+    #Work,
+    #About,
+    #FAQ,
+    #Contact,
+    .hero-section {
+      scroll-margin-top: 85px;
+    }
+
+    /* ===== Modern UI Enhancements ===== */
+    :root {
+      --sn-primary: #274685;
+      --sn-secondary: #2d71a1;
+      --sn-accent: #FF8803;
+      --sn-teal: #1391a5;
+      --sn-bg-soft: #f8fafc;
+    }
+
+    /* ===== Hero Section Enhancements ===== */
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .badge-tech {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      border-radius: 25px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      transition: all .3s ease;
+    }
+
+    .badge-tech:hover {
+      background: rgba(255, 255, 255, 0.28);
+      transform: translateY(-2px);
+    }
+
+    .hero-actions .btn {
+      margin-bottom: 10px;
+    }
+
+    .btn-light-hero {
+      background: #ffffff;
+      color: #274685 !important;
+      border: 2px solid #ffffff;
+      border-radius: 30px;
+      padding: 12px 26px !important;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      display: inline-block;
+      transition: all .3s ease;
+    }
+
+    .btn-light-hero:hover {
+      background: #f0f4f9;
+      color: #1391a5 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Stats & Trust Bar ===== */
+    .stats-section {
+      position: relative;
+      z-index: 5;
+      margin-top: -55px;
+      margin-bottom: 40px;
+    }
+
+    .stats-container {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 15px 45px rgba(39, 70, 133, 0.1);
+      padding: 30px 20px;
+      border: 1px solid rgba(39, 70, 133, 0.06);
+    }
+
+    .stat-card {
+      padding: 10px;
+      transition: transform .3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .stat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(45, 113, 161, 0.1);
+      color: #2d71a1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #274685;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13.5px;
+      color: #64748b;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    /* ===== Modern Services Cards ===== */
+    .step {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 38px 24px 30px;
+      box-shadow: 0 10px 30px rgba(39, 70, 133, 0.06);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      position: relative;
+      overflow: hidden;
+      transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #274685, #1391a5);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(39, 70, 133, 0.14);
+      border-color: rgba(39, 70, 133, 0.25);
+    }
+
+    .step:hover::before {
+      opacity: 1;
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+    }
+
+    .service-icon {
+      width: 68px !important;
+      height: 68px !important;
+      line-height: 68px !important;
+      border-radius: 20px !important;
+      background: linear-gradient(135deg, rgba(39, 70, 133, 0.08) 0%, rgba(19, 145, 165, 0.12) 100%) !important;
+      border: 1.5px solid rgba(39, 70, 133, 0.12) !important;
+      margin: 0 auto 20px auto !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all .35s ease !important;
+    }
+
+    .service-icon i {
+      font-size: 26px !important;
+      color: #274685 !important;
+      transition: all .35s ease !important;
+    }
+
+    .step:hover .service-icon {
+      background: linear-gradient(135deg, #274685 0%, #1391a5 100%) !important;
+      border-color: transparent !important;
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 8px 20px rgba(39, 70, 133, 0.25);
+    }
+
+    .step:hover .service-icon i {
+      color: #ffffff !important;
+    }
+
+    .service-title {
+      font-size: 19px !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
+      margin-bottom: 12px !important;
+      text-align: center !important;
+      transition: color .3s ease;
+    }
+
+    .step:hover .service-title {
+      color: #274685 !important;
+    }
+
+    .service-description {
+      font-size: 14.5px !important;
+      line-height: 1.8 !important;
+      color: #64748b !important;
+      text-align: center !important;
+      margin-bottom: 0 !important;
+      flex-grow: 1;
+    }
+
     /* ===== Our Work / Portfolio ===== */
     .portfolio-item {
       position: relative;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 14px;
       margin-bottom: 30px;
       box-shadow: 0 12px 30px rgba(39, 70, 133, .12);
+      background: #1e293b;
     }
 
     .portfolio-item img {
       width: 100%;
-      height: 250px;
+      height: 270px;
       object-fit: cover;
       display: block;
-      transition: transform .6s ease;
+      transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .portfolio-item:hover img {
@@ -82,8 +349,8 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 25px;
-      background: linear-gradient(to top, rgba(39, 70, 133, .92), rgba(45, 113, 161, .35) 55%, transparent);
+      padding: 24px;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(39, 70, 133, 0.8) 55%, transparent 100%);
       opacity: 0;
       transition: opacity .4s ease;
     }
@@ -94,25 +361,49 @@
 
     .portfolio-overlay .cat {
       color: #FF8803;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .portfolio-overlay h3 {
       color: #fff;
-      font-size: 20px;
-      margin: 0 0 14px;
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+
+    .portfolio-overlay p.item-desc {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12.5px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .tech-pill {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.18);
+      color: #e2e8f0;
+      font-weight: 500;
     }
 
     .portfolio-overlay .view {
       display: inline-block;
-      align-self: flex-start;
       color: #fff;
       border: 1px solid rgba(255, 255, 255, .75);
-      padding: 7px 20px;
+      padding: 7px 18px;
       border-radius: 30px;
       font-size: 13px;
       transition: all .3s ease;
@@ -124,40 +415,661 @@
       text-decoration: none;
     }
 
+    /* ===== FAQ Accordion ===== */
+    .faq-accordion {
+      margin-top: 20px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 15px rgba(39, 70, 133, 0.03);
+      overflow: hidden;
+      transition: all .3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(45, 113, 161, 0.35);
+      box-shadow: 0 8px 25px rgba(39, 70, 133, 0.08);
+    }
+
+    .faq-question {
+      padding: 18px 24px;
+      font-size: 16.5px;
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color .3s ease;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      color: #274685;
+    }
+
+    .faq-question i {
+      font-size: 16px;
+      color: #2d71a1;
+      transition: transform .3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .3s ease;
+      padding: 0 24px;
+      color: #64748b;
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding: 0 24px 20px 24px;
+    }
+
     /* ===== WhatsApp floating button ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
       left: 25px;
-      width: 55px;
-      height: 55px;
+      width: 56px;
+      height: 56px;
       background: #25d366;
       color: #fff;
       border-radius: 50%;
       text-align: center;
       font-size: 30px;
       line-height: 56px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
       z-index: 9999;
-      transition: transform .3s ease;
+      transition: all .3s ease;
     }
 
     .whatsapp-float:hover {
       color: #fff;
       transform: scale(1.1);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
     }
 
-    /* ===== Call button in navbar ===== */
+    /* ===== Call button & Language link in navbar ===== */
     .nav-call {
       background: #274685;
       color: #fff !important;
       border-radius: 30px;
       padding: 6px 16px !important;
+      transition: all .3s ease;
     }
 
     .nav-call:hover {
       background: #1391a5;
       color: #fff !important;
+      transform: translateY(-1px);
+    }
+
+    .lang-switch {
+      font-weight: 600;
+      color: #274685 !important;
+      padding: 5px 12px !important;
+      border: 1px solid rgba(39, 70, 133, 0.25);
+      border-radius: 20px;
+      margin-left: 8px;
+      transition: all .3s ease;
+    }
+
+    .lang-switch:hover {
+      background: #274685;
+      color: #fff !important;
+    }
+
+    /* ===== Testimonials Section & Carousel ===== */
+    .testimonial-carousel-wrap {
+      position: relative;
+      margin: 0 auto;
+      max-width: 780px;
+    }
+
+    .review-card {
+      text-align: center;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(39, 70, 133, 0.08);
+      border: 1px solid rgba(39, 70, 133, 0.08);
+      padding: 35px 30px;
+      margin: 15px 12px 25px 12px;
+      transition: all .35s ease;
+    }
+
+    .review-card:hover {
+      box-shadow: 0 16px 40px rgba(39, 70, 133, 0.12);
+      border-color: rgba(45, 113, 161, 0.2);
+    }
+
+    .review-card .stars {
+      display: inline-block;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .review-card .stars span {
+      color: #FF8803 !important;
+      font-size: 20px;
+      margin: 0 2px;
+    }
+
+    .review-card .review-title {
+      color: #1e293b;
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .review-card .review-quote {
+      border: none;
+      padding: 0;
+      margin: 0 auto 20px auto;
+      max-width: 620px;
+    }
+
+    .review-card .review-quote p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #475569;
+      font-style: normal;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .review-card .review-user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .review-card .review-user img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(39, 70, 133, 0.15);
+      border: 3px solid #fff;
+      display: block;
+    }
+
+    .review-card .review-user .user-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .review-card .review-user .user-role {
+      font-size: 13.5px;
+      color: #2d71a1;
+      font-weight: 600;
+      text-align: center;
+      display: block;
+    }
+
+    .testimonial-carousel .owl-dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .testimonial-carousel .owl-dot {
+      display: inline-block;
+      outline: none;
+    }
+
+    .testimonial-carousel .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 5px 6px;
+      background: #cbd5e1;
+      display: block;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-carousel .owl-dot.active span {
+      background: #274685;
+      width: 26px;
+    }
+
+    /* ===== About Us Highlights ===== */
+    .about-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 15px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #1e293b;
+      transition: all .25s ease;
+    }
+
+    .about-badge:hover {
+      background: #ffffff;
+      border-color: rgba(39, 70, 133, 0.35);
+      box-shadow: 0 6px 18px rgba(39, 70, 133, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .about-badge i {
+      font-size: 18px;
+      color: #274685;
+      flex-shrink: 0;
+    }
+
+    /* ===== Trust Sectors Strip ===== */
+    .trust-strip-section {
+      background: #ffffff;
+      border-top: 1px solid #edf2f7;
+      border-bottom: 1px solid #edf2f7;
+      padding: 22px 0;
+    }
+
+    .trust-badge-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #274685;
+    }
+
+    .trust-sectors-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .sector-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      transition: all .25s ease;
+    }
+
+    .sector-pill:hover {
+      background: #ffffff;
+      border-color: #274685;
+      color: #274685;
+      box-shadow: 0 4px 14px rgba(39, 70, 133, 0.09);
+      transform: translateY(-1px);
+    }
+
+    .sector-pill i {
+      color: #1391a5;
+    }
+
+    /* ===== Modern Contact Hub & Cards ===== */
+    .contact-section-wrap {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 70px 0 60px 0;
+      position: relative;
+    }
+
+    .contact-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(39, 70, 133, 0.08);
+      color: #274685;
+      border-radius: 30px;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 4px 16px rgba(39, 70, 133, 0.04);
+      transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(39, 70, 133, 0.1);
+      border-color: rgba(39, 70, 133, 0.3);
+    }
+
+    .contact-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      transition: all .3s ease;
+    }
+
+    .contact-card-icon.whatsapp {
+      background: rgba(37, 211, 102, 0.12);
+      color: #25d366;
+    }
+
+    .contact-card-icon.phone {
+      background: rgba(39, 70, 133, 0.1);
+      color: #274685;
+    }
+
+    .contact-card-icon.email {
+      background: rgba(19, 145, 165, 0.12);
+      color: #1391a5;
+    }
+
+    .contact-card-icon.location {
+      background: rgba(255, 136, 3, 0.12);
+      color: #FF8803;
+    }
+
+    .contact-card:hover .contact-card-icon {
+      transform: scale(1.1);
+    }
+
+    .contact-card-body {
+      flex-grow: 1;
+    }
+
+    .contact-card-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-card-val {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 2px;
+      line-height: 1.4;
+      display: block;
+    }
+
+    .contact-card-sub {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    .contact-card-badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(37, 211, 102, 0.12);
+      color: #16a34a;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 4px;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulseDot 1.6s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.7; }
+    }
+
+    .contact-card-arrow {
+      font-size: 18px;
+      color: #cbd5e1;
+      transition: all .3s ease;
+      flex-shrink: 0;
+    }
+
+    .contact-card:hover .contact-card-arrow {
+      color: #274685;
+      transform: translateX(4px);
+    }
+
+    /* ===== Form Card Container ===== */
+    .contact-form-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 16px 45px rgba(39, 70, 133, 0.08);
+      position: relative;
+    }
+
+    .contact-form-header {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 18px;
+    }
+
+    .contact-form-header h3 {
+      font-size: 21px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+
+    .contact-form-header p {
+      font-size: 14px;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .form-group-icon-wrap {
+      position: relative;
+    }
+
+    .form-group-icon-wrap i {
+      position: absolute;
+      top: 14px;
+      font-size: 15px;
+      color: #94a3b8;
+      pointer-events: none;
+      transition: color .25s ease;
+    }
+
+    .form-group label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .form-control {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14.5px;
+      background: #ffffff;
+      color: #1e293b;
+      transition: all .25s ease;
+      box-shadow: none;
+      height: auto;
+    }
+
+    .form-control:focus {
+      border-color: #274685;
+      box-shadow: 0 0 0 3.5px rgba(39, 70, 133, 0.12);
+      outline: none;
+    }
+
+    .form-select-custom {
+      height: 48px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23274685' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: 16px;
+      cursor: pointer;
+      background-position: right 16px center;
+      padding-right: 38px;
+    }
+
+    .contact-form-card textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-submit-contact {
+      background: linear-gradient(135deg, #128c7e 0%, #25d366 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 30px !important;
+      padding: 15px 28px !important;
+      font-weight: 700 !important;
+      font-size: 16px !important;
+      letter-spacing: 0.3px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3) !important;
+      transition: all .3s ease !important;
+      cursor: pointer;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px;
+    }
+
+    .btn-submit-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5) !important;
+      color: #ffffff !important;
+    }
+
+    .contact-trust-guarantees {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .trust-guarantee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .trust-guarantee-item i {
+      color: #1391a5;
+    }
+
+    /* ===== Footer Contrast & Typography ===== */
+    .footer {
+      background: #0f172a !important;
+      color: #94a3b8 !important;
+      padding: 60px 0 30px 0 !important;
+    }
+
+    .footer h3 {
+      color: #f8fafc !important;
+      font-size: 17px !important;
+      font-weight: 700 !important;
+      margin-bottom: 20px !important;
+    }
+
+    .footer p {
+      color: #94a3b8 !important;
+      font-size: 14px !important;
+      line-height: 1.8 !important;
+    }
+
+    .footer ul li a {
+      color: #94a3b8 !important;
+      font-size: 14px !important;
+      transition: all .25s ease !important;
+      display: inline-block;
+      padding: 3px 0;
+    }
+
+    .footer ul li a:hover {
+      color: #38bdf8 !important;
+      transform: translateX(4px);
+    }
+
+    .footer .copyright {
+      color: #64748b !important;
+      font-size: 13.5px !important;
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer .social a {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 50% !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      color: #f8fafc !important;
+      margin: 0 4px !important;
+      transition: all .3s ease !important;
+    }
+
+    .footer .social a:hover {
+      background: #274685 !important;
+      color: #fff !important;
+      transform: translateY(-3px);
     }
   </style>
   <!-- =======================================================
@@ -198,19 +1110,13 @@
                 <li class="active"><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="#Services" class="nav-link">Services</a></li>
                 <li><a href="#Work" class="nav-link">Our Work</a></li>
-                <!-- <li><a href="pricing.html" class="nav-link">Pricing</a></li> has-children -->
-
-                <li class="">
-                  <a href="#About" class="nav-link">About</a>
-                  <!-- <ul class="dropdown">
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="blog-single.html" class="nav-link">Blog Sigle</a></li>
-                  </ul>-->
-                </li>
+                <li><a href="#About" class="nav-link">About</a></li>
+                <li><a href="#FAQ" class="nav-link">FAQ</a></li>
                 <li><a href="#Contact" class="nav-link">Contact</a></li>
                 <li><a href="tel:+967777066658" class="nav-link nav-call"><i class="fa fa-phone"></i> +967 777066658</a>
                 </li>
-                <li><a href="index_ar.html" class="nav-link">العربية </a></li>
+                <li><a href="index_ar.html" class="nav-link lang-switch"><i class="fa fa-globe mr-1"></i> العربية</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -252,11 +1158,20 @@
             <div class="col-12 hero-text-image">
               <div class="row">
                 <div class="col-lg-7 text-center text-lg-left">
-                  <h1 data-aos="fade-right">Create Your App with SoftNube</h1>
-                  <p class="mb-5" data-aos="fade-right" data-aos-delay="100">If you want create professional website and
-                    mobile app or cloud project you are in your area</p>
-                  <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500"><a href="#"
-                      class="btn btn-outline-white">Get started</a></p>
+                  <h1 data-aos="fade-right">Build Next-Gen Web, Mobile &amp; Cloud Systems</h1>
+                  <p class="mb-4" data-aos="fade-right" data-aos-delay="100">SoftNube engineers custom web applications,
+                    mobile apps, and enterprise cloud solutions designed to scale your business with speed, security,
+                    and elegance.</p>
+                  <div class="hero-highlights" data-aos="fade-right" data-aos-delay="150">
+                    <span class="badge-tech"><i class="fa fa-cloud mr-1"></i> Cloud Native</span>
+                    <span class="badge-tech"><i class="fa fa-bolt mr-1"></i> High Speed &amp; SEO</span>
+                    <span class="badge-tech"><i class="fa fa-shield mr-1"></i> Enterprise Security</span>
+                  </div>
+                  <div class="hero-actions" data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500">
+                    <a href="#Contact" class="btn btn-outline-white mr-2"><i class="fa fa-paper-plane mr-1"></i> Free
+                      Consultation</a>
+                    <a href="#Work" class="btn btn-light-hero"><i class="fa fa-laptop mr-1"></i> Explore Our Systems</a>
+                  </div>
                 </div>
                 <div class="col-lg-5 iphone-wrap">
                   <img src="ye/img/undraw_svg_99.svg" alt="Web and mobile app development illustration" class=""
@@ -270,6 +1185,65 @@
 
       </div>
 
+      <!-- ===== Stats & Trust Bar ===== -->
+      <div class="stats-section">
+        <div class="container">
+          <div class="stats-container">
+            <div class="row text-center">
+              <div class="col-6 col-md-3 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="50">
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa fa-cubes"></i></div>
+                  <h3 class="stat-number">+50</h3>
+                  <p class="stat-label">Delivered Projects</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa fa-server"></i></div>
+                  <h3 class="stat-number">+15</h3>
+                  <p class="stat-label">Enterprise &amp; Cloud Systems</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="150">
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa fa-check-circle"></i></div>
+                  <h3 class="stat-number">99.9%</h3>
+                  <p class="stat-label">System Reliability</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card">
+                  <div class="stat-icon"><i class="fa fa-headphones"></i></div>
+                  <h3 class="stat-number">24/7</h3>
+                  <p class="stat-label">Dedicated Support</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== End Stats Bar ===== -->
+
+      <!-- ===== Industries We Power ===== -->
+      <div class="trust-strip-section" data-aos="fade-up">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-3 text-center text-lg-left mb-3 mb-lg-0">
+              <span class="trust-badge-title"><i class="fa fa-handshake-o mr-2" style="color: #1391a5;"></i> Trusted
+                Across Industries:</span>
+            </div>
+            <div class="col-lg-9">
+              <div class="trust-sectors-wrap">
+                <span class="sector-pill"><i class="fa fa-ship"></i> Customs &amp; Logistics ERP</span>
+                <span class="sector-pill"><i class="fa fa-user-md"></i> Healthcare &amp; Dental EHR</span>
+                <span class="sector-pill"><i class="fa fa-shopping-cart"></i> Retail &amp; Smart POS</span>
+                <span class="sector-pill"><i class="fa fa-building"></i> Corporate &amp; Service Brands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="site-section" id="About">
         <div class="container">
 
@@ -279,18 +1253,44 @@
             </div>
           </div>
           <div class="row align-items-center">
-            <div class="col-md-5 me-auto">
+            <div class="col-md-6 me-auto">
 
 
               <p class="mb-4">
-                SoftNube is a <b>digital services</b> company fuellled by creative, and passionate people. We believe in
+                SoftNube is a <b>digital services</b> company fueled by creative, and passionate people. We believe in
                 building strong brands, good clean design, well-crafted content, and integrated strategies. From digital
                 marketing to website development, we’re more than just another company. We’re your next digital partner.
               </p>
-              <!-- <p><a href="#" class="btn btn-primary"></a></p> -->
+
+              <div class="about-highlights row mt-4">
+                <div class="col-sm-6 mb-3">
+                  <div class="about-badge">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Local &amp; Regional Engineering</span>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="about-badge">
+                    <i class="fa fa-cloud"></i>
+                    <span>5+ Years Cloud ERP Experience</span>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="about-badge">
+                    <i class="fa fa-shield"></i>
+                    <span>Enterprise Data Protection</span>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="about-badge">
+                    <i class="fa fa-graduation-cap"></i>
+                    <span>Dedicated Support &amp; Training</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-md-1 me-auto"></div>
-            <div class="col-md-6 aos-init aos-animate" data-aos="fade-left">
+            <div class="col-md-5 aos-init aos-animate" data-aos="fade-left">
               <img src="ye/img/undraw_svg_3.svg" alt="SoftNube digital services illustration" class="img-fluid"
                 loading="lazy">
             </div>
@@ -350,8 +1350,7 @@
                   <!-- service-icon -->
                   <h3 class="service-title">Website Design</h3>
                   <p class="service-description">We have team of ninja designers that design Worlds best websites with
-                    cool design, fast speed and SEO optimized. </p>
-                  <p style="padding: 5px;"></p>
+                    cool design, fast speed and SEO optimized.</p>
                 </div>
               </div>
             </div>
@@ -477,36 +1476,59 @@
           </div>
           <div class="row">
 
-            <!-- Replace the image (ye/img/...), title and link of each item with your real project -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up">
               <div class="portfolio-item">
-                <img src="shipment/screenshots/02-dashboard.jpg" alt="Customs Shipment Management">
+                <img src="shipment/screenshots/02-dashboard.jpg" alt="Customs Shipment Management System">
                 <div class="portfolio-overlay">
-                  <span class="cat">Customs Shipment Management</span>
-                  <h3>Customs Shipment Management System</h3>
-                  <a href="shipment/features-en.html" target="_blank" class="view">View Project</a>
+                  <span class="cat">Customs &amp; Logistics ERP</span>
+                  <h3>Customs Shipment Management</h3>
+                  <p class="item-desc">Comprehensive container tracking, customs declarations, automated tariff
+                    calculations and instant client reporting.</p>
+                  <div class="portfolio-tags">
+                    <span class="tech-pill">Laravel</span>
+                    <span class="tech-pill">MySQL</span>
+                    <span class="tech-pill">Cloud ERP</span>
+                  </div>
+                  <a href="shipment/features-en.html" target="_blank" class="view"><i
+                      class="fa fa-arrow-right mr-1"></i> View System</a>
                 </div>
               </div>
             </div>
 
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
               <div class="portfolio-item">
-                <img src="prodentic/images/dashboard.png" alt="Dental Clinic Management">
+                <img src="prodentic/images/dashboard.png" alt="ProDentic Dental Clinic Management">
                 <div class="portfolio-overlay">
-                  <span class="cat">Dental Clinic Management</span>
-                  <h3>Specialized Dental Clinic Management System</h3>
-                  <a href="prodentic/features-en.html" target="_blank" class="view">View Project</a>
+                  <span class="cat">Healthcare &amp; EHR Solution</span>
+                  <h3>ProDentic Dental Management</h3>
+                  <p class="item-desc">Specialized dental EHR, interactive 3D teeth charting, smart appointment
+                    scheduling, and automated billing.</p>
+                  <div class="portfolio-tags">
+                    <span class="tech-pill">Laravel</span>
+                    <span class="tech-pill">Vue.js</span>
+                    <span class="tech-pill">EHR</span>
+                  </div>
+                  <a href="prodentic/features-en.html" target="_blank" class="view"><i
+                      class="fa fa-arrow-right mr-1"></i> View System</a>
                 </div>
               </div>
             </div>
 
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
               <div class="portfolio-item">
-                <img src="pos/assets/images/Capture.PNG" alt="Sales Management">
+                <img src="pos/assets/images/Capture.PNG" alt="Smart POS Management">
                 <div class="portfolio-overlay">
-                  <span class="cat">Sales Management</span>
-                  <h3>Point of Sale (POS) System</h3>
-                  <a href="pos/index.html" target="_blank" class="view">View Project</a>
+                  <span class="cat">Retail &amp; Sales Solution</span>
+                  <h3>Smart Point of Sale (POS)</h3>
+                  <p class="item-desc">High-speed retail billing, barcode scanning, multi-branch inventory tracking, and
+                    daily profit analytics.</p>
+                  <div class="portfolio-tags">
+                    <span class="tech-pill">PHP / JS</span>
+                    <span class="tech-pill">Inventory</span>
+                    <span class="tech-pill">POS</span>
+                  </div>
+                  <a href="pos/index.html" target="_blank" class="view"><i class="fa fa-arrow-right mr-1"></i> View
+                    System</a>
                 </div>
               </div>
             </div>
@@ -519,91 +1541,81 @@
         <div class="container">
           <div class="row justify-content-center text-center mb-5">
             <div class="col-md-8">
-              <h2 class="section-heading">Review From Our Users</h2>
+              <h2 class="section-heading">Client Success Stories</h2>
+              <p>Hear how our custom software and cloud solutions transformed operations for our clients.</p>
             </div>
           </div>
           <div class="row justify-content-center text-center">
-            <div class="col-md-7">
-              <div class="owl-carousel testimonial-carousel">
-                <div class="review text-center">
-                  <p class="stars">
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star muted"></span>
-                  </p>
-                  <h3>Excellent App!</h3>
-                  <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                      aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                      provident voluptates consectetur maiores quos.</p>
-                  </blockquote>
+            <div class="col-md-9 col-lg-8" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonial-carousel-wrap">
+                <div class="owl-carousel testimonial-carousel">
 
+                  <div class="review-card text-center">
+                    <p class="stars">
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                    </p>
+                    <h3 class="review-title">Outstanding UX &amp; Efficiency!</h3>
+                    <blockquote class="review-quote">
+                      <p>SoftNube transformed our customs shipment management with incredible precision. The platform is
+                        intuitive, reliable, and significantly reduced operational overhead. Truly our ideal digital
+                        partner!</p>
+                    </blockquote>
 
+                    <div class="review-user">
+                      <img src="ye/img/person_1.jpg" alt="Sama Trading Co." class="img-fluid rounded-circle"
+                        loading="lazy">
+                      <span class="user-name">Sama Trading &amp; Logistics</span>
+                      <span class="user-role">Enterprise Client &mdash; Customs &amp; Freight</span>
+                    </div>
+                  </div>
 
-                  <p class="review-user">
-                    <img src="ye/img/person_1.jpg" alt="Ansaf Alzurka" class="img-fluid rounded-circle mb-3"
-                      loading="lazy">
-                    <span class="d-block">
-                      <span class="text-black">Ansaf Alzurka</span>, &mdash; client
-                    </span>
-                  </p>
+                  <div class="review-card text-center">
+                    <p class="stars">
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                    </p>
+                    <h3 class="review-title">Rapid Response &amp; Reliable Support!</h3>
+                    <blockquote class="review-quote">
+                      <p>Their team's responsiveness and technical expertise are top-tier. Whenever we need feature
+                        enhancements or cloud maintenance, they deliver promptly with unmatched commitment.</p>
+                    </blockquote>
 
-                </div>
+                    <div class="review-user">
+                      <img src="ye/img/person_2.jpg" alt="Mohammed Ali" class="img-fluid rounded-circle" loading="lazy">
+                      <span class="user-name">Mohammed Ali</span>
+                      <span class="user-role">Operations Director</span>
+                    </div>
+                  </div>
 
-                <div class="review text-center">
-                  <p class="stars">
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star muted"></span>
-                  </p>
-                  <h3>This App is easy to use!</h3>
-                  <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                      aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                      provident voluptates consectetur maiores quos.</p>
-                  </blockquote>
+                  <div class="review-card text-center">
+                    <p class="stars">
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                      <span class="icofont-star"></span>
+                    </p>
+                    <h3 class="review-title">Exceptional Engineering!</h3>
+                    <blockquote class="review-quote">
+                      <p>ProDentic revolutionized our dental clinic's workflow. Patient charting, appointments, and
+                        accounting are seamless. SoftNube delivered an enterprise solution that exceeded our
+                        expectations.</p>
+                    </blockquote>
 
-
-
-                  <p class="review-user">
-                    <img src="ye/img/person_2.jpg" alt="Mohammed Ali" class="img-fluid rounded-circle mb-3"
-                      loading="lazy">
-                    <span class="d-block">
-                      <span class="text-black">Mohammed Ali</span>, &mdash; Manger HR Company
-                    </span>
-                  </p>
-
-                </div>
-
-
-                <div class="review text-center">
-                  <p class="stars">
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star"></span>
-                    <span class="icofont-star muted"></span>
-                  </p>
-                  <h3>Awesome functionality!</h3>
-                  <blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                      aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                      provident voluptates consectetur maiores quos.</p>
-                  </blockquote>
-
-
-
-                  <p class="review-user">
-                    <img src="ye/img/person_3.jpg" alt="Lila Alshami" class="img-fluid rounded-circle mb-3"
-                      loading="lazy">
-                    <span class="d-block">
-                      <span class="text-black">Lila Alshami</span>, &mdash; website owner
-                    </span>
-                  </p>
+                    <div class="review-user">
+                      <img src="ye/img/person_3.jpg" alt="Dr. Sumaya Ali" class="img-fluid rounded-circle"
+                        loading="lazy">
+                      <span class="user-name">Dr. Sumaya Ali</span>
+                      <span class="user-role">Specialized Dental Clinic Director</span>
+                    </div>
+                  </div>
 
                 </div>
               </div>
@@ -611,74 +1623,224 @@
           </div>
         </div>
       </div>
-      <br>
-      <section class="section" id="Contact">
+
+      <!-- ===== FAQ Section ===== -->
+      <div class="site-section bg-light" id="FAQ">
         <div class="container">
           <div class="row justify-content-center text-center mb-5">
             <div class="col-md-8" data-aos="fade-up">
-              <h2 class="section-heading">Contact Us </h2>
+              <h2 class="section-heading">Frequently Asked Questions</h2>
+              <p>Everything you need to know about our services, software solutions, and delivery process.</p>
             </div>
           </div>
-          <div class="row mb-5 align-items-end">
-            <div class="col-md-6 aos-init aos-animate" data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-lg-9" data-aos="fade-up">
+              <div class="faq-accordion" id="faqAccordion">
 
-              <h2>Request a Free Consultation</h2>
-              <p class="mb-0">Fill out the form to get a Free proposal and Business Advice.</p>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="col-md-4 ms-auto order-2 aos-init aos-animate" data-aos="fade-up">
-              <ul class="list-unstyled">
-                <li class="mb-3">
-                  <strong class="d-block mb-1">Address</strong>
-                  <span>Hada street , Next Alzazany center </span>
-                </li>
-                <li class="mb-3">
-                  <strong class="d-block mb-1">Phone</strong>
-                  <span>+967 777066658</span>
-                </li>
-                <li class="mb-3">
-                  <strong class="d-block mb-1">Email</strong>
-                  <span>support@SoftNube.com</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-md-6 mb-5 mb-md-0 aos-init aos-animate" data-aos="fade-up">
-              <form action="ye/forms/contact.php" method="post" role="form" class="php-email-form">
-
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control" id="name" required="">
+                <div class="faq-item active">
+                  <div class="faq-question">
+                    <span>How long does it typically take to develop a custom website or system?</span>
+                    <i class="fa fa-chevron-down"></i>
                   </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <label for="name">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" required="">
-                  </div>
-                  <div class="col-md-12 form-group mt-3">
-                    <label for="name">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" required="">
-                  </div>
-                  <div class="col-md-12 form-group mt-3">
-                    <label for="name">Message</label>
-                    <textarea class="form-control" name="message" required=""></textarea>
-                  </div>
-
-                  <div class="col-md-12 mb-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-
-                  <div class="col-md-6 form-group">
-                    <input type="submit" class="btn btn-primary d-block w-100" value="Submit Message">
+                  <div class="faq-answer">
+                    Corporate landing pages and standard websites typically take 1 to 2 weeks. Custom enterprise web
+                    applications and ERP solutions take 3 to 8 weeks depending on scope, database architecture, and
+                    integration complexity.
                   </div>
                 </div>
 
-              </form>
+                <div class="faq-item">
+                  <div class="faq-question">
+                    <span>Do you provide cloud hosting, domain setup, and ongoing maintenance?</span>
+                    <i class="fa fa-chevron-down"></i>
+                  </div>
+                  <div class="faq-answer">
+                    Yes! We provide complete end-to-end turnkey packages including cloud server deployment, SSL
+                    configuration, domain registration, automated multi-destination backups, and 24/7 technical
+                    monitoring.
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <div class="faq-question">
+                    <span>Can we test or demo your software (e.g. ProDentic or Shipment System) before
+                      purchasing?</span>
+                    <i class="fa fa-chevron-down"></i>
+                  </div>
+                  <div class="faq-answer">
+                    Certainly. You can review the feature pages or contact our team to schedule an interactive live
+                    walkthrough demonstration tailored to your exact business workflow.
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <div class="faq-question">
+                    <span>How do you guarantee data security and business continuity?</span>
+                    <i class="fa fa-chevron-down"></i>
+                  </div>
+                  <div class="faq-answer">
+                    We apply strict cybersecurity best practices including data encryption at rest and in transit,
+                    role-based granular permissions, automated daily cloud backups (e.g., Google Drive and S3), and
+                    proactive uptime monitoring.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== End FAQ Section ===== -->
+      <br>
+      <section class="section contact-section-wrap" id="Contact">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8" data-aos="fade-up">
+              <span class="contact-header-badge"><i class="fa fa-comments-o mr-1"></i> Direct Communication Channels</span>
+              <h2 class="section-heading">Let's Build Something Great Together</h2>
+              <p style="color: #64748b; font-size: 15px;">Whether you need an enterprise cloud system, mobile application, or high-performance website, our team is ready to help you scale.</p>
+            </div>
+          </div>
+
+          <div class="row align-items-stretch">
+
+            <!-- Column 1: Fast Direct Contact Cards -->
+            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <div class="contact-cards-container">
+
+                <!-- Instant WhatsApp Card -->
+                <a href="https://wa.me/967777066658?text=Hello%20SoftNube%2C%20I%20would%20like%20to%20inquire%20about%20your%20software%20and%20cloud%20development%20services."
+                  target="_blank" rel="noopener" class="contact-card">
+                  <div class="contact-card-icon whatsapp">
+                    <i class="fa fa-whatsapp"></i>
+                  </div>
+                  <div class="contact-card-body">
+                    <span class="contact-card-tag"><i class="fa fa-bolt" style="color: #25d366;"></i> Instant Consultation</span>
+                    <span class="contact-card-val">Live WhatsApp Chat</span>
+                    <p class="contact-card-sub">Chat directly with a software consultant</p>
+                    <span class="contact-card-badge-live">
+                      <span class="live-dot"></span> Online &mdash; Quick Response
+                    </span>
+                  </div>
+                  <i class="fa fa-chevron-right contact-card-arrow"></i>
+                </a>
+
+                <!-- Phone Support Card -->
+                <a href="tel:+967777066658" class="contact-card">
+                  <div class="contact-card-icon phone">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <div class="contact-card-body">
+                    <span class="contact-card-tag"><i class="fa fa-headphones" style="color: #274685;"></i> Sales &amp; Technical Line</span>
+                    <span class="contact-card-val">+967 777066658</span>
+                    <p class="contact-card-sub">Saturday &ndash; Thursday: 8:00 AM &ndash; 6:00 PM</p>
+                  </div>
+                  <i class="fa fa-chevron-right contact-card-arrow"></i>
+                </a>
+
+                <!-- Official Email Card -->
+                <a href="mailto:support@SoftNube.com" class="contact-card">
+                  <div class="contact-card-icon email">
+                    <i class="fa fa-envelope-o"></i>
+                  </div>
+                  <div class="contact-card-body">
+                    <span class="contact-card-tag"><i class="fa fa-paper-plane-o" style="color: #1391a5;"></i> Official Inquiry</span>
+                    <span class="contact-card-val">support@SoftNube.com</span>
+                    <p class="contact-card-sub">We reply to all inquiries within 2 hours</p>
+                  </div>
+                  <i class="fa fa-chevron-right contact-card-arrow"></i>
+                </a>
+
+                <!-- Headquarters Location Card -->
+                <div class="contact-card">
+                  <div class="contact-card-icon location">
+                    <i class="fa fa-map-marker"></i>
+                  </div>
+                  <div class="contact-card-body">
+                    <span class="contact-card-tag"><i class="fa fa-building-o" style="color: #FF8803;"></i> Headquarters</span>
+                    <span class="contact-card-val">Hada street, Next Alzazany center</span>
+                    <p class="contact-card-sub">Sana'a, Republic of Yemen</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Column 2: Smart Proposal & Consultation Form -->
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <div class="contact-form-card">
+                <div class="contact-form-header">
+                  <h3>Request a Free Consultation &amp; Proposal</h3>
+                  <p>Tell us about your project requirements and our engineering team will get back to you with an actionable plan.</p>
+                </div>
+
+                <form id="consultationForm" action="ye/forms/contact.php" method="post" role="form">
+                  <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                      <label for="name">Full Name <span class="text-danger">*</span></label>
+                      <input type="text" name="name" class="form-control" id="name" placeholder="e.g. John Doe" required="">
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                      <label for="phone">Phone / WhatsApp <span class="text-danger">*</span></label>
+                      <input type="tel" name="phone" class="form-control" id="phone" placeholder="e.g. +967 777066658" required="">
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                      <label for="email">Business Email <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" name="email" id="email" placeholder="name@company.com" required="">
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                      <label for="service_interest">Select Solution / Service <span class="text-danger">*</span></label>
+                      <select name="service_interest" id="service_interest" class="form-control form-select-custom" required="">
+                        <option value="" disabled selected>-- Select an option --</option>
+                        <option value="Customs Shipment & Logistics ERP">Customs Shipment &amp; Logistics ERP</option>
+                        <option value="ProDentic Dental EHR System">ProDentic Dental EHR System</option>
+                        <option value="Retail Point of Sale & Cashier (POS)">Retail Point of Sale &amp; Cashier (POS)</option>
+                        <option value="Custom Web Application / E-Commerce">Custom Web Application / E-Commerce</option>
+                        <option value="Mobile App Development (iOS & Android)">Mobile App Development (iOS &amp; Android)</option>
+                        <option value="Enterprise Cloud & Bespoke Architecture">Enterprise Cloud &amp; Bespoke Architecture</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="subject">Project Subject <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="e.g. Inquiring about ProDentic System deployment" required="">
+                    </div>
+
+                    <div class="col-md-12 form-group mb-4">
+                      <label for="message">Project Scope &amp; Details <span class="text-danger">*</span></label>
+                      <textarea class="form-control" name="message" id="message" placeholder="Briefly describe your project goals, timeline, and key requirements..." required=""></textarea>
+                    </div>
+
+                    <div class="col-md-12 mb-3" id="formNotice" style="display: none;">
+                      <div class="sent-message" style="display: block; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; border-radius: 10px; padding: 12px 15px; font-weight: 600; text-align: center;">
+                        <i class="fa fa-whatsapp mr-1" style="font-size: 18px; color: #25d366;"></i> Your inquiry details have been prepared! Opening WhatsApp to connect you directly with our engineering team...
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 form-group mb-2">
+                      <button type="submit" class="btn btn-submit-contact d-block w-100">
+                        <i class="fa fa-whatsapp" style="font-size: 20px;"></i>
+                        <span>Send Request via WhatsApp Directly</span>
+                      </button>
+                      <small class="text-muted d-block text-center mt-2" style="font-size: 12.5px;">
+                        <i class="fa fa-info-circle mr-1"></i> A WhatsApp chat will open automatically with your project details formatted and ready to send
+                      </small>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="contact-trust-guarantees">
+                        <span class="trust-guarantee-item"><i class="fa fa-lock"></i> 100% Confidential</span>
+                        <span class="trust-guarantee-item"><i class="fa fa-clock-o"></i> Response in &lt; 24h</span>
+                        <span class="trust-guarantee-item"><i class="fa fa-check-circle"></i> Free No-Obligation Consultation</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
             </div>
 
           </div>
@@ -702,13 +1864,12 @@
 
 
     </main>
-    <hr />
     <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="row">
           <div class="col-md-4 mb-4 mb-md-0">
             <h3>About SoftNube</h3>
-            <p>SoftNube is a digital services company fuellled by creative, and passionate people. We believe in
+            <p>SoftNube is a digital services company fueled by creative, and passionate people. We believe in
               building strong brands, good clean design, well-crafted content, and integrated strategies. From digital
               marketing to website development, we’re more than just another company. We’re your next digital partner.
             </p>
@@ -724,29 +1885,35 @@
               <div class="col-md-4 mb-4 mb-md-0">
                 <h3>Navigation</h3>
                 <ul class="list-unstyled">
-                  <li><a href="#">Pricing</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#main">Home</a></li>
+                  <li><a href="#Services">Services</a></li>
+                  <li><a href="#Work">Our Systems</a></li>
+                  <li><a href="#About">About Us</a></li>
+                  <li><a href="#FAQ">FAQ</a></li>
+                  <li><a href="#Contact">Contact Us</a></li>
                 </ul>
               </div>
-              <div class="col-md-3 mb-3 mb-md-0">
-                <h3>Services</h3>
+              <div class="col-md-4 mb-3 mb-md-0">
+                <h3>Software Solutions</h3>
                 <ul class="list-unstyled">
-                  <li><a href="#">Team</a></li>
-                  <li><a href="#">Collaboration</a></li>
-                  <li><a href="#">Todos</a></li>
-                  <li><a href="#">Events</a></li>
+                  <li><a href="shipment/features-en.html" target="_blank">Customs Shipment ERP</a></li>
+                  <li><a href="prodentic/features-en.html" target="_blank">ProDentic Dental System</a></li>
+                  <li><a href="pos/index.html" target="_blank">Smart POS System</a></li>
+                  <li><a href="#Services">Custom Web Apps</a></li>
+                  <li><a href="#Services">Mobile Apps</a></li>
                 </ul>
               </div>
-              <div class="col-md-5 mb-5 mb-md-0">
-                <h3>Social Active</h3>
+              <div class="col-md-4 mb-5 mb-md-0">
+                <h3>Connect With Us</h3>
                 <p class="social">
-                  <a href="https://www.youtube.com/channel/UCC4sNgTIP11jct5CgLFqZdA/featured"><span
-                      class="icofont-youtube"></span></a>
-                  <a href="https://twitter.com/_softnube"><span class="icofont-twitter"></span></a>
-                  <a href="https://www.facebook.com/softnube"><span class="icofont-facebook"></span></a>
-                  <a href="https://www.instagram.com/_softnube/"><span class="icofont-instagram"></span></a>
+                  <a href="https://www.youtube.com/channel/UCC4sNgTIP11jct5CgLFqZdA/featured" target="_blank"
+                    rel="noopener"><span class="icofont-youtube"></span></a>
+                  <a href="https://twitter.com/_softnube" target="_blank" rel="noopener"><span
+                      class="icofont-twitter"></span></a>
+                  <a href="https://www.facebook.com/softnube" target="_blank" rel="noopener"><span
+                      class="icofont-facebook"></span></a>
+                  <a href="https://www.instagram.com/_softnube/" target="_blank" rel="noopener"><span
+                      class="icofont-instagram"></span></a>
 
                 </p>
               </div>
@@ -758,13 +1925,6 @@
           <div class="col-md-7">
             <p class="copyright">&copy; Copyright SoftNube <span id="year"></span>. All Rights Reserved</p>
             <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=SoftNube
-              -->
-
             </div>
           </div>
         </div>
@@ -774,7 +1934,8 @@
   </div> <!-- .site-wrap -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-  <a href="https://wa.me/967777066658" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a href="https://wa.me/967777066658?text=Hello%20SoftNube%2C%20I%20would%20like%20to%20inquire%20about%20your%20software%20and%20web%20development%20services."
+    class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="fa fa-whatsapp"></i>
   </a>
 
@@ -792,7 +1953,80 @@
   <!-- End of HubSpot Embed Code -->
   <!-- Template Main JS File -->
   <script src="ye/js/main.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // Dynamic Year for UI and Meta Copyright
+    (function () {
+      var currentYear = new Date().getFullYear();
+      var yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = currentYear;
+      }
+      var metaCopyright = document.getElementById('meta-copyright');
+      if (metaCopyright) {
+        metaCopyright.setAttribute('content', '© ' + currentYear + ' SoftNube. All Rights Reserved');
+      }
+    })();
+
+    // Interactive FAQ Accordion
+    document.addEventListener('DOMContentLoaded', function () {
+      var faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(function (question) {
+        question.addEventListener('click', function () {
+          var item = this.parentElement;
+          var wasActive = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach(function (el) {
+            el.classList.remove('active');
+          });
+          if (!wasActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // Submit consultation form directly to WhatsApp
+      var consultationForm = document.getElementById('consultationForm');
+      if (consultationForm) {
+        consultationForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var name = (document.getElementById('name') ? document.getElementById('name').value.trim() : '');
+          var phone = (document.getElementById('phone') ? document.getElementById('phone').value.trim() : '');
+          var email = (document.getElementById('email') ? document.getElementById('email').value.trim() : '');
+          var serviceSelect = document.getElementById('service_interest');
+          var service = serviceSelect ? (serviceSelect.options[serviceSelect.selectedIndex].text || serviceSelect.value) : '';
+          var subject = (document.getElementById('subject') ? document.getElementById('subject').value.trim() : '');
+          var message = (document.getElementById('message') ? document.getElementById('message').value.trim() : '');
+
+          var waMessage = "👋 *New Technical Consultation & Proposal Request*\n" +
+            "━━━━━━━━━━━━━━━━━━━\n" +
+            "👤 *Name:* " + name + "\n" +
+            "📱 *Phone / WhatsApp:* " + phone + "\n" +
+            "📧 *Email:* " + (email || "Not specified") + "\n" +
+            "⚙️ *Requested Service/System:* " + service + "\n" +
+            "📌 *Subject:* " + subject + "\n" +
+            "📝 *Project Details:* \n" + message + "\n" +
+            "━━━━━━━━━━━━━━━━━━━\n" +
+            "🌐 *Source:* SoftNube Official Website";
+
+          var waUrl = "https://wa.me/967777066658?text=" + encodeURIComponent(waMessage);
+
+          var notice = document.getElementById('formNotice');
+          if (notice) {
+            notice.style.display = 'block';
+          }
+
+          try {
+            var formData = new FormData(consultationForm);
+            fetch('ye/forms/contact.php', { method: 'POST', body: formData }).catch(function () { });
+          } catch (err) { }
+
+          setTimeout(function () {
+            window.open(waUrl, '_blank');
+          }, 400);
+        });
+      }
+    });
+  </script>
 
 </body>
 
